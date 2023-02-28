@@ -1,0 +1,194 @@
+﻿form {
+    height: 400px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+}
+
+form * {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+form h3 {
+    font-size: 31px;
+    font-weight: 500;
+    line-height: 10px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input {
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(79 58 58 / 10%);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 300;
+    color:black;
+}
+
+::placeholder {
+    color: whitesmoke;
+    font-size: 14px;
+}
+
+input:hover {
+    outline: 2px solid skyblue;
+}
+
+button {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+label {
+    color: black;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: darkslategrey;
+    color: white;
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: cornsilk;
+}
+
+span.title {
+    cursor: pointer;
+    letter-spacing: -3px;
+    font-size: 45px;
+    display: inline-block;
+    color: darkslategrey;
+    font-weight: 400;
+    font-family: fantasy;
+}
+
+span:hover:not(.field-validation-error) {
+    animation: bounce 400ms ease-in-out;
+    transition: color 200ms ease-in-out;
+    color: white;
+}
+
+span:nth-child(5) {
+    margin-right: 10px;
+}
+
+@keyframes bounce
+{
+    0% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#link {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.item_text {
+    animation: key1 .3s ease infinite alternate;
+}
+
+@keyframes key1 
+{
+  0% {
+      transform: translateY(0px);
+  }
+
+  100% {
+      transform: translateY(-10px);
+  }
+}
+
+.container {
+    position: relative;
+}
+
+.eyespan {
+    float: right;
+    margin-right: 6px;
+    margin-top: -35px;
+    position: relative;
+    z-index: 2;
+    color: black;
+    cursor: hand;
+}
+
+
+a {
+    padding: 0px 0px 0px 5px;
+    color: black;
+    font-size: 14px;
+    margin-left: 55%;
+    font-weight: 500;
+}
+
+a:hover{
+   color:orange;
+}
+
+
+.mainLoginInput::-webkit-input-placeholder {
+    font-family: FontAwesome;
+    font-weight: normal;
+    overflow: visible;
+    vertical-align: top;
+    display: inline-block !important;
+    padding-left: 5px;
+    padding-top: 2px;
+    color:black;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: 14px;
+    float: right;
+}
+
+span{
+    color:black;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMS", "CMS.csproj", "{03A5D942-96B5-4597-AB47-9EF883576833}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CMSWebApi", "..\CMSWebApi\CMSWebApi.csproj", "{86426533-8DA9-4A73-928E-592E5BD41168}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03A5D942-96B5-4597-AB47-9EF883576833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03A5D942-96B5-4597-AB47-9EF883576833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03A5D942-96B5-4597-AB47-9EF883576833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03A5D942-96B5-4597-AB47-9EF883576833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86426533-8DA9-4A73-928E-592E5BD41168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86426533-8DA9-4A73-928E-592E5BD41168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86426533-8DA9-4A73-928E-592E5BD41168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86426533-8DA9-4A73-928E-592E5BD41168}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F7E4957-61C4-49EA-9FDB-98E76B605F69}
+	EndGlobalSection
+EndGlobal

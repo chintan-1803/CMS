@@ -1,0 +1,126 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot - Copy\**" />
+    <Compile Remove="wwwroot\css\fonts\**" />
+    <Compile Remove="wwwroot\css\icons\**" />
+    <Compile Remove="wwwroot\extra-libs\**" />
+    <Compile Remove="wwwroot\js\pages\**" />
+    <Compile Remove="wwwroot\scss\**" />
+    <Content Remove="wwwroot - Copy\**" />
+    <Content Remove="wwwroot\css\fonts\**" />
+    <Content Remove="wwwroot\css\icons\**" />
+    <Content Remove="wwwroot\extra-libs\**" />
+    <Content Remove="wwwroot\js\pages\**" />
+    <Content Remove="wwwroot\scss\**" />
+    <EmbeddedResource Remove="wwwroot - Copy\**" />
+    <EmbeddedResource Remove="wwwroot\css\fonts\**" />
+    <EmbeddedResource Remove="wwwroot\css\icons\**" />
+    <EmbeddedResource Remove="wwwroot\extra-libs\**" />
+    <EmbeddedResource Remove="wwwroot\js\pages\**" />
+    <EmbeddedResource Remove="wwwroot\scss\**" />
+    <None Remove="wwwroot - Copy\**" />
+    <None Remove="wwwroot\css\fonts\**" />
+    <None Remove="wwwroot\css\icons\**" />
+    <None Remove="wwwroot\extra-libs\**" />
+    <None Remove="wwwroot\js\pages\**" />
+    <None Remove="wwwroot\scss\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\app-style-switcher.js" />
+    <Content Remove="wwwroot\js\app-style-switcher.min.js" />
+    <Content Remove="wwwroot\js\custom.js" />
+    <Content Remove="wwwroot\js\custom.min.js" />
+    <Content Remove="wwwroot\js\feather.min.js" />
+    <Content Remove="wwwroot\js\sidebarmenu.js" />
+    <Content Remove="wwwroot\js\sidebarmenu.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Template\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\font-awesome\js\all.js" />
+    <None Include="wwwroot\lib\font-awesome\js\all.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\brands.js" />
+    <None Include="wwwroot\lib\font-awesome\js\brands.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\conflict-detection.js" />
+    <None Include="wwwroot\lib\font-awesome\js\conflict-detection.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\fontawesome.js" />
+    <None Include="wwwroot\lib\font-awesome\js\fontawesome.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\regular.js" />
+    <None Include="wwwroot\lib\font-awesome\js\regular.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\solid.js" />
+    <None Include="wwwroot\lib\font-awesome\js\solid.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\v4-shims.js" />
+    <None Include="wwwroot\lib\font-awesome\js\v4-shims.min.js" />
+    <None Include="wwwroot\lib\font-awesome\sprites\brands.svg" />
+    <None Include="wwwroot\lib\font-awesome\sprites\regular.svg" />
+    <None Include="wwwroot\lib\font-awesome\sprites\solid.svg" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="RestSharp" Version="108.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CMSWebApi">
+      <HintPath>..\CMSWebApi\bin\Debug\net6.0\CMSWebApi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

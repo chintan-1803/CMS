@@ -1,0 +1,82 @@
+﻿@using CMS.Constants;
+@model CMS.Models.UserLoginEntity
+
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = null;
+}
+
+<link href="~/css/loginpage.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+
+<style type="text/css">
+   
+</style>
+
+<html>
+<body>
+
+    <img class="container" src="~/images/BackgroundImages.jpg" width="100%" height="100%">
+
+    <div>
+
+        <img style="position:absolute;left:16;top:3%;" class="item_text" width="15%" height="15%" src="~/images/TechcronusLogoNew.jpg" />
+
+        @*<form asp-action="LoginSubmit" asp-controller="Login" method="post">*@
+        @*</form>*@
+
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { id = "submitForm" }))
+        {
+            @Html.ValidationSummary(true)
+            <div>
+                <span class="title">L</span>
+                <span class="title">o</span>
+                <span class="title">g</span>
+                <span class="title">-</span>
+                <span class="title">I n</span>
+            </div>
+
+            <div class="form-control">
+                <label> <span class="fa fa-user" aria-hidden="true" /></label>
+                @Html.TextBoxFor(x=>x.Email ,new {placeholder="Email",id="valemail" ,required = "required"})
+                @Html.ValidationMessageFor(x=>x.Email)
+            </div>
+
+            <div class="form-control pb-20" >
+                <label> <span class="fa fa-key" aria-hidden="true"/></label>
+                <div>
+                @Html.TextBoxFor(x=>x.Password ,new {placeholder="Password",id="valPassword",type="password" ,required = "required"})
+                <span class="fas fa-eye eyespan" id="btnToggle" />
+                </div>
+                @Html.ValidationMessageFor(x=>x.Password)
+            </div>
+
+            <a tabindex="3" href="@ControllerName.Home/@ActionName.ForgotPasswordSubmit" class="font-weight-bold text-danger">Forgot Password ?</a>
+
+            <button type="submit" tabindex="4">Login</button>
+        }
+
+    </div>
+
+</body>
+</html>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/font-awesome/js/fontawesome.min.js"></script>
+
+
+<script>
+
+    $('#btnToggle').click(function () 
+    {
+        if ('password' == $('#valPassword').attr('type')) {
+            $('#valPassword').prop('type', 'text');
+        }
+        else {
+            $('#valPassword').prop('type', 'password');
+        }
+    });
+
+</script>
