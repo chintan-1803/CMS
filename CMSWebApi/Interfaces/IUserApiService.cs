@@ -1,9 +1,5 @@
 ﻿using CMS.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CMSWebApi.Models;
 
 namespace CMSWebApi.Interfaces
 {
@@ -11,5 +7,20 @@ namespace CMSWebApi.Interfaces
     {
         AuthenticateResponse AuthenticateUser(UserLoginEntity loginRequest);
         LoginResponse GetById(int userId);
+
+        //Designation
+        Task<List<DesignationModel>> GetAllDesignation();
+
+        //Reason
+        Task<List<ReasonModel>> GetAllReason();
+
+        //Technology
+        Task<List<TechnologyModel>> GetAllTechnology();
+
+        //Role
+        Task<List<RoleModel>> GetAllRole();
+
+        //Round
+        Task<List<RoundModel>> GetAllRound();
     }
 }

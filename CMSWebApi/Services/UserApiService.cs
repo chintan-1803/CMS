@@ -1,9 +1,9 @@
 ﻿using CMS.ApplicationHelpers;
-using CMS.Interfaces;
 using CMS.Models;
 using CMSWebApi.Dapper;
 using CMSWebApi.DataHelper;
 using CMSWebApi.Interfaces;
+using CMSWebApi.Models;
 using Dapper;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -75,5 +75,50 @@ namespace CMSWebApi.Services
             return new LoginResponse();
         }
 
+        //Designation---------
+
+        public async  Task<List<DesignationModel>> GetAllDesignation()
+        {
+            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+            var model = await  Task.FromResult(_dapper.GetAll<DesignationModel>(StoreProcedureName.DesignationMasterData, null, System.Data.CommandType.StoredProcedure));
+            return model;
+        }
+
+        //Reason--------
+        public async Task<List<ReasonModel>> GetAllReason()
+        {
+            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+            var model = await Task.FromResult(_dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure));
+            return model;
+        }
+
+        //Technology
+
+        public async Task<List<TechnologyModel>> GetAllTechnology()
+        {
+            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+            var model = await Task.FromResult(_dapper.GetAll<TechnologyModel>(StoreProcedureName.TechnologyMasterData, null, System.Data.CommandType.StoredProcedure));
+            return model;
+        }
+
+        public async Task<List<RoleModel>> GetAllRole()
+        {
+            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+            var model = await Task.FromResult(_dapper.GetAll<RoleModel>(StoreProcedureName.RoleMasterData, null, System.Data.CommandType.StoredProcedure));
+            return model;
+        }
+
+
+        public async Task<List<RoundModel>> GetAllRound()
+        {
+            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+            var model = await Task.FromResult(_dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, null, System.Data.CommandType.StoredProcedure));
+            return model;
+        }
+        //public <List<DesignationModel>> GetMembers()
+        //{
+        //    var result = _dapper.GetAll<DesignationModel>($"Select * from [members]", null, commandType: CommandType.Text);
+        //    return result;
+        //}
     }
 }
