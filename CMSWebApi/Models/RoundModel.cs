@@ -11,8 +11,5 @@ namespace CMSWebApi.Models
         public string Change_user { get; set; }
         public DateTime change_Date { get; set; }
         public bool IsDelete { get; set; }
-
-        [JsonProperty("results")]
-        public List<RoundModel> results { get; set; }
     }
 }

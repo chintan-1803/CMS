@@ -15,8 +15,6 @@ namespace CMS.Models
         public string Error { get; set; }
         public string UserFullName { get; set; }
         public string UserRoleName { get; set; }
-
-      
     }
     
 }

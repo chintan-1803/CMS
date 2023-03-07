@@ -31,8 +31,13 @@ builder.Services.AddControllers()
 // configure DI for application services
 builder.Services.AddSingleton<HttpContextAccessor>();
 builder.Services.AddScoped<IUserApiService,UserApiService>();
+builder.Services.AddScoped<IDesignation_Interface,Designation_Service>();
+builder.Services.AddScoped<IReason_Interface,Reason_Service>();
+builder.Services.AddScoped<IRole_Interface,Role_Service>();
+builder.Services.AddScoped<IRound_Interface,Round_Service>();
+builder.Services.AddScoped<ITechnology_Interface,Technology_Service>();
 builder.Services.AddScoped<IDapper,Dappers>();
-builder.Services.AddScoped<ICipherService, CipherService>();
+builder.Services.AddScoped<ICipherService,CipherService>();
 
 
 

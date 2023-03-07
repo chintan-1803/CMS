@@ -31,10 +31,10 @@ namespace CMSWebApi.Dapper
             return db.Query<T>(sp, parms, commandType: commandType, commandTimeout: 0).ToList();
         }
 
-        public void Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        public int Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {
             using IDbConnection db = GetDbconnection();
-            db.Execute(sp, parms, commandType: commandType, commandTimeout: 0);
+            return db.Execute(sp, parms, commandType: commandType, commandTimeout: 0);
         }
 
         public T Get<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.Text)
@@ -48,6 +48,7 @@ namespace CMSWebApi.Dapper
             T result;
             using IDbConnection db = GetDbconnection();
             try
+            
             {
                 if (db.State == ConnectionState.Closed)
                     db.Open();
@@ -76,6 +77,5 @@ namespace CMSWebApi.Dapper
 
             return result;
         }
-
     }
 }

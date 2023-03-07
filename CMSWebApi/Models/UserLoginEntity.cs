@@ -11,7 +11,6 @@ namespace CMS.Models
         //[EmailAddress(ErrorMessage = "Please enter valid Email.")]
         public string Email { set; get; }
 
-
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
