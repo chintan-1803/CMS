@@ -27,7 +27,13 @@ builder.Services.AddHttpContextAccessor();
 
 //------ Add services to pipeline also called as dependancy injection
 builder.Services.AddSingleton<HttpContextAccessor>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IDesignation,Designation>();
+builder.Services.AddScoped<IReason,Reason>();
+builder.Services.AddScoped<IRole,Role>();
+builder.Services.AddScoped<IRound, Round>();
+builder.Services.AddScoped<ITechnology,Technology>();
+
 
 
 

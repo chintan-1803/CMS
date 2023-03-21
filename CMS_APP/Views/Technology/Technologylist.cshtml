@@ -1,0 +1,367 @@
+﻿
+@using CMS.Constants;
+@using CMS.ApplicationHelpers;
+
+@model List<CMS.Models.TechnologyModel>
+@inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "TechnologyPage";
+    string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+
+<style type="text/css">
+
+    .btn-primary {
+        width: 45px;
+        height: 30px;
+        padding: 0; /* optional: removes padding inside button */
+    }
+
+    .btn1.btn-primary {
+        width: 98px;
+        height: 35px;
+        padding: 0; /* optional: removes padding inside button */
+    }
+
+    .btn.btn-deep-blue {
+        position: right;
+        background-color: #0047ab;
+        color: #fff;
+        /* border: 1px solid #ADD8E6;*/
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        /*color :#ADD8E6;*/
+    }
+
+    .modal-header .close {
+        font-size: 20px;
+    }
+
+    .modal-body {
+        text-align: left;
+    }
+
+    .right-align {
+        text-align: left;
+    }
+
+</style>
+
+<div class="col-xl-12 col-md-12">
+    <div class="card table-card">
+        <div class="card-header">
+            <h5>Technology List</h5>
+            <div class="card-header-right">
+
+                <button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter">
+                    Create New
+                </button>
+
+                @*Add Reason--pop box*@
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <h4 class="modal-title w-100 font-weight-bold">Create New Technology</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body mx-3">
+                                    <label data-error="wrong" data-success="right" for="orangeForm-name">
+
+                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
+                                    </label>
+                                    <input type="text" id="TechnologyName" class="form-control validate">
+                                </div>
+
+                                <div class="modal-body mx-3">
+                                    <label data-error="wrong" data-success="right" for="orangeForm-name">
+
+                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Discription</span>
+                                    </label>
+                                    <input type="text" id="Discription" class="form-control validate">
+                                </div>
+
+                                <input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+
+                                <div class="modal-footer d-flex justify-content-center">
+                                    <button class="btn btn-deep-blue" id="save-btn" data-dismiss="modal"> Save</button>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            @*<div class="card-header-right">
+            <ul class="list-unstyled card-option">
+            <li><i class="fa fa fa-wrench open-card-option"></i></li>
+            <li><i class="fa fa-window-maximize full-card"></i></li>
+            <li><i class="fa fa-minus minimize-card"></i></li>
+            <li><i class="fa fa-refresh reload-card"></i></li>
+            <li><i class="fa fa-trash close-card"></i></li>
+            </ul>
+            </div>*@
+        </div>
+        <div class="card-block">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Technology Name</th>
+                            <th class="text-center">Discription</th>
+                            <th class="text-center">CreatedBy</th>
+                            <th class="text-center">Create Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var data in Model)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    <div class="d-inline-block align-middle">
+                                        <div class="d-inline-block">
+                                            <h6>@data.TechnologyName</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-center">@data.Discription</td>
+                                <td class="text-center">@data.create_User</td>
+                                <td class="text-center">@data.create_Date</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <button width="10px" height="10px" type="button" class="btn btn-primary light sharp" data-toggle="dropdown">
+                                            <svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                                    <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                    <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                    <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            @*<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.DesignationID">Edit</button>
+                                        *@
+                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.TechnologyId">Edit</button>
+                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.TechnologyId">Delete</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Modal HTML -->
+                                    <div class="text-center">
+                                        <div id="myModal_@data.TechnologyId" class="modal fade">
+                                            <div class="modal-dialog modal-confirm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header flex-column-vertical">
+                                                        <h4 class="modal-title w-100" style="vertical-align: middle;">Are you sure?</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="hidden" id="deleteTechnologyid_@data.TechnologyId" value="@data.TechnologyId" class="form-control validate">
+                                                        <p>Do you really want to delete these records? This process cannot be undone.</p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-center">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" onclick="deletefunction(@data.TechnologyId)" class="btn btn-danger" id="delete-btn">Delete</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                     <!-- Update Popup-->
+                                    <div class="modal fade" id="UpdateModalCenter_@data.TechnologyId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header text-center">
+                                                        <h4 class="modal-title w-100 font-weight-bold">Edit Role</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body mx-3">
+                                                        
+                                                            <input type="hidden" id="updateTechnologyId_@data.TechnologyId" value="@data.TechnologyId" class="form-control validate" readonly>
+                        
+                                                        <div class="md-form mb-5">
+                                                            <label class ="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
+                                                            </label>
+                                                            <input type="text" id="updatetechnologyname_@data.TechnologyId" value="@data.TechnologyName" class="form-control validate">
+                                                        </div>
+                                                        <div class="md-form mb-5">                                                            <label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">IsActive</span>
+                                                            </label>
+                                                            <input type="text" id="updateisactive_@data.TechnologyId" value="@data.IsActive" class="form-control validate">
+                                                        </div>
+                                                        <div class="md-form mb-5">
+                                                            <label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Discription</span>
+                                                            </label>
+                                                            <input type="text" id="updatediscription_@data.TechnologyId" value="@data.Discription" class="form-control validate">
+                                                        </div>
+                                                        <input type="hidden" id="update_change_user_@data.TechnologyId" value="@create_User" class="form-control validate">
+                                                        <input type="hidden" id="update_change_Date_@data.TechnologyId" value="@data.change_Date" class="form-control validate">
+
+                                                    </div>
+                                                    <div class="modal-footer d-flex justify-content-center">
+                                                        <button class="btn btn-deep-blue" id="edit-btn" onclick="testfunction(@data.TechnologyId)"> Edit </button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="text-right m-r-20">
+                    <a href="#!" class=" b-b-primary text-primary">View all Task</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@*Update Designation--pop box*@
+
+
+
+
+
+
+
+<!--  project and team member end -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        var saveButton = document.getElementById('save-btn'); // add a click event listener to the Save button
+        saveButton.addEventListener('click', function () {
+            // refresh the page after 500 milliseconds (0.5 seconds)
+            setTimeout(function () {
+                location.reload();
+            }, 500);
+        });
+
+
+
+        $(function () {
+            debugger // Add click event handler to the Save button
+            $('#save-btn').click(function () {
+                // Get the values of the input fields
+                var TechnologyName = $('#TechnologyName').val();
+                var Discription = $('#Discription').val();
+                var createdBy = $('#create_User').val();
+
+                // Make the AJAX call
+                $.ajax({
+                    url: '/Technology/AddTechnologylist',
+                    method: 'POST',
+                    data: {
+                        TechnologyName: TechnologyName,
+                        Discription: Discription,
+                        create_User: createdBy
+                    },
+                    success: function (response) {
+                        // Handle the response data here
+                        console.log(response);
+
+                        $('#exampleModalCenter').modal('hide');
+                        location.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        // Handle errors here
+                        console.error(errorThrown);
+                    }
+                });
+            });
+        });
+
+        function testfunction(id) {
+
+            debugger
+
+            var TechnologyId = $('#updateTechnologyId_' + id).val();
+            var TechnologyName = $('#updatetechnologyname_' + id).val();
+            var IsActive = $('#updateisactive_' + id).val();
+            var Discription = $('#updatediscription_' + id).val();
+            var updatedby = $('#update_change_user_' + id).val();
+            var updatedtime = $('#update_change_Date_' + id).val();
+
+            $.ajax({
+                url: '/Technology/UpdateTechnologylist',
+                method: 'put',
+                data: {
+                    TechnologyId: TechnologyId,
+                    TechnologyName: TechnologyName,
+                     IsActive: IsActive,
+                    Discription: Discription,
+                    change_user: updatedby,
+                    change_Date: updatedtime
+                },
+                success: function (response) {
+                    console.log(response);
+                    $('#examplemodalcenter').modal('hide');
+                url: '/Technology/UpdateTechnologylist',
+                        location.reload();
+                },
+                error: function (jqxhr, textstatus, errorthrown) {
+                    console.error(errorthrown);
+                }
+            });
+        }
+
+    function deletefunction(id) {
+        debugger
+
+        var TechnologyId = $('#deleteTechnologyid_' + id).val();
+
+        $.ajax({
+            url: '/Technology/DeleteTechnologylist',
+            method: 'put',
+            data: {
+                TechnologyId: TechnologyId,
+
+            },
+            success: function (response) {
+                console.log(response);
+                $('#examplemodalcenter').modal('hide');
+                location.reload();
+            },
+            error: function (jqxhr, textstatus, errorthrown) {
+                console.error(errorthrown);
+            }
+        });
+    }
+
+    </script>
+
+

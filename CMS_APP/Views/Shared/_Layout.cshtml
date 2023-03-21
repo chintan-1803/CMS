@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using CMS.Constants;
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -251,7 +252,7 @@
                             <div class="pcoded-navigation-label" data-i18n="nav.category.navigation">All Details</div>
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="active">
-                                    <a href="index.html" class="waves-effect waves-dark">
+                                    <a href="@Url.Action("Home","HomePage")" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
@@ -381,6 +382,56 @@
                                 </li>
 
                             </ul>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu ">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Master modules</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="@Url.Action("Designationlist","Designation")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Designation Master</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Reasonlist","Reason")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Reason Master</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Technologylist","Technology")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Technology Master</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("Roundlist","Round")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Round Master</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    
+                                        <li class="">
+                                            <a href="@Url.Action("Rolelist","Role")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Role Master</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+
 
                             <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Others</div>
                             <ul class="pcoded-item pcoded-left-item">
@@ -432,7 +483,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         @RenderBody()
-                                        <div class="row">
+                                       @* <div class="row">
                                             <!-- task, page, download counter  start -->
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="card">
@@ -683,10 +734,10 @@
                                             </div>
 
                                             <!--  project and team member end -->
-                                        </div>
+                                        </div>*@
 
 
-                                        <div class="row">
+                                       @* <div class="row">
                                             <div class="col-xl-4">
                                                 <div class="card ">
                                                     <div class="card-header">
@@ -764,9 +815,9 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>*@
 
-                                         <div class="row">
+                                        @* <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="card ">
                                                     <div class="card-header">
@@ -804,7 +855,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>*@
                                     </div>
                                     <!-- Page-body end -->
                                 </div>

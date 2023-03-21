@@ -28,18 +28,27 @@ namespace CMS.Controllers
             if(ModelState.IsValid)
             {
                 var response = _userService.AuthenticateLogin(objUserLogin);
+				string create_User = objUserLogin.Email;
+				//string change_user = objUserLogin.Email;
 
-                if (response != null)
+                HttpContext.Session.SetString("create_User", create_User);
+				//HttpContext.Session.SetString("change_user", change_user);
+
+				if (response != null)
                 {
-
+                    return RedirectToAction("HomePage", "Home");
                 }
                 else
                 {
-
+                    return View();
                 }
             }
+            else
+            {
+                return View();
+            }
 
-            return View();
+            
         }
     }
 }
