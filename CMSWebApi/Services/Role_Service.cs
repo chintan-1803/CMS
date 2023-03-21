@@ -36,7 +36,7 @@ namespace CMSWebApi.Services
         public Task<RoleModel> AddRole([FromBody] RoleModel roleModel)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
+           // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
             parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
             parameters.Add("@create_user", roleModel.create_User, DbType.String);
 
@@ -67,10 +67,10 @@ namespace CMSWebApi.Services
         #endregion
 
         #region DeleteRoleByid
-        public int DeleteRoleByid(int RoleId)
+        public int DeleteRoleByid(RoleModel Role_ID)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@RoleId", RoleId, DbType.Int32);
+            parameters.Add("@RoleId", Role_ID.RoleId, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.DeleteRole, parameters, CommandType.StoredProcedure);
 

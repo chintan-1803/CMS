@@ -55,7 +55,7 @@ namespace CMSWebApi.Controllers
                 }
 
 
-                return Ok("SUCESS");
+                return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace CMSWebApi.Controllers
                 }
                 else if (response > 0)
                 {
-                    return Ok("SUCESS");
+                    return Ok("SUCCESS");
                 }
                 else
                 {
@@ -95,30 +95,30 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region  DeleteRound
-        [HttpPut("RoundID")]
-        public IActionResult DeleteRound(int RoundID)
-        {
-            try
-            {
-                var response = _roundService.DeleteRoundByid(RoundID);
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
-    }
+		[HttpPut("DeleteRound")]
+		public IActionResult DeleteRound(RoundModel Round_ID)
+		{
+			try
+			{
+				var response = _roundService.DeleteRoundByid(Round_ID);
+				if (response == 0)
+				{
+					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+				}
+				else if (response > 0)
+				{
+					return Ok("SUCCESS");
+				}
+				else
+				{
+					return Ok("Something went wrong");
+				}
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
+		}
+		#endregion
+	}
 }

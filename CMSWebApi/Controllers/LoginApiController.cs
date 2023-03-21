@@ -23,7 +23,7 @@ namespace CMSWebApi.Controllers
         }
 
         [HttpPost("authenticate")]
-        public IActionResult Authenticate(UserLoginEntity model)
+        public IActionResult Authenticate(WebApiUserLoginEntity model)
         {
             try
             {

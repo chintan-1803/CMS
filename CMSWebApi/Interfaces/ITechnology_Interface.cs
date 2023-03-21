@@ -8,7 +8,7 @@ namespace CMSWebApi.Interfaces
         Task<List<TechnologyModel>> GetAllTechnology();
         Task<TechnologyModel> AddTechnology([FromBody] TechnologyModel technologyModel);
         public int UpdateTechnology(TechnologyModel technologyModel);
-        public int DeleteTechnologyByid(int TechnologyId);
+        public int DeleteTechnology(TechnologyModel Technology_ID);
 
     }
 }

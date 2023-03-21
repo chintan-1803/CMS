@@ -29,6 +29,10 @@ namespace CMS.Models
             UserFullName = user.UserFullName;
             UserRoleName = user.UserRoleName;
         }
+
+        public AuthenticateResponse()
+        {
+        }
     }
 
     

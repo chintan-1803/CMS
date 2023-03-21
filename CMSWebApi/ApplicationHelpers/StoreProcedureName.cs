@@ -16,6 +16,8 @@
 
         public readonly static string RoundMasterData = "GetAllRoundMasterData";
 
+        public readonly static string InterviewerData = "GetAllInterviewersData";
+
         //Designation
 
         public readonly static string InsertDesignation = "sp_Insert_DesignationMaster";
@@ -52,7 +54,12 @@
 
         public readonly static string DeleteRound = "sp_Delete_RoundMaster";
 
-
+        //Interviewer
+        public readonly static string InsertInterviewer = "sp_Insert_Interviewers";
+        
+        public readonly static string UpdateInterviewer = "sp_Update_Interviewers";
+        
+        public readonly static string DeleteInterviewer = "sp_Delete_Interviewer";
 
 
     }

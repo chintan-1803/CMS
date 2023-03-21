@@ -35,7 +35,7 @@ namespace CMSWebApi.Services
         public Task<ReasonModel> AddReason(ReasonModel reasonModel)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
+            //parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
             parameters.Add("@Reason", reasonModel.Reason, DbType.String);
             parameters.Add("@create_user", reasonModel.create_User, DbType.String);
 
@@ -59,18 +59,18 @@ namespace CMSWebApi.Services
             var result = _dapper.Execute(StoreProcedureName.UpdateReason, parameters, CommandType.StoredProcedure);
             return result;
         }
-        #endregion
+		#endregion
 
-        #region DeleteReasonByid
-        public int DeleteReasonByid(int ReasonID)
-        {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
-            var parameters = new DynamicParameters();
-            parameters.Add("@ReasonID", ReasonID, DbType.Int32);
+		#region DeleteReasonByid
+		public int DeleteReasonByid(ReasonModel Reason_ID)
+		{
+			var parameters = new DynamicParameters();
+			parameters.Add("@ReasonID", Reason_ID.ReasonID, DbType.Int32);
 
-            var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
+			var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
 
-            return result;
-        }
-        #endregion
-    }
+			return result;
+		}
+		#endregion
+	}
 }

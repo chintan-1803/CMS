@@ -8,6 +8,6 @@ namespace CMSWebApi.Interfaces
         Task<List<RoundModel>> GetAllRound();
         Task<RoundModel> AddRound([FromBody] RoundModel roundModel);
         public int UpdateRound(RoundModel roundModel);
-        public int DeleteRoundByid(int RoundID);
+		public int DeleteRoundByid(RoundModel Round_ID);
     }
 }

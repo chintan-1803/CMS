@@ -55,7 +55,7 @@ namespace CMSWebApi.Controllers
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
                 }
-                return Ok("Sucess");
+                return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
@@ -78,7 +78,7 @@ namespace CMSWebApi.Controllers
                 }
                 else if (response > 0)
                 {
-                    return Ok("SUCESS");
+                    return Ok("SUCCESS");
                 }
                 else
                 {
@@ -91,34 +91,34 @@ namespace CMSWebApi.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-        #endregion
+		#endregion
 
-        #region  DeleteDesignation
-        [HttpPut("DesignationID")]
-        public IActionResult DeleteReason(int ReasonID)
-        {
-            try
-            {
-                var response = _reasonService.DeleteReasonByid(ReasonID);
-    
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
-    }
+		#region  DeleteReason
+		[HttpPut("DeleteReason")]
+		public IActionResult DeleteReason(ReasonModel Reason_ID)
+		{
+			try
+			{
+				var response = _reasonService.DeleteReasonByid(Reason_ID);
+
+				if (response == 0)
+				{
+					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+				}
+				else if (response > 0)
+				{
+					return Ok("SUCCESS");
+				}
+				else
+				{
+					return Ok("Something went wrong");
+				}
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
+		}
+		#endregion
+	}
 }

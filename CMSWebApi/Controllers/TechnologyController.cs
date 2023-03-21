@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TechnologyController : Controller
     {
         private readonly ITechnology_Interface _TechnologyService;
@@ -92,14 +94,14 @@ namespace CMSWebApi.Controllers
         }
         #endregion
 
-        #region  DeleteDesignation
-        [HttpPut("DesignationID")]
-        public IActionResult DeleteDesignation(int TechnologyId)
+        #region  DeleteTechnology
+        [HttpPut("DeleteTechnology")]
+        public IActionResult DeleteTechnology(TechnologyModel Technology_Id)
         {
             try
             {
-                var response = _TechnologyService.DeleteTechnologyByid(TechnologyId);
-          
+                var response = _TechnologyService.DeleteTechnology(Technology_Id);
+
                 if (response == 0)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });

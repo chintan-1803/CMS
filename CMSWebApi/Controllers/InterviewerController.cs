@@ -1,7 +1,6 @@
 ﻿using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
-using CMSWebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
@@ -9,54 +8,55 @@ namespace CMSWebApi.Controllers
 
     [ApiController]
     [Route("[controller]")]
-    public class RoleController : Controller
+    public class InterviewerController : Controller
     {
-        private readonly IRole_Interface _roleService;
+        private readonly IInterviewer_Interface _InterviewerService;
+        //private readonly ILogger _logger;
         private readonly IDapper _dapper;
-        public RoleController(IRole_Interface roleService, IDapper dapper)
+        public InterviewerController(IInterviewer_Interface interviewerServiece, IDapper dapper)
         {
-            _roleService = roleService;
+            _InterviewerService = interviewerServiece;
+            // _logger = logger;
             _dapper = dapper;
-
         }
 
-        #region Get Role Without Async
-        [HttpGet("Role")]
-        public IActionResult Role()
+        #region Get Designation WithOut Async
+        [HttpGet("Interviewer")]
+        public IActionResult Interviewer()
         {
             try
             {
-                var responseTask = _roleService.GetAllRole();
+                var responseTask = _InterviewerService.GetAllInterviewerDetails();
+                responseTask.Wait();
                 var response = responseTask.Result;
 
                 if (response == null)
                 {
                     return BadRequest(new { message = "NULL VALUE" });
                 }
-        
-                return Ok(response);
 
+                return Ok(response);
             }
             catch (Exception ex)
             {
+                //_logger.Error(ex, "Post UsersController Authenticate");
                 return BadRequest(new { message = ex.Message });
             }
         }
         #endregion
 
-        #region  AddRole
-        [HttpPost("AddRole")]
-        public IActionResult AddRole(RoleModel roleModel)
+        #region  AddInterviewer
+        [HttpPost("AddInterviewer")]
+        public IActionResult AddInterviewer(InterviewerModel interviewermodel)
         {
             try
             {
-                var response = _roleService.AddRole(roleModel);
+                var response = _InterviewerService.AddInterviewer(interviewermodel);
 
                 if (response == null)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
                 }
-
 
                 return Ok("SUCCESS");
             }
@@ -67,13 +67,13 @@ namespace CMSWebApi.Controllers
         }
         #endregion
 
-        #region  UpdateRole
-        [HttpPut("UpdateRole")]
-        public IActionResult UpdateRole(RoleModel roleModel)
+        #region  UpdateInterviewer
+        [HttpPut("UpdateInterviewer")]
+        public IActionResult UpdateInterviewer(InterviewerModel interviewermodel)
         {
             try
             {
-                var response = _roleService.UpdateRole(roleModel);
+                var response = _InterviewerService.UpdateInterviewer(interviewermodel);
 
                 if (response == 0)
                 {
@@ -96,14 +96,14 @@ namespace CMSWebApi.Controllers
         }
         #endregion
 
-       
-        #region  DeleteRole
-        [HttpPut("DeleteRole")]
-        public IActionResult DeleteRole(RoleModel Role_ID)
+        #region  DeleteInterviewer
+        [HttpPut("InterviewerId")]
+        public IActionResult DeleteInterviewer(int InterviewerId)
         {
             try
             {
-                var response = _roleService.DeleteRoleByid(Role_ID);
+                var response = _InterviewerService.DeleteInterviewerByid(InterviewerId);
+
                 if (response == 0)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
@@ -123,5 +123,6 @@ namespace CMSWebApi.Controllers
             }
         }
         #endregion
+
     }
 }

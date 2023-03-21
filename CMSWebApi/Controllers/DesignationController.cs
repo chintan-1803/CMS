@@ -54,12 +54,17 @@ namespace CMSWebApi.Controllers
             {
                 var response = _designationService.AddDesignation(designationmodel);
 
+                //if (designationmodel.change_Date == default(DateTime))
+                //{
+                //    designationmodel.change_Date = null;
+                //}
+
                 if (response == null)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
                 }
 
-                return Ok("SUCESS");
+                return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
@@ -82,7 +87,7 @@ namespace CMSWebApi.Controllers
                 }
                 else if(response > 0)
                 {
-                    return Ok("SUCESS");
+                    return Ok("SUCCESS");
                 }
                 else
                 {
@@ -98,12 +103,12 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region  DeleteDesignation
-        [HttpPut("DesignationID")]
-        public IActionResult DeleteDesignation(int DesignationID)
+        [HttpPut("DeleteDesignation")]
+        public IActionResult DeleteDesignation(DesignationModel Designation_ID)
         {
             try
             {
-                var response = _designationService.DeleteDesignationByid(DesignationID);
+                var response = _designationService.DeleteDesignationByid(Designation_ID);
 
                 if (response == 0)
                 {
@@ -111,7 +116,7 @@ namespace CMSWebApi.Controllers
                 }
                 else if (response > 0)
                 {
-                    return Ok("SUCESS");
+                    return Ok("SUCCESS");
                 }
                 else
                 {

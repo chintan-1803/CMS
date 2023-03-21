@@ -36,7 +36,7 @@ namespace CMSWebApi.Services
         public Task<RoundModel> AddRound([FromBody] RoundModel roundModel)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
+           // parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
             parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
             parameters.Add("@create_user", roundModel.create_User, DbType.String);
 
@@ -65,25 +65,25 @@ namespace CMSWebApi.Services
   
             return result;
         }
-        #endregion
+		#endregion
 
 
-        #region DeleteRoundByid
-        public int DeleteRoundByid(int RoundID)
-        {
+		#region DeleteRoundByid
+		public int DeleteRoundByid(RoundModel Round_ID)
+		{
 
-            var parameters = new DynamicParameters();
-            parameters.Add("@RoundID", RoundID, DbType.Int32);
+			var parameters = new DynamicParameters();
+			parameters.Add("@RoundID", Round_ID.RoundID, DbType.Int32);
 
-            var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
+			var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
 
-            //if (result == 0)
-            //{
-            //    throw new Exception("Failed to insert designation.");
-            //}
+			//if (result == 0)
+			//{
+			//    throw new Exception("Failed to insert designation.");
+			//}
 
-            return result;
-        }
-        #endregion   
-    }
+			return result;
+		}
+		#endregion
+	}
 }

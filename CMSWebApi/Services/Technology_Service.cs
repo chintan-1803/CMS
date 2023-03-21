@@ -38,10 +38,10 @@ namespace CMSWebApi.Services
             //var encryptedName = _cipherService.Encrypt(designationModel.);
 
             var parameters = new DynamicParameters();
-            parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
+           // parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
             parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
             parameters.Add("@Discription", technologyModel.Discription, DbType.String);
-            parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
+            //parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
             parameters.Add("@create_user", technologyModel.create_User, DbType.String);
 
             var result = _dapper.Insert<TechnologyModel>(StoreProcedureName.InsertTechnology, parameters, CommandType.StoredProcedure);
@@ -73,10 +73,10 @@ namespace CMSWebApi.Services
         #endregion
 
         #region DeleteTechnologyByid
-        public int DeleteTechnologyByid(int TechnologyId)
+        public int DeleteTechnology(TechnologyModel Technology_ID)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@TechnologyId", TechnologyId, DbType.Int32);
+            parameters.Add("@TechnologyId", Technology_ID.TechnologyId, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.DeleteTechnology, parameters, CommandType.StoredProcedure);
 

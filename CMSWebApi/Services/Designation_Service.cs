@@ -35,7 +35,7 @@ namespace CMSWebApi.Services
         public Task<DesignationModel> AddDesignation([FromBody] DesignationModel designationModel)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
+           // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
             parameters.Add("@Designation", designationModel.Designation, DbType.String);
             parameters.Add("@create_user", designationModel.create_User, DbType.String);
             
@@ -61,15 +61,16 @@ namespace CMSWebApi.Services
 
             var result =_dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure);
           
+            
             return result;
         }
         #endregion
 
         #region DeleteDesignationByid
-        public int DeleteDesignationByid(int DesignationID)
+        public int DeleteDesignationByid(DesignationModel Designation_ID)
         {   
             var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID", DesignationID,  DbType.Int32);
+            parameters.Add("@DesignationID", Designation_ID.DesignationID,  DbType.Int32);
  
             var result = _dapper.Execute(StoreProcedureName.DeleteDesignation, parameters, CommandType.StoredProcedure);
 

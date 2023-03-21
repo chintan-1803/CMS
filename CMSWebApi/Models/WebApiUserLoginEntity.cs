@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CMS.Models
 {
-    public class UserLoginEntity
+    public class WebApiUserLoginEntity
     {
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Email is required")]
