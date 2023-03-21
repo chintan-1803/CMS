@@ -9,7 +9,7 @@ namespace CMS.Services
     public class Designation : IDesignation
     {
    
-        public  RestResponse  Designationlist()
+        public  RestResponse Designationlist()
         {
             
                 var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.DesignationPath);
