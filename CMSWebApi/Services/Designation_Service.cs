@@ -32,21 +32,21 @@ namespace CMSWebApi.Services
         #endregion
 
         #region AddDesignation
-        public Task<DesignationModel> AddDesignation([FromBody] DesignationModel designationModel)
+        public string AddDesignation([FromBody] DesignationModel designationModel)
         {
             var parameters = new DynamicParameters();
            // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
             parameters.Add("@Designation", designationModel.Designation, DbType.String);
             parameters.Add("@create_user", designationModel.create_User, DbType.String);
             
-            var result = _dapper.Insert<DesignationModel>(StoreProcedureName.InsertDesignation, parameters, CommandType.StoredProcedure);
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertDesignation, parameters, CommandType.StoredProcedure);
 
             if (result == null)
             {
                 throw new Exception("Failed to insert designation.");
             }
 
-            return Task.FromResult(result);
+            return result;
         }
         #endregion
 
