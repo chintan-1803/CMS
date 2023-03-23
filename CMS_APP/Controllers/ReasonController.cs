@@ -6,124 +6,84 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    public class ReasonController : Controller
-    {
-        private readonly IReason _reason_Interface;
-        public ReasonController(IReason reason_Interface)
-        {
-            _reason_Interface = reason_Interface;
-        }
+	public class ReasonController : Controller
+	{
+		private readonly IReason _reason_Interface;
+		public ReasonController(IReason reason_Interface)
+		{
+			_reason_Interface = reason_Interface;
+		}
 
 
-        [HttpGet]
-        public IActionResult Reasonlist()
+		[HttpGet]
+		public IActionResult Reasonlist()
 
-        {
-            if (ModelState.IsValid)
-            {
-                var response = _reason_Interface.Reasonlist();
-                var data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
+		{
+			var response = _reason_Interface.Reasonlist();
+			var data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
 
-                if (data != null)
-                {
-                    //return RedirectToAction("DesignationPage", "Designation",new { data });
-                    return View(data);
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
+			if (data != null)
+			{
+				return View(data);
+			}
+			else
+			{
+				return View();
+			}
+		}
 
-        }
-
-        [HttpPost]
-        public IActionResult AddReasonlist(ReasonModel reasonData)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            if (ModelState.IsValid)
-            {
-                reasonData.create_Date = DateTime.Now;
-
-                var response = _reason_Interface.AddDesignationlist(reasonData);
-
-                if (response != null)
-                {
-                    return RedirectToAction("Reasonlist","Reason");
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
-        }
+		[HttpPost]
+		public IActionResult AddReasonlist(ReasonModel reasonData)
+		{
+			//var errors = ModelState.Values.SelectMany(v => v.Errors);
+			var response = _reason_Interface.AddDesignationlist(reasonData);
+			if (!response.IsSuccessful)
+			{
+				return BadRequest(response);
+			}
+			if (response != null)
+			{
+				return Json(new { });
+			}
+			else
+			{
+				return BadRequest(response);
+			}
+		}
 
 		[HttpPut]
 		public IActionResult UpdateReasonlist(ReasonModel reasonmodel)
 		{
-			var errors = ModelState.Values.SelectMany(v => v.Errors);
-			if (ModelState.IsValid)
+			//var errors = ModelState.Values.SelectMany(v => v.Errors);
+			var response = _reason_Interface.UpdateReasonlist(reasonmodel);
+			if (!response.IsSuccessful)
 			{
-				reasonmodel.change_Date = DateTime.Now;
-
-				var response = _reason_Interface.UpdateReasonlist(reasonmodel);
-
-
-				if (response != null)
-				{
-					return RedirectToAction("Reasonlist", " Reason");
-				}
-				else
-				{
-					return View();
-				}
+				//return Json(new {response});
+				return BadRequest(response);
+			}
+			if (response != null)
+			{
+				return Json(new { });
 			}
 			else
 			{
-				return View();
+				return BadRequest(response);
 			}
-
-
 		}
+
 		[HttpPut]
 		public IActionResult DeleteReasonlist(ReasonModel Reason_ID)
 		{
-			var errors = ModelState.Values.SelectMany(v => v.Errors);
-			if (ModelState.IsValid)
+			//var errors = ModelState.Values.SelectMany(v => v.Errors);
+			var response = _reason_Interface.DeleteReasonitem(Reason_ID);
+			if (response != null)
 			{
-
-
-				var response = _reason_Interface.DeleteReasonitem(Reason_ID);
-
-
-				if (response != null)
-				{
-					return RedirectToAction("Reasonlist", " Reason");
-				}
-				else
-				{
-					return View();
-				}
+				return Json(new { });
 			}
 			else
 			{
-				return View();
+				return BadRequest(response);
 			}
-
-
 		}
-
-		public IActionResult Index()
-        {
-            return View();
-        }
-    }
+	}
 }

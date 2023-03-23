@@ -22,7 +22,8 @@ namespace CMS.Controllers
 			var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
 			if (data != null)
 			{
-				return View(data);
+               
+                return View(data);
 			}
 			else
 			{
@@ -35,8 +36,7 @@ namespace CMS.Controllers
 		{
 			var response = _designation_Interface.AddDesignationlist(designationData);
 			if(!response.IsSuccessful){
-				return Json(new {response.Content});
-
+				return BadRequest(response);
 			}
 			if (response != null)
 			{
@@ -52,6 +52,11 @@ namespace CMS.Controllers
 		public IActionResult UpdateDesignationlist(DesignationModel updatedesignationData)
 		{
 			var response = _designation_Interface.UpdateDesignationlist(updatedesignationData);
+			if (!response.IsSuccessful)
+			{
+				//return Json(new {response});
+				return BadRequest(response);
+			}
 			if (response != null)
 			{
 				return Json(new { });
@@ -59,7 +64,7 @@ namespace CMS.Controllers
 			else
 			{
 				return BadRequest(response);
-			}
+			}	
 		}
 
 		[HttpPut]

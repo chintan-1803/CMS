@@ -15,6 +15,7 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
@@ -106,6 +107,27 @@
 						</div>
 					</div>
 				</div>
+				<!-- Add this to your HTML code -->
+				<!-- Success Modal -->
+				<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="success-modal-label" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="success-modal-label">Success</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<p id="success-message"></p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
 
 			</div>
 
@@ -157,7 +179,7 @@
 										</button>
 										<div class="dropdown-menu">
 
-											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.DesignationID">Edit</button>
+											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.DesignationID" >Edit</button>
 											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.DesignationID">Delete</button>
 										</div>
 									</div>
@@ -254,23 +276,27 @@
             // Clear the input field values 
 		   $('#Designation').val('');
 		   $('#DesignationError').text('');
+		  
 	   }
-
+	
 
 
 		$(function() {
 			// Add click event handler to the Save button
 			$('#save-btn').click(function () {
-
-			debugger
 				// Get the values of the input fields
 			var Designation = $('#Designation').val();
 			var createdBy = $('#create_User').val();
 			
 
 			if (Designation === '') {
-					$('#DesignationError').text('Designation Is Required.');
-					return;
+				$('#DesignationError').text('Designation is Required.');
+				return;
+			}
+
+			if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(Designation.trim())) {
+				$('#DesignationError').text('Designation is incorrect.Please enter a valid designation.');
+				return;
 			}
 				// Make the AJAX call
 				$.ajax({
@@ -279,23 +305,30 @@
 					data: {Designation: Designation,create_User: createdBy
 					},
 					success: function (response) {
-						debugger
+						
 						// Handle the response data here
 						console.log(response);
-						alert(response)
+					
+					  
 						$('#exampleModalCenter').modal('hide');
+
+					  // $('#success-modal').modal('show');
+					  //setTimeout($('#success-modal'), 2000);
 						location.reload(true);
 					},
 					error: function (response) {
 						// Handle errors here
-					$('#DesignationError').text(response.message);
+					if (!response.IsSuccessful) {
+						$('#DesignationError').text("Designation already exists. Please choose a different name.");
+						return;
+						//setTimeout($('#DesignationError'), 2000);
+					}
 						console.error(errorThrown);
 
 					}
 				});
 			});
 
-			debugger
 			$('#Designation').on('input', function () {
 				// Clear the error message when the field is not empty
 				if ($(this).val() !== '') {
@@ -305,16 +338,29 @@
 		});
 
 		function updatefunction(id) {
+			
 		    var designationid = $('#updatedesignationid_' + id).val();
 			var designation = $('#updatedesignation_' + id).val();
 			var updatedby = $('#update_change_user_' + id).val();
 			var updatedtime = $('#update_change_Date_' + id).val();
 
-		if (designation === '') {
-			// Show error message and return without making the AJAX call
-			$('#DesignationError_' + id).text('Designation Is Required.');
-			return;
-		}
+			if (designation === '') {
+				// Show error message and return without making the AJAX call
+				$('#DesignationError_' + id).text('Designation is Required.');
+				setTimeout(function () {
+					$('#DesignationError_' + id).text('');
+				}, 3000);
+				return ;
+			}
+		    if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(designation.trim())) {
+				// Show error message and return without making the AJAX call
+			    $('#DesignationError_' + id).text('Designation is incorrect.Please enter a valid designation.');
+				setTimeout(function () {
+					$('#DesignationError_' + id).text('');
+				}, 3000);
+				return;
+			}
+
 			$.ajax({
 				url: '/Designation/UpdateDesignationlist',
 				method: 'put',
@@ -325,12 +371,22 @@
 					change_Date: updatedtime
 				},
 				success: function (response) {
+				
 					console.log(response);
 					$('#examplemodalcenter').modal('hide');
 					location.reload();
 				},
 			    error: function (response) {
+				
+				if (!response.IsSuccessful) {
+					$('#DesignationError_' + id).text("Designation already exists. Please choose a different name.");
+					setTimeout(function () {
+						$('#DesignationError_' + id).text('');
+					}, 3000);
+					return;
+					
 					console.error(errorthrown);
+				}
 				}
 			});
 			
@@ -352,13 +408,13 @@
 				designationid: designationid
 				},
 				success: function (response) {
-					debugger
+					
 					console.log(response);
 					$('#examplemodalcenter').modal('hide');   
 					location.reload();
 				},
 				error: function (response) {
-					debugger
+					
 					console.error(errorthrown);
 				}
 			});

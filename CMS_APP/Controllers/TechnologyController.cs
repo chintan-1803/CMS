@@ -6,123 +6,79 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    public class TechnologyController : Controller
-    {
-        private readonly ITechnology _technology_Interface;
-        public TechnologyController(ITechnology technology_Interface)
-        {
-            _technology_Interface = technology_Interface;
-        }
-        [HttpGet]
-        public IActionResult Technologylist()
+	public class TechnologyController : Controller
+	{
+		private readonly ITechnology _technology_Interface;
+		public TechnologyController(ITechnology technology_Interface)
+		{
+			_technology_Interface = technology_Interface;
+		}
+		[HttpGet]
+		public IActionResult Technologylist()
+		{
+			var response = _technology_Interface.Technologylist();
+			var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
 
-        {
-            if (ModelState.IsValid)
-            {
-                var response = _technology_Interface.Technologylist();
-                var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
+			if (data != null)
+			{
 
-                if (data != null)
-                {
-                    //return RedirectToAction("DesignationPage", "Designation",new { data });
-                    return View(data);
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
+				return View(data);
+			}
+			else
+			{
+				return View();
+			}
+		}
 
-        }
+		[HttpPost]
+		public IActionResult AddTechnologylist(TechnologyModel technologyData)
+		{
+			var response = _technology_Interface.AddTechnology(technologyData);
+			if (!response.IsSuccessful)
+			{
+				return BadRequest(response);
+			}
+			if (response != null)
+			{
+				return Json(new { });
+			}
+			else
+			{
+				return BadRequest(response);
+			}
 
-        [HttpPost]
-        public IActionResult AddTechnologylist(TechnologyModel technologyData)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            if (ModelState.IsValid)
-            {
-                technologyData.create_Date = DateTime.Now;
+		}
 
-                var response = _technology_Interface.AddTechnology(technologyData);
-                if (response != null)
-                {
-                    return RedirectToAction("Technologylist", "Technology");
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
+		[HttpPut]
+		public IActionResult UpdateTechnologylist(TechnologyModel technologyData)
+		{
+			var response = _technology_Interface.UpdateTechnologylist(technologyData);
+			if (!response.IsSuccessful)
+			{
+				return BadRequest(response);
+			}
+			if (response != null)
+			{
+				return Json(new { });
+			}
+			else
+			{
+				return BadRequest(response);
+			}
+		}
 
-
-        }
-
-        [HttpPut]
-        public IActionResult UpdateTechnologylist(TechnologyModel technologyData)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            if (ModelState.IsValid)
-            {
-                technologyData.change_Date = DateTime.Now;
-
-                var response = _technology_Interface.UpdateTechnologylist(technologyData);
-
-
-                if (response != null)
-                {
-                    return RedirectToAction("Technologylist", "Technology");
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
-
-
-        }
-
-        [HttpPut]
-        public IActionResult DeleteTechnologylist(TechnologyModel Technology_ID)
-        {
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            if (ModelState.IsValid)
-            {
-
-
-                var response = _technology_Interface.DeleteTechnologyitem(Technology_ID);
-
-
-                if (response != null)
-                {
-                    return RedirectToAction("Technologylist", "Technology");
-                }
-                else
-                {
-                    return View();
-                }
-            }
-            else
-            {
-                return View();
-            }
-
-
-        }
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+		[HttpPut]
+		public IActionResult DeleteTechnologylist(TechnologyModel Technology_ID)
+		{
+			var response = _technology_Interface.DeleteTechnologyitem(Technology_ID);
+			if (response != null)
+			{
+				return Json(new { });
+			}
+			else
+			{
+				return BadRequest(response);
+			}
+		}
+	}
 }

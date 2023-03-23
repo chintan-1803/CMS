@@ -61,7 +61,7 @@
             <h5>Technology List</h5>
             <div class="card-header-right">
 
-                <button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
                     Create New
                 </button>
 
@@ -82,7 +82,8 @@
 
                                         <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
                                     </label>
-                                    <input type="text" id="TechnologyName" class="form-control validate">
+                                    <input asp-for="TechnologyName" type="text" id="TechnologyName" class="form-control validate">
+                                    <span asp-validation-for="TechnologyName" class="text-danger" id="TechnologyNameError"></span>
                                 </div>
 
                                 <div class="modal-body mx-3">
@@ -90,13 +91,17 @@
 
                                         <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Discription</span>
                                     </label>
-                                    <input type="text" id="Discription" class="form-control validate">
+                                    <input asp-for="Discription"  type="text" id="Discription" class="form-control validate">
+                                    <span asp-validation-for="Discription" class="text-danger" id="DiscriptionError"></span>
                                 </div>
 
                                 <input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+                                <div class="modal-body mx-3">
+                                               <span asp-validation-for="field" class="text-danger" id="EmptyfieldError"></span>
+                                </div>
 
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button class="btn btn-deep-blue" id="save-btn" data-dismiss="modal"> Save</button>
+                                    <button class="btn btn-deep-blue" id="save-btn" > Save</button>
 
                                 </div>
                             </div>
@@ -209,24 +214,27 @@
                                                                 <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
                                                             </label>
                                                             <input type="text" id="updatetechnologyname_@data.TechnologyId" value="@data.TechnologyName" class="form-control validate">
+                                                            <span class="text-danger" id="technologyError_@data.TechnologyId"></span>
                                                         </div>
-                                                        <div class="md-form mb-5">                                                            <label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
-                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">IsActive</span>
-                                                            </label>
-                                                            <input type="text" id="updateisactive_@data.TechnologyId" value="@data.IsActive" class="form-control validate">
-                                                        </div>
+                            
                                                         <div class="md-form mb-5">
                                                             <label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
                                                                 <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Discription</span>
                                                             </label>
                                                             <input type="text" id="updatediscription_@data.TechnologyId" value="@data.Discription" class="form-control validate">
+                                                            <span class="text-danger" id="discriptionError_@data.TechnologyId"></span>
+
                                                         </div>
+                                                        <input type="hidden" id="updateisactive_@data.TechnologyId" value="@data.IsActive" class="form-control validate">
                                                         <input type="hidden" id="update_change_user_@data.TechnologyId" value="@create_User" class="form-control validate">
                                                         <input type="hidden" id="update_change_Date_@data.TechnologyId" value="@data.change_Date" class="form-control validate">
+                                                        <div class="modal-body mx-3">
+                                                            <span asp-validation-for="field" class="text-danger" id="EmptyfieldError_@data.TechnologyId"></span>
+                                                        </div>
 
                                                     </div>
                                                     <div class="modal-footer d-flex justify-content-center">
-                                                        <button class="btn btn-deep-blue" id="edit-btn" onclick="testfunction(@data.TechnologyId)"> Edit </button>
+                                                        <button class="btn btn-deep-blue" id="edit-btn" onclick="updatefunction(@data.TechnologyId)"> Edit </button>
                                                     </div>
 
                                                 </div>
@@ -263,23 +271,51 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
-        var saveButton = document.getElementById('save-btn'); // add a click event listener to the Save button
-        saveButton.addEventListener('click', function () {
-            // refresh the page after 500 milliseconds (0.5 seconds)
-            setTimeout(function () {
-                location.reload();
-            }, 500);
-        });
+        function clearModal() {
+            // Clear the input field values
+            $('#TechnologyName').val('');
+            $('#Discription').val('');
+            $('#TechnologyNameError').text('');
+            $('#DiscriptionError').text('');
+        EmptyfieldError
 
-
-
+        }
         $(function () {
-            debugger // Add click event handler to the Save button
+           // Add click event handler to the Save button
             $('#save-btn').click(function () {
                 // Get the values of the input fields
                 var TechnologyName = $('#TechnologyName').val();
                 var Discription = $('#Discription').val();
                 var createdBy = $('#create_User').val();
+
+                 if ((TechnologyName === '') && (Discription === ''))
+                 {
+                  $('#EmptyfieldError').text('Both Fields Required.');
+                    setTimeout(function () {
+                        $('#EmptyfieldError').text('');
+                    }, 3000);
+                      return;
+                 }
+                if (TechnologyName === '' ) {
+                $('#TechnologyNameError').text('Technology is Required.');
+                     return;
+                }
+                if ( Discription === '') {
+                    $('#DiscriptionError').text('Discription is Required.');
+                    setTimeout(function () {
+                        $('#DiscriptionError').text('');
+                    }, 3000);
+                return;
+                }
+
+                if (!/^[a-zA-Z0-9\s.-]+$/.test(TechnologyName.trim())) {
+                    $('#TechnologyNameError').text('Technology is incorrect.Please enter a valid technology.');
+                    return;
+                }
+                if (!/^[a-zA-Z0-9]+([. -]?[a-zA-Z0-9]+)*$/.test(Discription.trim())) {
+                $('#DiscriptionError').text('Please enter a valid Discription.');
+                    return;
+                }
 
                 // Make the AJAX call
                 $.ajax({
@@ -296,25 +332,83 @@
 
                         $('#exampleModalCenter').modal('hide');
                         location.reload();
+                    alert("SucessFull");
                     },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                        // Handle errors here
+                error: function (response) {
+                    if (!response.IsSuccessful) {
+                        $('#TechnologyNameError').text("Technology already exists. Please choose a different name.");
+                        return;
+                    }
                         console.error(errorThrown);
                     }
                 });
             });
+            $('#TechnologyName').on('input', function () {
+                // Clear the error message when the field is not empty
+                if ($(this).val() !== '') {
+                $('#TechnologyNameError').text('');
+                }
+            });
         });
 
-        function testfunction(id) {
+        function updatefunction(id) {
 
-            debugger
 
             var TechnologyId = $('#updateTechnologyId_' + id).val();
             var TechnologyName = $('#updatetechnologyname_' + id).val();
-            var IsActive = $('#updateisactive_' + id).val();
             var Discription = $('#updatediscription_' + id).val();
             var updatedby = $('#update_change_user_' + id).val();
             var updatedtime = $('#update_change_Date_' + id).val();
+
+        if ((TechnologyName === '') && (Discription === '')) {
+            $('#EmptyfieldError_' + id).text('Both Fields Required.');
+            setTimeout(function () {
+                $('#EmptyfieldError_' + id).text('');
+            }, 3000);
+            return;
+        }
+        if (TechnologyName === '') {
+				// Show error message and return without making the AJAX call
+            $('#technologyError_' + id).text('Technology is Required.');
+				setTimeout(function () {
+                $('#technologyError_' + id).text('');
+				}, 3000);
+				return ;
+			}
+        if (Discription === '') {
+            // Show error message and return without making the AJAX call
+            $('#discriptionError_' + id).text('Discription is Required.');
+            setTimeout(function () {
+                $('#discriptionError_' + id).text('');
+            }, 3000);
+            return;
+        }
+            
+        if ((!/^[a-zA-Z0-9\s.-]+$/.test(TechnologyName.trim())) && (!/^[a-zA-Z0-9]+([. -]?[a-zA-Z0-9]+)*$/.test(Discription.trim()))) {
+            // Show error message and return without making the AJAX call
+            $('#EmptyfieldError_' + id).text('Please enter a valid Information.');
+            setTimeout(function () {
+                $('#EmptyfieldError_' + id).text('');
+            }, 3000);
+            return;
+        }
+
+        if (!/^[a-zA-Z0-9\s.-]+$/.test(TechnologyName.trim())) {
+				// Show error message and return without making the AJAX call
+            $('#technologyError_' + id).text('Technology is incorrect.Please enter a valid technology.');
+				setTimeout(function () {
+                $('#technologyError_' + id).text('');
+				}, 3000);
+				return;
+			}
+        if (!/^[a-zA-Z0-9]+([. -]?[a-zA-Z0-9]+)*$/.test(Discription.trim())) {
+            $('#discriptionError_' + id).text('Please enter a valid Discription.');
+            setTimeout(function () {
+                $('#discriptionError_' + id).text('');
+            }, 3000);
+            return;
+        }
+        
 
             $.ajax({
                 url: '/Technology/UpdateTechnologylist',
@@ -322,26 +416,32 @@
                 data: {
                     TechnologyId: TechnologyId,
                     TechnologyName: TechnologyName,
-                     IsActive: IsActive,
                     Discription: Discription,
                     change_user: updatedby,
                     change_Date: updatedtime
                 },
                 success: function (response) {
                     console.log(response);
-                    $('#examplemodalcenter').modal('hide');
-                url: '/Technology/UpdateTechnologylist',
+                    $('#examplemodalcenter').modal('hide');      
                         location.reload();
+
+                        alert("SucessFull");
                 },
-                error: function (jqxhr, textstatus, errorthrown) {
+                error: function (response) {
+                if (!response.IsSuccessful) {
+                    $('#technologyError_' + id).text("Technology already exists. Please choose a different name.");
+                    setTimeout(function () {
+                        $('#technologyError_' + id).text('');
+                    }, 3000);
+                    return;
+                }
                     console.error(errorthrown);
                 }
             });
         }
 
     function deletefunction(id) {
-        debugger
-
+        
         var TechnologyId = $('#deleteTechnologyid_' + id).val();
 
         $.ajax({
@@ -356,7 +456,7 @@
                 $('#examplemodalcenter').modal('hide');
                 location.reload();
             },
-            error: function (jqxhr, textstatus, errorthrown) {
+            error: function (response) {
                 console.error(errorthrown);
             }
         });
