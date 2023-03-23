@@ -33,21 +33,21 @@ namespace CMSWebApi.Services
         #endregion
 
         #region AddRole
-        public Task<RoleModel> AddRole([FromBody] RoleModel roleModel)
+        public string AddRole([FromBody] RoleModel roleModel)
         {
             var parameters = new DynamicParameters();
            // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
             parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
             parameters.Add("@create_user", roleModel.create_User, DbType.String);
 
-            var result = _dapper.Insert<RoleModel>(StoreProcedureName.InsertRole, parameters, CommandType.StoredProcedure);
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertRole, parameters, CommandType.StoredProcedure);
 
             if (result == null)
             {
                 throw new Exception("Failed to insert designation.");
             }
 
-            return Task.FromResult(result);
+            return result;
         }
         #endregion
 

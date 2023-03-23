@@ -26,28 +26,25 @@ namespace CMSWebApi.Services
         #region GetRound
         public Task<List<RoundModel>> GetAllRound()
         {
-            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
             var model = _dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, null, System.Data.CommandType.StoredProcedure);
             return Task.FromResult(model);
         }
         #endregion
 
         #region AddRound
-        public Task<RoundModel> AddRound([FromBody] RoundModel roundModel)
+        public string AddRound([FromBody] RoundModel roundModel)
         {
             var parameters = new DynamicParameters();
-           // parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
             parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
             parameters.Add("@create_user", roundModel.create_User, DbType.String);
 
-            var result = _dapper.Insert<RoundModel>(StoreProcedureName.InsertRound, parameters, CommandType.StoredProcedure);
-
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertRound, parameters, CommandType.StoredProcedure);
             if (result == null)
             {
                 throw new Exception("Failed to insert designation.");
             }
 
-            return Task.FromResult(result);
+            return result;
         }
         #endregion
 
@@ -58,11 +55,8 @@ namespace CMSWebApi.Services
             parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
             parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
             parameters.Add("@change_user", roundModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
-
 
             var result = _dapper.Execute(StoreProcedureName.UpdateRound, parameters, CommandType.StoredProcedure);
-  
             return result;
         }
 		#endregion
@@ -71,17 +65,10 @@ namespace CMSWebApi.Services
 		#region DeleteRoundByid
 		public int DeleteRoundByid(RoundModel Round_ID)
 		{
-
 			var parameters = new DynamicParameters();
 			parameters.Add("@RoundID", Round_ID.RoundID, DbType.Int32);
 
 			var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
-
-			//if (result == 0)
-			//{
-			//    throw new Exception("Failed to insert designation.");
-			//}
-
 			return result;
 		}
 		#endregion

@@ -6,7 +6,7 @@ namespace CMSWebApi.Models
     {
         public int TechnologyId { get; set; }
         public string ?TechnologyName { get; set; }
-        public bool ?IsActive { get; set; } 
+        public bool? IsActive { get; set; } = true;
         public string ?Discription { get; set; }
         public string ?create_User { get; set; }
         public DateTime ?create_Date { get; set; }

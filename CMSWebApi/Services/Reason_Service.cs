@@ -32,19 +32,19 @@ namespace CMSWebApi.Services
         #endregion
 
         #region AddReason
-        public Task<ReasonModel> AddReason(ReasonModel reasonModel)
+        public string AddReason(ReasonModel reasonModel)
         {
             var parameters = new DynamicParameters();
             //parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
             parameters.Add("@Reason", reasonModel.Reason, DbType.String);
             parameters.Add("@create_user", reasonModel.create_User, DbType.String);
 
-            var resultmsg = _dapper.Insert<ReasonModel>(StoreProcedureName.InsertReason, parameters, CommandType.StoredProcedure);
-            if (resultmsg == null)
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertReason, parameters, CommandType.StoredProcedure);
+            if (result == null)
             {
-                throw new Exception("Failed to insert designation.");
+                throw new Exception("Failed to insert Reason.");
             }
-            return Task.FromResult(resultmsg);
+            return result;
         }
         #endregion
 

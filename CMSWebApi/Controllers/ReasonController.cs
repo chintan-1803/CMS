@@ -53,9 +53,13 @@ namespace CMSWebApi.Controllers
 
                 if (response == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Reason" });
                 }
-                return Ok("SUCCESS");
+				else if (response == "Unsuccessful")
+				{
+					return BadRequest(new { message = "Reason IS ALREADY EXISTS" });
+				}
+				return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
@@ -71,10 +75,10 @@ namespace CMSWebApi.Controllers
             try
             {
                 var response = _reasonService.UpdateReason(reasonModel);
-   
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+
+				if (response == 0 || response < 0)
+				{
+                    return BadRequest(new { message = "FAILED TO ADD REASON" });
                 }
                 else if (response > 0)
                 {
@@ -101,9 +105,10 @@ namespace CMSWebApi.Controllers
 			{
 				var response = _reasonService.DeleteReasonByid(Reason_ID);
 
+				
 				if (response == 0)
 				{
-					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+					return BadRequest(new { message = "FAILED TO DELETE REASON" });
 				}
 				else if (response > 0)
 				{

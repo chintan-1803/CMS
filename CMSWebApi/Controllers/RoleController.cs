@@ -54,11 +54,14 @@ namespace CMSWebApi.Controllers
 
                 if (response == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Role" });
                 }
+				else if (response == "Unsuccessful")
+				{
+					return BadRequest(new { message = "ROLE IS ALREADY EXISTS" });
+				}
 
-
-                return Ok("SUCCESS");
+				return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
@@ -75,9 +78,9 @@ namespace CMSWebApi.Controllers
             {
                 var response = _roleService.UpdateRole(roleModel);
 
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+				if (response == 0 || response < 0)
+				{
+                    return BadRequest(new { message = "FAILED TO ADD ROLE" });
                 }
                 else if (response > 0)
                 {

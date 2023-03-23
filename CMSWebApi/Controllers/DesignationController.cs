@@ -38,7 +38,6 @@ namespace CMSWebApi.Controllers
 			}
 			catch (Exception ex)
 			{
-				//_logger.Error(ex, "Post UsersController Authenticate");
 				return BadRequest(new { message = ex.Message });
 			}
 		}
@@ -51,11 +50,6 @@ namespace CMSWebApi.Controllers
 			try
 			{
 				var response = _designationService.AddDesignation(designationmodel);
-
-				//if (designationmodel.change_Date == default(DateTime))
-				//{
-				//    designationmodel.change_Date = null;
-				//}
 
 				if (response == null)
 				{
@@ -83,10 +77,11 @@ namespace CMSWebApi.Controllers
 			{
 				var response = _designationService.UpdateDesignation(designationmodel);
 
-				if (response == 0)
+				if (response == 0 || response < 0)
 				{
 					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
 				}
+
 				else if (response > 0)
 				{
 					return Ok("SUCCESS");
@@ -114,7 +109,7 @@ namespace CMSWebApi.Controllers
 
 				if (response == 0)
 				{
-					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+					return BadRequest(new { message = "FAILED TO DELETE DESIGNATION" });
 				}
 				else if (response > 0)
 				{

@@ -33,39 +33,32 @@ namespace CMSWebApi.Services
         #endregion
 
         #region AddTechnology
-        public Task<TechnologyModel> AddTechnology([FromBody] TechnologyModel technologyModel)
+        public string AddTechnology([FromBody] TechnologyModel technologyModel)
         {
-            //var encryptedName = _cipherService.Encrypt(designationModel.);
-
             var parameters = new DynamicParameters();
-           // parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
             parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
             parameters.Add("@Discription", technologyModel.Discription, DbType.String);
-            //parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
             parameters.Add("@create_user", technologyModel.create_User, DbType.String);
 
-            var result = _dapper.Insert<TechnologyModel>(StoreProcedureName.InsertTechnology, parameters, CommandType.StoredProcedure);
-
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertTechnology, parameters, CommandType.StoredProcedure);
             if (result == null)
             {
-                throw new Exception("Failed to insert designation.");
+                throw new Exception("Failed to insert Technology.");
             }
 
-            return Task.FromResult(result);
+            return result;
         }
         #endregion
 
         #region UpdateTechnology
         public int UpdateTechnology(TechnologyModel technologyModel)
         {
-
             var parameters = new DynamicParameters();
             parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
             parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
             parameters.Add("@Discription", technologyModel.Discription, DbType.String);
-            parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
+           // parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
             parameters.Add("@change_user", technologyModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
             var result = _dapper.Execute(StoreProcedureName.UpdateTechnology, parameters, CommandType.StoredProcedure);
             return result;
@@ -79,11 +72,6 @@ namespace CMSWebApi.Services
             parameters.Add("@TechnologyId", Technology_ID.TechnologyId, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.DeleteTechnology, parameters, CommandType.StoredProcedure);
-
-            //if (result == null)
-            //{
-            //    throw new Exception("Failed to insert designation.");
-            //}
 
             return result;
         }

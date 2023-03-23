@@ -32,17 +32,17 @@ namespace CMSWebApi.Controllers
                 {
                     return BadRequest(new { message = "NULL VALUE" });
                 }
-
-                return Ok(response);
+				return Ok(response);
             }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message });
             }
         }
+		#endregion
 
-        #region  AddRound
-        [HttpPost("AddRound")]
+		#region  AddRound
+		[HttpPost("AddRound")]
         public IActionResult AddRound(RoundModel roundmodel)
         {
             try
@@ -51,31 +51,34 @@ namespace CMSWebApi.Controllers
             
                 if (response == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD ROUND" });
                 }
+				else if (response == "Unsuccessful")
+				{
+					return BadRequest(new { message = "Round IS ALREADY EXISTS" });
+				}
 
-
-                return Ok("SUCCESS");
+				return Ok("SUCCESS");
             }
             catch (Exception ex)
             {
                 return BadRequest(new { message = ex.Message });
             }
         }
-        #endregion
+		#endregion
 
-        #endregion
-        #region  UpdateRound
-        [HttpPut("UpdateRound")]
+
+		#region  UpdateRound
+		[HttpPut("UpdateRound")]
         public IActionResult UpdateRound(RoundModel roundmodel)
         {
             try
             {
                 var response = _roundService.UpdateRound(roundmodel);
 
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+				if (response == 0 || response < 0)
+				{
+                    return BadRequest(new { message = "FAILED TO ADD Round" });
                 }
                 else if (response > 0)
                 {
@@ -120,5 +123,6 @@ namespace CMSWebApi.Controllers
 			}
 		}
 		#endregion
+		
 	}
 }

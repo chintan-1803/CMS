@@ -35,7 +35,6 @@ namespace CMSWebApi.Services
         public string AddDesignation([FromBody] DesignationModel designationModel)
         {
             var parameters = new DynamicParameters();
-           // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
             parameters.Add("@Designation", designationModel.Designation, DbType.String);
             parameters.Add("@create_user", designationModel.create_User, DbType.String);
             

@@ -1,4 +1,5 @@
-﻿using CMSWebApi.Dapper;
+﻿using Azure;
+using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
 using CMSWebApi.Services;
@@ -50,11 +51,15 @@ namespace CMSWebApi.Controllers
         {
             try
             {
-                var resultmessage = _TechnologyService.AddTechnology(technologyModel);
+                var result = _TechnologyService.AddTechnology(technologyModel);
            
-                if (resultmessage == null)
+                if (result == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Technology" });
+                }
+                else if (result == "Unsucessfull")
+                {
+                    return BadRequest(new { message = "Technology IS ALREADY EXISTS" });
                 }
                 return Ok("Sucess");
             }
@@ -67,15 +72,15 @@ namespace CMSWebApi.Controllers
 
         #region  UpdateTechnology
         [HttpPut("UpdateTechnology")]
-        public IActionResult UpdateDesignation(TechnologyModel technologyModel)
+        public IActionResult UpdateTechnology(TechnologyModel technologyModel)
         {
             try
             {
                 var response = _TechnologyService.UpdateTechnology(technologyModel);
-          
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+
+				if (response == 0 || response < 0)
+				{
+                    return BadRequest(new { message = "FAILED TO ADD Technology" });
                 }
                 else if (response > 0)
                 {
@@ -104,7 +109,7 @@ namespace CMSWebApi.Controllers
 
                 if (response == 0)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Technology" });
                 }
                 else if (response > 0)
                 {
