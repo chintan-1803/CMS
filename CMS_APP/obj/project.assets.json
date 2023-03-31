@@ -1013,26 +1013,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\poojak\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages": {},
+    "C:\\Users\\Muskan\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Rohit Tiwari\\CMS Application\\CMS\\CMS.csproj",
+      "projectUniqueName": "D:\\CMS_Project\\CMS\\CMS_APP\\CMS.csproj",
       "projectName": "CMS",
-      "projectPath": "E:\\Rohit Tiwari\\CMS Application\\CMS\\CMS.csproj",
-      "packagesPath": "C:\\Users\\poojak\\.nuget\\packages\\",
-      "outputPath": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\",
+      "projectPath": "D:\\CMS_Project\\CMS\\CMS_APP\\CMS.csproj",
+      "packagesPath": "C:\\Users\\Muskan\\.nuget\\packages\\",
+      "outputPath": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\poojak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+        "C:\\Users\\Muskan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1041,7 +1038,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1092,7 +1088,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

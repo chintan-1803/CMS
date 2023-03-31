@@ -15,7 +15,7 @@
 @model List<CMS.Models.RoundModel>
 @{
 	ViewData["Title"] = "RoundPage";
-	string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -93,7 +93,7 @@
 									<input asp-for="Round_Name" type="text" id="Round_Name" class="form-control validate">
 									<span asp-validation-for="Round_Name" class="text-danger" id="RoundError"></span>
 
-									<input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+									@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 								</div>
 
 								<div class="modal-footer d-flex justify-content-center">
@@ -173,7 +173,7 @@
 													</div>
 													<div class="modal-body">
 														<input type="hidden" id="deleteroundid_@data.RoundID" value="@data.RoundID" class="form-control validate">
-														<p>Do you really want to delete these records? This process cannot be undone.</p>
+														<p>Do you really want to delete these record? This process cannot be undone.</p>
 													</div>
 													<div class="modal-footer justify-content-center">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -206,7 +206,7 @@
 														<input type="text" id="updateround_@data.RoundID" value="@data.Round_Name" class="form-control validate">
 														<span asp-validation-for="Reason" class="text-danger" id="RoundError_@data.RoundID"></span>
 
-														<input type="hidden" id="update_change_user_@data.RoundID" value="@create_User" class="form-control validate">
+														@*<input type="hidden" id="update_change_user_@data.RoundID" value="@create_User" class="form-control validate">*@
 														<input type="hidden" id="update_change_Date_@data.RoundID" value="@data.change_Date" class="form-control validate">
 													</div>
 													<div class="modal-footer d-flex justify-content-center">
@@ -250,15 +250,15 @@
 		$('#save-btn').click(function () {
 			// Get the values of the input fields
 			var Round_Name = $('#Round_Name').val();
-			var createdBy = $('#create_User').val();
+			//var createdBy = $('#create_User').val();
 
 			if (Round_Name === '') {
-				$('#RoundError').text('Round is Required.');
+				$('#RoundError').text('Round is required.');
 				return;
 			}
 
 			if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(Round_Name.trim())) {
-				$('#RoundError').text('Round is incorrect.Please enter a valid Round.');
+				$('#RoundError').text('Round is incorrect.Please enter a valid round.');
 				return;
 			}
 
@@ -268,13 +268,14 @@
 				method: 'POST',
 				data: {
 					Round_Name: Round_Name,
-					create_User: createdBy
+					//create_User: createdBy
 				},
 				success: function (response) {
 					// Handle the response data here
 					console.log(response);
 
 					$('#exampleModalCenter').modal('hide');
+					alert(response.message);
 					location.reload();
 				},
 				error: function (response) {
@@ -295,15 +296,15 @@
 	});
 
 	function updatefunction(id) {
-
+	
 		var RoundID = $('#updateRoundID_' + id).val();
 		var Round_Name = $('#updateround_' + id).val();
-		var updatedby = $('#update_change_user_' + id).val();
+		//var updatedby = $('#update_change_user_' + id).val();
 		var updatedtime = $('#update_change_Date_' + id).val();
 
 		if (Round_Name === '') {
 			// Show error message and return without making the AJAX call
-			$('#RoundError_' + id).text('Round is Required.');
+			$('#RoundError_' + id).text('Round is required.');
 			setTimeout(function () {
 				$('#RoundError_' + id).text('');
 			}, 3000);
@@ -324,23 +325,35 @@
 			data: {
 				RoundID: RoundID,
 				Round_Name: Round_Name,
-				change_user: updatedby,
+				//change_user: updatedby,
 				change_Date: updatedtime
 			},
 			success: function (response) {
 				console.log(response);
 				$('#examplemodalcenter').modal('hide');
-				url: '/Round/UpdateRoundlist',
+				//url: '/Round/UpdateRoundlist',
+				if (response.success) {
+					// Record created successfully
+					alert(response.message);
 					location.reload();
-			},
-			error: function (response) {
-				if (!response.IsSuccessful) {
+				}
+				else {
 					$('#RoundError_' + id).text("Round already exists. Please choose a different name.");
 					setTimeout(function () {
 						$('#RoundError_' + id).text('');
 					}, 3000);
 					return;
 				}
+					location.reload();
+			},
+			error: function (response) {
+				//if (!response.IsSuccessful) {
+				//	$('#RoundError_' + id).text("Round already exists. Please choose a different name.");
+				//	setTimeout(function () {
+				//		$('#RoundError_' + id).text('');
+				//	}, 3000);
+				//	return;
+				//}
 				console.error(errorthrown);
 			}
 		});
@@ -348,7 +361,7 @@
 		$('#updateround_' + id).on('input', function () {
 			// Clear the error message when the field is not empty
 			if ($(this).val() !== '') {
-				$('#ReasonError_' + id).text('');
+				$('#RoundError_' + id).text('');
 			}
 		});
 	}
@@ -368,6 +381,7 @@
 			success: function (response) {
 				console.log(response);
 				$('#examplemodalcenter').modal('hide');
+				alert(response.message);
 				location.reload();
 			},
 			error: function (response) {

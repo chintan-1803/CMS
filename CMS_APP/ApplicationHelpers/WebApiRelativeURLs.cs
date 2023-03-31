@@ -60,5 +60,8 @@ namespace CMS.ApplicationHelpers
 
 		public const string DeleteTechnology = "/Technology/DeleteTechnology";
 
+        //MasterData Api
+		public const string MasterDatalist = "/MasterData/AllMasterDatalist";
+
 	}
 }

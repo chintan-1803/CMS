@@ -5,60 +5,81 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CMS
 build_property.RootNamespace = CMS
-build_property.ProjectDir = E:\Rohit Tiwari\CMS Application\CMS\
+build_property.ProjectDir = D:\CMS_Project\CMS\CMS_APP\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = E:\Rohit Tiwari\CMS Application\CMS
+build_property.MSBuildProjectDirectory = D:\CMS_Project\CMS\CMS_APP
 build_property._RazorSourceGeneratorDebug = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Error.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Index.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Privacy.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/_ViewImports.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/_ViewStart.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Views/Candidate/CandidateRegistration.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Views/Candidate/CandidateRegistration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlXENhbmRpZGF0ZVJlZ2lzdHJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Views/Home/HomePage.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Views/Designation/Designationlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVzaWduYXRpb25cRGVzaWduYXRpb25saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CMS_Project/CMS/CMS_APP/Views/Home/HomePage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Views/Login/Login.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Views/Shared/_Layout.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Views/Reason/Reasonlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVhc29uXFJlYXNvbmxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CMS_Project/CMS/CMS_APP/Views/Role/Rolelist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9sZVxSb2xlbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CMS_Project/CMS/CMS_APP/Views/Round/Roundlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm91bmRcUm91bmRsaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CMS_Project/CMS/CMS_APP/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Shared/_Layout.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Views/Technology/Technologylist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5vbG9neVxUZWNobm9sb2d5bGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/CMS_Project/CMS/CMS_APP/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-9r59e51bvp
 
-[E:/Rohit Tiwari/CMS Application/CMS/Pages/Shared/_LayoutLogin.cshtml]
+[D:/CMS_Project/CMS/CMS_APP/Pages/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = b-9ledczac14

@@ -61,6 +61,11 @@
         
         public readonly static string DeleteInterviewer = "sp_Delete_Interviewer";
 
+        // Sp for GetAllMasterData 
 
-    }
+		public readonly static string GetAllMasterData = "GetAllMasterData";
+		
+
+
+	}
 }

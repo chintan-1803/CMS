@@ -11,7 +11,7 @@
 @using Microsoft.AspNetCore.Http
 @{
 	ViewData["Title"] = "RolePage";
-	string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
@@ -89,7 +89,7 @@
 									<span asp-validation-for="RoleName" class="text-danger" id="RoleError"></span>
 								</div>
 
-								<input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+								@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 							
 								<div class="modal-footer d-flex justify-content-center">
 									<button class="btn btn-deep-blue" id="save-btn" > Save </button>
@@ -207,7 +207,7 @@
 														<span asp-validation-for="RoleName" class="text-danger" id="RoleError_@data.RoleId"></span>
 
 
-														<input type="hidden" id="update_change_user_@data.RoleId" value="@create_User" class="form-control validate">
+														@*<input type="hidden" id="update_change_user_@data.RoleId" value="@create_User" class="form-control validate">*@
 												
 														<input type="hidden" id="update_change_Date_@data.RoleId" value="@data.change_Date" class="form-control validate">
 
@@ -261,15 +261,15 @@
 		$('#save-btn').click(function () {
 			// Get the values of the input fields
 			var RoleName = $('#RoleName').val();
-			var createdBy = $('#create_User').val();
+			//var createdBy = $('#create_User').val();
 
 			if (RoleName === '') {
-				$('#RoleError').text('Role is Required.');
+				$('#RoleError').text('Role is required.');
 				return;
 			}
 
-			if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(RoleName.trim())) {
-				$('#RoleError').text('Role is incorrect.Please enter a valid designation.');
+			if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(RoleName.trim())) {
+				$('#RoleError').text('Role is incorrect.Please enter a valid role.');
 				return;
 			}
 
@@ -279,13 +279,14 @@
 				method: 'POST',
 				data: {
 					RoleName: RoleName,
-					create_User: createdBy
+					//create_User: createdBy
 				},
 				success: function (response) {
 					// Handle the response data here
 					console.log(response);
 
 					$('#exampleModalCenter').modal('hide');
+					alert(response.message);
 					location.reload();
 				},
 				error: function (response) {
@@ -310,20 +311,20 @@
 
 		var RoleId = $('#updateRoleId_' + id).val();
 		var RoleName = $('#updaterole_' + id).val();
-		var updatedby = $('#update_change_user_' + id).val();
+		//var updatedby = $('#update_change_user_' + id).val();
 		var updatedtime = $('#update_change_Date_' + id).val();
 
 		if (RoleName === '') {
 			// Show error message and return without making the AJAX call
-			$('#RoleError_'+ id).text('Role is Required.');
+			$('#RoleError_'+ id).text('Role is required.');
 				setTimeout(function () {
 					$('#"RoleError_'+id).text('');
 				}, 3000);
 			return;
 		}
-		if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(RoleName.trim())) {
+		if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(RoleName.trim())) {
 			// Show error message and return without making the AJAX call
-			$('#RoleError_' + id).text('Role Is Incorrect.Please enter a valid Role.');
+			$('#RoleError_' + id).text('Role is incorrect.Please enter a valid role.');
 				setTimeout(function () {
 					$('#"RoleError_'+ id).text('');
 				}, 3000);
@@ -336,24 +337,34 @@
 			data: {
 				RoleId: RoleId,
 				RoleName: RoleName,
-				change_user: updatedby,
+				//change_user: updatedby,
 				change_Date: updatedtime
 			},
 			success: function (response) {
 				console.log(response);
-				$('#examplemodalcenter').modal('hide');
-				url: '/Role/UpdateRolelist',
+				if (response.success) {
+					// Record created successfully
+					alert(response.message);
 					location.reload();
-			},
-			error: function (response) {
-				if (!response.IsSuccessful) {
+				}
+				else {
 					$('#RoleError_' + id).text("Role already exists. Please choose a different name.");
 					setTimeout(function () {
 						$('#RoleError_' + id).text('');
 					}, 3000);
 					return;
+				}
+					location.reload();
+			},
+			error: function (response) {
+				//if (!response.IsSuccessful) {
+				//	$('#RoleError_' + id).text("Role already exists. Please choose a different name.");
+				//	setTimeout(function () {
+				//		$('#RoleError_' + id).text('');
+				//	}, 3000);
+				//	return;
 				console.error(errorthrown);
-			}
+			//}
 			}
 		});
 		$('#updaterole_' + id).on('input', function () {
@@ -379,6 +390,7 @@
 			success: function (response) {
 				console.log(response);
 				$('#examplemodalcenter').modal('hide');
+				alert(response.message);
 				location.reload();
 			},
 			error: function (response) {

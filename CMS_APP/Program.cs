@@ -33,6 +33,8 @@ builder.Services.AddScoped<IReason,Reason>();
 builder.Services.AddScoped<IRole,Role>();
 builder.Services.AddScoped<IRound, Round>();
 builder.Services.AddScoped<ITechnology,Technology>();
+builder.Services.AddScoped<IMasterData,MasterData>();
+
 
 
 

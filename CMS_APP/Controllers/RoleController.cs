@@ -37,6 +37,8 @@ namespace CMS.Controllers
 		public IActionResult AddRolelist(RoleModel roleModel)
 		{
 			//var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+			roleModel.create_User = HttpContext.Session.GetString("Username");
 			var response = _role_Interface.AddRolelist(roleModel);
 			if (!response.IsSuccessful)
 			{
@@ -44,7 +46,7 @@ namespace CMS.Controllers
 			}
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Role Added successfully." });
 			}
 			else
 			{
@@ -56,15 +58,21 @@ namespace CMS.Controllers
 		[HttpPut]
 		public IActionResult UpdateRolelist(RoleModel rolemodel)
 		{
-			//var errors = ModelState.Values.SelectMany(v => v.Errors);
-			var response = _role_Interface.UpdateRolelist(rolemodel);
+            //var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            rolemodel.Change_user = HttpContext.Session.GetString("Username");
+            var response = _role_Interface.UpdateRolelist(rolemodel);
 			if (!response.IsSuccessful)
 			{
 				return BadRequest(response);
 			}
-			if (response != null)
+			else if (response.Content == "\"SUCCESS\"")
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Role updated successfully." });
+			}
+			else if (response != null)
+			{
+				return Json(new { success = false/*, message = "Role updated successfully."*/ });
 			}
 			else
 			{
@@ -81,7 +89,7 @@ namespace CMS.Controllers
 
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Role deleted successfully." });
 			}
 			else
 			{

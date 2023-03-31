@@ -33,14 +33,15 @@ namespace CMS.Controllers
 		[HttpPost]
 		public IActionResult AddTechnologylist(TechnologyModel technologyData)
 		{
-			var response = _technology_Interface.AddTechnology(technologyData);
+            technologyData.create_User = HttpContext.Session.GetString("Username");
+            var response = _technology_Interface.AddTechnology(technologyData);
 			if (!response.IsSuccessful)
 			{
 				return BadRequest(response);
 			}
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Technology added successfully." });
 			}
 			else
 			{
@@ -50,22 +51,23 @@ namespace CMS.Controllers
 		}
 
 		[HttpPut]
-		public IActionResult UpdateTechnologylist(TechnologyModel technologyData)
+		public IActionResult UpdateTechnologylist(TechnologyModel updatetechnologyData)
 		{
-			var response = _technology_Interface.UpdateTechnologylist(technologyData);
-			if (!response.IsSuccessful)
-			{
-				return BadRequest(response);
-			}
-			if (response != null)
-			{
-				return Json(new { });
-			}
-			else
-			{
-				return BadRequest(response);
-			}
-		}
+            updatetechnologyData.change_user = HttpContext.Session.GetString("Username");
+            var response = _technology_Interface.UpdateTechnologylist(updatetechnologyData);
+            if (response.Content == "\"SUCCESS\"")
+            {
+                return Json(new { success = true, message = "Technology updated successfully." });
+            }
+            if (response != null)
+            {
+                return Json(new { success = false });
+            }
+            else
+            {
+                return BadRequest(response);
+            }
+        }
 
 		[HttpPut]
 		public IActionResult DeleteTechnologylist(TechnologyModel Technology_ID)
@@ -73,7 +75,7 @@ namespace CMS.Controllers
 			var response = _technology_Interface.DeleteTechnologyitem(Technology_ID);
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Technology deleted successfully." });
 			}
 			else
 			{

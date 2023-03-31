@@ -24,23 +24,16 @@ namespace CMSWebApi.Controllers
         [HttpGet("Technology")]
         public IActionResult Technology()
         {
-            try
-            {
-                var responseTask = _TechnologyService.GetAllTechnology();
-                responseTask.Wait();
-                var response = responseTask.Result;
+            var responseTask = _TechnologyService.GetAllTechnology();
+            //responseTask.Wait();
+            var response = responseTask.Result;
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
+            //if (response == null)
+            //{
+            //    return BadRequest(new { message = "NULL VALUE" });
+            //}
 
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            return Ok(response);
         }
 
         #endregion
@@ -49,24 +42,17 @@ namespace CMSWebApi.Controllers
         [HttpPost("AddTechnology")]
         public IActionResult AddTechnology(TechnologyModel technologyModel)
         {
-            try
+            var result = _TechnologyService.AddTechnology(technologyModel);
+
+            //if (result == null)
+            //{
+            //    return BadRequest(new { message = "FAILED TO ADD Technology" });
+            //}
+            if (result == "Unsucessfull")
             {
-                var result = _TechnologyService.AddTechnology(technologyModel);
-           
-                if (result == null)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD Technology" });
-                }
-                else if (result == "Unsucessfull")
-                {
-                    return BadRequest(new { message = "Technology IS ALREADY EXISTS" });
-                }
-                return Ok("Sucess");
+                return BadRequest(new { message = "TECHNOLOGY IS ALREADY EXISTS" });
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            return Ok("SUCCESS");
         }
         #endregion
 
@@ -74,27 +60,23 @@ namespace CMSWebApi.Controllers
         [HttpPut("UpdateTechnology")]
         public IActionResult UpdateTechnology(TechnologyModel technologyModel)
         {
-            try
+            var response = _TechnologyService.UpdateTechnology(technologyModel);
+
+            //if (response == 0 || response < 0)
+            //{
+            //    return BadRequest(new { message = "FAILED TO ADD TECHNOLOGY" });
+            //}
+            if (response < 0)
             {
-                var response = _TechnologyService.UpdateTechnology(technologyModel);
-
-				if (response == 0 || response < 0)
-				{
-                    return BadRequest(new { message = "FAILED TO ADD Technology" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-
+                return Ok("Data already exists");
             }
-            catch (Exception ex)
+            else if (response > 0)
             {
-                return BadRequest(new { message = ex.Message });
+                return Ok("SUCCESS");
+            }
+            else
+            {
+                return Ok("Something went wrong");
             }
         }
         #endregion
@@ -102,16 +84,14 @@ namespace CMSWebApi.Controllers
         #region  DeleteTechnology
         [HttpPut("DeleteTechnology")]
         public IActionResult DeleteTechnology(TechnologyModel Technology_Id)
-        {
-            try
-            {
-                var response = _TechnologyService.DeleteTechnology(Technology_Id);
+        { 
+            var response = _TechnologyService.DeleteTechnology(Technology_Id);
 
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD Technology" });
-                }
-                else if (response > 0)
+                //if (response == 0)
+                //{
+                //    return BadRequest(new { message = "FAILED TO ADD TECHNOLOGY" });
+                //}
+                if (response > 0)
                 {
                     return Ok("SUCESS");
                 }
@@ -120,11 +100,6 @@ namespace CMSWebApi.Controllers
                     return Ok("Something went wrong");
                 }
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
         #endregion
     }
 }

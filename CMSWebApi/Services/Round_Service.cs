@@ -26,38 +26,58 @@ namespace CMSWebApi.Services
         #region GetRound
         public Task<List<RoundModel>> GetAllRound()
         {
-            var model = _dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, null, System.Data.CommandType.StoredProcedure);
-            return Task.FromResult(model);
+            try
+            {
+                var model = _dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, null, System.Data.CommandType.StoredProcedure);
+                return Task.FromResult(model);
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("NULL VALUE", ex);
+			}
         }
         #endregion
 
         #region AddRound
         public string AddRound([FromBody] RoundModel roundModel)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
-            parameters.Add("@create_user", roundModel.create_User, DbType.String);
-
-            var result = _dapper.Insert<string>(StoreProcedureName.InsertRound, parameters, CommandType.StoredProcedure);
-            if (result == null)
+            try
             {
-                throw new Exception("Failed to insert designation.");
-            }
+                var parameters = new DynamicParameters();
+                parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
+                parameters.Add("@create_user", roundModel.create_User, DbType.String);
 
-            return result;
+                var result = _dapper.Insert<string>(StoreProcedureName.InsertRound, parameters, CommandType.StoredProcedure);
+                //if (result == null)
+                //{
+                //    throw new Exception("Failed to insert designation.");
+                //}
+
+                return result;
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO INSERT ROUND.", ex);
+			}
         }
         #endregion
 
         #region UpdateRound
         public int UpdateRound(RoundModel roundModel)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
-            parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
-            parameters.Add("@change_user", roundModel.Change_user, DbType.String);
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@RoundID", roundModel.RoundID, DbType.Int32);
+                parameters.Add("@Round_Name", roundModel.Round_Name, DbType.String);
+                parameters.Add("@change_user", roundModel.Change_user, DbType.String);
 
-            var result = _dapper.Execute(StoreProcedureName.UpdateRound, parameters, CommandType.StoredProcedure);
-            return result;
+                var result = _dapper.Execute(StoreProcedureName.UpdateRound, parameters, CommandType.StoredProcedure);
+                return result;
+            }
+            catch (ArgumentNullException ex) {
+                throw new ArgumentNullException("FAILED TO UPDATE ROUND.", ex);
+            }
         }
 		#endregion
 
@@ -65,11 +85,17 @@ namespace CMSWebApi.Services
 		#region DeleteRoundByid
 		public int DeleteRoundByid(RoundModel Round_ID)
 		{
-			var parameters = new DynamicParameters();
-			parameters.Add("@RoundID", Round_ID.RoundID, DbType.Int32);
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@RoundID", Round_ID.RoundID, DbType.Int32);
 
-			var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
-			return result;
+                var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
+                return result;
+            }
+            catch (ArgumentNullException ex) { 
+                throw new ArgumentNullException("FAILED TO DELETE ROUND.", ex); 
+            }
 		}
 		#endregion
 	}

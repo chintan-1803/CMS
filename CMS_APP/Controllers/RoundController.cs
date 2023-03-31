@@ -33,14 +33,16 @@ namespace CMS.Controllers
 		[HttpPost]
 		public IActionResult AddRoundlist(RoundModel roundData)
 		{
-			var response = _round_Interface.AddRound(roundData);
+            roundData.create_User = HttpContext.Session.GetString("Username");
+            var response = _round_Interface.AddRound(roundData);
+			
 			if (!response.IsSuccessful)
 			{
 				return BadRequest(response);
 			}
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Round added successfully." });
 			}
 			else
 			{
@@ -51,15 +53,20 @@ namespace CMS.Controllers
 		[HttpPut]
 		public IActionResult UpdateRoundlist(RoundModel roundData)
 		{
-			var response = _round_Interface.UpdateRoundlist(roundData);
+            roundData.Change_user = HttpContext.Session.GetString("Username");
+            var response = _round_Interface.UpdateRoundlist(roundData);
 			if (!response.IsSuccessful)
 			{
 				//return Json(new {response});
 				return BadRequest(response);
 			}
+			if (response.Content == "\"SUCCESS\"")
+			{
+				return Json(new { success = true, message = "Round updated successfully." });
+			}
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = false/*, message = "Round updated successfully."*/ });
 			}
 			else
 			{
@@ -73,7 +80,7 @@ namespace CMS.Controllers
 			var response = _round_Interface.DeleteRounditem(Round_ID);
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = true, message = "Round deleted successfully." });
 			}
 			else
 			{

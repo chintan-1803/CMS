@@ -11,7 +11,7 @@
 @using Microsoft.AspNetCore.Http
 @{
 	ViewData["Title"] = "ReasonPage";
-	string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -91,7 +91,7 @@
 									<span asp-validation-for="Reason" class="text-danger" id="ReasonError"></span>
 								</div>
 							
-									<input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+									@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 
 								<div class="modal-footer d-flex justify-content-center">
 									<button class="btn btn-deep-blue" id="save-btn" > Save</button>
@@ -169,7 +169,7 @@
 													</div>
 													<div class="modal-body">
 														<input type="hidden" id="deleteReasonID_@data.ReasonID" value="@data.ReasonID" class="form-control validate">
-														<p>Do you really want to delete these records? This process cannot be undone.</p>
+														<p>Do you really want to delete these record? This process cannot be undone.</p>
 													</div>
 													<div class="modal-footer justify-content-center">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -202,7 +202,7 @@
 														<input asp-for="Reason" type="text" id="updatereason_@data.ReasonID" value="@data.Reason" class="form-control validate">
 														<span asp-validation-for="Reason" class="text-danger" id="ReasonError_@data.ReasonID"></span>
 														
-														<input type="hidden" id="update_change_user_@data.ReasonID" value="@create_User" class="form-control validate">
+														@*<input type="hidden" id="update_change_user_@data.ReasonID" value="@create_User" class="form-control validate">*@
 														<input type="hidden" id="update_change_Date_@data.ReasonID" value="@data.change_Date" class="form-control validate">
 													</div>
 													<div class="modal-footer d-flex justify-content-center">
@@ -247,21 +247,20 @@
 
 	}
 
-	
-
 	$(function () {
 		// Add click event handler to the Save button
 		$('#save-btn').click(function () {
 			// Get the values of the input fields
 			var Reason = $('#Reason').val();
-			var createdBy = $('#create_User').val();
+
+			//var createdBy = $('#create_User').val();
 			if (Reason === '') {
-				$('#ReasonError').text('Reason is Required.');
+				$('#ReasonError').text('Reason is required.');
 				return;
 			}
 
 			if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Reason.trim())) {
-				$('#ReasonError').text('Reason is incorrect.Please enter a valid Reason.');
+				$('#ReasonError').text('Reason is incorrect.Please enter a valid reason.');
 				return;
 			}
 			// Make the AJAX call
@@ -269,14 +268,15 @@
 				url: '/Reason/AddReasonlist',
 				method: 'POST',
 				data: {
-					Reason: Reason,
-					create_User: createdBy
+					Reason: Reason
+					//create_User: createdBy
 				},
 				success: function (response) {
 					// Handle the response data here
 					console.log(response);
 
 					$('#exampleModalCenter').modal('hide');
+					alert(response.message);
 					location.reload();
 				},
 				error: function (response) {
@@ -298,21 +298,20 @@
 	});
 
 	function updatefunction(id) {
-
 		var reasonid = $('#updatereasonid_' + id).val();
 		var reason = $('#updatereason_' + id).val();
-		var updatedby = $('#update_change_user_' + id).val();
+		//var updatedby = $('#update_change_user_' + id).val();
 		var updatedtime = $('#update_change_Date_' + id).val();
 
 		if (reason === '') {
 			// Show error message and return without making the AJAX call
-			$('#ReasonError_'+ id).text('Reason is Required.');
+			$('#ReasonError_'+ id).text('Reason is required.');
 			setTimeout(function () {
 				$('#ReasonError_'+ id).text('');
 			}, 3000);
 			return;
 		}
-		if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(reason.trim())) {
+		if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(reason.trim())) {
 			// Show error message and return without making the AJAX call
 			$('#ReasonError_' + id).text('Reason is incorrect.Please enter a valid reason.');
 			setTimeout(function () {
@@ -326,21 +325,32 @@
 			data: {
 				reasonid: reasonid,
 				reason: reason,
-				change_user: updatedby,
+				//change_user: updatedby,
 				change_Date: updatedtime
 			},
 			success: function (response) {
 				console.log(response);
-				$('#examplemodalcenter').modal('hide');
-				location.reload();
+				//$('#examplemodalcenter').modal('hide');
+				if (response.success) {
+					// Record created successfully
+					alert(response.message);
+					location.reload();
+				}
+				else {
+					$('#ReasonError_' + id).text("Reason already exists. Please choose a different name.");
+					setTimeout(function () {
+						$('#ReasonError_' + id).text('');
+					}, 3000);
+					return;
+				}
 			},
 			error: function(response) {
 				if (!response.IsSuccessful) {
-					$('#ReasonError_' + id).text("Reason already exists. Please choose a different name.");
-					setTimeout(function () {
-						$('#ReasonError_'+id).text('');
-					}, 3000);
-					return;
+					//$('#ReasonError_' + id).text("Reason already exists. Please choose a different name.");
+					//setTimeout(function () {
+					//	$('#ReasonError_'+id).text('');
+					//}, 3000);
+					//return;
 					console.error(errorthrown);
 				}
 					
@@ -349,20 +359,17 @@
 	}
 
    	function deletefunction(id) {
-		
-
 		var reasonid = $('#deleteReasonID_' + id).val();
-
 		$.ajax({
 			url: '/Reason/DeleteReasonlist',
 			method: 'put',
 			data: {
 				reasonid: reasonid,
-
 			},
 			success: function (response) {
 				console.log(response);
-				$('#examplemodalcenter').modal('hide');
+				//$('#examplemodalcenter').modal('hide');
+				alert(response.message);
 				location.reload();
 			},
 			error: function (response) {

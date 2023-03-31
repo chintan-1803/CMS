@@ -26,59 +26,88 @@ namespace CMSWebApi.Services
         #region GetRole
         public Task<List<RoleModel>> GetAllRole()
         {
-            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-            var model = _dapper.GetAll<RoleModel>(StoreProcedureName.RoleMasterData, null, System.Data.CommandType.StoredProcedure);
-            return Task.FromResult(model);
+            try
+            {
+                //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+                var model = _dapper.GetAll<RoleModel>(StoreProcedureName.RoleMasterData, null, System.Data.CommandType.StoredProcedure);
+                return Task.FromResult(model);
+            }
+            catch (ArgumentNullException ex)
+            {
+
+				throw new ArgumentNullException("NULL VALUE", ex);
+			}
         }
         #endregion
 
         #region AddRole
         public string AddRole([FromBody] RoleModel roleModel)
         {
-            var parameters = new DynamicParameters();
-           // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
-            parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
-            parameters.Add("@create_user", roleModel.create_User, DbType.String);
-
-            var result = _dapper.Insert<string>(StoreProcedureName.InsertRole, parameters, CommandType.StoredProcedure);
-
-            if (result == null)
+            try
             {
-                throw new Exception("Failed to insert designation.");
-            }
+                var parameters = new DynamicParameters();
+                // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
+                parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
+                parameters.Add("@create_user", roleModel.create_User, DbType.String);
 
-            return result;
+                var result = _dapper.Insert<string>(StoreProcedureName.InsertRole, parameters, CommandType.StoredProcedure);
+
+                //if (result == null)
+                //{
+                //    throw new Exception("Failed to insert designation.");
+                //}
+
+                return result;
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO INSERT Role.", ex);
+			}
         }
         #endregion
 
         #region UpdateRole
         public int UpdateRole(RoleModel roleModel)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
-            parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
-            parameters.Add("@change_user", roleModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
+                parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
+                parameters.Add("@change_user", roleModel.Change_user, DbType.String);
+                // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
-            var result = _dapper.Execute(StoreProcedureName.UpdateRole, parameters, CommandType.StoredProcedure);
-         
-            return result;
+                var result = _dapper.Execute(StoreProcedureName.UpdateRole, parameters, CommandType.StoredProcedure);
+
+                return result;
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO UPDATE Role.", ex);
+			}
         }
         #endregion
 
         #region DeleteRoleByid
         public int DeleteRoleByid(RoleModel Role_ID)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@RoleId", Role_ID.RoleId, DbType.Int32);
-
-            var result = _dapper.Execute(StoreProcedureName.DeleteRole, parameters, CommandType.StoredProcedure);
-
-            if (result == 0)
+            try
             {
-                throw new Exception("Failed to insert designation.");
+                var parameters = new DynamicParameters();
+                parameters.Add("@RoleId", Role_ID.RoleId, DbType.Int32);
+
+                var result = _dapper.Execute(StoreProcedureName.DeleteRole, parameters, CommandType.StoredProcedure);
+
+                //if (result == 0)
+                //{
+                //    throw new Exception("Failed to DELETE ROLE.");
+                //}
+                return result;
             }
-            return result;
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO DELETE REASON.", ex);
+			}
         }
         #endregion
     }
