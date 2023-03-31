@@ -51,7 +51,7 @@ namespace CMSWebApi.Controllers
             try
             {
                 var resultmessage = _TechnologyService.AddTechnology(technologyModel);
-           
+
                 if (resultmessage == null)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
@@ -72,7 +72,7 @@ namespace CMSWebApi.Controllers
             try
             {
                 var response = _TechnologyService.UpdateTechnology(technologyModel);
-          
+
                 if (response == 0)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
@@ -119,6 +119,15 @@ namespace CMSWebApi.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        }
+        #endregion
+
+        #region GetTechnologiesByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetTechnologiesByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var technologies = await _TechnologyService.GetTechnologiesByPage(pageNumber, rowsOfPage);
+            return Ok(technologies);
         }
         #endregion
     }

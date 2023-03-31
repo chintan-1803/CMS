@@ -71,7 +71,7 @@ namespace CMSWebApi.Controllers
             try
             {
                 var response = _reasonService.UpdateReason(reasonModel);
-   
+
                 if (response == 0)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
@@ -91,34 +91,43 @@ namespace CMSWebApi.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-		#endregion
+        #endregion
 
-		#region  DeleteReason
-		[HttpPut("DeleteReason")]
-		public IActionResult DeleteReason(ReasonModel Reason_ID)
-		{
-			try
-			{
-				var response = _reasonService.DeleteReasonByid(Reason_ID);
+        #region  DeleteReason
+        [HttpPut("DeleteReason")]
+        public IActionResult DeleteReason(ReasonModel Reason_ID)
+        {
+            try
+            {
+                var response = _reasonService.DeleteReasonByid(Reason_ID);
 
-				if (response == 0)
-				{
-					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-				}
-				else if (response > 0)
-				{
-					return Ok("SUCCESS");
-				}
-				else
-				{
-					return Ok("Something went wrong");
-				}
-			}
-			catch (Exception ex)
-			{
-				return BadRequest(new { message = ex.Message });
-			}
-		}
-		#endregion
-	}
+                if (response == 0)
+                {
+                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                }
+                else if (response > 0)
+                {
+                    return Ok("SUCCESS");
+                }
+                else
+                {
+                    return Ok("Something went wrong");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        #endregion
+
+        #region GetReasonsByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetReasonsByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var reasons = await _reasonService.GetReasonsByPage(pageNumber, rowsOfPage);
+            return Ok(reasons);
+        }
+        #endregion
+    }
 }

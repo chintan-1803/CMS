@@ -36,7 +36,7 @@ namespace CMSWebApi.Services
         public Task<RoleModel> AddRole([FromBody] RoleModel roleModel)
         {
             var parameters = new DynamicParameters();
-           // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
+            // parameters.Add("@RoleId", roleModel.RoleId, DbType.Int32);
             parameters.Add("@RoleName", roleModel.RoleName, DbType.String);
             parameters.Add("@create_user", roleModel.create_User, DbType.String);
 
@@ -61,7 +61,7 @@ namespace CMSWebApi.Services
             // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
             var result = _dapper.Execute(StoreProcedureName.UpdateRole, parameters, CommandType.StoredProcedure);
-         
+
             return result;
         }
         #endregion
@@ -78,6 +78,18 @@ namespace CMSWebApi.Services
             {
                 throw new Exception("Failed to insert designation.");
             }
+            return result;
+        }
+        #endregion
+
+        #region GetRolesByPage
+        public async Task<List<RoleModel>> GetRolesByPage(int pageNumber, int rowsOfPage)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+            var result = _dapper.GetAll<RoleModel>("PageRoleMaster", parameters, CommandType.StoredProcedure);
             return result;
         }
         #endregion

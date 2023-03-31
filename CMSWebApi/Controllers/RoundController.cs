@@ -41,6 +41,8 @@ namespace CMSWebApi.Controllers
             }
         }
 
+        #endregion
+
         #region  AddRound
         [HttpPost("AddRound")]
         public IActionResult AddRound(RoundModel roundmodel)
@@ -48,7 +50,7 @@ namespace CMSWebApi.Controllers
             try
             {
                 var response = _roundService.AddRound(roundmodel);
-            
+
                 if (response == null)
                 {
                     return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
@@ -64,7 +66,6 @@ namespace CMSWebApi.Controllers
         }
         #endregion
 
-        #endregion
         #region  UpdateRound
         [HttpPut("UpdateRound")]
         public IActionResult UpdateRound(RoundModel roundmodel)
@@ -95,30 +96,39 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region  DeleteRound
-		[HttpPut("DeleteRound")]
-		public IActionResult DeleteRound(RoundModel Round_ID)
-		{
-			try
-			{
-				var response = _roundService.DeleteRoundByid(Round_ID);
-				if (response == 0)
-				{
-					return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-				}
-				else if (response > 0)
-				{
-					return Ok("SUCCESS");
-				}
-				else
-				{
-					return Ok("Something went wrong");
-				}
-			}
-			catch (Exception ex)
-			{
-				return BadRequest(new { message = ex.Message });
-			}
-		}
-		#endregion
-	}
+        [HttpPut("DeleteRound")]
+        public IActionResult DeleteRound(RoundModel Round_ID)
+        {
+            try
+            {
+                var response = _roundService.DeleteRoundByid(Round_ID);
+                if (response == 0)
+                {
+                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                }
+                else if (response > 0)
+                {
+                    return Ok("SUCCESS");
+                }
+                else
+                {
+                    return Ok("Something went wrong");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+        #endregion
+
+        #region GetRoundsByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetRoundsByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var rounds = await _roundService.GetRoundsByPage(pageNumber, rowsOfPage);
+            return Ok(rounds);
+        }
+        #endregion
+    }
 }

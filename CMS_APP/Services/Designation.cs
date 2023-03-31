@@ -3,13 +3,14 @@ using CMS.Interfaces;
 using CMS.Models;
 using Newtonsoft.Json;
 using RestSharp;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace CMS.Services
 {
     public class Designation : IDesignation
     {
-   
-        public  RestResponse Designationlist()
+        public RestResponse Designationlist()
         {
             
                 var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.DesignationPath);
@@ -57,7 +58,5 @@ namespace CMS.Services
 			var response = client.Execute<DesignationModel>(request);
 			return response;
 		}
-
-
 	}
 }

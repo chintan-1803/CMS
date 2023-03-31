@@ -15,7 +15,4 @@ namespace CMS.Models
         public DateTime? change_Date { get; set; }
         public bool IsDelete { get; set; } = false;
     }
-
-
-  
 }

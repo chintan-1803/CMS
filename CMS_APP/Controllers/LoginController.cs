@@ -1,7 +1,6 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 
 namespace CMS.Controllers
 {
@@ -30,8 +29,9 @@ namespace CMS.Controllers
                 var response = _userService.AuthenticateLogin(objUserLogin);
 				string create_User = objUserLogin.Email;
 				//string change_user = objUserLogin.Email;
+				
 
-                HttpContext.Session.SetString("create_User", create_User);
+				HttpContext.Session.SetString("create_User", create_User);
 				//HttpContext.Session.SetString("change_user", change_user);
 
 				if (response != null)
@@ -47,8 +47,6 @@ namespace CMS.Controllers
             {
                 return View();
             }
-
-            
         }
     }
 }

@@ -25,7 +25,7 @@ namespace CMSWebApi.Services
 
         #region GetReasons 
         public Task<List<ReasonModel>> GetAllReason()
-        {           
+        {
             var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
             return Task.FromResult(model);
         }
@@ -59,18 +59,30 @@ namespace CMSWebApi.Services
             var result = _dapper.Execute(StoreProcedureName.UpdateReason, parameters, CommandType.StoredProcedure);
             return result;
         }
-		#endregion
+        #endregion
 
-		#region DeleteReasonByid
-		public int DeleteReasonByid(ReasonModel Reason_ID)
-		{
-			var parameters = new DynamicParameters();
-			parameters.Add("@ReasonID", Reason_ID.ReasonID, DbType.Int32);
+        #region DeleteReasonByid
+        public int DeleteReasonByid(ReasonModel Reason_ID)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@ReasonID", Reason_ID.ReasonID, DbType.Int32);
 
-			var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
+            var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
 
-			return result;
-		}
-		#endregion
-	}
+            return result;
+        }
+        #endregion
+
+        #region GetReasonsByPage
+        public async Task<List<ReasonModel>> GetReasonsByPage(int pageNumber, int rowsOfPage)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+            var result = _dapper.GetAll<ReasonModel>("PageReasonMaster", parameters, CommandType.StoredProcedure);
+            return result;
+        }
+        #endregion
+    }
 }

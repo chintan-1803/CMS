@@ -48,7 +48,7 @@ namespace CMSWebApi.Dapper
             T result;
             using IDbConnection db = GetDbconnection();
             try
-            
+
             {
                 if (db.State == ConnectionState.Closed)
                     db.Open();
@@ -65,9 +65,9 @@ namespace CMSWebApi.Dapper
                     throw;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
-                throw ;
+                throw;
             }
             finally
             {

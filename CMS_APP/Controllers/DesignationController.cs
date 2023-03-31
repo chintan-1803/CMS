@@ -1,6 +1,5 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
-using CMS.Services;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -18,17 +17,24 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Designationlist()
 		{
+			// Get the list of designations from the API
 			var response = _designation_Interface.Designationlist();
 			var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-			if (data != null)
-			{
-				return View(data);
-			}
-			else
-			{
-				return View();
-			}
+
+			var data1 = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
+			var jsonData = JsonConvert.SerializeObject(data1);
+			HttpContext.Session.SetString("designationList", jsonData);
+
+			// Serialize the data to a string
+			//var serializedData = JsonConvert.SerializeObject(data);
+
+			//// Store the serialized data in session
+			//HttpContext.Session.SetString("DesignationList", serializedData);
+
+			// Return the view with the list of designations
+			return View(data);
 		}
+
 
 		[HttpPost]
 		public IActionResult AddDesignationlist(DesignationModel designationData)
@@ -75,5 +81,5 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 		}
-	}
+    }
 }

@@ -9,5 +9,6 @@ namespace CMSWebApi.Interfaces
         Task<RoleModel> AddRole([FromBody] RoleModel roleModel);
         public int UpdateRole(RoleModel roleModel);
         public int DeleteRoleByid(RoleModel Role_ID);
+        Task<List<RoleModel>> GetRolesByPage(int pageNumber, int rowsOfPage);
     }
 }

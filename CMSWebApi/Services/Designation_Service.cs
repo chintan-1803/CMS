@@ -35,10 +35,10 @@ namespace CMSWebApi.Services
         public string AddDesignation([FromBody] DesignationModel designationModel)
         {
             var parameters = new DynamicParameters();
-           // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
+            // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
             parameters.Add("@Designation", designationModel.Designation, DbType.String);
             parameters.Add("@create_user", designationModel.create_User, DbType.String);
-            
+
             var result = _dapper.Insert<string>(StoreProcedureName.InsertDesignation, parameters, CommandType.StoredProcedure);
 
             if (result == null)
@@ -50,35 +50,47 @@ namespace CMSWebApi.Services
         }
         #endregion
 
-       #region UpdateDesignation
-       public int UpdateDesignation(DesignationModel designationModel)
-       {
+        #region UpdateDesignation
+        public int UpdateDesignation(DesignationModel designationModel)
+        {
             var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID",  designationModel.DesignationID, DbType.Int32);
+            parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
             parameters.Add("@Designation", designationModel.Designation, DbType.String);
             parameters.Add("@change_user", designationModel.Change_user, DbType.String);
-           // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
+            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
-            var result =_dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure);
-          
-            
+            var result = _dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure);
+
+
             return result;
         }
         #endregion
 
         #region DeleteDesignationByid
         public int DeleteDesignationByid(DesignationModel Designation_ID)
-        {   
+        {
             var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID", Designation_ID.DesignationID,  DbType.Int32);
- 
+            parameters.Add("@DesignationID", Designation_ID.DesignationID, DbType.Int32);
+
             var result = _dapper.Execute(StoreProcedureName.DeleteDesignation, parameters, CommandType.StoredProcedure);
 
             if (result == 0)
             {
                 throw new Exception("Failed to insert designation.");
             }
-            return result; 
+            return result;
+        }
+        #endregion
+
+        #region GetDesignationsByPage
+        public async Task<List<DesignationModel>> GetDesignationsByPage(int pageNumber, int rowsOfPage)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+            var result = _dapper.GetAll<DesignationModel>("PageDesignationMaster", parameters, CommandType.StoredProcedure);
+            return result;
         }
         #endregion
     }

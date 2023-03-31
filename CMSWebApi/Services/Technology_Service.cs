@@ -38,7 +38,7 @@ namespace CMSWebApi.Services
             //var encryptedName = _cipherService.Encrypt(designationModel.);
 
             var parameters = new DynamicParameters();
-           // parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
+            // parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
             parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
             parameters.Add("@Discription", technologyModel.Discription, DbType.String);
             //parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
@@ -85,6 +85,18 @@ namespace CMSWebApi.Services
             //    throw new Exception("Failed to insert designation.");
             //}
 
+            return result;
+        }
+        #endregion
+
+        #region GetTechnologiesByPage
+        public async Task<List<TechnologyModel>> GetTechnologiesByPage(int pageNumber, int rowsOfPage)
+        {
+            var parameters = new DynamicParameters();
+            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+            var result = _dapper.GetAll<TechnologyModel>("PageTechnologyMaster", parameters, CommandType.StoredProcedure);
             return result;
         }
         #endregion

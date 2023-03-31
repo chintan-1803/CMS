@@ -262,7 +262,7 @@
 			// Add click event handler to the Save button
 			$('#save-btn').click(function () {
 
-			debugger
+		
 				// Get the values of the input fields
 			var Designation = $('#Designation').val();
 			var createdBy = $('#create_User').val();
@@ -279,7 +279,7 @@
 					data: {Designation: Designation,create_User: createdBy
 					},
 					success: function (response) {
-						debugger
+						
 						// Handle the response data here
 						console.log(response);
 						alert(response)
@@ -295,7 +295,7 @@
 				});
 			});
 
-			debugger
+			
 			$('#Designation').on('input', function () {
 				// Clear the error message when the field is not empty
 				if ($(this).val() !== '') {
@@ -352,18 +352,15 @@
 				designationid: designationid
 				},
 				success: function (response) {
-					debugger
+					
 					console.log(response);
 					$('#examplemodalcenter').modal('hide');   
 					location.reload();
 				},
-				error: function (response) {
-					debugger
+				error: function (response) { 
+					
 					console.error(errorthrown);
 				}
 			});
 		}
 	</script>
-
-
-

@@ -32,27 +32,27 @@ namespace CMSWebApi.Services
         #endregion
 
         #region AddInterviewer Data
-        public Task<InterviewerModel> AddInterviewer([FromBody] InterviewerModel interviewerModel)
+        public string AddInterviewer([FromBody] InterviewerModel interviewerModel)
         {
             var parameters = new DynamicParameters();
             //parameters.Add("@InterviewerId", interviewerModel.InterviewerId, DbType.Int32);
             parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
             parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
             parameters.Add("@Email", interviewerModel.Email, DbType.String);
-            parameters.Add("@Technology", interviewerModel.Technology, DbType.String);
-            parameters.Add("@YearOfExperiance", interviewerModel.YearOfExperiance, DbType.Int32);
-            parameters.Add("@Designation", interviewerModel.Designation, DbType.String);
+            parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
+			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
+			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);
             parameters.Add("@TotalInterviewsConducted", interviewerModel.TotalInterviewsConducted, DbType.Int32);
             parameters.Add("@create_user", interviewerModel.create_User, DbType.String);
 
-            var result = _dapper.Insert<InterviewerModel>(StoreProcedureName.InsertInterviewer, parameters, CommandType.StoredProcedure);
+            var result = _dapper.Insert<string>(StoreProcedureName.InsertInterviewer, parameters, CommandType.StoredProcedure);
 
             if (result == null)
             {
                 throw new Exception("Failed to insert Interviewer Data.");
             }
 
-            return Task.FromResult(result);
+            return result;
         }
         #endregion
 
@@ -61,15 +61,15 @@ namespace CMSWebApi.Services
         {
             var parameters = new DynamicParameters();
             parameters.Add("@InterviewerId", interviewerModel.InterviewerId, DbType.Int32);
-            parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
-            parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
-            //parameters.Add("@Email", interviewerModel.Email, DbType.String);
-            parameters.Add("@Technology", interviewerModel.Technology, DbType.String);
-            parameters.Add("@YearOfExperience", interviewerModel.YearOfExperiance, DbType.Int32);
-            parameters.Add("@Designation", interviewerModel.Designation, DbType.String);
-            parameters.Add("@TotalInterviewsConducted", interviewerModel.TotalInterviewsConducted, DbType.Int32);
-            parameters.Add("@change_user", interviewerModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", InterviewerModel.IsDelete=false, DbType.String);
+			parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
+			parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
+			parameters.Add("@Email", interviewerModel.Email, DbType.String);
+			parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
+			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
+			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);
+			parameters.Add("@TotalInterviewsConducted", interviewerModel.TotalInterviewsConducted, DbType.Int32);
+			parameters.Add("@change_user", interviewerModel.change_user, DbType.String);
+            parameters.Add("@IsDeleted", interviewerModel.IsDeleted, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.UpdateInterviewer, parameters, CommandType.StoredProcedure);
 
@@ -78,10 +78,10 @@ namespace CMSWebApi.Services
         #endregion
 
         #region DeleteInterviewer By Id
-        public int DeleteInterviewerByid(int InterviewerId)
+        public int DeleteInterviewerByid(InterviewerModel Interviewer_Id)
         {
             var parameters = new DynamicParameters();
-            parameters.Add("@InterviewerId", InterviewerId, DbType.Int32);
+            parameters.Add("@InterviewerId", Interviewer_Id.InterviewerId, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.DeleteInterviewer, parameters, CommandType.StoredProcedure);
 

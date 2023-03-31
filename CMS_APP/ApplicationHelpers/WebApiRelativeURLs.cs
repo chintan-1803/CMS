@@ -50,7 +50,7 @@ namespace CMS.ApplicationHelpers
 
 		public const string DeleteRound = "/Round/DeleteRound";
 
-		//Round
+		//Technology
 
 		public const string TechnologyPath = "/Technology/Technology";
 
@@ -60,5 +60,15 @@ namespace CMS.ApplicationHelpers
 
 		public const string DeleteTechnology = "/Technology/DeleteTechnology";
 
-	}
+        //Interviewer
+
+        public const string InterviewerPath = "/Interviewer/Interviewer";
+
+        public const string AddInterviewer = "/Interviewer/AddInterviewer";
+
+        public const string UpdateInterviewer = "/Interviewer/UpdateInterviewer";
+
+        public const string DeleteInterviewer = "/Interviewer/DeleteInterviewer";
+
+    }
 }

@@ -33,7 +33,7 @@ namespace CMSWebApi.Controllers
                 {
                     return BadRequest(new { message = "NULL VALUE" });
                 }
-        
+
                 return Ok(response);
 
             }
@@ -96,7 +96,6 @@ namespace CMSWebApi.Controllers
         }
         #endregion
 
-       
         #region  DeleteRole
         [HttpPut("DeleteRole")]
         public IActionResult DeleteRole(RoleModel Role_ID)
@@ -121,6 +120,15 @@ namespace CMSWebApi.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+        }
+        #endregion
+
+        #region GetRolesByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetRolesByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var roles = await _roleService.GetRolesByPage(pageNumber, rowsOfPage);
+            return Ok(roles);
         }
         #endregion
     }

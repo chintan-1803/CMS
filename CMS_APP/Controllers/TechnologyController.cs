@@ -22,7 +22,11 @@ namespace CMS.Controllers
                 var response = _technology_Interface.Technologylist();
                 var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
 
-                if (data != null)
+				var data1 = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
+				var jsonData1 = JsonConvert.SerializeObject(data1);
+				HttpContext.Session.SetString("technologyList", jsonData1);
+
+				if (data != null)
                 {
                     //return RedirectToAction("DesignationPage", "Designation",new { data });
                     return View(data);

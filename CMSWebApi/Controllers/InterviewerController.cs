@@ -97,12 +97,12 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region  DeleteInterviewer
-        [HttpPut("InterviewerId")]
-        public IActionResult DeleteInterviewer(int InterviewerId)
+        [HttpPut("DeleteInterviewer")]
+        public IActionResult DeleteInterviewer(InterviewerModel Interviewer_Id)
         {
             try
             {
-                var response = _InterviewerService.DeleteInterviewerByid(InterviewerId);
+                var response = _InterviewerService.DeleteInterviewerByid(Interviewer_Id);
 
                 if (response == 0)
                 {
