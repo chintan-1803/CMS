@@ -1,5 +1,7 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
+using CMS.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -8,9 +10,11 @@ namespace CMS.Controllers
 	public class DesignationController : Controller
 	{
 		private readonly IDesignation _designation_Interface;
-		public DesignationController(IDesignation designation_Interface)
+		private readonly IMasterData _masterdata;
+		public DesignationController(IDesignation designation_Interface, IMasterData masterdata)
 		{
 			_designation_Interface = designation_Interface;
+			_masterdata = masterdata;
 
 		}
 
@@ -20,33 +24,42 @@ namespace CMS.Controllers
 			// Get the list of designations from the API
 			var response = _designation_Interface.Designationlist();
 			var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
+			//var masterDatalist = HttpContext.Session.GetString("masterDatalist");
 
-			var data1 = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-			var jsonData = JsonConvert.SerializeObject(data1);
-			HttpContext.Session.SetString("designationList", jsonData);
+			//add designation list into session
+			//var data1 = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
 
-			// Serialize the data to a string
-			//var serializedData = JsonConvert.SerializeObject(data);
+			//var jsonData = JsonConvert.SerializeObject(data1);
+			//HttpContext.Session.SetString("designationList", jsonData);
 
-			//// Store the serialized data in session
-			//HttpContext.Session.SetString("DesignationList", serializedData);
-
-			// Return the view with the list of designations
-			return View(data);
+			if (data != null)
+			{
+				var masterDataResponse = _masterdata.AllMasterDatalist();
+				var jsonData = JsonConvert.SerializeObject(masterDataResponse);
+				HttpContext.Session.SetString("masterDatalist", jsonData);
+				return View(data);
+			}
+			else
+			{
+				return View();
+			}
 		}
 
 
 		[HttpPost]
 		public IActionResult AddDesignationlist(DesignationModel designationData)
 		{
+			//var create_User = HttpContext.Session.GetString("create_User");
+			designationData.create_User = HttpContext.Session.GetString("Username");
+
 			var response = _designation_Interface.AddDesignationlist(designationData);
 			if(!response.IsSuccessful){
-				return Json(new {response.Content});
-
+				return BadRequest(response);
 			}
 			if (response != null)
 			{
-				return Json(new { });
+				HttpContext.Session.Remove("masterDatalist");
+				return Json(new { success = true, message = "Designation added successfully." });
 			}
 			else
 			{
@@ -57,24 +70,39 @@ namespace CMS.Controllers
 		[HttpPut]
 		public IActionResult UpdateDesignationlist(DesignationModel updatedesignationData)
 		{
+			updatedesignationData.Change_user = HttpContext.Session.GetString("Username");
+
 			var response = _designation_Interface.UpdateDesignationlist(updatedesignationData);
+
+			//updatedesignationData.create_User = create_User;
+
+			if (!response.IsSuccessful)
+			{
+				//return Json(new {response});
+				return BadRequest(response);
+			}
+			if(response.Content == "\"SUCCESS\""){
+				HttpContext.Session.Remove("masterDatalist");
+				return Json(new { success = true, message = "Designation updated successfully." });
+			}
 			if (response != null)
 			{
-				return Json(new { });
+				return Json(new { success = false/*, message = "Designation updated successfully."*/ });
 			}
 			else
 			{
 				return BadRequest(response);
-			}
+			}	
 		}
 
 		[HttpPut]
 		public IActionResult DeleteDesignationlist(DesignationModel Designation_ID)
-		{
+		{ 
 			var response = _designation_Interface.DeleteDesignationitem(Designation_ID);
 			if (response != null)
 			{
-				return Json(new { });
+				HttpContext.Session.Remove("masterDatalist");
+				return Json(new { success = true, message = "Designation deleted successfully." });
 			}
 			else
 			{

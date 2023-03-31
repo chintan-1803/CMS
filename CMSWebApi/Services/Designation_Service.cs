@@ -34,51 +34,67 @@ namespace CMSWebApi.Services
         #region AddDesignation
         public string AddDesignation([FromBody] DesignationModel designationModel)
         {
-            var parameters = new DynamicParameters();
-            // parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
-            parameters.Add("@Designation", designationModel.Designation, DbType.String);
-            parameters.Add("@create_user", designationModel.create_User, DbType.String);
-
-            var result = _dapper.Insert<string>(StoreProcedureName.InsertDesignation, parameters, CommandType.StoredProcedure);
-
-            if (result == null)
+            try
             {
-                throw new Exception("Failed to insert designation.");
-            }
+				var parameters = new DynamicParameters();
+				parameters.Add("@Designation", designationModel.Designation, DbType.String);
+				parameters.Add("@create_user", designationModel.create_User, DbType.String);
 
-            return result;
+				var result = _dapper.Insert<string>(StoreProcedureName.InsertDesignation, parameters, CommandType.StoredProcedure);
+
+				return result;
+
+			}
+            catch (ArgumentNullException ex)
+            {
+
+				throw new ArgumentNullException("FAILED TO INSERT DESIGNATION.", ex);
+			}
+           
         }
         #endregion
 
-        #region UpdateDesignation
-        public int UpdateDesignation(DesignationModel designationModel)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
-            parameters.Add("@Designation", designationModel.Designation, DbType.String);
-            parameters.Add("@change_user", designationModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
+       #region UpdateDesignation
+       public int UpdateDesignation(DesignationModel designationModel)
+       {
+            try
+            {
+				var parameters = new DynamicParameters();
+				parameters.Add("@DesignationID", designationModel.DesignationID, DbType.Int32);
+				parameters.Add("@Designation", designationModel.Designation, DbType.String);
+				parameters.Add("@change_user", designationModel.Change_user, DbType.String);
+				// parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
-            var result = _dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure);
+				//var result = _dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure);
+				var result = _dapper.Execute(StoreProcedureName.UpdateDesignation, parameters, CommandType.StoredProcedure); //change
+				return result;
 
+			}
+            catch (ArgumentNullException ex)
+            {
 
-            return result;
-        }
+				throw new ArgumentNullException("FAILED TO UPDATE DESIGNATION.", ex);
+			} 
+       }
         #endregion
 
         #region DeleteDesignationByid
         public int DeleteDesignationByid(DesignationModel Designation_ID)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@DesignationID", Designation_ID.DesignationID, DbType.Int32);
-
-            var result = _dapper.Execute(StoreProcedureName.DeleteDesignation, parameters, CommandType.StoredProcedure);
-
-            if (result == 0)
+            try
             {
-                throw new Exception("Failed to insert designation.");
+                var parameters = new DynamicParameters();
+                parameters.Add("@DesignationID", Designation_ID.DesignationID, DbType.Int32);
+
+                var result = _dapper.Execute(StoreProcedureName.DeleteDesignation, parameters, CommandType.StoredProcedure);
+
+                return result;
             }
-            return result;
+            catch (ArgumentNullException ex)
+            {
+
+				throw new ArgumentNullException("FAILED TO DELETE DESIGNATION.", ex);
+			}
         }
         #endregion
 

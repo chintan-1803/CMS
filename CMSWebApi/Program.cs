@@ -38,6 +38,8 @@ builder.Services.AddScoped<IRound_Interface,Round_Service>();
 builder.Services.AddScoped<ITechnology_Interface,Technology_Service>();
 builder.Services.AddScoped<IDapper,Dappers>();
 builder.Services.AddScoped<ICipherService,CipherService>();
+builder.Services.AddScoped<IAllMsaterData_Interface,AllMasterData_Service>();
+
 builder.Services.AddScoped<IInterviewer_Interface, Interviewer_Service>();
 
 

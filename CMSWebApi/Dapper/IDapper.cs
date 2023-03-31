@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data;
+using CMSWebApi.Models;
 
 namespace CMSWebApi.Dapper
 {
@@ -12,5 +13,8 @@ namespace CMSWebApi.Dapper
         List<T> GetAll<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
         int Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
         T Insert<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
-    }
+
+        public (List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>) GetAllMasterData(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
+
+	}
 }

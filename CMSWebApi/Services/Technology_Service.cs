@@ -26,46 +26,53 @@ namespace CMSWebApi.Services
         #region GetTechnology 
         public Task<List<TechnologyModel>> GetAllTechnology()
         {
-            //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-            var model = _dapper.GetAll<TechnologyModel>(StoreProcedureName.TechnologyMasterData, null, System.Data.CommandType.StoredProcedure);
-            return Task.FromResult(model);
+            try
+            {
+                //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+                var model = _dapper.GetAll<TechnologyModel>(StoreProcedureName.TechnologyMasterData, null, System.Data.CommandType.StoredProcedure);
+                return Task.FromResult(model);
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("NULL VALUE", ex);
+			}
         }
         #endregion
 
         #region AddTechnology
-        public Task<TechnologyModel> AddTechnology([FromBody] TechnologyModel technologyModel)
+        public string AddTechnology([FromBody] TechnologyModel technologyModel)
         {
-            //var encryptedName = _cipherService.Encrypt(designationModel.);
-
-            var parameters = new DynamicParameters();
-            // parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
-            parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
-            parameters.Add("@Discription", technologyModel.Discription, DbType.String);
-            //parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
-            parameters.Add("@create_user", technologyModel.create_User, DbType.String);
-
-            var result = _dapper.Insert<TechnologyModel>(StoreProcedureName.InsertTechnology, parameters, CommandType.StoredProcedure);
-
-            if (result == null)
+            try
             {
-                throw new Exception("Failed to insert designation.");
-            }
+                var parameters = new DynamicParameters();
+                parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
+                parameters.Add("@Description", technologyModel.Description, DbType.String);
+                parameters.Add("@create_user", technologyModel.create_User, DbType.String);
 
-            return Task.FromResult(result);
+                var result = _dapper.Insert<string>(StoreProcedureName.InsertTechnology, parameters, CommandType.StoredProcedure);
+                //if (result == null)
+                //{
+                //    throw new Exception("Failed to insert Technology.");
+                //}
+
+                return result;
+            }
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO INSERT TECHNOLOGY.", ex);
+			}
         }
         #endregion
 
         #region UpdateTechnology
         public int UpdateTechnology(TechnologyModel technologyModel)
         {
-
             var parameters = new DynamicParameters();
             parameters.Add("@TechnologyId", technologyModel.TechnologyId, DbType.Int32);
             parameters.Add("@TechnologyName", technologyModel.TechnologyName, DbType.String);
-            parameters.Add("@Discription", technologyModel.Discription, DbType.String);
-            parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
+            parameters.Add("@Description", technologyModel.Description, DbType.String);
+           // parameters.Add("@IsActive", technologyModel.IsActive, DbType.Boolean);
             parameters.Add("@change_user", technologyModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
 
             var result = _dapper.Execute(StoreProcedureName.UpdateTechnology, parameters, CommandType.StoredProcedure);
             return result;
@@ -79,11 +86,6 @@ namespace CMSWebApi.Services
             parameters.Add("@TechnologyId", Technology_ID.TechnologyId, DbType.Int32);
 
             var result = _dapper.Execute(StoreProcedureName.DeleteTechnology, parameters, CommandType.StoredProcedure);
-
-            //if (result == null)
-            //{
-            //    throw new Exception("Failed to insert designation.");
-            //}
 
             return result;
         }

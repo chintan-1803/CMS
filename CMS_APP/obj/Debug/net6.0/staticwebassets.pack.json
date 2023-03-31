@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "F:\\CMS Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css",
       "PackagePath": "staticwebassets\\CMS.bundle.scp.css"
     },
@@ -1146,6 +1147,1153 @@
     },
     {
       "Id": "F:\\CMS Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\excanvas.js",
+=======
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CMS.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\LoginPage.css",
+      "PackagePath": "staticwebassets\\css\\LoginPage.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\animate.css\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css\\css\\animate.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\chartist\\chartist.css",
+      "PackagePath": "staticwebassets\\css\\chartist\\chartist.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\ionicons.css",
+      "PackagePath": "staticwebassets\\css\\ionicons.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\jquery.mCustomScrollbar.css",
+      "PackagePath": "staticwebassets\\css\\jquery.mCustomScrollbar.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\morris.js\\css\\morris.css",
+      "PackagePath": "staticwebassets\\css\\morris.js\\css\\morris.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\css\\regular.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\css\\solid.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\HELP-US-OUT.txt",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\HELP-US-OUT.txt"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\css\\font-awesome.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\animated.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\animated.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\bordered-pulled.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\bordered-pulled.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\core.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\core.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\fixed-width.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\fixed-width.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\font-awesome.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\font-awesome.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\icons.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\icons.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\larger.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\larger.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\list.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\list.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\mixins.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\mixins.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\path.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\path.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\rotated-flipped.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\rotated-flipped.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\screen-reader.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\screen-reader.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\stacked.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\stacked.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\variables.less",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\less\\variables.less"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_animated.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_path.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_path.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\font-awesome.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css.map",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\font-awesome.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.scss",
+      "PackagePath": "staticwebassets\\icon\\font-awesome\\scss\\font-awesome.scss"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\css\\icofont.css",
+      "PackagePath": "staticwebassets\\icon\\icofont\\css\\icofont.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.eot",
+      "PackagePath": "staticwebassets\\icon\\icofont\\fonts\\icofont.eot"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.svg",
+      "PackagePath": "staticwebassets\\icon\\icofont\\fonts\\icofont.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.ttf",
+      "PackagePath": "staticwebassets\\icon\\icofont\\fonts\\icofont.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.woff",
+      "PackagePath": "staticwebassets\\icon\\icofont\\fonts\\icofont.woff"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\icon\\themify-icons\\fonts\\themify.eot"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\icon\\themify-icons\\fonts\\themify.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\icon\\themify-icons\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\icon\\themify-icons\\fonts\\themify.woff"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\themify-icons.css",
+      "PackagePath": "staticwebassets\\icon\\themify-icons\\themify-icons.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\BackgroundImages.jpg",
+      "PackagePath": "staticwebassets\\images\\BackgroundImages.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogo.png",
+      "PackagePath": "staticwebassets\\images\\TechcronusLogo.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogo.svg",
+      "PackagePath": "staticwebassets\\images\\TechcronusLogo.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogoNew.jpg",
+      "PackagePath": "staticwebassets\\images\\TechcronusLogoNew.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\Logo-small-bottom.png",
+      "PackagePath": "staticwebassets\\images\\auth\\Logo-small-bottom.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\Thumbs.db",
+      "PackagePath": "staticwebassets\\images\\auth\\Thumbs.db"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\logo-dark.png",
+      "PackagePath": "staticwebassets\\images\\auth\\logo-dark.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\logo.png",
+      "PackagePath": "staticwebassets\\images\\auth\\logo.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-1.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-2.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-3.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-4.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-5.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-blank.jpg",
+      "PackagePath": "staticwebassets\\images\\avatar-blank.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-130.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-130.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-r-1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-r-2.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-r-3.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-single-1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-single-1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-single.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-single.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-small-bg-1.png",
+      "PackagePath": "staticwebassets\\images\\blog\\blog-small-bg-1.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery1.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\st_gallery1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery2.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\st_gallery2.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery3.jpg",
+      "PackagePath": "staticwebassets\\images\\blog\\st_gallery3.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\breadcrumb-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\breadcrumb-bg.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\chrome.png",
+      "PackagePath": "staticwebassets\\images\\browser\\chrome.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\firefox.png",
+      "PackagePath": "staticwebassets\\images\\browser\\firefox.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\ie.png",
+      "PackagePath": "staticwebassets\\images\\browser\\ie.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\opera.png",
+      "PackagePath": "staticwebassets\\images\\browser\\opera.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\safari.png",
+      "PackagePath": "staticwebassets\\images\\browser\\safari.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\details_close.png",
+      "PackagePath": "staticwebassets\\images\\details_close.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\details_open.png",
+      "PackagePath": "staticwebassets\\images\\details_open.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\faq_man.png",
+      "PackagePath": "staticwebassets\\images\\faq_man.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\images\\favicon.ico"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo-blue.png",
+      "PackagePath": "staticwebassets\\images\\logo-blue.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo-compact.png",
+      "PackagePath": "staticwebassets\\images\\logo-compact.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mCSB_buttons.png",
+      "PackagePath": "staticwebassets\\images\\mCSB_buttons.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\01.jpg",
+      "PackagePath": "staticwebassets\\images\\mega-menu\\01.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\02.jpg",
+      "PackagePath": "staticwebassets\\images\\mega-menu\\02.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\03.jpg",
+      "PackagePath": "staticwebassets\\images\\mega-menu\\03.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\pi-symbol-image.png",
+      "PackagePath": "staticwebassets\\images\\pi-symbol-image.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\select-arrow.png",
+      "PackagePath": "staticwebassets\\images\\select-arrow.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\Euclid.png",
+      "PackagePath": "staticwebassets\\images\\tooltip\\Euclid.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\shape1.svg",
+      "PackagePath": "staticwebassets\\images\\tooltip\\shape1.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\tooltip1.svg",
+      "PackagePath": "staticwebassets\\images\\tooltip\\tooltip1.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\user-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\user-bg.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\AUSTRALIA.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\AUSTRALIA.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\BRAZIL.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\BRAZIL.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\DIGITALPEN.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\DIGITALPEN.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\GERMANY.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\GERMANY.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\IPAD.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\IPAD.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE1.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\PHONE1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE2.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\PHONE2.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE3.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\PHONE3.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE4.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\PHONE4.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\TABLET.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\TABLET.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\UK.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\UK.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\USA.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\USA.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod1.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\prod1.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod2.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\prod2.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod3.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\prod3.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod4.jpg",
+      "PackagePath": "staticwebassets\\images\\widget\\prod4.jpg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2bottom.png",
+      "PackagePath": "staticwebassets\\images\\widget\\wather2bottom.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2m.png",
+      "PackagePath": "staticwebassets\\images\\widget\\wather2m.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2star1.png",
+      "PackagePath": "staticwebassets\\images\\widget\\wather2star1.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2star2.png",
+      "PackagePath": "staticwebassets\\images\\widget\\wather2star2.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherbottom.png",
+      "PackagePath": "staticwebassets\\images\\widget\\watherbottom.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wathernature.png",
+      "PackagePath": "staticwebassets\\images\\widget\\wathernature.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherstar1.png",
+      "PackagePath": "staticwebassets\\images\\widget\\watherstar1.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherstar2.png",
+      "PackagePath": "staticwebassets\\images\\widget\\watherstar2.png"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\SmoothScroll.js",
+      "PackagePath": "staticwebassets\\js\\SmoothScroll.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\bootstrap-growl.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-growl.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\chart.js\\Chart.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\Chart.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\common-pages.js",
+      "PackagePath": "staticwebassets\\js\\common-pages.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\js\\fontawesome.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery-slimscroll\\jquery.slimscroll.js",
+      "PackagePath": "staticwebassets\\js\\jquery-slimscroll\\jquery.slimscroll.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery-ui\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-ui\\jquery-ui.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.mCustomScrollbar.concat.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery.mousewheel.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.mousewheel.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\modernizr\\css-scrollbars.js",
+      "PackagePath": "staticwebassets\\js\\modernizr\\css-scrollbars.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\modernizr\\modernizr.js",
+      "PackagePath": "staticwebassets\\js\\modernizr\\modernizr.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\morris-custom-chart.js",
+      "PackagePath": "staticwebassets\\js\\morris-custom-chart.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\morris.js\\morris.js",
+      "PackagePath": "staticwebassets\\js\\morris.js\\morris.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\pcoded.min.js",
+      "PackagePath": "staticwebassets\\js\\pcoded.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\popper.js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\raphael\\raphael.min.js",
+      "PackagePath": "staticwebassets\\js\\raphael\\raphael.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\script.min.js",
+      "PackagePath": "staticwebassets\\js\\script.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\vertical-layout.min.js",
+      "PackagePath": "staticwebassets\\js\\vertical-layout.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\all.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\brands.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\brands.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\brands.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\regular.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\regular.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\regular.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\solid.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\solid.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\solid.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\svg-with-js.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-font-face.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-shims.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v4-shims.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\v5-font-face.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\all.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\all.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\all.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\brands.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\brands.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\brands.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\conflict-detection.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\fontawesome.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\fontawesome.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\regular.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\regular.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\regular.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\solid.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\solid.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\solid.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\v4-shims.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\js\\v4-shims.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\brands.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\brands.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\regular.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\regular.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\solid.svg",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\sprites\\solid.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\accordion\\accordion.js",
+      "PackagePath": "staticwebassets\\pages\\accordion\\accordion.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\accordion\\accordion.min.js",
+      "PackagePath": "staticwebassets\\pages\\accordion\\accordion.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\css\\amchart.css",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\css\\amchart.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\css\\export.css",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\css\\export.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\amcharts.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\amcharts.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\custom-amchart.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\custom-amchart.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\export.min.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\export.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\light.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\light.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\serial.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\amchart\\js\\serial.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\custom-dashboard.js",
+      "PackagePath": "staticwebassets\\pages\\dashboard\\custom-dashboard.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\google-maps\\gmaps.js",
+      "PackagePath": "staticwebassets\\pages\\google-maps\\gmaps.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\google-maps\\google-maps.js",
+      "PackagePath": "staticwebassets\\pages\\google-maps\\google-maps.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\icon-modal.js",
+      "PackagePath": "staticwebassets\\pages\\icon-modal.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\notification\\notification.css",
+      "PackagePath": "staticwebassets\\pages\\notification\\notification.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\notification\\notification.js",
+      "PackagePath": "staticwebassets\\pages\\notification\\notification.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\todo\\todo.js",
+      "PackagePath": "staticwebassets\\pages\\todo\\todo.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\waves\\css\\waves.min.css",
+      "PackagePath": "staticwebassets\\pages\\waves\\css\\waves.min.css"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\waves\\js\\waves.min.js",
+      "PackagePath": "staticwebassets\\pages\\waves\\js\\waves.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\amcharts.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\amcharts.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\amcharts.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\amcharts.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\export.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\export.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\gauge.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\gauge.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\gauge.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\gauge.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\light.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\light.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\light.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\light.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\pie.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\pie.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\pie.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\pie.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\serial.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\serial.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\serial.min.js",
+      "PackagePath": "staticwebassets\\pages\\widget\\amchart\\serial.min.js"
+    },
+    {
+      "Id": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\excanvas.js",
+>>>>>>> 1e863bd7182e437892c68c91436e46def64ae076
       "PackagePath": "staticwebassets\\pages\\widget\\excanvas.js"
     },
     {

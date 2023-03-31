@@ -6,128 +6,95 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class ReasonController : Controller
-    {
-        private readonly IReason_Interface _reasonService;
-        private readonly IDapper _dapper;
-        public ReasonController(IReason_Interface reasonService, IDapper dapper)
-        {
-            _reasonService = reasonService;
-            _dapper = dapper;
+	[ApiController]
+	[Route("[controller]")]
+	public class ReasonController : Controller
+	{
+		private readonly IReason_Interface _reasonService;
+		private readonly IDapper _dapper;
+		public ReasonController(IReason_Interface reasonService, IDapper dapper)
+		{
+			_reasonService = reasonService;
+			_dapper = dapper;
 
-        }
+		}
 
-        #region Get method Of Reason wothout async
-        [HttpGet("Reason")]
-        public IActionResult Reason()
-        {
-            try
-            {
-                var responseTask = _reasonService.GetAllReason();
-                responseTask.Wait();
-                var response = responseTask.Result;
+		#region Get method Of Reason wothout async
+		[HttpGet("Reason")]
+		public IActionResult Reason()
+		{
+			var responseTask = _reasonService.GetAllReason();
+			//responseTask.Wait();
+			var response = responseTask.Result;
+			//if (response == null)
+			//{
+			//	return BadRequest(new { message = "NULL VALUE" });
+			//}
+			return Ok(response);
+		}
+		#endregion
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
+		#region  AddReason
+		[HttpPost("AddReason")]
+		public IActionResult AddReason(ReasonModel reasonModel)
+		{
+			var response = _reasonService.AddReason(reasonModel);
 
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
+			//if (response == null)
+			//{
+			//    return BadRequest(new { message = "FAILED TO ADD Reason" });
+			//}
+			if (response == "Unsuccessful")
+			{
+				return BadRequest(new { message = "Reason IS ALREADY EXISTS" });
+			}
+			return Ok("SUCCESS");
+		}
+		#endregion
 
-        #region  AddReason
-        [HttpPost("AddReason")]
-        public IActionResult AddReason(ReasonModel reasonModel)
-        {
-            try
-            {
-                var response = _reasonService.AddReason(reasonModel);
+		#region  UpdateReason
+		[HttpPut("UpdateReason")]
+		public IActionResult UpdateReason(ReasonModel reasonModel)
+		{
+			var response = _reasonService.UpdateReason(reasonModel);
+			//if (response == 0 || response < 0)
+			//{
+			//  return BadRequest(new { message = "FAILED TO ADD REASON" });
+			//}
+			if (response < 0)
+			{
+				return Ok("Data already exists");
+			}
+			else if (response > 0)
+			{
+				return Ok("SUCCESS");
+			}
+			else
+			{
+				return Ok("Something went wrong");
+			}
+		}
+		#endregion
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                return Ok("SUCCESS");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
+		#region  DeleteReason
+		[HttpPut("DeleteReason")]
+		public IActionResult DeleteReason(ReasonModel Reason_ID)
+		{
+			var response = _reasonService.DeleteReasonByid(Reason_ID);
 
-        #region  UpdateReason
-        [HttpPut("UpdateReason")]
-        public IActionResult UpdateReason(ReasonModel reasonModel)
-        {
-            try
-            {
-                var response = _reasonService.UpdateReason(reasonModel);
-
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
-
-        #region  DeleteReason
-        [HttpPut("DeleteReason")]
-        public IActionResult DeleteReason(ReasonModel Reason_ID)
-        {
-            try
-            {
-                var response = _reasonService.DeleteReasonByid(Reason_ID);
-
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-        }
-        #endregion
-
-        #region GetReasonsByPage
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetReasonsByPage(int pageNumber = 1, int rowsOfPage = 5)
-        {
-            var reasons = await _reasonService.GetReasonsByPage(pageNumber, rowsOfPage);
-            return Ok(reasons);
-        }
-        #endregion
-    }
+			//if (response == 0)
+			//{
+			//	return BadRequest(new { message = "FAILED TO DELETE REASON" });
+			//}
+			if (response > 0)
+			{
+				return Ok("SUCCESS");
+			}
+			else
+			{
+				return Ok("Something went wrong");
+			}
+		}
+		#endregion
+	}
 }

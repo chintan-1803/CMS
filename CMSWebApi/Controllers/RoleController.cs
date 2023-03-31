@@ -48,22 +48,20 @@ namespace CMSWebApi.Controllers
         [HttpPost("AddRole")]
         public IActionResult AddRole(RoleModel roleModel)
         {
-            try
-            {
+           
                 var response = _roleService.AddRole(roleModel);
 
                 if (response == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Role" });
                 }
+				else if (response == "Unsuccessful")
+				{
+					return BadRequest(new { message = "ROLE IS ALREADY EXISTS" });
+				}
 
-
-                return Ok("SUCCESS");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+				return Ok("SUCCESS");
+           
         }
         #endregion
 
@@ -71,15 +69,18 @@ namespace CMSWebApi.Controllers
         [HttpPut("UpdateRole")]
         public IActionResult UpdateRole(RoleModel roleModel)
         {
-            try
-            {
+           
                 var response = _roleService.UpdateRole(roleModel);
 
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
+				//if (response == 0 || response < 0)
+				//{
+				//                return BadRequest(new { message = "FAILED TO ADD ROLE" });
+				//            }
+				if (response < 0)
+				{
+					return Ok("Data already exists");
+				}
+				else if (response > 0)
                 {
                     return Ok("SUCCESS");
                 }
@@ -88,11 +89,6 @@ namespace CMSWebApi.Controllers
                     return Ok("Something went wrong");
                 }
 
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
         }
         #endregion
 
@@ -100,14 +96,13 @@ namespace CMSWebApi.Controllers
         [HttpPut("DeleteRole")]
         public IActionResult DeleteRole(RoleModel Role_ID)
         {
-            try
-            {
+            
                 var response = _roleService.DeleteRoleByid(Role_ID);
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
+                //if (response == 0)
+                //{
+                //    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                //}
+                if (response > 0)
                 {
                     return Ok("SUCCESS");
                 }
@@ -115,11 +110,7 @@ namespace CMSWebApi.Controllers
                 {
                     return Ok("Something went wrong");
                 }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            
         }
         #endregion
 

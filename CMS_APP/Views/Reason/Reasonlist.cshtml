@@ -11,7 +11,7 @@
 @using Microsoft.AspNetCore.Http
 @{
 	ViewData["Title"] = "ReasonPage";
-	string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -65,7 +65,7 @@
 			<h5>Reasons List</h5>
 			<div class="card-header-right">
 
-				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter">
+				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
 					Create New
 				</button>
 
@@ -86,13 +86,15 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason</span>
 									</label>
-									<input type="text" id="Reason" class="form-control validate">
+									<input asp-for="Reason" type="text" id="Reason" class="form-control validate">
+
+									<span asp-validation-for="Reason" class="text-danger" id="ReasonError"></span>
 								</div>
 							
-									<input type="hidden" id="create_User" value="@create_User" class="form-control validate">
+									@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 
 								<div class="modal-footer d-flex justify-content-center">
-									<button class="btn btn-deep-blue" id="save-btn" data-dismiss="modal"> Save</button>
+									<button class="btn btn-deep-blue" id="save-btn" > Save</button>
 
 								</div>
 							</div>
@@ -167,7 +169,7 @@
 													</div>
 													<div class="modal-body">
 														<input type="hidden" id="deleteReasonID_@data.ReasonID" value="@data.ReasonID" class="form-control validate">
-														<p>Do you really want to delete these records? This process cannot be undone.</p>
+														<p>Do you really want to delete these record? This process cannot be undone.</p>
 													</div>
 													<div class="modal-footer justify-content-center">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -197,13 +199,14 @@
 															<label class="text-right"  data-error="wrong" data-success="left" for="orangeForm-name">
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">	Reason </span>
 															</label>
-															<input type="text" id="updatereason_@data.ReasonID" value="@data.Reason" class="form-control validate">
+														<input asp-for="Reason" type="text" id="updatereason_@data.ReasonID" value="@data.Reason" class="form-control validate">
+														<span asp-validation-for="Reason" class="text-danger" id="ReasonError_@data.ReasonID"></span>
 														
-														<input type="hidden" id="update_change_user_@data.ReasonID" value="@create_User" class="form-control validate">
+														@*<input type="hidden" id="update_change_user_@data.ReasonID" value="@create_User" class="form-control validate">*@
 														<input type="hidden" id="update_change_Date_@data.ReasonID" value="@data.change_Date" class="form-control validate">
 													</div>
 													<div class="modal-footer d-flex justify-content-center">
-														<button class="btn btn-deep-blue" id="edit-btn" onclick="testfunction(@data.ReasonID)"> Edit </button>
+														<button class="btn btn-deep-blue" id="edit-btn" onclick="updatefunction(@data.ReasonID)"> Edit </button>
 													</div>
 
 												</div>
@@ -231,103 +234,147 @@
 
 
 
-
-
-
-
 <!--  project and team member end -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script>
-	var saveButton = document.getElementById('save-btn'); // add a click event listener to the Save button
-	saveButton.addEventListener('click', function () {
-		// refresh the page after 500 milliseconds (0.5 seconds)
-		setTimeout(function () {
-			location.reload();
-		}, 500);
-	});
 
+	function clearModal() {
+		// Clear the input field values
+		$('#Reason').val('');
+		$('#ReasonError').text('');
 
+	}
 
 	$(function () {
 		// Add click event handler to the Save button
 		$('#save-btn').click(function () {
 			// Get the values of the input fields
 			var Reason = $('#Reason').val();
-			var createdBy = $('#create_User').val();
 
+			//var createdBy = $('#create_User').val();
+			if (Reason === '') {
+				$('#ReasonError').text('Reason is required.');
+				return;
+			}
+
+			if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Reason.trim())) {
+				$('#ReasonError').text('Reason is incorrect.Please enter a valid reason.');
+				return;
+			}
 			// Make the AJAX call
 			$.ajax({
 				url: '/Reason/AddReasonlist',
 				method: 'POST',
 				data: {
-					Reason: Reason,
-					create_User: createdBy
+					Reason: Reason
+					//create_User: createdBy
 				},
 				success: function (response) {
 					// Handle the response data here
 					console.log(response);
 
 					$('#exampleModalCenter').modal('hide');
+					alert(response.message);
 					location.reload();
 				},
-				error: function (jqXHR, textStatus, errorThrown) {
+				error: function (response) {
+					if (!response.IsSuccessful) {
+						$('#ReasonError').text("Reason already exists. Please choose a different name.");
+						return;
+					}
 					// Handle errors here
 					console.error(errorThrown);
 				}
 			});
 		});
+		$('#Reason').on('input', function () {
+			// Clear the error message when the field is not empty
+			if ($(this).val() !== '') {
+				$('#ReasonError').text('');
+			}
+		});
 	});
 
-	function testfunction(id) {
-
-		
-
+	function updatefunction(id) {
 		var reasonid = $('#updatereasonid_' + id).val();
 		var reason = $('#updatereason_' + id).val();
-		var updatedby = $('#update_change_user_' + id).val();
+		//var updatedby = $('#update_change_user_' + id).val();
 		var updatedtime = $('#update_change_Date_' + id).val();
 
+		if (reason === '') {
+			// Show error message and return without making the AJAX call
+			$('#ReasonError_'+ id).text('Reason is required.');
+			setTimeout(function () {
+				$('#ReasonError_'+ id).text('');
+			}, 3000);
+			return;
+		}
+		if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(reason.trim())) {
+			// Show error message and return without making the AJAX call
+			$('#ReasonError_' + id).text('Reason is incorrect.Please enter a valid reason.');
+			setTimeout(function () {
+				$('#ReasonError_' + id).text('');
+			}, 3000);
+			return;
+		}
 		$.ajax({
 			url: '/Reason/UpdateReasonlist',
 			method: 'put',
 			data: {
 				reasonid: reasonid,
 				reason: reason,
-				change_user: updatedby,
+				//change_user: updatedby,
 				change_Date: updatedtime
 			},
 			success: function (response) {
 				console.log(response);
-				$('#examplemodalcenter').modal('hide');
-				url: '/Reason/UpdateReasonlist',
+				//$('#examplemodalcenter').modal('hide');
+				if (response.success) {
+					// Record created successfully
+					alert(response.message);
 					location.reload();
+				}
+				else {
+					$('#ReasonError_' + id).text("Reason already exists. Please choose a different name.");
+					setTimeout(function () {
+						$('#ReasonError_' + id).text('');
+					}, 3000);
+					return;
+				}
 			},
-			error: function (jqxhr, textstatus, errorthrown) {
-				console.error(errorthrown);
+			error: function(response) {
+				if (!response.IsSuccessful) {
+					//$('#ReasonError_' + id).text("Reason already exists. Please choose a different name.");
+					//setTimeout(function () {
+					//	$('#ReasonError_'+id).text('');
+					//}, 3000);
+					//return;
+					console.error(errorthrown);
+				}
+					
 			}
 		});
 	}
 
    	function deletefunction(id) {
-		
+		debugger
 
 		var reasonid = $('#deleteReasonID_' + id).val();
-
 		$.ajax({
 			url: '/Reason/DeleteReasonlist',
 			method: 'put',
 			data: {
 				reasonid: reasonid,
-
 			},
 			success: function (response) {
 				console.log(response);
-				$('#examplemodalcenter').modal('hide');
+				//$('#examplemodalcenter').modal('hide');
+				alert(response.message);
 				location.reload();
 			},
-			error: function (jqxhr, textstatus, errorthrown) {
+			error: function (response) {
 				console.error(errorthrown);
 			}
 		});

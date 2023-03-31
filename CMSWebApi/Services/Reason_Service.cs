@@ -26,49 +26,82 @@ namespace CMSWebApi.Services
         #region GetReasons 
         public Task<List<ReasonModel>> GetAllReason()
         {
-            var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
-            return Task.FromResult(model);
+            try
+            {
+                //var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
+
+                //change this
+				var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
+				return Task.FromResult(model);
+            }
+            catch (ArgumentNullException ex)
+            {
+
+				throw new ArgumentNullException("NULL VALUE", ex);
+			}
         }
         #endregion
 
         #region AddReason
-        public Task<ReasonModel> AddReason(ReasonModel reasonModel)
+        public string AddReason(ReasonModel reasonModel)
         {
-            var parameters = new DynamicParameters();
-            //parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
-            parameters.Add("@Reason", reasonModel.Reason, DbType.String);
-            parameters.Add("@create_user", reasonModel.create_User, DbType.String);
-
-            var resultmsg = _dapper.Insert<ReasonModel>(StoreProcedureName.InsertReason, parameters, CommandType.StoredProcedure);
-            if (resultmsg == null)
+            try
             {
-                throw new Exception("Failed to insert designation.");
+                var parameters = new DynamicParameters();
+                //parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
+                parameters.Add("@Reason", reasonModel.Reason, DbType.String);
+                parameters.Add("@create_user", reasonModel.create_User, DbType.String);
+
+                var result = _dapper.Insert<string>(StoreProcedureName.InsertReason, parameters, CommandType.StoredProcedure);
+                return result;
             }
-            return Task.FromResult(resultmsg);
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO INSERT REASON.", ex);
+			}
         }
         #endregion
 
         #region UpdateReason
         public int UpdateReason(ReasonModel reasonModel)
         {
-            var parameters = new DynamicParameters();
-            parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
-            parameters.Add("@Reason", reasonModel.Reason, DbType.String);
-            parameters.Add("@change_user", reasonModel.Change_user, DbType.String);
-            // parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
-            var result = _dapper.Execute(StoreProcedureName.UpdateReason, parameters, CommandType.StoredProcedure);
-            return result;
+            try
+            {
+				var parameters = new DynamicParameters();
+				parameters.Add("@ReasonID", reasonModel.ReasonID, DbType.Int32);
+				parameters.Add("@Reason", reasonModel.Reason, DbType.String);
+				parameters.Add("@change_user", reasonModel.Change_user, DbType.String);
+				// parameters.Add("@IsDelete", designationModel.IsDelete=false, DbType.String);
+				var result = _dapper.Execute(StoreProcedureName.UpdateReason, parameters, CommandType.StoredProcedure);
+				return result;
+
+			}
+            catch (ArgumentNullException ex)
+            {
+				throw new ArgumentNullException("FAILED TO UPDATE REASON.", ex);
+			}
+            
         }
         #endregion
 
-        #region DeleteReasonByid
-        public int DeleteReasonByid(ReasonModel Reason_ID)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@ReasonID", Reason_ID.ReasonID, DbType.Int32);
+		#region DeleteReasonByid
+		public int DeleteReasonByid(ReasonModel Reason_ID)
+		{
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@ReasonID", Reason_ID.ReasonID, DbType.Int32);
 
-            var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
+                var result = _dapper.Execute(StoreProcedureName.DeleteReason, parameters, CommandType.StoredProcedure);
 
+                return result;
+            }
+            catch (ArgumentNullException ex) { 
+                throw new ArgumentNullException("FAILED TO DELETE REASON.", ex); 
+            }
+		}
+		#endregion
+	}
             return result;
         }
         #endregion

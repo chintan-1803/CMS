@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "efJsszKSHNer/yY8y9dBo/soyTu7Z7B+qx4sg+l2kQk=",
+  "Hash": "GoKhZ8T71ovMrHYD301EH5FQYxp20qNFPVfcgWD5XuE=",
   "Source": "CMS",
   "BasePath": "_content/CMS",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CMS\\wwwroot",
       "Source": "CMS",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CMS.styles.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CMS.styles.css",
       "SourceId": "CMS",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CMS",
       "RelativePath": "CMS.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CMS.styles.css"
+      "OriginalItemSpec": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\bundle\\CMS.styles.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css",
       "SourceId": "CMS",
       "SourceType": "Computed",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/CMS",
       "RelativePath": "CMS.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "E:\\Rohit Tiwari\\CMS Application\\CMS\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css"
+      "OriginalItemSpec": "D:\\CMS_Project\\CMS\\CMS_APP\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CMS.bundle.scp.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\animate.css\\css\\animate.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\animate.css\\css\\animate.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/animate.css/css/animate.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\animate.css\\css\\animate.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\bootstrap\\css\\bootstrap.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\bootstrap\\css\\bootstrap.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/bootstrap/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\chartist\\chartist.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\chartist\\chartist.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/chartist/chartist.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\chartist\\chartist.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\fontawesome.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\fontawesome.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/fontawesome.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\fontawesome.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\font-awesome.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\font-awesome.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/font-awesome.min.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\font-awesome.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\ionicons.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\ionicons.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/ionicons.css",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\css\\ionicons.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\jquery.mCustomScrollbar.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\jquery.mCustomScrollbar.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/jquery.mCustomScrollbar.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\jquery.mCustomScrollbar.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\LoginPage.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\LoginPage.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/LoginPage.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\LoginPage.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\morris.js\\css\\morris.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\morris.js\\css\\morris.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/morris.js/css/morris.css",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\morris.js\\css\\morris.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\regular.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\regular.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/regular.min.css",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\regular.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\solid.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\solid.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/solid.min.css",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\solid.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\css\\style.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\css\\style.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "css/style.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\style.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\favicon.ico",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\favicon.ico",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\css\\font-awesome.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\css\\font-awesome.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/css/font-awesome.css",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\css\\font-awesome.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\css\\font-awesome.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\css\\font-awesome.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/css/font-awesome.min.css",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\css\\font-awesome.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\FontAwesome.otf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\FontAwesome.otf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/FontAwesome.otf",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\FontAwesome.otf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/fontawesome-webfont.eot",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.eot"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/fontawesome-webfont.svg",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/fontawesome-webfont.ttf",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/fontawesome-webfont.woff",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/fonts/fontawesome-webfont.woff2",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\fonts\\fontawesome-webfont.woff2"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\HELP-US-OUT.txt",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\HELP-US-OUT.txt",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/HELP-US-OUT.txt",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\HELP-US-OUT.txt"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\animated.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\animated.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/animated.less",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\animated.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\bordered-pulled.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\bordered-pulled.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/bordered-pulled.less",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\bordered-pulled.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\core.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\core.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/core.less",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\core.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\fixed-width.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\fixed-width.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/fixed-width.less",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\fixed-width.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\font-awesome.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\font-awesome.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/font-awesome.less",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\font-awesome.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\icons.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\icons.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/icons.less",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\icons.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\larger.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\larger.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/larger.less",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\larger.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\list.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\list.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/list.less",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\list.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\mixins.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\mixins.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/mixins.less",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\mixins.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\path.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\path.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/path.less",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\path.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\rotated-flipped.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\rotated-flipped.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/rotated-flipped.less",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\rotated-flipped.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\screen-reader.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\screen-reader.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/screen-reader.less",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\screen-reader.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\stacked.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\stacked.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/stacked.less",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\stacked.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\less\\variables.less",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\less\\variables.less",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/less/variables.less",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\less\\variables.less"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_animated.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_animated.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_animated.scss",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_animated.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_bordered-pulled.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_bordered-pulled.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_bordered-pulled.scss",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_bordered-pulled.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_core.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_core.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_core.scss",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_core.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_fixed-width.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_fixed-width.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_fixed-width.scss",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_fixed-width.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_icons.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_icons.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_icons.scss",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_icons.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_larger.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_larger.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_larger.scss",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_larger.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_list.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_list.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_list.scss",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_list.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_mixins.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_mixins.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_mixins.scss",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_mixins.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_path.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_path.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_path.scss",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_path.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_rotated-flipped.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_rotated-flipped.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_rotated-flipped.scss",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_rotated-flipped.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_screen-reader.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_screen-reader.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_screen-reader.scss",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_screen-reader.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_stacked.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_stacked.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_stacked.scss",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_stacked.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\_variables.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\_variables.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/_variables.scss",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\_variables.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/font-awesome.css",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\font-awesome.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/font-awesome.css.map",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\font-awesome.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.scss",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\font-awesome\\scss\\font-awesome.scss",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/font-awesome/scss/font-awesome.scss",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\font-awesome\\scss\\font-awesome.scss"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\icofont\\css\\icofont.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\css\\icofont.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/icofont/css/icofont.css",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\icofont\\css\\icofont.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\icofont\\fonts\\icofont.eot",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.eot",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/icofont/fonts/icofont.eot",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\icofont\\fonts\\icofont.eot"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\icofont\\fonts\\icofont.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/icofont/fonts/icofont.svg",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\icofont\\fonts\\icofont.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\icofont\\fonts\\icofont.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/icofont/fonts/icofont.ttf",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\icofont\\fonts\\icofont.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\icofont\\fonts\\icofont.woff",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\icofont\\fonts\\icofont.woff",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/icofont/fonts/icofont.woff",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\icofont\\fonts\\icofont.woff"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\themify-icons\\fonts\\themify.eot",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.eot",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/themify-icons/fonts/themify.eot",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\themify-icons\\fonts\\themify.eot"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\themify-icons\\fonts\\themify.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/themify-icons/fonts/themify.svg",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\themify-icons\\fonts\\themify.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\themify-icons\\fonts\\themify.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/themify-icons/fonts/themify.ttf",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\themify-icons\\fonts\\themify.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\themify-icons\\fonts\\themify.woff",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\fonts\\themify.woff",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/themify-icons/fonts/themify.woff",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\themify-icons\\fonts\\themify.woff"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\icon\\themify-icons\\themify-icons.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\icon\\themify-icons\\themify-icons.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "icon/themify-icons/themify-icons.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\icon\\themify-icons\\themify-icons.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\auth\\logo.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\logo.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/auth/logo.png",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\images\\auth\\logo.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\auth\\logo-dark.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\logo-dark.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/auth/logo-dark.png",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\images\\auth\\logo-dark.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\auth\\Logo-small-bottom.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\Logo-small-bottom.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/auth/Logo-small-bottom.png",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\images\\auth\\Logo-small-bottom.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\auth\\Thumbs.db",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\auth\\Thumbs.db",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/auth/Thumbs.db",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\images\\auth\\Thumbs.db"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-1.jpg",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-2.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-2.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-2.jpg",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-2.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-3.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-3.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-3.jpg",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-3.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-4.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-4.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-4.jpg",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-4.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-5.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-5.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-5.jpg",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-5.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\avatar-blank.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\avatar-blank.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/avatar-blank.jpg",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\images\\avatar-blank.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\BackgroundImages.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\BackgroundImages.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/BackgroundImages.jpg",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\images\\BackgroundImages.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-130.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-130.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-130.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-130.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-r-1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-r-1.jpg",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-r-1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-r-2.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-2.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-r-2.jpg",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-r-2.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-r-3.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-r-3.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-r-3.jpg",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-r-3.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-single.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-single.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-single.jpg",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-single.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-single-1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-single-1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-single-1.jpg",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-single-1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\blog-small-bg-1.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\blog-small-bg-1.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/blog-small-bg-1.png",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\blog-small-bg-1.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\st_gallery1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/st_gallery1.jpg",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\st_gallery1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\st_gallery2.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery2.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/st_gallery2.jpg",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\st_gallery2.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\blog\\st_gallery3.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\blog\\st_gallery3.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/blog/st_gallery3.jpg",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\images\\blog\\st_gallery3.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\breadcrumb-bg.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\breadcrumb-bg.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/breadcrumb-bg.jpg",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\images\\breadcrumb-bg.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\browser\\chrome.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\chrome.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/browser/chrome.png",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\images\\browser\\chrome.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\browser\\firefox.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\firefox.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/browser/firefox.png",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\images\\browser\\firefox.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\browser\\ie.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\ie.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/browser/ie.png",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\images\\browser\\ie.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\browser\\opera.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\opera.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/browser/opera.png",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\images\\browser\\opera.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\browser\\safari.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\browser\\safari.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/browser/safari.png",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\images\\browser\\safari.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\details_close.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\details_close.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/details_close.png",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\images\\details_close.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\details_open.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\details_open.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/details_open.png",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\images\\details_open.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\faq_man.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\faq_man.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/faq_man.png",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\images\\faq_man.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\favicon.ico",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\favicon.ico",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/favicon.ico",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\images\\favicon.ico"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\logo.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\logo-blue.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo-blue.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/logo-blue.png",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo-blue.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\logo-compact.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\logo-compact.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/logo-compact.png",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo-compact.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\mCSB_buttons.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mCSB_buttons.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/mCSB_buttons.png",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mCSB_buttons.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\mega-menu\\01.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\01.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/mega-menu/01.jpg",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mega-menu\\01.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\mega-menu\\02.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\02.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/mega-menu/02.jpg",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mega-menu\\02.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\mega-menu\\03.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\mega-menu\\03.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/mega-menu/03.jpg",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\images\\mega-menu\\03.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\pi-symbol-image.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\pi-symbol-image.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/pi-symbol-image.png",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\images\\pi-symbol-image.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\select-arrow.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\select-arrow.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/select-arrow.png",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\images\\select-arrow.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\TechcronusLogo.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogo.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/TechcronusLogo.png",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\images\\TechcronusLogo.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\TechcronusLogo.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogo.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/TechcronusLogo.svg",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\images\\TechcronusLogo.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\TechcronusLogoNew.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\TechcronusLogoNew.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/TechcronusLogoNew.jpg",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\images\\TechcronusLogoNew.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\tooltip\\Euclid.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\Euclid.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/tooltip/Euclid.png",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\images\\tooltip\\Euclid.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\tooltip\\shape1.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\shape1.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/tooltip/shape1.svg",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\images\\tooltip\\shape1.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\tooltip\\tooltip1.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\tooltip\\tooltip1.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/tooltip/tooltip1.svg",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\images\\tooltip\\tooltip1.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\user-bg.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\user-bg.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/user-bg.jpg",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\images\\user-bg.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\AUSTRALIA.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\AUSTRALIA.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/AUSTRALIA.jpg",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\AUSTRALIA.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\BRAZIL.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\BRAZIL.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/BRAZIL.jpg",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\BRAZIL.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\DIGITALPEN.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\DIGITALPEN.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/DIGITALPEN.jpg",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\DIGITALPEN.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\GERMANY.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\GERMANY.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/GERMANY.jpg",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\GERMANY.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\IPAD.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\IPAD.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/IPAD.jpg",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\IPAD.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\PHONE1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/PHONE1.jpg",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\PHONE1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\PHONE2.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE2.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/PHONE2.jpg",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\PHONE2.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\PHONE3.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE3.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/PHONE3.jpg",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\PHONE3.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\PHONE4.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\PHONE4.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/PHONE4.jpg",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\PHONE4.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\prod1.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod1.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/prod1.jpg",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\prod1.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\prod2.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod2.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/prod2.jpg",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\prod2.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\prod3.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod3.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/prod3.jpg",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\prod3.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\prod4.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\prod4.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/prod4.jpg",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\prod4.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\TABLET.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\TABLET.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/TABLET.jpg",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\TABLET.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\UK.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\UK.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/UK.jpg",
       "AssetKind": "All",
@@ -2159,10 +2159,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\UK.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\USA.jpg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\USA.jpg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/USA.jpg",
       "AssetKind": "All",
@@ -2176,10 +2176,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\USA.jpg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\wather2bottom.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2bottom.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/wather2bottom.png",
       "AssetKind": "All",
@@ -2193,10 +2193,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\wather2bottom.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\wather2m.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2m.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/wather2m.png",
       "AssetKind": "All",
@@ -2210,10 +2210,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\wather2m.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\wather2star1.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2star1.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/wather2star1.png",
       "AssetKind": "All",
@@ -2227,10 +2227,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\wather2star1.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\wather2star2.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wather2star2.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/wather2star2.png",
       "AssetKind": "All",
@@ -2244,10 +2244,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\wather2star2.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\watherbottom.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherbottom.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/watherbottom.png",
       "AssetKind": "All",
@@ -2261,10 +2261,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\watherbottom.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\wathernature.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\wathernature.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/wathernature.png",
       "AssetKind": "All",
@@ -2278,10 +2278,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\wathernature.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\watherstar1.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherstar1.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/watherstar1.png",
       "AssetKind": "All",
@@ -2295,10 +2295,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\watherstar1.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\images\\widget\\watherstar2.png",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\images\\widget\\watherstar2.png",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "images/widget/watherstar2.png",
       "AssetKind": "All",
@@ -2312,10 +2312,10 @@
       "OriginalItemSpec": "wwwroot\\images\\widget\\watherstar2.png"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\bootstrap\\js\\bootstrap.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\bootstrap\\js\\bootstrap.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/bootstrap/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -2329,10 +2329,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\bootstrap-growl.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\bootstrap-growl.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/bootstrap-growl.min.js",
       "AssetKind": "All",
@@ -2346,10 +2346,10 @@
       "OriginalItemSpec": "wwwroot\\js\\bootstrap-growl.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\chart.js\\Chart.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\chart.js\\Chart.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/chart.js/Chart.js",
       "AssetKind": "All",
@@ -2363,10 +2363,10 @@
       "OriginalItemSpec": "wwwroot\\js\\chart.js\\Chart.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\common-pages.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\common-pages.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/common-pages.js",
       "AssetKind": "All",
@@ -2380,10 +2380,10 @@
       "OriginalItemSpec": "wwwroot\\js\\common-pages.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\fontawesome.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\fontawesome.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/fontawesome.min.js",
       "AssetKind": "All",
@@ -2397,10 +2397,10 @@
       "OriginalItemSpec": "wwwroot\\js\\fontawesome.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/jquery.mCustomScrollbar.concat.min.js",
       "AssetKind": "All",
@@ -2414,10 +2414,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.mCustomScrollbar.concat.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\jquery.mousewheel.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery.mousewheel.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/jquery.mousewheel.min.js",
       "AssetKind": "All",
@@ -2431,10 +2431,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.mousewheel.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\jquery\\jquery.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery\\jquery.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/jquery/jquery.min.js",
       "AssetKind": "All",
@@ -2448,10 +2448,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery\\jquery.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\jquery-slimscroll\\jquery.slimscroll.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery-slimscroll\\jquery.slimscroll.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/jquery-slimscroll/jquery.slimscroll.js",
       "AssetKind": "All",
@@ -2465,10 +2465,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-slimscroll\\jquery.slimscroll.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\jquery-ui\\jquery-ui.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\jquery-ui\\jquery-ui.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/jquery-ui/jquery-ui.min.js",
       "AssetKind": "All",
@@ -2482,10 +2482,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-ui\\jquery-ui.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\modernizr\\css-scrollbars.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\modernizr\\css-scrollbars.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/modernizr/css-scrollbars.js",
       "AssetKind": "All",
@@ -2499,10 +2499,10 @@
       "OriginalItemSpec": "wwwroot\\js\\modernizr\\css-scrollbars.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\modernizr\\modernizr.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\modernizr\\modernizr.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/modernizr/modernizr.js",
       "AssetKind": "All",
@@ -2516,10 +2516,10 @@
       "OriginalItemSpec": "wwwroot\\js\\modernizr\\modernizr.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\morris.js\\morris.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\morris.js\\morris.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/morris.js/morris.js",
       "AssetKind": "All",
@@ -2533,10 +2533,10 @@
       "OriginalItemSpec": "wwwroot\\js\\morris.js\\morris.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\morris-custom-chart.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\morris-custom-chart.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/morris-custom-chart.js",
       "AssetKind": "All",
@@ -2550,10 +2550,10 @@
       "OriginalItemSpec": "wwwroot\\js\\morris-custom-chart.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\pcoded.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\pcoded.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/pcoded.min.js",
       "AssetKind": "All",
@@ -2567,10 +2567,10 @@
       "OriginalItemSpec": "wwwroot\\js\\pcoded.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\popper.js\\popper.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\popper.js\\popper.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/popper.js/popper.min.js",
       "AssetKind": "All",
@@ -2584,10 +2584,10 @@
       "OriginalItemSpec": "wwwroot\\js\\popper.js\\popper.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\raphael\\raphael.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\raphael\\raphael.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/raphael/raphael.min.js",
       "AssetKind": "All",
@@ -2601,10 +2601,10 @@
       "OriginalItemSpec": "wwwroot\\js\\raphael\\raphael.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\script.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\script.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/script.js",
       "AssetKind": "All",
@@ -2618,10 +2618,10 @@
       "OriginalItemSpec": "wwwroot\\js\\script.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\script.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\script.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/script.min.js",
       "AssetKind": "All",
@@ -2635,10 +2635,10 @@
       "OriginalItemSpec": "wwwroot\\js\\script.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\SmoothScroll.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\SmoothScroll.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/SmoothScroll.js",
       "AssetKind": "All",
@@ -2652,10 +2652,10 @@
       "OriginalItemSpec": "wwwroot\\js\\SmoothScroll.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\js\\vertical-layout.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\js\\vertical-layout.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "js/vertical-layout.min.js",
       "AssetKind": "All",
@@ -2669,10 +2669,10 @@
       "OriginalItemSpec": "wwwroot\\js\\vertical-layout.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -2686,10 +2686,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -2703,10 +2703,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -2720,10 +2720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -2737,10 +2737,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -2754,10 +2754,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -2771,10 +2771,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -2788,10 +2788,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -2805,10 +2805,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -2822,10 +2822,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -2839,10 +2839,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -2856,10 +2856,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -2873,10 +2873,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -2890,10 +2890,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -2907,10 +2907,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -2924,10 +2924,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -2941,10 +2941,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -2958,10 +2958,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -2975,10 +2975,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -2992,10 +2992,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -3009,10 +3009,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -3026,10 +3026,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -3043,10 +3043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -3060,10 +3060,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -3077,10 +3077,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -3094,10 +3094,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -3111,10 +3111,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -3128,10 +3128,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -3145,10 +3145,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -3162,10 +3162,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -3179,10 +3179,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -3196,10 +3196,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -3213,10 +3213,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -3230,10 +3230,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -3247,10 +3247,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -3264,10 +3264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -3281,10 +3281,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -3298,10 +3298,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -3315,10 +3315,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -3332,10 +3332,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -3349,10 +3349,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -3366,10 +3366,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -3383,10 +3383,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -3400,10 +3400,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -3417,10 +3417,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -3434,10 +3434,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\all.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\all.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/all.css",
       "AssetKind": "All",
@@ -3451,10 +3451,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\all.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\all.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\all.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/all.min.css",
       "AssetKind": "All",
@@ -3468,10 +3468,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\all.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\brands.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\brands.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/brands.css",
       "AssetKind": "All",
@@ -3485,10 +3485,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\brands.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\brands.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\brands.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/brands.min.css",
       "AssetKind": "All",
@@ -3502,10 +3502,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\brands.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\fontawesome.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\fontawesome.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/fontawesome.css",
       "AssetKind": "All",
@@ -3519,10 +3519,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\fontawesome.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/fontawesome.min.css",
       "AssetKind": "All",
@@ -3536,10 +3536,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\fontawesome.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\regular.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\regular.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/regular.css",
       "AssetKind": "All",
@@ -3553,10 +3553,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\regular.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\regular.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\regular.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/regular.min.css",
       "AssetKind": "All",
@@ -3570,10 +3570,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\regular.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\solid.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\solid.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/solid.css",
       "AssetKind": "All",
@@ -3587,10 +3587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\solid.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\solid.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\solid.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/solid.min.css",
       "AssetKind": "All",
@@ -3604,10 +3604,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\solid.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/svg-with-js.css",
       "AssetKind": "All",
@@ -3621,10 +3621,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\svg-with-js.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/svg-with-js.min.css",
       "AssetKind": "All",
@@ -3638,10 +3638,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\svg-with-js.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v4-font-face.css",
       "AssetKind": "All",
@@ -3655,10 +3655,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v4-font-face.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v4-font-face.min.css",
       "AssetKind": "All",
@@ -3672,10 +3672,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v4-font-face.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v4-shims.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-shims.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v4-shims.css",
       "AssetKind": "All",
@@ -3689,10 +3689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v4-shims.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v4-shims.min.css",
       "AssetKind": "All",
@@ -3706,10 +3706,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v4-shims.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v5-font-face.css",
       "AssetKind": "All",
@@ -3723,10 +3723,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v5-font-face.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/css/v5-font-face.min.css",
       "AssetKind": "All",
@@ -3740,10 +3740,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\css\\v5-font-face.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\all.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\all.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/all.js",
       "AssetKind": "All",
@@ -3757,10 +3757,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\all.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\all.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\all.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/all.min.js",
       "AssetKind": "All",
@@ -3774,10 +3774,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\all.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\brands.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\brands.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/brands.js",
       "AssetKind": "All",
@@ -3791,10 +3791,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\brands.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\brands.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\brands.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/brands.min.js",
       "AssetKind": "All",
@@ -3808,10 +3808,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\brands.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/conflict-detection.js",
       "AssetKind": "All",
@@ -3825,10 +3825,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\conflict-detection.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/conflict-detection.min.js",
       "AssetKind": "All",
@@ -3842,10 +3842,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\conflict-detection.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\fontawesome.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\fontawesome.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/fontawesome.js",
       "AssetKind": "All",
@@ -3859,10 +3859,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\fontawesome.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/fontawesome.min.js",
       "AssetKind": "All",
@@ -3876,10 +3876,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\fontawesome.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\regular.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\regular.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/regular.js",
       "AssetKind": "All",
@@ -3893,10 +3893,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\regular.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\regular.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\regular.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/regular.min.js",
       "AssetKind": "All",
@@ -3910,10 +3910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\regular.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\solid.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\solid.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/solid.js",
       "AssetKind": "All",
@@ -3927,10 +3927,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\solid.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\solid.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\solid.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/solid.min.js",
       "AssetKind": "All",
@@ -3944,10 +3944,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\solid.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\v4-shims.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\v4-shims.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/v4-shims.js",
       "AssetKind": "All",
@@ -3961,10 +3961,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\v4-shims.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/js/v4-shims.min.js",
       "AssetKind": "All",
@@ -3978,10 +3978,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\js\\v4-shims.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\sprites\\brands.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\brands.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/sprites/brands.svg",
       "AssetKind": "All",
@@ -3995,10 +3995,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\sprites\\brands.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\sprites\\regular.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\regular.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/sprites/regular.svg",
       "AssetKind": "All",
@@ -4012,10 +4012,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\sprites\\regular.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\sprites\\solid.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\sprites\\solid.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/sprites/solid.svg",
       "AssetKind": "All",
@@ -4029,10 +4029,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\sprites\\solid.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-brands-400.ttf",
       "AssetKind": "All",
@@ -4046,10 +4046,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-brands-400.woff2",
       "AssetKind": "All",
@@ -4063,10 +4063,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-regular-400.ttf",
       "AssetKind": "All",
@@ -4080,10 +4080,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-regular-400.woff2",
       "AssetKind": "All",
@@ -4097,10 +4097,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-solid-900.ttf",
       "AssetKind": "All",
@@ -4114,10 +4114,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-solid-900.woff2",
       "AssetKind": "All",
@@ -4131,10 +4131,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-v4compatibility.ttf",
       "AssetKind": "All",
@@ -4148,10 +4148,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.ttf"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/font-awesome/webfonts/fa-v4compatibility.woff2",
       "AssetKind": "All",
@@ -4165,10 +4165,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\font-awesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -4182,10 +4182,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -4199,10 +4199,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -4216,10 +4216,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -4233,10 +4233,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -4250,10 +4250,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -4267,10 +4267,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -4284,10 +4284,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -4301,10 +4301,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -4318,10 +4318,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -4335,10 +4335,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -4352,10 +4352,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -4369,10 +4369,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\accordion\\accordion.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\accordion\\accordion.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/accordion/accordion.js",
       "AssetKind": "All",
@@ -4386,10 +4386,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\accordion\\accordion.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\accordion\\accordion.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\accordion\\accordion.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/accordion/accordion.min.js",
       "AssetKind": "All",
@@ -4403,10 +4403,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\accordion\\accordion.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\css\\amchart.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\css\\amchart.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/css/amchart.css",
       "AssetKind": "All",
@@ -4420,10 +4420,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\css\\amchart.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\css\\export.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\css\\export.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/css/export.css",
       "AssetKind": "All",
@@ -4437,10 +4437,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\css\\export.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\amcharts.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\amcharts.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/amcharts.js",
       "AssetKind": "All",
@@ -4454,10 +4454,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\amcharts.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\custom-amchart.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\custom-amchart.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/custom-amchart.js",
       "AssetKind": "All",
@@ -4471,10 +4471,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\custom-amchart.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\export.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\export.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/export.min.js",
       "AssetKind": "All",
@@ -4488,10 +4488,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\export.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/images/dragIconRoundBig.svg",
       "AssetKind": "All",
@@ -4505,10 +4505,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBig.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/images/dragIconRoundBigH.svg",
       "AssetKind": "All",
@@ -4522,10 +4522,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\images\\dragIconRoundBigH.svg"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\light.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\light.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/light.js",
       "AssetKind": "All",
@@ -4539,10 +4539,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\light.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\amchart\\js\\serial.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\amchart\\js\\serial.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/amchart/js/serial.js",
       "AssetKind": "All",
@@ -4556,10 +4556,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\amchart\\js\\serial.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\dashboard\\custom-dashboard.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\dashboard\\custom-dashboard.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/dashboard/custom-dashboard.js",
       "AssetKind": "All",
@@ -4573,10 +4573,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\dashboard\\custom-dashboard.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\google-maps\\gmaps.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\google-maps\\gmaps.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/google-maps/gmaps.js",
       "AssetKind": "All",
@@ -4590,10 +4590,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\google-maps\\gmaps.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\google-maps\\google-maps.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\google-maps\\google-maps.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/google-maps/google-maps.js",
       "AssetKind": "All",
@@ -4607,10 +4607,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\google-maps\\google-maps.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\icon-modal.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\icon-modal.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/icon-modal.js",
       "AssetKind": "All",
@@ -4624,10 +4624,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\icon-modal.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\notification\\notification.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\notification\\notification.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/notification/notification.css",
       "AssetKind": "All",
@@ -4641,10 +4641,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\notification\\notification.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\notification\\notification.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\notification\\notification.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/notification/notification.js",
       "AssetKind": "All",
@@ -4658,10 +4658,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\notification\\notification.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\todo\\todo.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\todo\\todo.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/todo/todo.js",
       "AssetKind": "All",
@@ -4675,10 +4675,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\todo\\todo.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\waves\\css\\waves.min.css",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\waves\\css\\waves.min.css",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/waves/css/waves.min.css",
       "AssetKind": "All",
@@ -4692,10 +4692,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\waves\\css\\waves.min.css"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\waves\\js\\waves.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\waves\\js\\waves.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/waves/js/waves.min.js",
       "AssetKind": "All",
@@ -4709,10 +4709,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\waves\\js\\waves.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\amcharts.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\amcharts.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/amcharts.js",
       "AssetKind": "All",
@@ -4726,10 +4726,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\amcharts.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\amcharts.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\amcharts.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/amcharts.min.js",
       "AssetKind": "All",
@@ -4743,10 +4743,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\amcharts.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\export.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\export.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/export.min.js",
       "AssetKind": "All",
@@ -4760,10 +4760,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\export.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\gauge.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\gauge.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/gauge.js",
       "AssetKind": "All",
@@ -4777,10 +4777,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\gauge.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\gauge.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\gauge.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/gauge.min.js",
       "AssetKind": "All",
@@ -4794,10 +4794,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\gauge.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\light.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\light.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/light.js",
       "AssetKind": "All",
@@ -4811,10 +4811,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\light.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\light.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\light.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/light.min.js",
       "AssetKind": "All",
@@ -4828,10 +4828,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\light.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\pie.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\pie.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/pie.js",
       "AssetKind": "All",
@@ -4845,10 +4845,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\pie.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\pie.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\pie.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/pie.min.js",
       "AssetKind": "All",
@@ -4862,10 +4862,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\pie.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\serial.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\serial.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/serial.js",
       "AssetKind": "All",
@@ -4879,10 +4879,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\serial.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\amchart\\serial.min.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\amchart\\serial.min.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/amchart/serial.min.js",
       "AssetKind": "All",
@@ -4896,10 +4896,10 @@
       "OriginalItemSpec": "wwwroot\\pages\\widget\\amchart\\serial.min.js"
     },
     {
-      "Identity": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\pages\\widget\\excanvas.js",
+      "Identity": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\pages\\widget\\excanvas.js",
       "SourceId": "CMS",
       "SourceType": "Discovered",
-      "ContentRoot": "E:\\Rohit Tiwari\\CMS Application\\CMS\\wwwroot\\",
+      "ContentRoot": "D:\\CMS_Project\\CMS\\CMS_APP\\wwwroot\\",
       "BasePath": "_content/CMS",
       "RelativePath": "pages/widget/excanvas.js",
       "AssetKind": "All",

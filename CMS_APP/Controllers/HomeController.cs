@@ -10,7 +10,9 @@ namespace CMS.Controllers
         }
 
         public IActionResult HomePage()
+
         {
+
             return View();
         }
     }

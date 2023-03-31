@@ -6,8 +6,9 @@ namespace CMSWebApi.Interfaces
     public interface IRole_Interface
     {
         Task<List<RoleModel>> GetAllRole();
-        Task<RoleModel> AddRole([FromBody] RoleModel roleModel);
-        public int UpdateRole(RoleModel roleModel);
+        public string AddRole([FromBody] RoleModel roleModel);
+
+		public int UpdateRole(RoleModel roleModel);
         public int DeleteRoleByid(RoleModel Role_ID);
         Task<List<RoleModel>> GetRolesByPage(int pageNumber, int rowsOfPage);
     }
