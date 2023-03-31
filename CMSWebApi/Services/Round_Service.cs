@@ -98,28 +98,18 @@ namespace CMSWebApi.Services
             }
 		}
 		#endregion
+
+		#region GetRoundsByPage
+		public async Task<List<RoundModel>> GetRoundsByPage(int pageNumber, int rowsOfPage)
+		{
+			var parameters = new DynamicParameters();
+			parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+			parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+			var result = _dapper.GetAll<RoundModel>("PageRoundMaster", parameters, CommandType.StoredProcedure);
+			return result;
+		}
+		#endregion
 	}
-            var result = _dapper.Execute(StoreProcedureName.DeleteRound, parameters, CommandType.StoredProcedure);
 
-            //if (result == 0)
-            //{
-            //    throw new Exception("Failed to insert designation.");
-            //}
-
-            return result;
-        }
-        #endregion
-
-        #region GetRoundsByPage
-        public async Task<List<RoundModel>> GetRoundsByPage(int pageNumber, int rowsOfPage)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-            var result = _dapper.GetAll<RoundModel>("PageRoundMaster", parameters, CommandType.StoredProcedure);
-            return result;
-        }
-        #endregion
-    }
 }

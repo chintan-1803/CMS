@@ -101,21 +101,18 @@ namespace CMSWebApi.Services
             }
 		}
 		#endregion
+
+		#region GetReasonsByPage
+		public async Task<List<ReasonModel>> GetReasonsByPage(int pageNumber, int rowsOfPage)
+		{
+			var parameters = new DynamicParameters();
+			parameters.Add("@PageNumber", pageNumber, DbType.Int32);
+			parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
+
+			var result = _dapper.GetAll<ReasonModel>("PageReasonMaster", parameters, CommandType.StoredProcedure);
+			return result;
+		}
+		#endregion
 	}
-            return result;
-        }
-        #endregion
 
-        #region GetReasonsByPage
-        public async Task<List<ReasonModel>> GetReasonsByPage(int pageNumber, int rowsOfPage)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-            var result = _dapper.GetAll<ReasonModel>("PageReasonMaster", parameters, CommandType.StoredProcedure);
-            return result;
-        }
-        #endregion
-    }
 }
