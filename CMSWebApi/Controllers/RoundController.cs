@@ -2,11 +2,13 @@
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
 using CMSWebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
-	[ApiController]
+    [Authorize]
+    [ApiController]
 	[Route("[controller]")]
 	public class RoundController : Controller
 	{

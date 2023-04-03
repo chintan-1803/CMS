@@ -4,6 +4,7 @@ using CMSWebApi.Dapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using ILogger = Serilog.ILogger;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CMSWebApi.Controllers
 {
@@ -22,6 +23,7 @@ namespace CMSWebApi.Controllers
             _dapper = dapper;
         }
 
+        /*[AllowAnonymous]*/
         [HttpPost("authenticate")]
         public IActionResult Authenticate(WebApiUserLoginEntity model)
         {

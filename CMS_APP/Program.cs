@@ -2,6 +2,8 @@ using CMS.ApplicationHelpers;
 using CMS.Constants;
 using CMS.Interfaces;
 using CMS.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,17 +29,19 @@ builder.Services.AddHttpContextAccessor();
 
 //------ Add services to pipeline also called as dependancy injection
 builder.Services.AddSingleton<HttpContextAccessor>();
-builder.Services.AddScoped<IUserService,UserService>();
-builder.Services.AddScoped<IDesignation,Designation>();
-builder.Services.AddScoped<IReason,Reason>();
-builder.Services.AddScoped<IRole,Role>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IDesignation, Designation>();
+builder.Services.AddScoped<IReason, Reason>();
+builder.Services.AddScoped<IRole, Role>();
 builder.Services.AddScoped<IRound, Round>();
-builder.Services.AddScoped<ITechnology,Technology>();
-builder.Services.AddScoped<IMasterData,MasterData>();
-
+builder.Services.AddScoped<ITechnology, Technology>();
+builder.Services.AddScoped<IMasterData, MasterData>();
 builder.Services.AddScoped<IInterviewer, Interviewer>();
-
-
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Login/Login";
+    });
 
 
 
@@ -59,9 +63,24 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Login}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=HomePage}/{id?}");
+
+
+/*app.Use(async (context, next) =>
+{
+    if (context.User == null || !context.User.Identity.IsAuthenticated)
+    {
+        await context.ChallengeAsync();
+    }
+    else
+    {
+        await next();
+    }
+});*/
 
 app.Run();
+
+
+

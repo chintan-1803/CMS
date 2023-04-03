@@ -1,11 +1,12 @@
 ﻿using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
-
+    /*[Authorize]*/
     [ApiController]
     [Route("[controller]")]
     public class InterviewerController : Controller
@@ -55,10 +56,14 @@ namespace CMSWebApi.Controllers
 
                 if (response == null)
                 {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
+                    return BadRequest(new { message = "FAILED TO ADD Interviewer" });
+                }
+                else if (response == "Unsuccessful")
+                {
+                    return BadRequest(new { message = "Interviewer email IS ALREADY EXISTS" });
                 }
 
-                return Ok("SUCCESS");
+                return Ok(new { message = "SUCCESS" });
             }
             catch (Exception ex)
             {

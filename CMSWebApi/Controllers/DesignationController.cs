@@ -1,11 +1,13 @@
 ﻿using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
-	[ApiController]
+    /*[Authorize]*/
+    [ApiController]
     [Route("[controller]")]
     public class DesignationController : Controller
     {

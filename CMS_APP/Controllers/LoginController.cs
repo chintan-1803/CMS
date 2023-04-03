@@ -1,6 +1,9 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using CMS.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
@@ -10,7 +13,8 @@ namespace CMS.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly IUserService _userService; 
+		
+		private readonly IUserService _userService; 
         private readonly IMasterData _masterdata;
 		private readonly IWebHostEnvironment _hostEnvironment;
 
@@ -22,6 +26,7 @@ namespace CMS.Controllers
 
 		}
 
+	/*	[AllowAnonymous]*/
         [HttpGet]
         public IActionResult Login()
         {
@@ -50,10 +55,22 @@ namespace CMS.Controllers
 
                     //do for all the master table .
 					var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
+                    //var designation = masterDataList.DesignationData;
 					//var designation 
-					var jsonData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-					HttpContext.Session.SetString("DesignationList", jsonData);
+					var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
+					HttpContext.Session.SetString("DesignationList",DesignationData);
 
+					var TechnologyData = JsonConvert.SerializeObject(masterDataList.TechnologyData);
+					HttpContext.Session.SetString("TechnologyList",TechnologyData);
+
+					var ReasonData = JsonConvert.SerializeObject(masterDataList.ReasonData);
+					HttpContext.Session.SetString("ReasonDataList",ReasonData);
+
+					var RoleData = JsonConvert.SerializeObject(masterDataList.RoleData);
+					HttpContext.Session.SetString("RoleDataList",RoleData);
+
+					var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
+					HttpContext.Session.SetString("RoundList",RoundData);
 
 					// Store the serialized list of MasterData objects in the session
 					//var jsonData = JsonConvert.SerializeObject(masterDataResponse.Content);
@@ -83,6 +100,15 @@ namespace CMS.Controllers
             {
                 return View();
             }
+        }
+
+        /*[AllowAnonymous]*/
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            TempData["Message"] = "You have been successfully logged out.";
+            return RedirectToAction("Login", "Login");
         }
     }
 }

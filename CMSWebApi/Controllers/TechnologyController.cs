@@ -3,10 +3,12 @@ using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
 using CMSWebApi.Models;
 using CMSWebApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class TechnologyController : Controller

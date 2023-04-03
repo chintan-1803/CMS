@@ -451,7 +451,7 @@
 				if (email.trim() === '') {
 					$('#emailError').text('Please enter an email address.');
 					return;
-				} else if (!/^\S+\S+\.\S+$/.test(email)) {
+				} else if (!/^[^\s]+[^\s]+\.[^\s]+$/.test(email)) {
 					$('#emailError').text('Please enter a valid email address.');
 					return;
 				}
@@ -485,8 +485,8 @@
 						YearOfExperience: experience,
 						TotalInterviewsConducted: interviewsConducted
 					},
+					
 					success: function (response) {
-						
 						// Handle the response data here
 						console.log(response);
 						if (response.success) {
@@ -498,11 +498,17 @@
 							location.reload(true);
 						}
 					},
-					error: function (response) {
-					  // Handle errors here
-					  console.error(response);
-					  alert('Error occurred while saving data');
-					  location.reload(true);
+					error: function(jqXHR, textStatus, errorThrown) {
+						console.error(jqXHR.responseText);
+						console.error(textStatus);
+						console.error(errorThrown);
+						if (jqXHR.status == 400 && jqXHR.responseJSON && jqXHR.responseJSON.message == "Interviewer email IS ALREADY EXISTS") {
+						alert('Email address already exists');
+						$('#emailError').text('Email address already exists');
+						} else {
+						alert('Error occurred while saving data');
+						}
+						location.reload(true);
 					}
 				});
 			});

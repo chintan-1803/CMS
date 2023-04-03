@@ -12,11 +12,17 @@
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
 
 <style type="text/css">
-   
+
 </style>
 
 <html>
 <body>
+    <div style="text-align: right;">
+        @if (TempData["Message"] != null)
+        {
+            <div class="alert alert-success mx-auto text-center" style="color: green; font-size: 20px;">@TempData["Message"]</div>
+        }
+    </div>
 
     <img class="container" src="~/images/BackgroundImages.jpg" width="100%" height="100%">
 
@@ -44,11 +50,11 @@
                 @Html.ValidationMessageFor(x=>x.Email)
             </div>
 
-            <div class="form-control pb-20" >
-                <label> <span class="fa fa-key" aria-hidden="true"/></label>
+            <div class="form-control pb-20">
+                <label> <span class="fa fa-key" aria-hidden="true" /></label>
                 <div>
-                @Html.TextBoxFor(x=>x.Password ,new {placeholder="Password",id="valPassword",type="password" ,required = "required"})
-                <span class="fas fa-eye eyespan" id="btnToggle" />
+                    @Html.TextBoxFor(x=>x.Password ,new {placeholder="Password",id="valPassword",type="password" ,required = "required"})
+                    <span class="fas fa-eye eyespan" id="btnToggle" />
                 </div>
                 @Html.ValidationMessageFor(x=>x.Password)
             </div>
@@ -69,8 +75,7 @@
 
 <script>
 
-    $('#btnToggle').click(function () 
-    {
+    $('#btnToggle').click(function () {
         if ('password' == $('#valPassword').attr('type')) {
             $('#valPassword').prop('type', 'text');
         }
