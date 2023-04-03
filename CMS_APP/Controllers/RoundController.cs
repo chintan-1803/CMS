@@ -18,16 +18,34 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Roundlist()
 		{
-			var response = _round_Interface.Roundlist();
-			var data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
-			if (data != null)
+			//pass the session
+			var jsonData = HttpContext.Session.GetString("RoundList");
+
+			List<RoundModel> data;
+			if (jsonData == null)
 			{
-				return View(data);
+
+				var response = _round_Interface.Roundlist();
+				data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
+				var RoundData = JsonConvert.SerializeObject(data);
+				HttpContext.Session.SetString("RoundList",RoundData);
 			}
 			else
 			{
-				return View();
+				data = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData);
 			}
+			return View(data);
+
+			//var response = _round_Interface.Roundlist();
+			//var data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
+			//if (data != null)
+			//{
+			//	return View(data);
+			//}
+			//else
+			//{
+			//	return View();
+			//}
 		}
 
 		[HttpPost]
@@ -42,6 +60,7 @@ namespace CMS.Controllers
 			}
 			if (response != null)
 			{
+				HttpContext.Session.Remove("RoundList");
 				return Json(new { success = true, message = "Round added successfully." });
 			}
 			else
@@ -62,6 +81,7 @@ namespace CMS.Controllers
 			}
 			if (response.Content == "\"SUCCESS\"")
 			{
+				HttpContext.Session.Remove("RoundList");
 				return Json(new { success = true, message = "Round updated successfully." });
 			}
 			if (response != null)
@@ -80,6 +100,7 @@ namespace CMS.Controllers
 			var response = _round_Interface.DeleteRounditem(Round_ID);
 			if (response != null)
 			{
+				HttpContext.Session.Remove("RoundList");
 				return Json(new { success = true, message = "Round deleted successfully." });
 			}
 			else

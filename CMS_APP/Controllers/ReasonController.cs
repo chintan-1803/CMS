@@ -3,6 +3,7 @@ using CMS.Models;
 using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Drawing.Drawing2D;
 
 namespace CMS.Controllers
 {
@@ -19,19 +20,37 @@ namespace CMS.Controllers
 		public IActionResult Reasonlist()
 
 		{
-			var response = _reason_Interface.Reasonlist();
-			var data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
+			//pass the session
+			var jsonData = HttpContext.Session.GetString("ReasonDataList");
+			
 
-			//var jsonData = HttpContext.Session.GetString("designationList");
-			//var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
-			if (data != null)
+			List<ReasonModel> data;
+			if (jsonData == null)
 			{
-				return View(data);
+				
+				var response = _reason_Interface.Reasonlist();
+				data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
+				var ReasonData = JsonConvert.SerializeObject(data);
+				HttpContext.Session.SetString("ReasonDataList",ReasonData);
 			}
 			else
 			{
-				return View();
+				data = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
 			}
+			return View(data);
+			////var response = _reason_Interface.Reasonlist();
+			////var data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
+
+			////var jsonData = HttpContext.Session.GetString("designationList");
+			////var designationList = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
+			//if (data != null)
+			//{
+			//	return View(data);
+			//}
+			//else
+			//{
+			//	return View();
+			//}
 		}
 
 		[HttpPost]
@@ -46,6 +65,7 @@ namespace CMS.Controllers
 			}
 			if (response != null)
 			{
+				HttpContext.Session.Remove("ReasonDataList");
 				return Json(new { success = true, message = "Reason added successfully." });
 			}
 			else
@@ -67,6 +87,7 @@ namespace CMS.Controllers
 			}
 			if (response.Content == "\"SUCCESS\"")
 			{
+				HttpContext.Session.Remove("ReasonDataList");
 				return Json(new { success = true, message = "Reason updated successfully."});
 			}
 			if (response != null)
@@ -86,6 +107,7 @@ namespace CMS.Controllers
 			var response = _reason_Interface.DeleteReasonitem(Reason_ID);
 			if (response != null)
 			{
+				HttpContext.Session.Remove("ReasonDataList");
 				return Json(new { success = true, message = "Reason deleted successfully."});
 			}
 			else

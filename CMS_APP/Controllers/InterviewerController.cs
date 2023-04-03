@@ -22,15 +22,18 @@ namespace CMS.Controllers
 			var response = _interviewer_Interface.Interviewerlist();
 			var data = JsonConvert.DeserializeObject<List<InterviewerModel>>(response.Content);
 
+
 			// Get the list of designations from the session
+			
+			var jsonData = HttpContext.Session.GetString("DesignationList");
+			var designationList = JsonConvert.DeserializeObject(jsonData);
 
-			var jsonData = HttpContext.Session.GetString("designationList");
-			var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
-
+			var jsonData1=HttpContext.Session.GetString("TechnologyList");
+			var technologyList = JsonConvert.DeserializeObject(jsonData1);
 			// Get the list of technologies from the session
 
-			var jsonData1 = HttpContext.Session.GetString("technologyList");
-			var technologyList = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData1);
+			//var jsonData1 = HttpContext.Session.GetString("technologyList");
+			//var technologyList = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData1);
 
 			if (data != null)
 			{

@@ -63,7 +63,7 @@ namespace CMS.ApplicationHelpers
         //MasterData Api
 		public const string MasterDatalist = "/MasterData/AllMasterDatalist";
 
-	}
+	
         //Interviewer
 
         public const string InterviewerPath = "/Interviewer/Interviewer";

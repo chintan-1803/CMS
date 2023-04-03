@@ -16,18 +16,36 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Technologylist()
 		{
-			var response = _technology_Interface.Technologylist();
-			var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
 
-			if (data != null)
+			//pass the session
+			var jsonData = HttpContext.Session.GetString("TechnologyList");
+
+			List<TechnologyModel> data;
+			if (jsonData == null)
 			{
-
-				return View(data);
+				var response = _technology_Interface.Technologylist();
+				data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
+				var TechnologyData = JsonConvert.SerializeObject(data);
+				HttpContext.Session.SetString("TechnologyList", TechnologyData);
 			}
 			else
 			{
-				return View();
+				data = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData);
 			}
+			return View(data);
+
+			//var response = _technology_Interface.Technologylist();
+			//var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
+
+			//if (data != null)
+			//{
+
+			//	return View(data);
+			//}
+			//else
+			//{
+			//	return View();
+			//}
 		}
 
 		[HttpPost]
@@ -41,6 +59,7 @@ namespace CMS.Controllers
 			}
 			if (response != null)
 			{
+				HttpContext.Session.Remove("TechnologyList");
 				return Json(new { success = true, message = "Technology added successfully." });
 			}
 			else
@@ -57,7 +76,8 @@ namespace CMS.Controllers
             var response = _technology_Interface.UpdateTechnologylist(updatetechnologyData);
             if (response.Content == "\"SUCCESS\"")
             {
-                return Json(new { success = true, message = "Technology updated successfully." });
+				HttpContext.Session.Remove("TechnologyList");
+				return Json(new { success = true, message = "Technology updated successfully." });
             }
             if (response != null)
             {
@@ -75,6 +95,7 @@ namespace CMS.Controllers
 			var response = _technology_Interface.DeleteTechnologyitem(Technology_ID);
 			if (response != null)
 			{
+				HttpContext.Session.Remove("TechnologyList");
 				return Json(new { success = true, message = "Technology deleted successfully." });
 			}
 			else

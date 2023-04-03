@@ -18,18 +18,35 @@ namespace CMS.Controllers
 		public IActionResult Rolelist()
 
 		{
-			var response = _role_Interface.Rolelist();
-			var data = JsonConvert.DeserializeObject<List<RoleModel>>(response.Content);
+			//pass the session
+			var jsonData = HttpContext.Session.GetString("RoleDataList");
 
-			if (data != null)
+			List<RoleModel> data;
+
+			if (jsonData == null)
 			{
-				//return RedirectToAction("DesignationPage", "Designation",new { data });
-				return View(data);
+				var response = _role_Interface.Rolelist();
+				data = JsonConvert.DeserializeObject<List<RoleModel>>(response.Content);
+				var RoleData = JsonConvert.SerializeObject(data);
+				HttpContext.Session.SetString("RoleDataList", RoleData);
 			}
 			else
 			{
-				return View();
+				data = JsonConvert.DeserializeObject<List<RoleModel>>(jsonData);
 			}
+			return View(data);
+			//var response = _role_Interface.Rolelist();
+			//var data = JsonConvert.DeserializeObject<List<RoleModel>>(response.Content);
+
+			//if (data != null)
+			//{
+			//	//return RedirectToAction("DesignationPage", "Designation",new { data });
+			//	return View(data);
+			//}
+			//else
+			//{
+			//	return View();
+			//}
 
 		}
 
@@ -46,6 +63,7 @@ namespace CMS.Controllers
 			}
 			if (response != null)
 			{
+				HttpContext.Session.Remove("RoleDataList");
 				return Json(new { success = true, message = "Role Added successfully." });
 			}
 			else
@@ -68,6 +86,7 @@ namespace CMS.Controllers
 			}
 			else if (response.Content == "\"SUCCESS\"")
 			{
+				HttpContext.Session.Remove("RoleDataList");
 				return Json(new { success = true, message = "Role updated successfully." });
 			}
 			else if (response != null)
@@ -89,6 +108,7 @@ namespace CMS.Controllers
 
 			if (response != null)
 			{
+				HttpContext.Session.Remove("RoleDataList");
 				return Json(new { success = true, message = "Role deleted successfully." });
 			}
 			else

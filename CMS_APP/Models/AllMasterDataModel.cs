@@ -2,7 +2,7 @@
 {
 	public class AllMasterDataModel
 	{
-		public List<DesignationModel> DesignationData { get; set; }
+		public List<DesignationModel> ? DesignationData { get; set; }
 		
 		public List<ReasonModel> ReasonData { get; set; }
 
