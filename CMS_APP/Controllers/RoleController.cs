@@ -15,16 +15,12 @@ namespace CMS.Controllers
 		{
 			_role_Interface = role_Interface;
 		}
-
 		[HttpGet]
 		public IActionResult Rolelist()
-
 		{
 			//pass the session
 			var jsonData = HttpContext.Session.GetString("RoleDataList");
-
 			List<RoleModel> data;
-
 			if (jsonData == null)
 			{
 				var response = _role_Interface.Rolelist();
@@ -49,9 +45,7 @@ namespace CMS.Controllers
 			//{
 			//	return View();
 			//}
-
 		}
-
 		[HttpPost]
 		public IActionResult AddRolelist(RoleModel roleModel)
 		{
@@ -72,14 +66,11 @@ namespace CMS.Controllers
 			{
 				return BadRequest(response);
 			}
-
 		}
 
 		[HttpPut]
 		public IActionResult UpdateRolelist(RoleModel rolemodel)
 		{
-            //var errors = ModelState.Values.SelectMany(v => v.Errors);
-
             rolemodel.Change_user = HttpContext.Session.GetString("Username");
             var response = _role_Interface.UpdateRolelist(rolemodel);
 			if (!response.IsSuccessful)
@@ -100,14 +91,10 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 		}
-
 		[HttpPut]
 		public IActionResult DeleteRolelist(RoleModel Role_ID)
 		{
-			//var errors = ModelState.Values.SelectMany(v => v.Errors);
-
 			var response = _role_Interface.DeleteRoleitem(Role_ID);
-
 			if (response != null)
 			{
 				HttpContext.Session.Remove("RoleDataList");

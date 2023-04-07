@@ -16,20 +16,14 @@ namespace CMS.Controllers
 		{
 			_reason_Interface = reason_Interface;
 		}
-
-
 		[HttpGet]
 		public IActionResult Reasonlist()
 
 		{
-			//pass the session
 			var jsonData = HttpContext.Session.GetString("ReasonDataList");
-			
-
 			List<ReasonModel> data;
 			if (jsonData == null)
 			{
-				
 				var response = _reason_Interface.Reasonlist();
 				data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
 				var ReasonData = JsonConvert.SerializeObject(data);
@@ -54,7 +48,6 @@ namespace CMS.Controllers
 			//	return View();
 			//}
 		}
-
 		[HttpPost]
 		public IActionResult AddReasonlist(ReasonModel reasonData)
 		{
@@ -101,7 +94,6 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 		}
-
 		[HttpPut]
 		public IActionResult DeleteReasonlist(ReasonModel Reason_ID)
 		{

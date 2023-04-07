@@ -26,7 +26,6 @@ namespace CMS.Controllers
 			List<RoundModel> data;
 			if (jsonData == null)
 			{
-
 				var response = _round_Interface.Roundlist();
 				data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
 				var RoundData = JsonConvert.SerializeObject(data);
@@ -37,7 +36,6 @@ namespace CMS.Controllers
 				data = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData);
 			}
 			return View(data);
-
 			//var response = _round_Interface.Roundlist();
 			//var data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
 			//if (data != null)
@@ -49,7 +47,6 @@ namespace CMS.Controllers
 			//	return View();
 			//}
 		}
-
 		[HttpPost]
 		public IActionResult AddRoundlist(RoundModel roundData)
 		{
@@ -70,7 +67,6 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 		}
-
 		[HttpPut]
 		public IActionResult UpdateRoundlist(RoundModel roundData)
 		{
@@ -95,7 +91,6 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 		}
-
 		[HttpPut]
 		public IActionResult DeleteRoundlist(RoundModel Round_ID)
 		{

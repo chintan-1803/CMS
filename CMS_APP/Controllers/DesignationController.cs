@@ -18,9 +18,7 @@ namespace CMS.Controllers
 		{
 			_designation_Interface = designation_Interface;
 			_masterdata = masterdata;
-
 		}
-
 		[HttpGet]
 		public IActionResult Designationlist()
 		{
@@ -31,14 +29,11 @@ namespace CMS.Controllers
 				var response = _designation_Interface.Designationlist();
 				var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
 			}
-			
-
 			//var masterDatalist = HttpContext.Session.GetString("masterDatalist");
 			//add designation list into session
 			//var data1 = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
 			//var jsonData = JsonConvert.SerializeObject(data1);
 			//HttpContext.Session.SetString("designationList", jsonData);
-
 			if(jsonData == null){
 				var masterDataResponse = _masterdata.AllMasterDatalist();
 				var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);

@@ -49,7 +49,6 @@ namespace CMS.Controllers
 			//	return View();
 			//}
 		}
-
 		[HttpPost]
 		public IActionResult AddTechnologylist(TechnologyModel technologyData)
 		{
@@ -68,7 +67,6 @@ namespace CMS.Controllers
 			{
 				return BadRequest(response);
 			}
-
 		}
 
 		[HttpPut]

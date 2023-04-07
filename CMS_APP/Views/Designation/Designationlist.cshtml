@@ -13,29 +13,21 @@
 	ViewData["Title"] = "DesignationPage";
 	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
-	//var jsonData1 = HttpContextAccessor.HttpContext.Session.GetString("designationList");
-	//var designationList = JsonConvert.DeserializeObject<List<CMS.Models.DesignationModel>>(jsonData1);
 }
-
-
 <link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
-
 <style type="text/css">
-
 	.btn-primary {
 		width: 45px;
 		height: 30px;
 		padding: 0; /* optional: removes padding inside button */
 	}
-
 	.btn1.btn-primary {
 		width: 98px;
 		height: 35px;
 		padding: 0; /* optional: removes padding inside button */
 	}
-
 	.btn.btn-deep-blue {
 		position: right;
 		background-color: #0047ab;
@@ -47,33 +39,25 @@
 		cursor: pointer;
 		/*color :#ADD8E6;*/
 	}
-
 	.modal-header .close {
 		font-size: 20px;
 	}
-
 	.modal-body {
 		text-align: left;
 	}
-
 	.right-align {
 		text-align: left;
 	}
-
 </style>
-
 <div class="col-xl-12 col-md-12">
-	
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 	<div class="card table-card">
 		<div class="card-header">
 			<h5>Designation List</h5>
 			<div class="card-header-right">
-
 				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
 					Create New
 				</button>
-
 				@*Add Reason--pop box*@
 				<div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
@@ -85,32 +69,21 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation</span>
 									</label>
-									<input asp-for="Designation" type="text" id="Designation" class="form-control validate"  >
-
+									<input asp-for="Designation" type="text" id="Designation" class="form-control validate" >
 									<span asp-validation-for="Designation" class="text-danger" id="DesignationError"></span>
-									
 								</div>
-
 								@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
-
 								<div class="modal-footer d-flex justify-content-center">
 									<button class="btn btn-deep-blue" id="save-btn" > Save</button>
-
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 				</div>
-				<!-- Add this to your HTML code -->
-				<!-- Success Modal -->
 				<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="success-modal-label" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-content">
@@ -129,20 +102,7 @@
 						</div>
 					</div>
 				</div>
-
-
 			</div>
-
-
-			@*<div class="card-header-right">
-			<ul class="list-unstyled card-option">
-			<li><i class="fa fa fa-wrench open-card-option"></i></li>
-			<li><i class="fa fa-window-maximize full-card"></i></li>
-			<li><i class="fa fa-minus minimize-card"></i></li>
-			<li><i class="fa fa-refresh reload-card"></i></li>
-			<li><i class="fa fa-trash close-card"></i></li>
-			</ul>
-			</div>*@
 		</div>
 		<div class="card-block">
 			<div class="table-responsive">
@@ -185,7 +145,6 @@
 											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.DesignationID">Delete</button>
 										</div>
 									</div>
-
 									<div class="text-center">
 										<div id="myModal_@data.DesignationID" class="modal fade">
 											<div class="modal-dialog modal-confirm">
@@ -195,20 +154,18 @@
 														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 													</div>
 													<div class="modal-body">
-														<input type="hidden" id="deleteDesignationID_@data.DesignationID" value="@data.DesignationID" class="form-control ">
+														<input type="hidden" id="deleteDesignationID_@data.DesignationID" value="@data.DesignationID" class="form-control">
 														<p>Do you really want to delete these record?This process cannot be undone.</p>
 													</div>
 													<div class="modal-footer justify-content-center">
 														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 														<button type="button" onclick="deletefunction(@data.DesignationID)" class="btn btn-danger" id="delete-btn">Delete</button>
-
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<!-- Update Popup-->
-
 									<div class="modal fade" id="UpdateModalCenter_@data.DesignationID" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 										<div class="modal-dialog modal-dialog-centered" role="document">
 											<div class="modal-dialog" role="document">
@@ -219,7 +176,6 @@
 															<span aria-hidden="true">&times;</span>
 														</button>
 													</div>
-
 													<div class="modal-body ">
 														<input type="hidden" id="updatedesignationid_@data.DesignationID" value="@data.DesignationID" class="form-control validate" readonly>
 
@@ -235,12 +191,10 @@
 													<div class="modal-footer d-flex justify-content-center">
 														<button class="btn btn-deep-blue" id="edit-btn" onclick="updatefunction(@data.DesignationID)"> Edit </button>
 													</div>
-
 												</div>
 											</div>
 										</div>
 									</div>
-
 								</td>
 							</tr>
 						}
@@ -253,89 +207,50 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-@*Update Designation--pop box*@
-
-
-<!--  project and team member end -->
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 	<script>
-		//var saveButton = document.getElementById('save-btn'); // add a click event listener to the Save button
-		//saveButton.addEventListener('click', function () {
-		//	// refresh the page after 500 milliseconds (0.5 seconds)
-		//	setTimeout(function () {
-		//		location.reload();
-		//	}, 5000);
-		//});
-
-
 	   function clearModal(){
             // Clear the input field values 
 		   $('#Designation').val('');
-		   $('#DesignationError').text('');
-		  
+		   $('#DesignationError').text('');  
 	   }
-	
-
-
 		$(function() {
 			// Add click event handler to the Save button
 			$('#save-btn').click(function () {
-
-			debugger
 				// Get the values of the input fields
 			var Designation = $('#Designation').val();
 			//var createdBy = $('#create_User').val();
-			
-
 			if (Designation === '') {
 				$('#DesignationError').text('Designation is required.');
 				return;
 			}
-
 			if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(Designation.trim())) {
 				$('#DesignationError').text('Designation is incorrect.Please enter a valid designation.');
 				return;
-			}
-				// Make the AJAX call
+			}// Make the AJAX call
 				$.ajax({
 					url: '/Designation/AddDesignationlist',
 					method: 'POST',
 					data: {Designation: Designation/*create_User: createdBy*/
 					},
 					success: function (response) {
-						
 						// Handle the response data here
 						console.log(response);
-
 						$('#exampleModalCenter').modal('hide');
-
-					  // $('#success-modal').modal('show');
-					  //setTimeout($('#success-modal'), 2000);
 					    alert(response.message);
 						location.reload(true);
 					},
 					error: function (response) {
 						// Handle errors here
-
-					
 					if (!response.IsSuccessful) {
 						$('#DesignationError').text("Designation already exists. Please choose a different name.");
 						return;
 						//setTimeout($('#DesignationError'), 2000);
 					}
 						console.error(errorThrown);
-
 					}
 				});
 			});
-
-			debugger
 			$('#Designation').on('input', function () {
 				// Clear the error message when the field is not empty
 				if ($(this).val() !== '') {
@@ -343,14 +258,11 @@
 				}
 			});
 		});
-
 		function updatefunction(id) {
-			
 		    var designationid = $('#updatedesignationid_' + id).val();
 			var designation = $('#updatedesignation_' + id).val();
 			//var updatedby = $('#update_change_user_' + id).val();
 			var updatedtime = $('#update_change_Date_' + id).val();
-
 			if (designation === '') {
 				// Show error message and return without making the AJAX call
 			$('#DesignationError_' + id).text('Designation is required.');
@@ -367,7 +279,6 @@
 				}, 3000);
 				return;
 			}
-
 			$.ajax({
 				url: '/Designation/UpdateDesignationlist',
 				method: 'put',
@@ -378,10 +289,7 @@
 					change_Date: updatedtime
 				},
 				success: function (response) {
-				
 					console.log(response);
-				
-
 					if (response.success) {
 						// Record created successfully
 					$('#UpdateModalCenter_' + id).modal('hide');
@@ -394,15 +302,12 @@
 						}, 3000);
 						return;
 					}
-			
 				},
 			    error: function (response) {
 
 					console.error(errorthrown);
 				}
-				
 			});
-			
 			$('#updatedesignation_' + id).on('input', function () {
 				// Clear the error message when the field is not empty
 				if ($(this).val() !== '') {
@@ -410,10 +315,8 @@
 				}
 			});
 		}
-
 		function deletefunction(id) {
 		    var designationid = $('#deleteDesignationID_' + id).val();
-			
 			$.ajax({
 			    url: '/Designation/DeleteDesignationlist',
 				method:'put',
@@ -428,7 +331,7 @@
 					location.reload();
 				},
 				error: function (response) {
-					debugger
+				
 					console.error(errorthrown);
 				}
 			});
