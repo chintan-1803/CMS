@@ -18,6 +18,10 @@
 
         public readonly static string InterviewerData = "GetAllInterviewersData";
 
+        public readonly static string InterviewsData = "GetAllInterviewsData";
+
+        public readonly static string InterviewStatusData = "GetAllInterviewStatusData";
+
         //Designation
         public readonly static string PageDesignationMasterData = "PageDesignationMaster";
 
