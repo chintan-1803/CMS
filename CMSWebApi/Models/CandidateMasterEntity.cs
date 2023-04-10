@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace CMS.Models
+namespace CMSWebApi.Models
 {
     public class CandidateMasterEntity
 	{
@@ -11,7 +11,7 @@ namespace CMS.Models
 		public int? ContactNo { set; get; }
 		public int? TechnologyId { set; get; } //Select multiple dropdown of all technology.
 		public string? Skills { set; get; }  //Select multiple dropdown of all skills based on technology.
-		public string? PrimaryLocation { set; get; }//This property is required when PrimaryLocation is not Ahmedabad.
+		//public string? PrimaryLocation { set; get; }//This property is required when PrimaryLocation is not Ahmedabad.
 		public bool? AgreeForChangeLocation { set; get; }
 		public string? City { set; get; }
 		public string? State { set; get; }

@@ -37,16 +37,9 @@ builder.Services.AddScoped<IRound, Round>();
 builder.Services.AddScoped<ITechnology, Technology>();
 builder.Services.AddScoped<IMasterData, MasterData>();
 builder.Services.AddScoped<IInterviewer, Interviewer>();
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-    .AddCookie(options =>
-    {
-        options.LoginPath = "/Login/Login";
-    });
-
-
+builder.Services.AddScoped<ICandidate, Candidate>();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

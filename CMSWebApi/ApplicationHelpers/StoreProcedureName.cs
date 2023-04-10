@@ -92,5 +92,7 @@
 
         public readonly static string DeleteInterviewStatus = "sp_Delete_InterviewStatus";
 
+        public readonly static string insertCandidateData = "sp_Insert_Candidate";
+
     }
 }
