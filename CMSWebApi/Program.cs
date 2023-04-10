@@ -39,9 +39,10 @@ builder.Services.AddScoped<ITechnology_Interface,Technology_Service>();
 builder.Services.AddScoped<IDapper,Dappers>();
 builder.Services.AddScoped<ICipherService,CipherService>();
 builder.Services.AddScoped<IAllMsaterData_Interface,AllMasterData_Service>();
-
 builder.Services.AddScoped<IInterviewer_Interface, Interviewer_Service>();
-builder.Services.AddScoped<ICandidate_Interface, Candidate_Service>();
+builder.Services.AddScoped<IInterviewStatus_Interface, InterviewStatus_Service>();
+builder.Services.AddScoped<IInterviews_Interface, Interviews_Service>();
+
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddSwaggerGen(c =>

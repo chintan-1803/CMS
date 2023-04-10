@@ -78,11 +78,19 @@
 
 		public readonly static string GetAllMasterData = "GetAllMasterData";
 
-		//Candidate
-		public readonly static string insertCandidateData = "sp_Insert_Candidate";
+        // Interviews
+        public readonly static string InsertInterview = "sp_Insert_Interviews";
 
+        public readonly static string UpdateInterview = "sp_Update_Interviews";
 
+        public readonly static string DeleteInterview = "sp_Delete_Interviews";
 
+        // Interview Status
+        public readonly static string InsertInterviewStatus = "sp_Insert_InterviewStatus";
 
-	}
+        public readonly static string UpdateInterviewStatus = "sp_Update_InterviewStatus";
+
+        public readonly static string DeleteInterviewStatus = "sp_Delete_InterviewStatus";
+
+    }
 }
