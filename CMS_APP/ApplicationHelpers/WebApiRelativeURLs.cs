@@ -74,5 +74,7 @@ namespace CMS.ApplicationHelpers
 
         public const string DeleteInterviewer = "/Interviewer/DeleteInterviewer";
 
-    }
+		public const string insertCandidates = "/Candidate/AddCandidates";
+
+	}
 }

@@ -77,7 +77,11 @@
         // Sp for GetAllMasterData 
 
 		public readonly static string GetAllMasterData = "GetAllMasterData";
-		
+
+		//Candidate
+		public readonly static string insertCandidateData = "sp_Insert_Candidate";
+
+
 
 
 	}
