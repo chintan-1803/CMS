@@ -42,6 +42,7 @@ namespace CMSWebApi.Services
                 parameters.Add("@CandidateId", interviewsModel.CandidateId, DbType.Int32);
                 parameters.Add("@InterviewerId", interviewsModel.InterviewerId, DbType.Int32);
                 parameters.Add("@TechnologyId", interviewsModel.TechnologyId, DbType.Int32);
+                parameters.Add("@IsOnline", interviewsModel.IsOnline, DbType.Boolean);
                 parameters.Add("@InterviewURL", interviewsModel.InterviewURL, DbType.String);
                 parameters.Add("@ScheduledTime", interviewsModel.ScheduledTime, DbType.DateTime);
                 parameters.Add("@StatusID", interviewsModel.StatusID, DbType.Int32);
@@ -56,9 +57,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Insert<string>(StoreProcedureName.InsertInterview, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException("FAILED TO INSERT INTERVIEW DATA.", ex);
+                throw new Exception("FAILED TO INSERT INTERVIEW DATA.", ex);
             }
         }
 
@@ -71,6 +72,7 @@ namespace CMSWebApi.Services
                 parameters.Add("@CandidateId", interviewsModel.CandidateId, DbType.Int32);
                 parameters.Add("@InterviewerId", interviewsModel.InterviewerId, DbType.Int32);
                 parameters.Add("@TechnologyId", interviewsModel.TechnologyId, DbType.Int32);
+                parameters.Add("@IsOnline", interviewsModel.IsOnline, DbType.Boolean);
                 parameters.Add("@InterviewURL", interviewsModel.InterviewURL, DbType.String);
                 parameters.Add("@ScheduledTime", interviewsModel.ScheduledTime, DbType.DateTime);
                 parameters.Add("@StatusID", interviewsModel.StatusID, DbType.Int32);
@@ -83,9 +85,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Execute(StoreProcedureName.UpdateInterview, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException("FAILED TO UPDATE INTERVIEW DATA.", ex);
+                throw new Exception("FAILED TO UPDATE INTERVIEW DATA.", ex);
             }
         }
 
@@ -99,9 +101,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Execute(StoreProcedureName.DeleteInterview, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException("FAILED TO DELETE INTERVIEW DATA.", ex);
+                throw new Exception("FAILED TO DELETE INTERVIEW DATA.", ex);
             }
         }
     }

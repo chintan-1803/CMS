@@ -97,6 +97,15 @@ namespace CMSWebApi.Controllers
 				return Ok("Something went wrong");
 			}
 		}
-		#endregion
-	}
+        #endregion
+
+        #region GetReasonsByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetReasonsByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var reasons = await _reasonService.GetReasonsByPage(pageNumber, rowsOfPage);
+            return Ok(reasons);
+        }
+        #endregion
+    }
 }

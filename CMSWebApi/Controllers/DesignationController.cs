@@ -168,7 +168,16 @@ namespace CMSWebApi.Controllers
 				return Ok("Something went wrong");
 			}
 		}
-		#endregion
+        #endregion
+
+        #region GetDesignationsByPage
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetDesignationsByPage(int pageNumber = 1, int rowsOfPage = 5)
+        {
+            var designations = await _designationService.GetDesignationsByPage(pageNumber, rowsOfPage);
+            return Ok(designations);
+        }
+        #endregion
 
     }
 }

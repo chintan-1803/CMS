@@ -56,9 +56,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Insert<string>(StoreProcedureName.InsertInterviewStatus, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-				throw new ArgumentNullException("FAILED TO INSERT INTERVIEW STATUS.", ex);
+				throw new Exception("FAILED TO INSERT INTERVIEW STATUS.", ex);
             }
        }
         #endregion
@@ -78,9 +78,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Execute(StoreProcedureName.UpdateInterviewStatus, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex) 
+            catch (Exception ex) 
             {
-                throw new ArgumentNullException("FAILED TO UPDATE INTERVIEW STATUS.", ex);
+                throw new Exception("FAILED TO UPDATE INTERVIEW STATUS.", ex);
             }
          }
         #endregion
@@ -96,9 +96,9 @@ namespace CMSWebApi.Services
                 var result = _dapper.Execute(StoreProcedureName.DeleteInterviewStatus, parameters, CommandType.StoredProcedure);
                 return result;
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException("FAILED TO DELETE INTERVIEW STATUS.", ex);
+                throw new Exception("FAILED TO DELETE INTERVIEW STATUS.", ex);
             }
         }
         #endregion

@@ -6,6 +6,7 @@
         public int CandidateId { get; set; }
         public int InterviewerId { get; set; }
         public int TechnologyId { get; set; }
+        public bool? IsOnline { get; set; }
         public string? InterviewURL { get; set; }
         public DateTime ScheduledTime { get; set; }
         public int StatusID { get; set; }
