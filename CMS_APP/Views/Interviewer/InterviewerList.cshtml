@@ -5,7 +5,7 @@
 @{
 	ViewBag.Title = "Interviewer List";
 
-	string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -464,7 +464,7 @@
 					return false;
 				}
 				if (experience.trim() === '' || isNaN(parseFloat(experience)) || parseFloat(experience) < 0) {
-					$('#experienceError' + id).text('Please enter a valid year of experience.');
+					$('#experienceError').text('Please enter a valid year of experience.');
 					return;
 				}
 				if (interviewsConducted.trim() === '' || isNaN(interviewsConducted) || interviewsConducted < 0) {
@@ -485,31 +485,60 @@
 						YearOfExperience: experience,
 						TotalInterviewsConducted: interviewsConducted
 					},
-					
+
 					success: function (response) {
-						// Handle the response data here
-						console.log(response);
-						if (response.success) {
-							alert('Data saved successfully');
+						debugger
+						 if (response.success) {
+		     					// Display a success message
+							alert(response.message);
 							location.reload(true);
 						} else {
-							alert('Email address already exists');
-							$('#emailError').text('Email address already exists');
+							// Display an error message
+							alert("Error: " + response.message);
 							location.reload(true);
 						}
 					},
-					error: function(jqXHR, textStatus, errorThrown) {
-						console.error(jqXHR.responseText);
-						console.error(textStatus);
-						console.error(errorThrown);
-						if (jqXHR.status == 400 && jqXHR.responseJSON && jqXHR.responseJSON.message == "Interviewer email IS ALREADY EXISTS") {
-						alert('Email address already exists');
-						$('#emailError').text('Email address already exists');
-						} else {
-						alert('Error occurred while saving data');
-						}
-						location.reload(true);
+					error: function (xhr, status, error) {
+						debugger
+						// Handle any errors that occur during the request
+						alert("An error occurred while processing the request. Please try again later.");
 					}
+
+					//success: function (response) {
+					//	debugger
+					//	// Handle the response data here
+					//	console.log(response);
+					//	if (response.success) {
+					//		alert('Data saved successfully');
+					//		location.reload(true);
+					//	} 
+					//	else {
+					//		alert('Email address already exists');
+					//		$('#emailError').text('Email address already exists');
+					//		location.reload(true);
+					//	}
+					//},
+					//error: function (response) {
+					//	debugger
+					// Handle errors here
+					//	if (!response.IsSuccessful) {
+					//		$('#emailError').text("Email already exists. Please try a different email.");
+					//		return;
+					//	}
+					//	console.error(errorThrown);
+					//}
+					//error: function(jqXHR, textStatus, errorThrown) {
+					//	console.error(jqXHR.responseText);
+					//	console.error(textStatus);
+					//	console.error(errorThrown);
+					//	if (jqXHR.status == 400 && jqXHR.responseJSON && jqXHR.responseJSON.message == "Interviewer email IS ALREADY EXISTS") {
+					//	alert('Email address already exists');
+					//	$('#emailError').text('Email address already exists');
+					//	} else {
+					//	alert('Error occurred while saving data');
+					//	}
+					//	location.reload(true);
+					//}
 				});
 			});
 		});

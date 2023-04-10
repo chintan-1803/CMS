@@ -60,7 +60,13 @@ namespace CMS.Controllers
 					var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
 					HttpContext.Session.SetString("RoundList",RoundData);
 
-					return RedirectToAction("HomePage", "Home");
+/*                    var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
+                    HttpContext.Session.SetString("DesignationList", InterviewerData);
+
+                    var InterviewData = JsonConvert.SerializeObject(masterDataList.InterviewData);
+                    HttpContext.Session.SetString("DesignationList", InterviewData);*/
+
+                    return RedirectToAction("HomePage", "Home");
                 }
                 else
                 {

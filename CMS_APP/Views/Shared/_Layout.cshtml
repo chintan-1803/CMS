@@ -128,15 +128,15 @@
                             <li>
                                 <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
                             </li>
-                            <li class="header-search">
-                                <div class="main-search morphsearch-search">
-                                    <div class="input-group">
-                                        <span class="input-group-addon search-close"><i class="ti-close"></i></span>
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
-                                    </div>
-                                </div>
-                            </li>
+                            @*<li class="header-search">
+                            <div class="main-search morphsearch-search">
+                            <div class="input-group">
+                            <span class="input-group-addon search-close"><i class="ti-close"></i></span>
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon search-btn"><i class="ti-search"></i></span>
+                            </div>
+                            </div>
+                            </li>*@
                             <li>
                                 <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
                                     <i class="ti-fullscreen"></i>
@@ -193,28 +193,28 @@
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
-                                    <li class="waves-effect waves-light">
-                                        <a href="#!">
-                                            <i class="ti-settings"></i> Settings
-                                        </a>
+                                    @*<li class="waves-effect waves-light">
+                                    <a href="#!">
+                                    <i class="ti-settings"></i> Settings
+                                    </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="user-profile.html">
-                                            <i class="ti-user"></i> Profile
-                                        </a>
+                                    <a href="user-profile.html">
+                                    <i class="ti-user"></i> Profile
+                                    </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="email-inbox.html">
-                                            <i class="ti-email"></i> My Messages
-                                        </a>
+                                    <a href="email-inbox.html">
+                                    <i class="ti-email"></i> My Messages
+                                    </a>
                                     </li>
                                     <li class="waves-effect waves-light">
-                                        <a href="auth-lock-screen.html">
-                                            <i class="ti-lock"></i> Lock Screen
-                                        </a>
-                                    </li>
+                                    <a href="auth-lock-screen.html">
+                                    <i class="ti-lock"></i> Lock Screen
+                                    </a>
+                                    </li>*@
                                     <li class="waves-effect waves-light">
-                                        <a href="auth-normal-sign-in.html">
+                                        <a href="@Url.Action("Logout", "Login")">
                                             <i class="ti-layout-sidebar-left"></i> Logout
                                         </a>
                                     </li>
@@ -258,130 +258,143 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="pcoded-hasmenu">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-agenda"></i></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Interview Stages</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="accordion.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Telephonic Interview</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Practical Test</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="button.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Interview on Teams</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-
-
-                                    </ul>
+                                @*<li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-agenda"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.main">Interview Stages</span>
+                                <span class="pcoded-mcaret"></span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                <li class=" ">
+                                <a href="accordion.html" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Telephonic Interview</span>
+                                <span class="pcoded-mcaret"></span>
+                                </a>
                                 </li>
+                                <li class=" ">
+                                <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.breadcrumbs">Practical Test</span>
+                                <span class="pcoded-mcaret"></span>
+                                </a>
+                                </li>
+                                <li class=" ">
+                                <a href="button.html" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Interview on Teams</span>
+                                <span class="pcoded-mcaret"></span>
+                                </a>
+                                </li>
+
+
+                                </ul>
+                                </li>*@
                             </ul>
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Candidate</div>
+                            @*<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Candidate</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="form-elements-component.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Candidate Managment</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-id-badge"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Test Results</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
+                            <li>
+                            <a href="form-elements-component.html" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Candidate Managment</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            <li>
+                            <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-id-badge"></i><b>FC</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Test Results</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
 
-                            </ul>
-
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Interviewer</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="@Url.Action("InterviewerList","Interviewer")" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Interviewer List</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
-                            </ul>
-
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Result on Chart</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="chart.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-image"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Candidate Graph</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="chart.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Interviewer Graph</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.other">Important Activity</div>
+                            </ul>*@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Important modules</span>
+                                        <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Interview modules</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                      <li class="">
-                                          <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Task Managment</span>
-                                              <span class="pcoded-mcaret"></span>
-                                          </a>
-                                      </li>
-                                      <li class="">
-                                          <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Offer Latter</span>
-                                              <span class="pcoded-mcaret"></span>
-                                          </a>
-                                      </li>
-                                      <li class="">
-                                          <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Techcronus Calendar</span>
-                                              <span class="pcoded-mcaret"></span>
-                                          </a>
-                                      </li>
-                                      <li class="">
-                                          <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                              <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                              <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">To Do List</span>
-                                              <span class="pcoded-mcaret"></span>
-                                          </a>
-                                      </li>
-                                  </ul>
+                                        <li class="">
+                                            <a href="@Url.Action("InterviewList","Interview")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Interview List</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("InterviewerList","Interviewer")" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Interviewer List</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>                                       
+                                    </ul>
                                 </li>
-
                             </ul>
+
+                            @*<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Result on Chart</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                            <a href="chart.html" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-image"></i><b>FC</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Candidate Graph</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+
+                            <li>
+                            <a href="chart.html" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>FC</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Interviewer Graph</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            </ul>*@
+
+                            <div class="pcoded-navigation-label" data-i18n="nav.category.other">Important Activity</div>
+                            @* <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu ">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-direction-alt"></i><b>M</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.main">Important modules</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                            <li class="">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Task Managment</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            <li class="">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Offer Latter</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            <li class="">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">Techcronus Calendar</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            <li class="">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                            <span class="pcoded-mtext" data-i18n="nav.menu-levels.menu-level-21">To Do List</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            </ul>
+                            </li>
+
+                            </ul>*@
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
@@ -418,7 +431,7 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
-                                    
+
                                         <li class="">
                                             <a href="@Url.Action("Rolelist","Role")" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
@@ -433,16 +446,16 @@
 
 
 
-                            <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Others</div>
+                            @*<div class="pcoded-navigation-label" data-i18n="nav.category.forms">Others</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li>
-                                    <a href="chart.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-lock"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext" data-i18n="nav.form-components.main">Log Out</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
+                            <li>
+                            <a href="chart.html" class="waves-effect waves-dark">
+                            <span class="pcoded-micon"><i class="ti-lock"></i><b>FC</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main">Log Out</span>
+                            <span class="pcoded-mcaret"></span>
+                            </a>
+                            </li>
+                            </ul>*@
 
 
                         </div>
@@ -483,378 +496,378 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         @RenderBody()
-                                       @* <div class="row">
-                                            <!-- task, page, download counter  start -->
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-purple">46</h4>
-                                                                <h6 class="text-muted m-b-0">Interviews</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-bar-chart f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-purple">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
+                                        @* <div class="row">
+                                        <!-- task, page, download counter  start -->
+                                        <div class="col-xl-3 col-md-6">
+                                        <div class="card">
+                                        <div class="card-block">
+                                        <div class="row align-items-center">
+                                        <div class="col-8">
+                                        <h4 class="text-c-purple">46</h4>
+                                        <h6 class="text-muted m-b-0">Interviews</h6>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                        <i class="fa fa-bar-chart f-28"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="card-footer bg-c-purple">
+                                        <div class="row align-items-center">
+                                        <div class="col-9">
+                                        <p class="text-white m-b-0">% change</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                        <i class="fa fa-line-chart text-white f-16"></i>
+                                        </div>
+                                        </div>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-green">13</h4>
-                                                                <h6 class="text-muted m-b-0">Selected Candidate</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-users f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-green">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-red">8</h4>
-                                                                <h6 class="text-muted m-b-0">Offer Provided</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="ti-layout-cta-btn-left f-32"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-red">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-md-6">
-                                                <div class="card">
-                                                    <div class="card-block">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-8">
-                                                                <h4 class="text-c-blue">6</h4>
-                                                                <h6 class="text-muted m-b-0">Offer Accepted</h6>
-                                                            </div>
-                                                            <div class="col-4 text-right">
-                                                                <i class="fa fa-calendar-check-o f-28"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-footer bg-c-blue">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-9">
-                                                                <p class="text-white m-b-0">% change</p>
-                                                            </div>
-                                                            <div class="col-3 text-right">
-                                                                <i class="fa fa-line-chart text-white f-16"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <!--  sale analytics end -->
-                                            <!--  project and team member start -->
-                                            <div class="col-xl-12 col-md-12">
-                                                <div class="card table-card">
-                                                    <div class="card-header">
-                                                        <h5>Candidates</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>
-                                                                            <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                        <input type="checkbox" value="">
-                                                                                        <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                            Assigned
-                                                                        </th>
-                                                                        <th>Name</th>
-                                                                        <th>Due Date</th>
-                                                                        <th class="text-right">Priority</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                        <input type="checkbox" value="">
-                                                                                        <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="d-inline-block align-middle">
-                                                                                <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                                <div class="d-inline-block">
-                                                                                    <h6>John Deo</h6>
-                                                                                    <p class="text-muted m-b-0">Graphics Designer</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Able Pro</td>
-                                                                        <td>Jun, 26</td>
-                                                                        <td class="text-right"><label class="label label-danger">Low</label></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                        <input type="checkbox" value="">
-                                                                                        <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="d-inline-block align-middle">
-                                                                                <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                                <div class="d-inline-block">
-                                                                                    <h6>Jenifer Vintage</h6>
-                                                                                    <p class="text-muted m-b-0">Web Designer</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Mashable</td>
-                                                                        <td>March, 31</td>
-                                                                        <td class="text-right"><label class="label label-primary">high</label></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                        <input type="checkbox" value="">
-                                                                                        <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="d-inline-block align-middle">
-                                                                                <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                                <div class="d-inline-block">
-                                                                                    <h6>William Jem</h6>
-                                                                                    <p class="text-muted m-b-0">Developer</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Flatable</td>
-                                                                        <td>Aug, 02</td>
-                                                                        <td class="text-right"><label class="label label-success">medium</label></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td>
-                                                                            <div class="chk-option">
-                                                                                <div class="checkbox-fade fade-in-primary">
-                                                                                    <label class="check-task">
-                                                                                        <input type="checkbox" value="">
-                                                                                        <span class="cr">
-                                                                                            <i class="cr-icon fa fa-check txt-default"></i>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="d-inline-block align-middle">
-                                                                                <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                                                <div class="d-inline-block">
-                                                                                    <h6>David Jones</h6>
-                                                                                    <p class="text-muted m-b-0">Developer</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                        <td>Guruable</td>
-                                                                        <td>Sep, 22</td>
-                                                                        <td class="text-right"><label class="label label-primary">high</label></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <div class="text-right m-r-20">
-                                                                <a href="#!" class=" b-b-primary text-primary">View all Task</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                        <div class="card">
+                                        <div class="card-block">
+                                        <div class="row align-items-center">
+                                        <div class="col-8">
+                                        <h4 class="text-c-green">13</h4>
+                                        <h6 class="text-muted m-b-0">Selected Candidate</h6>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                        <i class="fa fa-users f-28"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="card-footer bg-c-green">
+                                        <div class="row align-items-center">
+                                        <div class="col-9">
+                                        <p class="text-white m-b-0">% change</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                        <i class="fa fa-line-chart text-white f-16"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                        <div class="card">
+                                        <div class="card-block">
+                                        <div class="row align-items-center">
+                                        <div class="col-8">
+                                        <h4 class="text-c-red">8</h4>
+                                        <h6 class="text-muted m-b-0">Offer Provided</h6>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                        <i class="ti-layout-cta-btn-left f-32"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="card-footer bg-c-red">
+                                        <div class="row align-items-center">
+                                        <div class="col-9">
+                                        <p class="text-white m-b-0">% change</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                        <i class="fa fa-line-chart text-white f-16"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-3 col-md-6">
+                                        <div class="card">
+                                        <div class="card-block">
+                                        <div class="row align-items-center">
+                                        <div class="col-8">
+                                        <h4 class="text-c-blue">6</h4>
+                                        <h6 class="text-muted m-b-0">Offer Accepted</h6>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                        <i class="fa fa-calendar-check-o f-28"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="card-footer bg-c-blue">
+                                        <div class="row align-items-center">
+                                        <div class="col-9">
+                                        <p class="text-white m-b-0">% change</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                        <i class="fa fa-line-chart text-white f-16"></i>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
 
-                                            <!--  project and team member end -->
+                                        <!--  sale analytics end -->
+                                        <!--  project and team member start -->
+                                        <div class="col-xl-12 col-md-12">
+                                        <div class="card table-card">
+                                        <div class="card-header">
+                                        <h5>Candidates</h5>
+                                        <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        <div class="card-block">
+                                        <div class="table-responsive">
+                                        <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                        <th>
+                                        <div class="chk-option">
+                                        <div class="checkbox-fade fade-in-primary">
+                                        <label class="check-task">
+                                        <input type="checkbox" value="">
+                                        <span class="cr">
+                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                        </span>
+                                        </label>
+                                        </div>
+                                        </div>
+                                        Assigned
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Due Date</th>
+                                        <th class="text-right">Priority</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>
+                                        <div class="chk-option">
+                                        <div class="checkbox-fade fade-in-primary">
+                                        <label class="check-task">
+                                        <input type="checkbox" value="">
+                                        <span class="cr">
+                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                        </span>
+                                        </label>
+                                        </div>
+                                        </div>
+                                        <div class="d-inline-block align-middle">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>John Deo</h6>
+                                        <p class="text-muted m-b-0">Graphics Designer</p>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        <td>Able Pro</td>
+                                        <td>Jun, 26</td>
+                                        <td class="text-right"><label class="label label-danger">Low</label></td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                        <div class="chk-option">
+                                        <div class="checkbox-fade fade-in-primary">
+                                        <label class="check-task">
+                                        <input type="checkbox" value="">
+                                        <span class="cr">
+                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                        </span>
+                                        </label>
+                                        </div>
+                                        </div>
+                                        <div class="d-inline-block align-middle">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>Jenifer Vintage</h6>
+                                        <p class="text-muted m-b-0">Web Designer</p>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        <td>Mashable</td>
+                                        <td>March, 31</td>
+                                        <td class="text-right"><label class="label label-primary">high</label></td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                        <div class="chk-option">
+                                        <div class="checkbox-fade fade-in-primary">
+                                        <label class="check-task">
+                                        <input type="checkbox" value="">
+                                        <span class="cr">
+                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                        </span>
+                                        </label>
+                                        </div>
+                                        </div>
+                                        <div class="d-inline-block align-middle">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>William Jem</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        <td>Flatable</td>
+                                        <td>Aug, 02</td>
+                                        <td class="text-right"><label class="label label-success">medium</label></td>
+                                        </tr>
+                                        <tr>
+                                        <td>
+                                        <div class="chk-option">
+                                        <div class="checkbox-fade fade-in-primary">
+                                        <label class="check-task">
+                                        <input type="checkbox" value="">
+                                        <span class="cr">
+                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                        </span>
+                                        </label>
+                                        </div>
+                                        </div>
+                                        <div class="d-inline-block align-middle">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        </td>
+                                        <td>Guruable</td>
+                                        <td>Sep, 22</td>
+                                        <td class="text-right"><label class="label label-primary">high</label></td>
+                                        </tr>
+                                        </tbody>
+                                        </table>
+                                        <div class="text-right m-r-20">
+                                        <a href="#!" class=" b-b-primary text-primary">View all Task</a>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+
+                                        <!--  project and team member end -->
                                         </div>*@
 
 
-                                       @* <div class="row">
-                                            <div class="col-xl-4">
-                                                <div class="card ">
-                                                    <div class="card-header">
-                                                        <h5>Team Members</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-30">
-                                                            <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="align-middle m-b-10">
-                                                            <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
-                                                            <div class="d-inline-block">
-                                                                <h6>David Jones</h6>
-                                                                <p class="text-muted m-b-0">Developer</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">View all Interviewer Members</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-8">
-                                                <div class="card ">
-                                                    <div class="card-header">
-                                                        <h5>Upcoming Schedule Interviews</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">View all Interviews</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        @* <div class="row">
+                                        <div class="col-xl-4">
+                                        <div class="card ">
+                                        <div class="card-header">
+                                        <h5>Team Members</h5>
+                                        <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        <div class="card-block">
+                                        <div class="align-middle m-b-30">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        <div class="align-middle m-b-30">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        <div class="align-middle m-b-30">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        <div class="align-middle m-b-30">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        <div class="align-middle m-b-10">
+                                        <img src="~/images/faq_man.png" alt="user image" class="img-radius img-40 align-top m-r-15">
+                                        <div class="d-inline-block">
+                                        <h6>David Jones</h6>
+                                        <p class="text-muted m-b-0">Developer</p>
+                                        </div>
+                                        </div>
+                                        <div class="text-center">
+                                        <a href="#!" class="b-b-primary text-primary">View all Interviewer Members</a>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-8">
+                                        <div class="card ">
+                                        <div class="card-header">
+                                        <h5>Upcoming Schedule Interviews</h5>
+                                        <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        <div class="card-block">
+                                        <div class="text-center">
+                                        <a href="#!" class="b-b-primary text-primary">View all Interviews</a>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
                                         </div>*@
 
                                         @* <div class="row">
-                                            <div class="col-xl-6">
-                                                <div class="card ">
-                                                    <div class="card-header">
-                                                        <h5>Task List</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="card-block">
-                                                        <div class="text-center">
-                                                            <a href="#!" class="b-b-primary text-primary">View all Tasks</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6">
-                                                <div class="card ">
-                                                    <div class="card-header">
-                                                        <h5>To Do List</h5>
-                                                        <div class="card-header-right">
-                                                            <ul class="list-unstyled card-option">
-                                                                <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                                <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                                                <li><i class="fa fa-trash close-card"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="col-xl-6">
+                                        <div class="card ">
+                                        <div class="card-header">
+                                        <h5>Task List</h5>
+                                        <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        <div class="card-block">
+                                        <div class="text-center">
+                                        <a href="#!" class="b-b-primary text-primary">View all Tasks</a>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                        <div class="card ">
+                                        <div class="card-header">
+                                        <h5>To Do List</h5>
+                                        <div class="card-header-right">
+                                        <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                        </ul>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
                                         </div>*@
                                     </div>
                                     <!-- Page-body end -->

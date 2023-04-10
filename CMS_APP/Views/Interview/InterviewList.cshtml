@@ -1,0 +1,341 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using CMS.Constants;
+@using CMS.ApplicationHelpers;
+@model List<CMS.Models.InterviewModel>
+@inject IHttpContextAccessor HttpContextAccessor
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@{
+	ViewBag.Title = "Interview List";
+
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+<style type="text/css">
+	.btn-primary {
+		width: 45px;
+		height: 30px;
+		padding: 0; /* optional: removes padding inside button */
+	}
+
+	.btn1.btn-primary {
+		width: 98px;
+		height: 35px;
+		padding: 0; /* optional: removes padding inside button */
+	}
+
+	.btn.btn-deep-blue {
+		position: right;
+		background-color: #0047ab;
+		color: #fff;
+		/* border: 1px solid #ADD8E6;*/
+		padding: 10px 20px;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		/*color :#ADD8E6;*/
+	}
+
+	.modal-header .close {
+		font-size: 20px;
+	}
+
+	.modal-body {
+		text-align: left;
+	}
+
+	.right-align {
+		text-align: left;
+	}
+</style>
+<div class="col-xl-12 col-md-12">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<div class="card table-card">
+		<div class="card-header">
+			<h5>Interview List</h5>
+			<div class="card-header-right">
+				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
+					Create New
+				</button>
+				@*Add Interview--pop box*@
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-content">
+									<div class="modal-header text-center">
+										<h4 class="modal-title w-100 font-weight-bold">Create New Interview</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate ID</span>
+										</label>
+										<input asp-for="CandidateId" type="number" id="candidateId" class="form-control validate">
+										<span asp-validation-for="CandidateId" class="text-danger" id="candidateIdError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interviewer ID</span>
+										</label>
+										<input asp-for="InterviewerId" type="number" id="interviewerId" class="form-control validate">
+										<span asp-validation-for="InterviewerId" class="text-danger" id="interviewerIdError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology ID</span>
+										</label>
+										<input asp-for="TechnologyId" type="number" id="technologyId" class="form-control validate">
+										<span asp-validation-for="TechnologyId" class="text-danger" id="technologyIdError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Is Online?</span>
+										</label>
+										<input asp-for="IsOnline" type="checkbox" id="isOnline" class="form-check-input">
+										<span asp-validation-for="IsOnline" class="text-danger" id="isOnlineError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL</span>
+										</label>
+										<input asp-for="InterviewURL" type="text" id="interviewURL" class="form-control validate">
+										<span asp-validation-for="InterviewURL" class="text-danger" id="interviewURLError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Status ID</span>
+										</label>
+										<input asp-for="StatusID" type="text" id="StatusID" class="form-control validate">
+										<span asp-validation-for="StatusID" class="text-danger" id="StatusIDError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Description</span>
+										</label>
+										<input asp-for="Description" type="text" id="Description" class="form-control validate">
+										<span asp-validation-for="Description" class="text-danger" id="DescriptionError"></span>
+									</div>
+
+									<div class="modal-body mx-3">
+										<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+											<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason ID</span>
+										</label>
+										<input asp-for="ReasonID" type="text" id="ReasonID" class="form-control validate">
+										<span asp-validation-for="ReasonID" class="text-danger" id="ReasonIDError"></span>
+									</div>
+								</div>
+
+								<div class="modal-footer d-flex justify-content-center">
+									<button class="btn btn-deep-blue" id="save-btn"> Save</button>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="card-block">
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="text-center">Candidate ID</th>
+							<th class="text-center">Interviewer ID</th>
+							<th class="text-center">Technology</th>
+							<th class="text-center">Online</th>
+							<th class="text-center">Interview URL</th>
+							<th class="text-center">Status ID</th>
+							<th class="text-center">Description</th>
+							<th class="text-center">Reason ID</th>
+							 <!-- Add a blank column for the action buttons -->
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var data in Model)
+						{
+							<tr>
+								@*<td class="text-center">@data.CandidateId</td>*@
+								<td class="text-center">@data.CandidateId</td>
+								<td class="text-center">@data.InterviewerId</td>
+								<td class="text-center">@data.TechnologyId</td>
+								<td class="text-center">@data.IsOnline</td>
+								<td class="text-center">@data.InterviewURL</td>
+								<td class="text-center">@data.StatusID</td>
+								<td class="text-center">@data.Description</td>
+								<td class="text-center">@data.ReasonID</td>
+								<td class="text-right">
+									<div class="dropdown">
+										<button width="10px" height="10px" type="button" class="btn btn-primary light sharp" data-toggle="dropdown">
+											<svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24"></rect>
+													<circle fill="#000000" cx="5" cy="12" r="2"></circle>
+													<circle fill="#000000" cx="12" cy="12" r="2"></circle>
+													<circle fill="#000000" cx="19" cy="12" r="2"></circle>
+												</g>
+											</svg>
+										</button>
+										<div class="dropdown-menu">
+
+											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewerId">Edit</button>
+											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.InterviewerId">Delete</button>
+										</div>
+									</div>
+
+									<div class="text-center">
+										<div id="myModal_@data.InterviewerId" class="modal fade">
+											<div class="modal-dialog modal-confirm">
+												<div class="modal-content">
+													<div class="modal-header flex-column-vertical">
+														<h4 class="modal-title w-100" style="vertical-align: middle;">Are you sure?</h4>
+														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+													</div>
+													<div class="modal-body">
+														<input type="hidden" id="deleteInterviewerId_@data.InterviewerId" value="@data.InterviewerId" class="form-control ">
+														<p>Do you really want to delete these record? This process cannot be undone.</p>
+													</div>
+													<div class="modal-footer justify-content-center">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+														<button type="button" onclick="deletefunction(@data.InterviewerId)" class="btn btn-danger" id="delete-btn">Delete</button>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- Update Popup-->
+
+									<div class="modal fade" id="UpdateModalCenter_@data.InterviewerId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered" role="document">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-header text-center">
+														<h4 class="modal-title w-100 font-weight-bold">Edit Interviewer</h4>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+
+													<div class="modal-body">
+														<input type="hidden" id="updateinterviewerid_@data.InterviewerId" value="@data.InterviewerId" class="form-control validate" readonly>
+
+														@*<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">First Name</span>
+															</label>
+															<input asp-for="firstName" type="text" id="firstName_@data.InterviewerId" value="@data.FirstName" class="form-control validate">
+
+															<span asp-validation-for="firstName" class="text-danger" id="firstNameError_@data.InterviewerId"></span>
+
+														</div>
+
+														<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Last Name</span>
+															</label>
+															<input asp-for="lastName" type="text" id="lastName_@data.InterviewerId" value="@data.LastName" class="form-control validate">
+
+															<span asp-validation-for="lastName" class="text-danger" id="lastNameError_@data.InterviewerId"></span>
+
+														</div>
+
+														<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Email</span>
+															</label>
+															<input asp-for="email" type="text" id="email_@data.InterviewerId" value="@data.Email" class="form-control validate">
+
+															<span asp-validation-for="email" class="text-danger" id="emailError_@data.InterviewerId"></span>
+
+														</div>*@
+
+														@*<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+																<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation</span>
+															</label>
+															<select class="form-control validate designation-dropdown" required id="designation_@data.InterviewerId">
+																<option value="" disabled>Select designation</option>
+																@foreach (var designation in ViewBag.DesignationList)
+																{
+																	<option value="@designation.DesignationID" @(designation.DesignationID == data.DesignationId ? "selected" : "")>@designation.Designation</option>
+																}
+															</select>
+															<span asp-validation-for="designation" class="text-danger" id="designationError_@data.InterviewerId"></span>
+														</div>*@
+
+														@*<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+																<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology</span>
+															</label>
+															<select class="form-control validate technology-dropdown" required selected="@data.TechnologyId" id="technology_@data.InterviewerId">
+																<option value="" disabled selected>Select technology</option>
+																@foreach (var technology in ViewBag.TechnologyList)
+																{
+																	<option value="@technology.TechnologyId" @(technology.TechnologyId == data.TechnologyId ? "selected" : "")>@technology.TechnologyName</option>
+																}
+															</select>
+															<span asp-validation-for="technology" class="text-danger" id="technologyError_@data.InterviewerId"></span>
+														</div>*@
+
+														@*<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Year of Experience</span>
+															</label>
+															<input asp-for="experience" type="text" id="experience_@data.InterviewerId" value="@data.YearOfExperience" class="form-control validate">
+
+															<span asp-validation-for="experience" class="text-danger" id="experienceError_@data.InterviewerId"></span>
+
+														</div>*@
+
+														@*<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
+
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Total Interviews Conducted</span>
+															</label>
+															<input asp-for="InterviewsConducted" type="text" id="InterviewsConducted_@data.InterviewerId" value="@data.TotalInterviewsConducted" class="form-control validate">
+
+															<span asp-validation-for="InterviewsConducted" class="text-danger" id="InterviewsConductedError_@data.InterviewerId"></span>
+
+														</div>*@
+													</div>
+													<div class="modal-footer d-flex justify-content-center">
+														<button class="btn btn-deep-blue" id="edit-btn" onclick="updatefunction(@data.InterviewerId)"> Edit </button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+				<div class="text-right m-r-20">
+					<a href="#!" class=" b-b-primary text-primary">View all Task</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
