@@ -36,6 +36,7 @@ builder.Services.AddScoped<IRole, Role>();
 builder.Services.AddScoped<IRound, Round>();
 builder.Services.AddScoped<ITechnology, Technology>();
 builder.Services.AddScoped<IMasterData, MasterData>();
+builder.Services.AddScoped<IInterview, Interview>();
 builder.Services.AddScoped<IInterviewer, Interviewer>();
 builder.Services.AddScoped<ICandidate, Candidate>();
 
