@@ -80,47 +80,54 @@ namespace CMSWebApi.Dapper
             return result;
         }
 
-		// using IDbConnection db = GetDbconnection();
-		//var data = db.QueryMultiple("ESP_GetDocumentCertificate", parms, commandType: CommandType.StoredProcedure);
-		//public List<T> GetAllMaster<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-		//{
-		//	using IDbConnection db = GetDbconnection();
-		//          return db.QueryMultiple(sp, parms, commandType: commandType);
-		//}
+        // using IDbConnection db = GetDbconnection();
+        //var data = db.QueryMultiple("ESP_GetDocumentCertificate", parms, commandType: CommandType.StoredProcedure);
+        //public List<T> GetAllMaster<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        //{
+        //	using IDbConnection db = GetDbconnection();
+        //          return db.QueryMultiple(sp, parms, commandType: commandType);
+        //}
 
-		//public List<object> GetAll(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-		//{
-		//    using IDbConnection db = GetDbconnection();
-		//    var results = new List<object>();
-		//    var reader = db.QueryMultiple(sp, parms, commandType: commandType);
-		//    while (!reader.IsConsumed)
-		//    {
-		//        results.Add(reader.Read<object>());
-		//    }
-		//    return results;
-		//}
+        //public List<object> GetAll(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        //{
+        //    using IDbConnection db = GetDbconnection();
+        //    var results = new List<object>();
+        //    var reader = db.QueryMultiple(sp, parms, commandType: commandType);
+        //    while (!reader.IsConsumed)
+        //    {
+        //        results.Add(reader.Read<object>());
+        //    }
+        //    return results;
+        //}
 
-		public (List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>) GetAllMasterData(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-		{
-			using IDbConnection db = GetDbconnection();
-			List<DesignationModel> DesignationData;
-			List<ReasonModel> ReasonData;
-			List<RoleModel> RoleData;
-			List<RoundModel> RoundData;
-			List<TechnologyModel> TechnologyData;
-			using (var reader = db.QueryMultiple(sp, parms, commandType: commandType))
-			{
-				DesignationData = reader.Read<DesignationModel>().ToList();
-				ReasonData = reader.Read<ReasonModel>().ToList();
-				RoleData = reader.Read<RoleModel>().ToList();
-				RoundData = reader.Read<RoundModel>().ToList();
-				TechnologyData = reader.Read<TechnologyModel>().ToList();
-			}
-			return (DesignationData, ReasonData, RoleData, RoundData, TechnologyData);
-		}
+        public (List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>, List<InterviewStatusModel>, List<InterviewerModel>, List<CandidateMasterEntity>) GetAllMasterData(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        {
+            using IDbConnection db = GetDbconnection();
+            List<DesignationModel> DesignationData;
+            List<ReasonModel> ReasonData;
+            List<RoleModel> RoleData;
+            List<RoundModel> RoundData;
+            List<TechnologyModel> TechnologyData;
+            List<InterviewStatusModel> InterviewStatusData;
+            List<InterviewerModel> InterviewerData;
+            List<CandidateMasterEntity> CandidateMasterData;
+
+            using (var reader = db.QueryMultiple(sp, parms, commandType: commandType))
+            {
+                DesignationData = reader.Read<DesignationModel>().ToList();
+                ReasonData = reader.Read<ReasonModel>().ToList();
+                RoleData = reader.Read<RoleModel>().ToList();
+                RoundData = reader.Read<RoundModel>().ToList();
+                TechnologyData = reader.Read<TechnologyModel>().ToList();
+                InterviewStatusData = reader.Read<InterviewStatusModel>().ToList();
+                InterviewerData = reader.Read<InterviewerModel>().ToList();
+                CandidateMasterData = reader.Read<CandidateMasterEntity>().ToList();
+            }
+            return (DesignationData, ReasonData, RoleData, RoundData, TechnologyData, InterviewStatusData, InterviewerData, CandidateMasterData);
+        }
 
 
 
 
-	}
+    }
 }

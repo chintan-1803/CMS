@@ -60,11 +60,14 @@ namespace CMS.Controllers
 					var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
 					HttpContext.Session.SetString("RoundList",RoundData);
 
-/*                    var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
-                    HttpContext.Session.SetString("DesignationList", InterviewerData);
+                    var InterviewStatusData = JsonConvert.SerializeObject(masterDataList.InterviewStatusData);
+                    HttpContext.Session.SetString("InterviewStatusList", InterviewStatusData);
 
-                    var InterviewData = JsonConvert.SerializeObject(masterDataList.InterviewData);
-                    HttpContext.Session.SetString("DesignationList", InterviewData);*/
+                    var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
+                    HttpContext.Session.SetString("InterviewerList", InterviewerData);
+
+                    var CandidateMasterData = JsonConvert.SerializeObject(masterDataList.CandidateMasterData);
+                    HttpContext.Session.SetString("CandidateMasterList", CandidateMasterData);
 
                     return RedirectToAction("HomePage", "Home");
                 }

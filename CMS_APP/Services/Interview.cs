@@ -10,6 +10,9 @@ namespace CMS.Services
 {
     public class Interview : IInterview
     {
+        internal DateTime ScheduledTime;
+        internal int CandidateId;
+
         public RestResponse GetInterviewList()
         {
             var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.InterviewPath);

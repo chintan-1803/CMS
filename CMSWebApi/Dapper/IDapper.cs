@@ -14,7 +14,7 @@ namespace CMSWebApi.Dapper
         int Execute(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
         T Insert<T>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
 
-        public (List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>) GetAllMasterData(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
+        public (List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>, List<InterviewStatusModel>, List<InterviewerModel>, List<CandidateMasterEntity>) GetAllMasterData(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
 
-	}
+    }
 }

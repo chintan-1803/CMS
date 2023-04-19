@@ -74,17 +74,21 @@ namespace CMS.ApplicationHelpers
 
         public const string DeleteInterviewer = "/Interviewer/DeleteInterviewer";
 
+        //Candidate
+
 		public const string insertCandidates = "/Candidate/AddCandidates";
+
+        public const string candidateList = "/Candidate/Candidatelist";
 
 		//Interview
 
 		public const string InterviewPath = "/Interview/Interview";
 
-		public const string AddInterview = "/Interview/AddInterview";
+		public const string AddInterview = "/Interview/AddInterviewData";
 
-		public const string UpdateInterview = "/Interview/UpdateInterview";
+		public const string UpdateInterview = "/Interview/UpdateInterviewData";
 
-		public const string DeleteInterview = "/Interview/DeleteInterview";
+		public const string DeleteInterview = "/Interview/DeleteInterviewData";
 
 	}
 }

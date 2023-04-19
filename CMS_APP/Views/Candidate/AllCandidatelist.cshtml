@@ -1,0 +1,190 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Newtonsoft.Json;
+@using Microsoft.AspNetCore.Http
+@using CMS.Models
+@model List<CMS.Models.CandidateMasterEntity>
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+	ViewBag.Title = "Interviewer List";
+
+
+	//string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
+<link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
+<style type="text/css">
+	.btn-primary {
+		width: 45px;
+		height: 30px;
+		padding: 0; /* optional: removes padding inside button */
+	}
+
+	.btn1.btn-primary {
+		width: 98px;
+		height: 35px;
+		padding: 0; /* optional: removes padding inside button */
+	}
+
+	.btn.btn-deep-blue {
+		position: right;
+		background-color: #0047ab;
+		color: #fff;
+		/* border: 1px solid #ADD8E6;*/
+		padding: 10px 20px;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		/*color :#ADD8E6;*/
+	}
+
+	.modal-header .close {
+		font-size: 20px;
+	}
+
+	.modal-body {
+		text-align: left;
+	}
+
+	.right-align {
+		text-align: left;
+	}
+
+	iframe {
+		display: block;
+		margin: 0 auto;
+	}
+</style>
+
+<div class="col-xl-12 col-md-12">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<div class="card table-card">
+		<div class="card-header">
+			<h5>Candidate List</h5>
+			<div class="card-header-right">
+				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
+					Create New
+				</button>
+				@*Add Reason--pop box*@
+			</div>
+		</div>
+		<div class="card-block">
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="text-center">First Name</th>
+							<th class="text-center">Last Name</th>
+							<th class="text-center">Email</th>
+							<th class="text-center">Technology</th>
+							<th class="text-center">Resume</th>
+							<th class="text-center">Experience</th>
+							<th></th> <!-- Add a blank column for the action buttons -->
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var data in Model)
+						{
+							<tr>
+								<td class="text-center">@data.firstName</td>
+								<td class="text-center">@data.lastName</td>
+								<td class="text-center">@data.Email</td>
+								<td class="text-center">@data.TechnologyName</td>
+								<td class="text-center">
+									<button type="button" data-toggle="modal" data-target="#viewModalCenter_@data.CandidateId">View Resume </button>
+									<div class="text-center">
+										<div id="viewModalCenter_@data.CandidateId" class="modal fade">
+											<div class="modal-dialog modal-lg">
+												<div class="modal-content" style="width:100%; height:50%;">
+													@*<div class="modal-header flex-column-vertical">
+														<h4 class="modal-title w-100" style="vertical-align: middle;">Resume</h4>
+														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+													</div>*@
+
+													<iframe src="data:application/pdf;base64,@data.resume" style="width:1000px; height:600px;" align="middle" scrolling="no" id="target"></iframe>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="text-center">@(data.IsExperience ? "Yes" : "No") </td>
+								<td class="text-right">
+									<div class="dropdown">
+										<button width="10px" height="10px" type="button" class="btn btn-primary light sharp" data-toggle="dropdown">
+											<svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
+												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<rect x="0" y="0" width="24" height="24"></rect>
+													<circle fill="#000000" cx="5" cy="12" r="2"></circle>
+													<circle fill="#000000" cx="12" cy="12" r="2"></circle>
+													<circle fill="#000000" cx="19" cy="12" r="2"></circle>
+												</g>
+											</svg>
+										</button>
+										<div class="dropdown-menu">
+
+											<button type="button" class="dropdown-item" data-toggle="modal" @*data-target="#UpdateModalCenter_@data.InterviewerId"*@>Edit</button>
+											<button type="button" class="dropdown-item" data-toggle="modal" @* data-target="#myModal_@data.InterviewerId"*@>Delete</button>
+										</div>
+									</div>
+									
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+				@*<div class="text-right m-r-20">
+					<a href="#!" class=" b-b-primary text-primary">View all Task</a>
+				</div>*@
+			</div>
+		</div>
+	</div>
+</div>
+@*<script>
+	var div = document.getElementById("target");
+	div.onload = function () {
+		div.style.height =
+			div.contentWindow.document.body.scrollHeight + 'px';
+	}
+</script>*@
+@*<script>
+
+	debugger
+	// Loop through each row in the table and convert the Base64 string to a PDF view
+	$('resume').each(function () {
+		const base64String = $(this).find('td:nth-child(5)').text(); // Replace 5 with the index of the resume column
+		const canvas = document.createElement('canvas');
+		const pdf = new jsPDF();
+
+		// Convert the Base64 string to an ArrayBuffer
+		const byteCharacters = atob(base64String);
+		const byteNumbers = new Array(byteCharacters.length);
+		for (let i = 0; i < byteCharacters.length; i++) {
+			byteNumbers[i] = byteCharacters.charCodeAt(i);
+		}
+		const byteArray = new Uint8Array(byteNumbers);
+
+		// Load the PDF from the ArrayBuffer and render it on the canvas
+		pdf.load(byteArray);
+		pdf.getPage(1).then(function (page) {
+			const viewport = page.getViewport(1.0);
+			canvas.width = viewport.width;
+			canvas.height = viewport.height;
+			const ctx = canvas.getContext('2d');
+			const renderContext = {
+				canvasContext: ctx,
+				viewport: viewport
+			};
+			page.render(renderContext);
+
+			// Replace the Base64 string with the rendered PDF view
+			$(this).find('td:nth-child(5)').html(canvas);
+		});
+	});
+
+</script>*@

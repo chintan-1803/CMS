@@ -21,11 +21,11 @@ namespace CMSWebApi.Services
 			_cipherService = cipherService;
 		}
 
-		public Task<(List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>)> GetAllModels()
-		{
-			var result = _dapper.GetAllMasterData(StoreProcedureName.GetAllMasterData, null, System.Data.CommandType.StoredProcedure);
-			return Task.FromResult(result);
-		}
+        public Task<(List<DesignationModel>, List<ReasonModel>, List<RoleModel>, List<RoundModel>, List<TechnologyModel>, List<InterviewStatusModel>, List<InterviewerModel>, List<CandidateMasterEntity>)> GetAllModels()
+        {
+            var result = _dapper.GetAllMasterData(StoreProcedureName.GetAllMasterData, null, System.Data.CommandType.StoredProcedure);
+            return Task.FromResult(result);
+        }
 
-	}
+    }
 }

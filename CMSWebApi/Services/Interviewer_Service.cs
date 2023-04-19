@@ -39,6 +39,7 @@ namespace CMSWebApi.Services
             parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
             parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
             parameters.Add("@Email", interviewerModel.Email, DbType.String);
+            parameters.Add("@Password", interviewerModel.Password, DbType.String);
             parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
 			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
 			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);
@@ -64,7 +65,8 @@ namespace CMSWebApi.Services
 			parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
 			parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
 			parameters.Add("@Email", interviewerModel.Email, DbType.String);
-			parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
+            parameters.Add("@Password", interviewerModel.Password, DbType.String);
+            parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
 			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
 			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);
 			parameters.Add("@TotalInterviewsConducted", interviewerModel.TotalInterviewsConducted, DbType.Int32);

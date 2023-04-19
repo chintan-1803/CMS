@@ -53,7 +53,7 @@ namespace CMS.Controllers
 		public IActionResult AddInterviewerlist(InterviewerModel interviewerData)
 		{
 			var response = _interviewer_Interface.AddInterviewerlist(interviewerData);
-			if (response.Content == "{\"message\":\"SUCCESS\"}")
+			if (response.Content == "\"SUCCESS\"")
 			{
 				return Json(new { success = true, message = "Interviewer added successfully." });
 			}
@@ -68,56 +68,6 @@ namespace CMS.Controllers
 				return Json(new { success = false, message = errorMessage });
 			}
 		}
-
-		/*public IActionResult AddInterviewerlist(InterviewerModel interviewerData)
-        {
-
-            var response = _interviewer_Interface.AddInterviewerlist(interviewerData);
-            *//*if (!response.IsSuccessful)
-			{
-				return Json(new { response.Content });
-
-			}
-			if (response != null)
-			{
-				return Json(new { });
-			}
-			else
-			{
-				return BadRequest(response);
-			}*/
-		/*if (!response.IsSuccessful)
-		{
-			//return Json(new {response});
-			return BadRequest(response);
-		}*//*
-		if (response.Content == "\"SUCCESS\"")
-		{
-			//HttpContext.Session.Remove("masterDatalist");
-			return Json(new { success = true, message = "Interviewer saved successfully." });
-		}
-		if (response.Content == "\"Unsuccessful\"")
-		{
-			return Json(new { success = false*//*, message = "Designation updated successfully."*//* });
-		}
-		else
-		{
-			return BadRequest(response);
-		}
-	}*/
-
-		/*private bool IsValidEmail(string email)
-		{
-			try
-			{
-				var addr = new System.Net.Mail.MailAddress(email);
-				return addr.Address == email;
-			}
-			catch
-			{
-				return false;
-			}
-		}*/
 
 		[HttpPut]
         public IActionResult UpdateInterviewerlist(InterviewerModel updateInterviewerData)

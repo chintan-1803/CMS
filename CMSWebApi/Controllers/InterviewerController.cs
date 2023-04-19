@@ -60,10 +60,10 @@ namespace CMSWebApi.Controllers
                 }
                 else if (response == "Unsuccessful")
                 {
-                    return BadRequest(new { message = "Interviewer email IS ALREADY EXISTS" });
+                    return BadRequest(response);
                 }
 
-                return Ok(new { message = "SUCCESS" });
+                return Ok("SUCCESS");
             }
             catch (Exception ex)
             {

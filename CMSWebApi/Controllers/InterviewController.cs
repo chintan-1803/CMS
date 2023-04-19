@@ -45,9 +45,11 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region AddInterview
-        [HttpPost("AddInterview")]
+        [HttpPost("AddInterviewData")]
         public IActionResult AddInterviewData(InterviewsModel interviewsModel)
         {
+            interviewsModel.StatusID = 1;
+            interviewsModel.ReasonID = 38;
             var response = _interviewsService.AddInterviewData(interviewsModel);
 
             if (response == "Unsuccessful")
@@ -55,12 +57,12 @@ namespace CMSWebApi.Controllers
                 return BadRequest(new { message = "FAILED TO ADD Interview" });
             }
 
-            return Ok(new { message = "SUCCESS" });
+            return Ok("SUCCESS");
         }
         #endregion
 
         #region UpdateInterview
-        [HttpPut("UpdateInterview")]
+        [HttpPut("UpdateInterviewData")]
         public IActionResult UpdateInterviewData(InterviewsModel interviewsModel)
         {
             var response = _interviewsService.UpdateInterviewData(interviewsModel);
@@ -81,7 +83,7 @@ namespace CMSWebApi.Controllers
         #endregion
 
         #region DeleteInterview
-        [HttpPut("DeleteInterview")]
+        [HttpPut("DeleteInterviewData")]
         public IActionResult DeleteInterviewDataById(InterviewsModel InterviewId)
         {
             var response = _interviewsService.DeleteInterviewDataById(InterviewId);

@@ -80,7 +80,7 @@ namespace CMSWebApi.Services
                 parameters.Add("@ReasonID", interviewsModel.ReasonID, DbType.Int32);
                 parameters.Add("@change_user", interviewsModel.change_user, DbType.String);
                 //parameters.Add("@change_date", interviewsModel.change_date, DbType.DateTime);
-                parameters.Add("@IsDeleted", interviewsModel.IsDeleted, DbType.Boolean);
+                //parameters.Add("@IsDeleted", interviewsModel.IsDeleted, DbType.Boolean);
 
                 var result = _dapper.Execute(StoreProcedureName.UpdateInterview, parameters, CommandType.StoredProcedure);
                 return result;

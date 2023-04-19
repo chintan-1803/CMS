@@ -8,6 +8,7 @@
         public int ?TechnologyId { get; set; }
         public string ?TechnologyName { get; set; }
         public string? Email { get; set; }
+        public string? Password { get; set; }
         public float ?YearOfExperience { get; set; }
         public int? DesignationId { get; set; }
         public string ?Designation { get; set; }

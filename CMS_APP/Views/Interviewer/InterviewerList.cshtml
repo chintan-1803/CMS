@@ -55,19 +55,19 @@
 </style>
 
 <div class="col-xl-12 col-md-12">
-	
+
 	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 	<div class="card table-card">
 		<div class="card-header">
 			<h5> Interviewer List </h5>
 			<div class="card-header-right">
 
-				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" >
+				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
 					Create New
 				</button>
-				
+
 				@*Add Interviewer--pop box*@
-				<div class="modal fade" id="exampleModalCenter"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -77,7 +77,7 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-
+								
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
 
@@ -86,7 +86,7 @@
 									<input asp-for="firstName" type="text" id="firstName" class="form-control validate">
 
 									<span asp-validation-for="firstName" class="text-danger" id="firstNameError"></span>
-									
+
 								</div>
 
 								<div class="modal-body mx-3">
@@ -112,6 +112,21 @@
 								</div>
 
 								<div class="modal-body mx-3">
+									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-password">
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Password</span>
+									</label>
+									<div class="input-group">
+										<input asp-for="password" type="text" id="password" class="form-control validate">
+										<div class="input-group-append">
+											<button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
+													<i class="fa fa-eye-slash"></i>
+											</button>
+										</div>
+									</div>
+									<span asp-validation-for="password" class="text-danger" id="passwordError"></span>
+								</div>
+
+								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
 										<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation</span>
 									</label>
@@ -119,7 +134,7 @@
 										<option value="" disabled selected>Select designation</option>
 										@foreach (var designation in ViewBag.DesignationList)
 										{
-											<option  value="@designation.DesignationID">@designation.Designation</option>
+											<option value="@designation.DesignationID">@designation.Designation</option>
 										}
 									</select>
 
@@ -167,7 +182,7 @@
 								@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 
 								<div class="modal-footer d-flex justify-content-center">
-									<button class="btn btn-deep-blue" id="save-btn" > Save</button>
+									<button class="btn btn-deep-blue" id="save-btn"> Save</button>
 
 								</div>
 							</div>
@@ -184,6 +199,7 @@
 							<th class="text-center">First Name</th>
 							<th class="text-center">Last Name</th>
 							<th class="text-center">Email</th>
+							<th class="text-center">Password</th>
 							<th class="text-center">Technology</th>
 							<th class="text-center">Year of Experience</th>
 							<th class="text-center">Designation</th>
@@ -196,16 +212,17 @@
 						{
 							<tr>
 								@*<td class="text-center">
-									<div class="d-inline-block align-middle">
-										<div class="d-inline-block">
-											<h6>@data.FirstName</h6>
-										</div>
-									</div>
-								</td>*@
-								
+							<div class="d-inline-block align-middle">
+							<div class="d-inline-block">
+							<h6>@data.FirstName</h6>
+							</div>
+							</div>
+							</td>*@
+
 								<td class="text-center">@data.FirstName</td>
 								<td class="text-center">@data.LastName</td>
 								<td class="text-center">@data.Email</td>
+								<td class="text-center">@data.Password</td>
 								<td class="text-center">@data.TechnologyName</td>
 								<td class="text-center">@data.YearOfExperience</td>
 								<td class="text-center">@data.Designation</td>
@@ -293,10 +310,25 @@
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Email</span>
 															</label>
-															<input asp-for="email" type="text" id="email_@data.InterviewerId" value ="@data.Email"class="form-control validate">
+															<input asp-for="email" type="text" id="email_@data.InterviewerId" value="@data.Email" class="form-control validate">
 
 															<span asp-validation-for="email" class="text-danger" id="emailError_@data.InterviewerId"></span>
 
+														</div>
+
+														<div class="modal-body">
+															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-password">
+																<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Password</span>
+															</label>
+															<div class="input-group">
+																<input asp-for="password" type="password" id="password_@data.InterviewerId" value="@data.Password" class="form-control validate">
+																<div class="input-group-append">
+																	<button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility(this.parentNode.parentNode.querySelector('input'), this.querySelector('.fa'))">
+																		<i class="fa fa-eye-slash"></i>
+																	</button>
+																</div>
+															</div>
+															<span asp-validation-for="password" class="text-danger" id="passwordError_@data.InterviewerId"></span>
 														</div>
 
 														<div class="modal-body">
@@ -379,17 +411,56 @@
 <!--  project and team member end -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- 
+
 	<script>
-		
+
+		function clearModal() {
+			// Clear the input field values
+			$('#firstName').val('');
+			$("#lastName").val('');
+			$("#email").val('');
+			$("#password").val('');
+			$("#designation").val('');
+			$("#technology").val('');
+			$("#experience").val('');
+			$("#InterviewsConducted").val('');
+		}
+
+		function togglePassword() {
+			const passwordInput = document.getElementById("password");
+			const icon = document.querySelector(".fa-eye-slash");
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+				icon.classList.remove("fa-eye-slash");
+				icon.classList.add("fa-eye");
+			} else {
+				passwordInput.type = "password";
+				icon.classList.remove("fa-eye");
+				icon.classList.add("fa-eye-slash");
+			}
+		}
+
+		function togglePasswordVisibility(inputElement, iconElement) {
+			if (inputElement.type === "password") {
+				inputElement.type = "text";
+				iconElement.classList.remove("fa-eye-slash");
+				iconElement.classList.add("fa-eye");
+			} else {
+				inputElement.type = "password";
+				iconElement.classList.remove("fa-eye");
+				iconElement.classList.add("fa-eye-slash");
+			}
+		}
+
 		$(function () {
 			// Add click event handler to the Save button
 			$('#save-btn').click(function () {
-
+				
 				// Get the values of the input fields
 				var firstName = $('#firstName').val();
 				var lastName = $('#lastName').val();
 				var email = $('#email').val();
+				var password = $('#password').val();
 				var designation = $('#designation').val();
 				var technology = $('#technology').val();
 				var experience = $('#experience').val();
@@ -411,6 +482,12 @@
 					// Clear the error message when the field is not empty
 					if ($(this).val() !== '') {
 						$('#emailError').text('');
+					}
+				});
+				$('#password').on('input', function () {
+					// Clear the error message when the field is not empty
+					if ($(this).val() !== '') {
+						$('#passwordError').text('');
 					}
 				});
 				$('#designation').on('input', function () {
@@ -439,13 +516,13 @@
 				});
 
 				// Validate the input fields
-			
+
 				if (firstName.trim() === '' || !/^[a-zA-Z]+$/.test(firstName)) {
-					$('#firstNameError').text('Please enter a valid first name without spaces, numbers or special characters.');
+					$('#firstNameError').text('Valid first name required: no spaces, numbers, or special characters.');
 					return;
 				}
 				if (lastName.trim() === '' || !/^[a-zA-Z]+$/.test(lastName)) {
-					$('#lastNameError').text('Please enter a valid last name without spaces, numbers or special characters.');
+					$('#lastNameError').text('Valid last name required: no spaces, numbers, or special characters.');
 					return;
 				}
 				if (email.trim() === '') {
@@ -453,6 +530,16 @@
 					return;
 				} else if (!/^[^\s]+[^\s]+\.[^\s]+$/.test(email)) {
 					$('#emailError').text('Please enter a valid email address.');
+					return;
+				}
+				if (password.trim() === '') {
+					$('#passwordError').text('Please enter a password.');
+					return;
+				} else if (password.length < 8) {
+					$('#passwordError').text('Password should be at least 8 characters long.');
+					return;
+				} else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[^a-zA-Z0-9]/.test(password)) {
+					$('#passwordError').text('Password must have lowercase, uppercase, digit, and special character.');
 					return;
 				}
 				if ($('#designation').val() == null || $('#designation').val() == '') {
@@ -480,6 +567,7 @@
 						FirstName: firstName,
 						LastName: lastName,
 						Email: email,
+						Password : password,
 						DesignationId: designation,
 						TechnologyId: technology,
 						YearOfExperience: experience,
@@ -487,9 +575,8 @@
 					},
 
 					success: function (response) {
-						debugger
-						 if (response.success) {
-		     					// Display a success message
+						if (response.success) {
+							// Display a success message
 							alert(response.message);
 							location.reload(true);
 						} else {
@@ -499,55 +586,20 @@
 						}
 					},
 					error: function (xhr, status, error) {
-						debugger
 						// Handle any errors that occur during the request
 						alert("An error occurred while processing the request. Please try again later.");
 					}
-
-					//success: function (response) {
-					//	debugger
-					//	// Handle the response data here
-					//	console.log(response);
-					//	if (response.success) {
-					//		alert('Data saved successfully');
-					//		location.reload(true);
-					//	} 
-					//	else {
-					//		alert('Email address already exists');
-					//		$('#emailError').text('Email address already exists');
-					//		location.reload(true);
-					//	}
-					//},
-					//error: function (response) {
-					//	debugger
-					// Handle errors here
-					//	if (!response.IsSuccessful) {
-					//		$('#emailError').text("Email already exists. Please try a different email.");
-					//		return;
-					//	}
-					//	console.error(errorThrown);
-					//}
-					//error: function(jqXHR, textStatus, errorThrown) {
-					//	console.error(jqXHR.responseText);
-					//	console.error(textStatus);
-					//	console.error(errorThrown);
-					//	if (jqXHR.status == 400 && jqXHR.responseJSON && jqXHR.responseJSON.message == "Interviewer email IS ALREADY EXISTS") {
-					//	alert('Email address already exists');
-					//	$('#emailError').text('Email address already exists');
-					//	} else {
-					//	alert('Error occurred while saving data');
-					//	}
-					//	location.reload(true);
-					//}
 				});
 			});
 		});
 
 		function updatefunction(id) {
+			debugger
 			var InterviewerId = $('#updateinterviewerid_' + id).val();
 			var FirstName = $('#firstName_' + id).val();
 			var LastName = $('#lastName_' + id).val();
 			var Email = $('#email_' + id).val();
+			var Password = $('#password_' + id).val();
 			var Designation = $('#designation_' + id).val();
 			var Technology = $('#technology_' + id).val();
 			var YearOfExperience = $('#experience_' + id).val();
@@ -556,6 +608,7 @@
 			$('#firstNameError_' + id).text('');
 			$('#lastNameError_' + id).text('');
 			$('#emailError_' + id).text('');
+			$('#passwordError_' + id).text('');
 			$('#designationError_' + id).text('');
 			$('#technologyError_' + id).text('');
 			$('#experienceError_' + id).text('');
@@ -569,6 +622,9 @@
 			});
 			$('#email_' + id).on('input', function () {
 				$('#emailError_' + id).text('');
+			});
+			$('#password_' + id).on('input', function () {
+				$('#passwordError_' + id).text('');
 			});
 			$('#designation_' + id).on('input', function () {
 				$('#designationError_' + id).text('');
@@ -585,26 +641,36 @@
 
 
 			if (FirstName.trim() === '' || !/^[a-zA-Z]+$/.test(FirstName)) {
-				$('#firstNameError_'+ id).text('Please enter a valid first name without spaces, numbers or special characters.');
+				$('#firstNameError_' + id).text('Valid first name required: no spaces, numbers, or special characters.');
 				return;
 			}
 			if (LastName.trim() === '' || !/^[a-zA-Z]+$/.test(LastName)) {
-				$('#lastNameError_'+ id).text('Please enter a valid last name without spaces, numbers or special characters.');
+				$('#lastNameError_' + id).text('Valid last name required: no spaces, numbers, or special characters.');
 				return;
 			}
 			if (Email.trim() === '') {
-				$('#emailError_'+ id).text('Please enter an email address.');
+				$('#emailError_' + id).text('Please enter an email address.');
 				return;
 			} else if (!/^\S+\S+\.\S+$/.test(Email)) {
-				$('#emailError_'+ id).text('Please enter a valid email address.');
+				$('#emailError_' + id).text('Please enter a valid email address.');
 				return;
 			}
-			if ($('#designation_'+id).val() == null || $('#designation_'+id).val() == '') {
-				$('#designationError_'+id).text('Please select a designation.');
+			if (Password.trim() === '') {
+				$('#passwordError_' + id).text('Please enter a password.');
+				return;
+			} else if (Password.length < 8) {
+				$('#passwordError_' + id).text('Password should be at least 8 characters long.');
+				return;
+			} else if (!/[a-z]/.test(Password) || !/[A-Z]/.test(Password) || !/[0-9]/.test(Password) || !/[^a-zA-Z0-9]/.test(Password)) {
+				$('#passwordError_' + id).text('Password must have lowercase, uppercase, digit, and special character.');
+				return;
+			}
+			if ($('#designation_' + id).val() == null || $('#designation_' + id).val() == '') {
+				$('#designationError_' + id).text('Please select a designation.');
 				return false;
 			}
-			if ($('#technology_'+id).val() == null || $('#technology_'+id).val() == '') {
-				$('#technologyError_'+id).text('Please select a technology.');
+			if ($('#technology_' + id).val() == null || $('#technology_' + id).val() == '') {
+				$('#technologyError_' + id).text('Please select a technology.');
 				return false;
 			}
 			if (YearOfExperience.trim() === '' || isNaN(parseFloat(YearOfExperience)) || parseFloat(YearOfExperience) < 0) {
@@ -624,13 +690,13 @@
 					FirstName: FirstName,
 					LastName: LastName,
 					Email: Email,
+					Password: Password,
 					DesignationId: Designation,
 					TechnologyId: Technology,
 					YearOfExperience: YearOfExperience,
 					TotalInterviewsConducted: InterviewsConducted
 				},
 				success: function (response) {
-					
 					// Handle the response data here
 					console.log(response);
 					if (response.success) {
@@ -639,7 +705,7 @@
 						location.reload(true);
 					} else {
 						alert('Data already exists');
-					location.reload(true);
+						location.reload(true);
 					}
 				},
 				error: function (response) {
@@ -649,8 +715,8 @@
 				}
 			});
 		}
-		
-	
+
+
 		function deletefunction(id) {
 			var InterviewerId = $('#deleteInterviewerId_' + id).val();
 

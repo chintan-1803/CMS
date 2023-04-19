@@ -23,7 +23,7 @@ namespace CMSWebApi.Controllers
 		[HttpPost("AddCandidates")]
 		public IActionResult AddCandidates(CandidateMasterEntity candidatedata)
 		{
-			var response = _candidateService.AddCandidate(candidatedata);
+			var response = _candidateService.addCandidate(candidatedata);
 
 			//if (response == null)
 			//{
@@ -31,13 +31,38 @@ namespace CMSWebApi.Controllers
 			//}
 			if (response == "Unsuccessful")
 			{
-				return BadRequest(new { message = "Reason IS ALREADY EXISTS" });
+				return BadRequest(response);
 			}
 			return Ok("SUCCESS");
 		}
-		public IActionResult Index()
+
+
+		[HttpGet("Candidatelist")]
+		public IActionResult Candidatelist()
 		{
-			return View();
+			try
+			{
+				var responseTask = _candidateService.GetAllCandidates();
+				//responseTask.Wait();
+				var response = responseTask.Result;
+
+				if (response == null)
+				{
+					return BadRequest(new { message = "NULL VALUE" });
+				}
+
+				return Ok(response);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
 		}
+
+
+		//public IActionResult Index()
+		//{
+		//	return View();
+		//}
 	}
 }

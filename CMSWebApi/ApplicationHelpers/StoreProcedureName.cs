@@ -94,5 +94,8 @@
 
         public readonly static string insertCandidateData = "sp_Insert_Candidate";
 
-    }
+		public readonly static string CandidateData = "GetAllCandidatesData";
+
+
+	}
 }

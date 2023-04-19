@@ -1,7 +1,6 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using CMSWebApi.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Drawing.Drawing2D;

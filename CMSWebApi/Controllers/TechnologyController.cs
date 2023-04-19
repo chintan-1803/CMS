@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CMSWebApi.Controllers
 {
-    [Authorize]
+   
     [ApiController]
     [Route("[controller]")]
     public class TechnologyController : Controller

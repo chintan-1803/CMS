@@ -1,11 +1,6 @@
-﻿@{
-	ViewData["Title"] = "Registration Page";
-	Layout = null;
-}
-<link rel="stylesheet" type="text/css" />
+﻿<link rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <link href="~/css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
 <style>
 
 	input::-webkit-outer-spin-button,
@@ -18,18 +13,15 @@
 	input[type=number] {
 		-moz-appearance: textfield;
 	}
-
 	.form-section {
-		list-style: none;
+	list-style: none;
 	}
-
 	.form-label.form-label-left,
 	.form-label.form-label-right,
 	.form-label.form-label-left.form-label-auto,
 	.form-label.form-label-right.form-label-auto {
-		width: 230px;
+	width: 230px;
 	}
-
 	.form-label-top,
 	.form-label-left,
 	.form-label-right,
@@ -39,7 +31,6 @@
 		text-align: left;
 		width: 100%;
 	}
-
 	.line-icon {
 		display: flex;
 		align-items: center;
@@ -47,60 +38,51 @@
 		margin: 20px 0;
 		position: relative;
 	}
-
-		.line-icon hr {
-			flex: 1;
-			border: none;
-			height: 1px;
-			background: #ccc;
-			border-style: solid;
-			border-width: 0 0 1px 0;
-		}
-
-		.line-icon::before {
-			content:; /* Replace with your desired icon code */
-			font-family: "Font Awesome 5 Free";
-			font-weight: 400;
-			font-size: 18px;
-			color: #ccc;
-			position: absolute;
-			top: 50%;
-			left: 0;
-			transform: translateY(-50%);
-			padding-right: 10px;
-		}
-
+	.line-icon hr {
+		flex: 1;
+		border: none;
+		height: 1px;
+		background: #ccc;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+	}
+	.line-icon::before {
+		content:; /* Replace with your desired icon code */
+		font-family: "Font Awesome 5 Free";
+		font-weight: 400;
+		font-size: 18px;
+		color: #ccc;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		padding-right: 10px;
+	}
 	.form-header {
 		font-size: 30px;
 		margin-bottom: 20px;
 		text-align: center;
 	}
-
 	.form-header-content {
 		font-size: 25px;
 		margin-bottom: 20px;
 	}
-
 	.form-section {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
-
-		.form-section > li {
-			margin-bottom: 20px;
-		}
-
+	.form-section > li {
+		margin-bottom: 20px;
+	}
 	.form-group {
 		margin-bottom: 10px;
 	}
-
-		.form-group label {
-			display: block;
-			font-weight: bold;
-			margin-bottom: 5px;
-		}
-
+	.form-group label {
+		display: block;
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
 	.form-control {
 		display: block;
 		width: 100%;
@@ -115,19 +97,16 @@
 		border-radius: 0.25rem;
 		transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 	}
-
-		.form-control:focus {
-			border-color: #80bdff;
-			outline: 0;
-			box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-		}
-
+	.form-control:focus {
+		border-color: #80bdff;
+		outline: 0;
+		box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+	}
 	.form-text {
 		margin-top: 5px;
 		font-size: 0.875rem;
 		color: #6c757d;
 	}
-
 	.card {
 		background-color: #fff;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -135,23 +114,19 @@
 		border: 1px solid #ccc;
 		padding: 20px;
 	}
-
 	.radio-buttons {
 		display: flex;
 		flex-direction: row;
 	}
-
 	.radio-button {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
 		margin-right: 20px;
 	}
-
-		.radio-button input[type="radio"] {
-			margin-right: 5px;
-		}
-
+	.radio-button input[type="radio"] {
+		margin-right: 5px;
+	}
 	.button {
 		margin: 0 auto;
 		display: inline-block;
@@ -168,16 +143,14 @@
 		border-radius: 15px;
 		box-shadow: 0 9px;
 	}
-
-		.button:hover {
-			background-color: #6495ED;
-			border: none;
-		}
-
-		.button:active {
-			background-color: #0047AB;
-			border: none;
-		}
+	.button:hover {
+		background-color: #6495ED;
+		border: none;
+	}
+	.button:active {
+		background-color: #0047AB;
+		border: none;
+	}
 	/*just bg and body style*/
 	.container1 {
 		background-color: #fff;
@@ -188,15 +161,12 @@
 		margin-left: 100px;
 		border-radius: 5px;
 	}
-
 	.center {
 		text-align: center;
 	}
-
 	#top {
 		margin-top: 20px;
 	}
-
 	.btn-container {
 		background: #fff;
 		border-radius: 5px;
@@ -206,25 +176,20 @@
 		margin-left: 100px;
 		margin-right: 100px;
 	}
-
 	.white {
 		color: white;
 	}
-
 	.imgupload {
 		color: #1E2832;
 		padding-top: 40px;
 		font-size: 7em;
 	}
-
 	#namefile {
 		color: black;
 	}
-
 	h4 > strong {
 		color: #ff3f3f
 	}
-
 	.btn-primary {
 		border-color: #6F8FAF !important;
 		color: #ffffff;
@@ -237,7 +202,6 @@
 		display: none;
 		color: green;
 	}
-
 	.imgupload.stop {
 		display: none;
 		color: red;
@@ -255,7 +219,6 @@
 		bottom: 40px;
 		height: 50px;
 	}
-
 	#resumeup {
 		opacity: 0;
 		-moz-opacity: 0;
@@ -268,23 +231,19 @@
 		bottom: 40px;
 		height: 50px;
 	}
-
 	.pdfupload.ok {
 		display: none;
 		color: green;
 	}
-
 	.pdfupload.stop {
 		display: none;
 		color: red;
 	}
-
 	.pdfupload {
 		color: #1E2832;
 		padding-top: 40px;
 		font-size: 7em;
 	}
-
 	#pdfnamefile {
 		color: black;
 	}
@@ -307,7 +266,7 @@
 			<div class="col-lg-12 col-xl-9">
 				<div class="card text-black" style="border-radius: 25px;">
 					<div class="card-body p-md-10">
-
+						<span asp-validation-for="Designation" class="text-danger" id="EmailError"></span>
 
 						<div class="form-header-group  header-large">
 							<div class="header-text httac htvam">
@@ -315,7 +274,7 @@
 								<div class="line-icon">
 									<hr>
 								</div>
-								<form>
+								<form method="post" id="form" enctype="multipart/form-data" accept-charset="utf-8" >
 									<ul class="form-section page-section">
 										<li class="form-line">
 											<div class="form-header-group  header-small">
@@ -330,15 +289,14 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="first_name">First Name</label>
-													<input type="text" class="form-control" id="first_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="First Name" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
+													<input type="text" class="form-control" id="first_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="First Name" required="">
 													<small id="firstname" class="form-text text-muted">Enter alphabets only</small>
-													<span asp-validation-for="firstname" class="text-danger" id="firstnameError"></span>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="last_name">Last Name</label>
-													<input type="text" class="form-control" id="last_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="emailHelp" placeholder="Last Name" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
+													<input type="text" class="form-control" id="last_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="emailHelp" placeholder="Last Name" required="">
 													<small id="lastname" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
@@ -351,14 +309,14 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="city">City</label>
-													<input type="text" class="form-control" id="city" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="cityHelp" placeholder="City" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
+													<input type="text" class="form-control" id="city" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="cityHelp" placeholder="City" required="">
 													<small id="city_" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="last_name">State</label>
-													<input type="text" class="form-control" id="State" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="stateHelp" placeholder="State" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
+													<input type="text" class="form-control" id="State" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="stateHelp" placeholder="State" required="">
 													<small id="State_" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
@@ -373,7 +331,7 @@
 												<div class="form-group">
 													<label for="email">E-Mail</label>
 													<input type="email" class="form-control" id="email" @*pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."*@ data-type="input-textbox" aria-describedby="emailHelp" placeholder="ex: Myname@example.com" required="">
-													<span asp-validation-for="Designation" class="text-danger" id="EmailError"></span>
+													
 												</div>
 											</div>
 											<br>
@@ -390,13 +348,13 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="10th_pr">10th Grade Percentage</label>
-													<input type="number" class="form-control" id="10th_pr" aria-describedby="10prHelp" placeholder="" min="1" max="100" step="0.01" required="">
+													<input type="number" class="form-control" id="10th_pr"  aria-describedby="10prHelp" placeholder="" min="1" max="100" step="0.01" required="" >
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="12th_pr">12th Grade Percentage</label>
-													<input type="number" class="form-control" id="12th_pr" aria-describedby="12prHelp" placeholder="" min="1" max="100" step="0.01">
+													<input type="text" class="form-control" id="12th_pr"  aria-describedby="12prHelp" placeholder="" min="1" max="100" step="0.01" >
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -408,7 +366,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="12th_pr">Percentage Obtained in the Course</label>
-													<input type="number" class="form-control" id="degreepr" data-component="phone" aria-describedby="degreeprHelp" min="1" max="10" step="0.01" placeholder="">
+													<input type="number" class="form-control" id="degreepr" data-component="phone" aria-describedby="degreeprHelp" min="1" max="10" step="0.01" placeholder="" >
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -536,7 +494,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="Reference">Reference </label>
-													<input type="text" class="form-control" id="Reference" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="Name of Refrence">
+													<input type="text" class="form-control" id="Reference" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="Name of Refrence" >
 													<small id="Reference1" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
@@ -550,42 +508,42 @@
 											</div>
 										</li>
 										@*<li>
-										<div class="container1 center">
-										<div class="row">
-										<div class="col-md-12">
-										<h2 class="white">Image Upload</h2>
-										<p class="white"></p>
-										</div>
-										</div>
-										<div class="row">
-										<div class="col-md-12 col-md-offset-3 center">
-										<div class="btn-container">
-										<p id="namefile">Only pics allowed! (jpg,jpeg,bmp,png)</p>
-										<button type="button" id="btnup" class="btn btn-primary btn-lg">Browse for your pic!</button>
-										<input type="file" value="" name="fileup" id="fileup" required="">
-										</div>
-										</div>
-										</div>
-										</div>
+											<div class="container1 center">
+												<div class="row">
+													<div class="col-md-12">
+														<h2 class="white">Image Upload</h2>
+														<p class="white"></p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 col-md-offset-3 center">
+														<div class="btn-container">
+															<p id="namefile">Only pics allowed! (jpg,jpeg,bmp,png)</p>
+															<button type="button" id="btnup" class="btn btn-primary btn-lg">Browse for your pic!</button>
+															<input type="file" value="" name="fileup" id="fileup" required="">
+														</div>
+													</div>
+												</div>
+											</div>
 										</li>*@
 										<li>
 											<div class="container1 center">
-											<div class="row">
-											<div class="col-md-12">
-											<h2 class="white">Resume Upload</h2>
-											<p class="white"></p>
-											</div>
-											</div>
-											<div class="row">
-											<div class="col-md-12 col-md-offset-3 center">
-											<div class="btn-container">
-											<p id="pdfnamefile">Only pdf allowed!</p>
-											<button type="button" id="pdfbtnup" class="btn btn-primary btn-lg">Browse for your resume!</button>
-											<input type="file" value="" name="resumeup" id="resumeup" accept="application/pdf" required="">
-											<p id="file-result"></p>
-											</div>
-											</div>
-											</div>
+												<div class="row">
+													<div class="col-md-12">
+														<h2 class="white">Resume Upload</h2>
+														<p class="white"></p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 col-md-offset-3 center">
+														<div class="btn-container">
+															<p id="pdfnamefile">Only pdf allowed!</p>
+															<button type="button" id="pdfbtnup" class="btn btn-primary btn-lg">Browse for your resume!</button>
+															<input type="file" value="" name="resumeup" id="resumeup" accept="application/pdf" required="">
+															<p id="file-result"></p>
+														</div>
+													</div>
+												</div>
 											</div>
 										</li>
 										<li class="form-line">
@@ -616,8 +574,7 @@
 									</ul>
 									<div id="cid_2" class="form-input-wide" data-layout="full">
 										<div data-align="center">
-											<input id="submit" type="submit" value="Submit" onclick="SaveRecord()" class="button">
-										
+											<button id="submit" type="submit" class="button" data-component="button" data-content="">Submit</button>
 										</div>
 									</div>
 								</form>
@@ -629,12 +586,9 @@
 		</div>
 	</div>
 </section>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script type="text/javascript" language="javascript">
+<script>
 	var pdfString;
-
 	function experiencerbtn(e) {
 		if (e.value == "yes") {
 			$('#experience_number').prop('required', true);
@@ -651,9 +605,7 @@
 			return null;
 		}
 	}
-
 	function locationrbtn(e) {
-
 		if (e.value == "yes") {
 			return true;
 		}
@@ -661,7 +613,30 @@
 			return false;
 		}
 	}
-
+	$('#fileup').change(function () {
+		//here we take the file extension and set an array of valid extensions
+		var res = $('#fileup').val();
+		var arr = res.split("\\");
+		var filename = arr.slice(-1)[0];
+		filextension = filename.split(".");
+		filext = "." + filextension.slice(-1)[0];
+		valid = [".jpg", ".png", ".jpeg", ".bmp"];
+		//if file is not valid we show the error icon, the red alert, and hide the submit button
+		if (valid.indexOf(filext.toLowerCase()) == -1) {
+			$(".imgupload").hide("slow");
+			$(".imgupload.ok").hide("slow");
+			$(".imgupload.stop").show("slow");
+			$('#namefile').css({ "color": "red", "font-weight": 700 });
+			$('#namefile').html("File " + filename + " is not  pic!");
+		} else {
+			//if file is valid we show the green alert and show the valid submit
+			$(".imgupload").hide("slow");
+			$(".imgupload.stop").hide("slow");
+			$(".imgupload.ok").show("slow");
+			$('#namefile').css({ "color": "green", "font-weight": 700 });
+			$('#namefile').html(filename);
+		}
+	});
 	$('#resumeup').change(function () {
 		//here we take the file extension and set an array of valid extensions
 		var res = $('#resumeup').val();
@@ -670,18 +645,26 @@
 		filextension = filename.split(".");
 		filext = "." + filextension.slice(-1)[0];
 		valid = [".pdf"];
-
+		
 		//if (res.files[0].size > 2097152) {
 		//	lblError.innerHTML = "File size is more than 2 MB.";
 		//	return;
 		//}
 		//if file is not valid we show the error icon, the red alert, and hide the submit button
 		if (valid.indexOf(filext.toLowerCase()) == -1) {
+
+			$(".pdfupload").hide("slow");
+			$(".pdfupload.ok").hide("slow");
+			$(".pdfupload.stop").show("slow");
 			$('#pdfnamefile').css({ "color": "red", "font-weight": 700 });
 			$('#pdfnamefile').html("File " + filename + " is not  pdf!");
-
+			$("#submitbtn").hide();
+			$("#fakebtn").show();
 		} else {
 			//if file is valid we show the green alert and show the valid submit
+			$(".imgupload").hide("slow");
+			$(".imgupload.stop").hide("slow");
+			$(".imgupload.ok").show("slow");
 			$('#pdfnamefile').css({ "color": "green", "font-weight": 700 });
 			$('#pdfnamefile').html(filename);
 		}
@@ -697,20 +680,24 @@
 			if (fileMb >= 2) {
 				$('#pdfnamefile').css({ "color": "red", "font-weight": 700 });
 				$('#pdfnamefile').html(filename + "<br> Please select a file less than 2MB.");
+				//fileResult.innerHTML = "Please select a file less than 2MB.";
+				//fileSubmit.disabled = true;
 				return false;
 			} else {
 				$('#pdfnamefile').css({ "color": "green", "font-weight": 700 });
 				$('#pdfnamefile').html(filename);
+				//fileResult.innerHTML = "Success, your file is " + fileMb.toFixed(1) + "MB.";
+				//fileSubmit.disabled = true;
 			}
 			// Select the very first file from list
 			var fileToLoad = selectedFile[0];
 			// FileReader function for read the file.
 			var fileReader = new FileReader();
-
+			
 
 			// Onload of file read the file content
 			fileReader.onload = function (fileLoadedEvent) {
-
+				
 				var base64 = fileLoadedEvent.target.result;
 
 				// Print data in console
@@ -724,95 +711,116 @@
 			fileReader.readAsDataURL(fileToLoad);
 		}
 	});
-
-</script>
-
-<script type="text/javascript" language="javascript">
-	
-	function SaveRecord() {
-		debugger;
-
-		var querystring = {
-			firstName: $('#first_name').val(),
-			lastName: $('#last_name').val(),
-			Email: $('#email').val(),
-			ContactNo: $('#phone_number').val(),
-			Skills: $('#skills').val(),
-			AgreeForChangeLocation: $('#location').val(),
-			City: $('#city').val(),
-			State: $('#State').val(),
-			Address: $('#Address').val(),
-			PR_10: $('#10th_pr').val(),
-			PR_12: $('#12th_pr').val(),
-			areaofstudy: $('#degreeinfo').val(),
-			College_CGPA: $('#degreepr').val(),
-			backlog: $('#backlog').val(),
-			TechnologyId: $('#technology').val(),
-			IsExperience: $('#experience').val(),
-			TotalExperience: $('#experience_number').val(),
-			CurrentCTC: $('#currentsalary').val(),
-			ExpectedCTC: $('#expectedsalary').val(),
-			ReasoneForChange: $('#Reason').val(),
-			Reference: $('#Reference').val(),
-			resume: pdfString
+	$('#submit').click(function () {
+			debugger
+		var base64String = "";
+		// Get the values of the input fields
+		var FirstName = $('#first_name').val();
+		var LastName = $('#last_name').val();
+		var Email = $('#email').val();
+		var ContactNo = $('#phone_number').val();
+		//var CandidateImage = $('#fileup').val();
+		var Skills = $('#skills').val();
+		var AgreeForChangeLocation = $('#location').val();
+		var City = $('#city').val();
+		var State = $('#State').val();
+		var Address = $('#Address').val();
+		var PR_10 = $('#10th_pr').val();
+		var PR_12 = $('#12th_pr').val();
+		var areaofstudy = $('#degreeinfo').val();
+		var College_CGPA = $('#degreepr').val();
+		var backlog = $('#backlog').val();
+		var TechnologyId = $('#technology').val();
+		var IsExperience = $('#experience').val();
+		var TotalExperience = $('#experience_number').val();
+		var CurrentCTC = $('#currentsalary').val();
+		var ExpectedCTC = $('#expectedsalary').val();
+		var ReasoneForChange = $('#Reason').val();
+		var Reference = $('#Reference').val();
+		var resume = $('#resumeup').val();
+		
+		if ((FirstName.trim() === '') || (LastName.trim() === '') || (Email.trim() === '') || (ContactNo.trim() === '') || (City.trim() === '') || (State.trim() === '') || (Address.trim() === '') || (TechnologyId.trim() === '') || (PR_10.trim() === '') || (areaofstudy.trim() === '') || (resume.trim() === '') ||(IsExperience.trim() === '')) {
+			return ;
 		}
-		//var base64String = "";
-		//// Get the values of the input fields
-		//var FirstName = $('#first_name').val();
-		//var LastName = $('#last_name').val();
-		//var Email = $('#email').val();
-		//var ContactNo = $('#phone_number').val();
-		//var Skills = $('#skills').val();
-		//var AgreeForChangeLocation = $('#location').val();
-		//var City = $('#city').val();
-		//var State = $('#State').val();
-		//var Address = $('#Address').val();
-		//var PR_10 = $('#10th_pr').val();
-		//var PR_12 = $('#12th_pr').val();
-		//var areaofstudy = $('#degreeinfo').val();
-		//var College_CGPA = $('#degreepr').val();
-		//var backlog = $('#backlog').val();
-		//var TechnologyId = $('#technology').val();
-		//var IsExperience = $('#experience').val();
-		//var TotalExperience = $('#experience_number').val();
-		//var CurrentCTC = $('#currentsalary').val();
-		//var ExpectedCTC = $('#expectedsalary').val();
-		//var ReasoneForChange = $('#Reason').val();
-		//var Reference = $('#Reference').val();
-		//var resume = $('#resumeup').val();
-		// Make the AJAX call
-		$.ajax({
-			url: '/Candidate/CandidateRegistration',
-			method: 'POST',
-			data: querystring,
-			success: function (response) {
-				// Handle the response data here
-				//console.log(response);
-				//$('#exampleModalCenter').modal('hide');
-				//alert(response.message);
-				//return true;
-				//location.reload(true);
-				window.location.reload();
 
-			},
-			error: function (response) {
-				// Handle errors here
-				console.error(errorThrown);
-				alert("error");
-				
-				return;
+		//var form = $('#form');
+	//	if (!form.valid()) {
+	//		// If the form is not valid, return false and do not submit the form
+	//		return false;
+	//	}
+	//	if (!form.validity.valid) {
+	//	return false;
+	//}
+		//var createdBy = $('#create_User').val();
+		if (resume.length > 0) {
 
-			}
-		});
-	}
+			$.ajax({
+				url: '/Candidate/CandidateRegistration',
+				method: 'POST',
+				data: {
 
+					firstName: FirstName,
+					lastName: LastName,
+					Email: Email,
+					ContactNo: ContactNo,
+					//CandidateImage: CandidateImage,
+					Skills: Skills,
+					AgreeForChangeLocation: AgreeForChangeLocation,
+					City: City,
+					State: State,
+					Address: Address,
+					PR_10: PR_10,
+					PR_12: PR_12,
+					areaofstudy: areaofstudy,
+					College_CGPA: College_CGPA,
+					backlog: backlog,
+					TechnologyId: TechnologyId,
+					IsExperience: IsExperience,
+					TotalExperience: TotalExperience,
+					CurrentCTC: CurrentCTC,
+					ExpectedCTC: ExpectedCTC,
+					ReasoneForChange: ReasoneForChange,
+					Reference: Reference,
+					resume: pdfString
+				},
+				success: function (response) {
+					debugger
+					// Handle the response data here
+					console.log(response);
+					//$('#exampleModalCenter').modal('hide');
+					// $('#success-modal').modal('show');
+					//setTimeout($('#success-modal'), 2000);
+					if (response.success) {
+						$('#DesignationError').response.message
+					alert(response.message);
+					location.reload(true);
+						return;
+					}
+					else{
+						//$('#messageModal').modal('show');
+						alert(response.message);
+						return;
+					}
+					
+				},
+				error: function (response) {
+					// Handle errors here
+					//alert(response.message);
+					//$('#messageModal').modal('show');
+					$('#EmailError').text("Email already exists.");
+					//if (!response.IsSuccessful) {
+					//	
+					//	alert(response.message);;
+					//	return;
+					//	//setTimeout($('#DesignationError'), 2000);
+					//}
 
-	$('#Designation').on('input', function () {
-		// Clear the error message when the field is not empty
-		if ($(this).val() !== '') {
-			$('#DesignationError').text('');
-		}
-	});
+					console.error(errorThrown);
+				}
+			});
+			
+		}	
+	});	
 </script>
 @*@section Scripts {
 		@{

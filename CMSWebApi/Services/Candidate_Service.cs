@@ -17,7 +17,7 @@ namespace CMSWebApi.Services
 		public Candidate_Service(IDapper dapper)
 		{			_dapper = dapper;
 		}
-		public string AddCandidate(CandidateMasterEntity candidatedata)
+		public string addCandidate(CandidateMasterEntity candidatedata)
 		{
 			try
 			{
@@ -25,22 +25,22 @@ namespace CMSWebApi.Services
 				parameters.Add("@firstName", candidatedata.firstName, DbType.String);
 				parameters.Add("@lastName", candidatedata.lastName, DbType.String);
 				parameters.Add("@Email", candidatedata.Email, DbType.String);
-				parameters.Add("@ContactNo", candidatedata.ContactNo, DbType.String);
+				parameters.Add("@ContactNo", candidatedata.ContactNo, DbType.Decimal);
 				parameters.Add("@Skills", candidatedata.Skills, DbType.String);
-				parameters.Add("@AgreeForChangeLocation", candidatedata.AgreeForChangeLocation, DbType.String);
+				parameters.Add("@AgreeForChangeLocation", candidatedata.AgreeForChangeLocation, DbType.Boolean);
 				parameters.Add("@City", candidatedata.City, DbType.String);
 				parameters.Add("@State", candidatedata.State, DbType.String);
 				parameters.Add("@Address", candidatedata.Address, DbType.String);
-				parameters.Add("@PR_10", candidatedata.PR_10, DbType.String);
-				parameters.Add("@PR_12", candidatedata.PR_12, DbType.String);
+				parameters.Add("@PR_10", candidatedata.PR_10, DbType.Decimal);
+				parameters.Add("@PR_12", candidatedata.PR_12, DbType.Decimal);
 				parameters.Add("@areaofstudy", candidatedata.areaofstudy, DbType.String);
-				parameters.Add("@College_CGPA", candidatedata.College_CGPA, DbType.String);
-				parameters.Add("@backlog", candidatedata.backlog, DbType.String);
-				parameters.Add("@TechnologyId", candidatedata.TechnologyId, DbType.String);
-				parameters.Add("@IsExperience", candidatedata.IsExperience, DbType.String);
-				parameters.Add("@TotalExperience", candidatedata.TotalExperience, DbType.String);
-				parameters.Add("@CurrentCTC", candidatedata.CurrentCTC, DbType.String);
-				parameters.Add("@ExpectedCTC", candidatedata.ExpectedCTC, DbType.String);
+				parameters.Add("@College_CGPA", candidatedata.College_CGPA, DbType.Decimal);
+				parameters.Add("@backlog", candidatedata.backlog, DbType.Boolean);
+				parameters.Add("@TechnologyId", candidatedata.TechnologyId, DbType.Int32);
+				parameters.Add("@IsExperience", candidatedata.IsExperience, DbType.Boolean);
+				parameters.Add("@TotalExperience", candidatedata.TotalExperience, DbType.Decimal);
+				parameters.Add("@CurrentCTC", candidatedata.CurrentCTC, DbType.Decimal);
+				parameters.Add("@ExpectedCTC", candidatedata.ExpectedCTC, DbType.Decimal);
 				parameters.Add("@ReasoneForChange", candidatedata.ReasoneForChange, DbType.String);
 				parameters.Add("@Reference", candidatedata.Reference, DbType.String);
 				parameters.Add("@resume", candidatedata.resume, DbType.String);
@@ -59,6 +59,13 @@ namespace CMSWebApi.Services
 				throw new ArgumentNullException("FAILED TO INSERT DESIGNATION.", ex);
 			}
 
+		}
+
+		//Admin--- 
+		public Task<List<CandidateMasterEntity>> GetAllCandidates()
+		{
+			var model = _dapper.GetAll<CandidateMasterEntity>(StoreProcedureName.CandidateData, null, System.Data.CommandType.StoredProcedure);
+			return Task.FromResult(model);
 		}
 	}
 }
