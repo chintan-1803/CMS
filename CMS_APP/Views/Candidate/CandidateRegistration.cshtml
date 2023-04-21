@@ -691,7 +691,7 @@
 
 		//Check File is not Empty
 		if (selectedFile.length > 0) {
-			debugger
+			
 			const fileSize = selectedFile[0].size;
 			const fileMb = fileSize / 1024 ** 2;
 			if (fileMb >= 2) {
@@ -717,7 +717,7 @@
 				console.log(base64);
 				base64String = base64
 				pdfString = base64.split(',')[1];
-				debugger;
+				
 
 			};
 			// Convert data to base64
@@ -727,10 +727,11 @@
 
 </script>
 
-<script type="text/javascript" language="javascript">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
 	
 	function SaveRecord() {
-		debugger;
+		
 
 		var querystring = {
 			firstName: $('#first_name').val(),
@@ -796,8 +797,9 @@
 
 			},
 			error: function (response) {
+				
 				// Handle errors here
-				console.error(errorThrown);
+				//console.error(errorThrown);
 				alert("error");
 				
 				return;

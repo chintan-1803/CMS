@@ -52,10 +52,18 @@ namespace CMSWebApi.Controllers
             interviewsModel.ReasonID = 38;
             var response = _interviewsService.AddInterviewData(interviewsModel);
 
-            if (response == "Unsuccessful")
+            if (response == "Candidate is occupied")
             {
-                return BadRequest(new { message = "FAILED TO ADD Interview" });
+                return BadRequest(response);
             }
+            if(response== "Interviewer is occupied")
+            {
+				return BadRequest(response);
+			}
+            if(response== "Data already exists")
+            {
+				return BadRequest(response);
+			}
 
             return Ok("SUCCESS");
         }
@@ -71,13 +79,19 @@ namespace CMSWebApi.Controllers
             {
                 return BadRequest(new { message = "FAILED TO UPDATE Interview" });
             }
+
+            else if (response < 0)
+            {
+				return BadRequest("Interviewer is occupied");
+			}
+            
             else if (response > 0)
             {
                 return Ok("SUCCESS");
             }
             else
             {
-                return Ok("Something went wrong");
+                return BadRequest("Something went wrong");
             }
         }
         #endregion

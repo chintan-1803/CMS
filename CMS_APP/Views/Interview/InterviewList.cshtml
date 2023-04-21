@@ -10,6 +10,7 @@
 @using Newtonsoft.Json
 @{
     ViewBag.Title = "Interview List";
+    
 
     //string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -273,7 +274,8 @@
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                                                 <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate Name</span>
                                                             </label>
-                                                            <select class="form-control validate candidate-dropdown" required selected="@data.CandidateId" id="candidateId_@data.InterviewId">
+
+                                                            <select class="form-control validate candidate-dropdown" required selected="@data.CandidateId" id="candidateId_@data.InterviewId" disabled>
                                                                 <option value="" disabled selected>Select Candidate</option>
                                                                 @foreach (var candidate in ViewBag.CandidateMasterList)
                                                                 {
@@ -448,7 +450,7 @@
         
         $(function () {
             $("#save-btn").click(function () {
-                debugger
+               
                 // Get the values from the form fields
                 var candidateId = $("#candidateId").val();
                 var interviewerId = $("#interviewerId").val();
@@ -699,7 +701,8 @@
                 error: function (response) {
                     // Handle errors here
                     console.error(response);
-                    alert('Error occurred while saving data');
+                     alert(response.message);
+                    //alert('Error occurred while saving data');
                     location.reload(true);
                 }
             });
