@@ -9,56 +9,57 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
-
 namespace CMS.Controllers
 {
     public class LoginController : Controller
     {
-		private readonly IUserService _userService; 
+        private readonly IUserService _userService;
         private readonly IMasterData _masterdata;
-		private readonly IWebHostEnvironment _hostEnvironment;
+        private readonly IWebHostEnvironment _hostEnvironment;
         public LoginController(IUserService userService, IWebHostEnvironment hostEnvironment, IMasterData masterdata)
         {
             _userService = userService;
             _hostEnvironment = hostEnvironment;
             _masterdata = masterdata;
-		}
+        }
+
         [AllowAnonymous]
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Login(UserLoginEntity objUserLogin)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var response = _userService.AuthenticateLogin(objUserLogin);
-				string Username = objUserLogin.Email;
-				
-				if (response != null)
+                
+                if (response.ResultMessage == "Successful")
                 {
-					HttpContext.Session.SetString("Username", Username);
-					var masterDataResponse = _masterdata.AllMasterDatalist();
+                    string Username = objUserLogin.Email;
+                    HttpContext.Session.SetString("Username", Username);
+                    var masterDataResponse = _masterdata.AllMasterDatalist();
 
                     //do for all the master table .
-					var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
+                    var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
 
-					var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-					HttpContext.Session.SetString("DesignationList",DesignationData);
+                    var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
+                    HttpContext.Session.SetString("DesignationList", DesignationData);
 
-					var TechnologyData = JsonConvert.SerializeObject(masterDataList.TechnologyData);
-					HttpContext.Session.SetString("TechnologyList",TechnologyData);
+                    var TechnologyData = JsonConvert.SerializeObject(masterDataList.TechnologyData);
+                    HttpContext.Session.SetString("TechnologyList", TechnologyData);
 
-					var ReasonData = JsonConvert.SerializeObject(masterDataList.ReasonData);
-					HttpContext.Session.SetString("ReasonDataList",ReasonData);
+                    var ReasonData = JsonConvert.SerializeObject(masterDataList.ReasonData);
+                    HttpContext.Session.SetString("ReasonDataList", ReasonData);
 
-					var RoleData = JsonConvert.SerializeObject(masterDataList.RoleData);
-					HttpContext.Session.SetString("RoleDataList",RoleData);
+                    var RoleData = JsonConvert.SerializeObject(masterDataList.RoleData);
+                    HttpContext.Session.SetString("RoleDataList", RoleData);
 
-					var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
-					HttpContext.Session.SetString("RoundList",RoundData);
+                    var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
+                    HttpContext.Session.SetString("RoundList", RoundData);
 
                     var InterviewStatusData = JsonConvert.SerializeObject(masterDataList.InterviewStatusData);
                     HttpContext.Session.SetString("InterviewStatusList", InterviewStatusData);
@@ -73,6 +74,7 @@ namespace CMS.Controllers
                 }
                 else
                 {
+                    TempData["Message"] = "Login unsuccessful";
                     return View();
                 }
             }

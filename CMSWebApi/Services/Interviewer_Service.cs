@@ -7,6 +7,7 @@ using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Data;
+using System.Reflection;
 
 namespace CMSWebApi.Services
 {
@@ -39,7 +40,8 @@ namespace CMSWebApi.Services
             parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
             parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
             parameters.Add("@Email", interviewerModel.Email, DbType.String);
-            parameters.Add("@Password", interviewerModel.Password, DbType.String);
+            parameters.Add("@Password", _cipherService.Encrypt(interviewerModel.Password), DbType.String);
+            //parameters.Add("@Password", interviewerModel.Password, DbType.String);
             parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
 			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
 			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);
@@ -65,7 +67,8 @@ namespace CMSWebApi.Services
 			parameters.Add("@FirstName", interviewerModel.FirstName, DbType.String);
 			parameters.Add("@LastName", interviewerModel.LastName, DbType.String);
 			parameters.Add("@Email", interviewerModel.Email, DbType.String);
-            parameters.Add("@Password", interviewerModel.Password, DbType.String);
+            parameters.Add("@Password", _cipherService.Encrypt(interviewerModel.Password), DbType.String);
+            //parameters.Add("@Password", interviewerModel.Password, DbType.String);
             parameters.Add("@TechnologyId", interviewerModel.TechnologyId, DbType.String);
 			parameters.Add("@YearOfExperience", interviewerModel.YearOfExperience, DbType.Double);
 			parameters.Add("@DesignationId", interviewerModel.DesignationId, DbType.String);

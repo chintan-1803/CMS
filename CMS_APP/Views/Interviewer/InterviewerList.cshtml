@@ -199,7 +199,6 @@
 							<th class="text-center">First Name</th>
 							<th class="text-center">Last Name</th>
 							<th class="text-center">Email</th>
-							<th class="text-center">Password</th>
 							<th class="text-center">Technology</th>
 							<th class="text-center">Year of Experience</th>
 							<th class="text-center">Designation</th>
@@ -222,7 +221,6 @@
 								<td class="text-center">@data.FirstName</td>
 								<td class="text-center">@data.LastName</td>
 								<td class="text-center">@data.Email</td>
-								<td class="text-center">@data.Password</td>
 								<td class="text-center">@data.TechnologyName</td>
 								<td class="text-center">@data.YearOfExperience</td>
 								<td class="text-center">@data.Designation</td>
@@ -452,147 +450,144 @@
 			}
 		}
 
-		$(function () {
-			// Add click event handler to the Save button
-			$('#save-btn').click(function () {
+		$('#save-btn').click(function () {
 				
-				// Get the values of the input fields
-				var firstName = $('#firstName').val();
-				var lastName = $('#lastName').val();
-				var email = $('#email').val();
-				var password = $('#password').val();
-				var designation = $('#designation').val();
-				var technology = $('#technology').val();
-				var experience = $('#experience').val();
-				var interviewsConducted = $('#InterviewsConducted').val();
+			// Get the values of the input fields
+			var firstName = $('#firstName').val();
+			var lastName = $('#lastName').val();
+			var email = $('#email').val();
+			var password = $('#password').val();
+			var designation = $('#designation').val();
+			var technology = $('#technology').val();
+			var experience = $('#experience').val();
+			var interviewsConducted = $('#InterviewsConducted').val();
 
-				$('#firstName').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#firstNameError').text('');
-					}
-				});
-				$('#lastName').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#lastNameError').text('');
-					}
-				});
-				$('#email').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#emailError').text('');
-					}
-				});
-				$('#password').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#passwordError').text('');
-					}
-				});
-				$('#designation').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#designationError').text('');
-					}
-				});
-				$('#technology').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#technologyError').text('');
-					}
-				});
-				$('#experience').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#experienceError').text('');
-					}
-				});
-				$('#InterviewsConducted').on('input', function () {
-					// Clear the error message when the field is not empty
-					if ($(this).val() !== '') {
-						$('#InterviewsConductedError').text('');
-					}
-				});
+			$('#firstName').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#firstNameError').text('');
+				}
+			});
+			$('#lastName').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#lastNameError').text('');
+				}
+			});
+			$('#email').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#emailError').text('');
+				}
+			});
+			$('#password').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#passwordError').text('');
+				}
+			});
+			$('#designation').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#designationError').text('');
+				}
+			});
+			$('#technology').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#technologyError').text('');
+				}
+			});
+			$('#experience').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#experienceError').text('');
+				}
+			});
+			$('#InterviewsConducted').on('input', function () {
+				// Clear the error message when the field is not empty
+				if ($(this).val() !== '') {
+					$('#InterviewsConductedError').text('');
+				}
+			});
 
-				// Validate the input fields
+			// Validate the input fields
 
-				if (firstName.trim() === '' || !/^[a-zA-Z]+$/.test(firstName)) {
-					$('#firstNameError').text('Valid first name required: no spaces, numbers, or special characters.');
-					return;
-				}
-				if (lastName.trim() === '' || !/^[a-zA-Z]+$/.test(lastName)) {
-					$('#lastNameError').text('Valid last name required: no spaces, numbers, or special characters.');
-					return;
-				}
-				if (email.trim() === '') {
-					$('#emailError').text('Please enter an email address.');
-					return;
-				} else if (!/^[^\s]+[^\s]+\.[^\s]+$/.test(email)) {
-					$('#emailError').text('Please enter a valid email address.');
-					return;
-				}
-				if (password.trim() === '') {
-					$('#passwordError').text('Please enter a password.');
-					return;
-				} else if (password.length < 8) {
-					$('#passwordError').text('Password should be at least 8 characters long.');
-					return;
-				} else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[^a-zA-Z0-9]/.test(password)) {
-					$('#passwordError').text('Password must have lowercase, uppercase, digit, and special character.');
-					return;
-				}
-				if ($('#designation').val() == null || $('#designation').val() == '') {
-					$('#designationError').text('Please select a designation.');
-					return false;
-				}
-				if ($('#technology').val() == null || $('#technology').val() == '') {
-					$('#technologyError').text('Please select a technology.');
-					return false;
-				}
-				if (experience.trim() === '' || isNaN(parseFloat(experience)) || parseFloat(experience) < 0) {
-					$('#experienceError').text('Please enter a valid year of experience.');
-					return;
-				}
-				if (interviewsConducted.trim() === '' || isNaN(interviewsConducted) || interviewsConducted < 0) {
-					$('#InterviewsConductedError').text('Please enter a valid number of interviews conducted.');
-					return;
-				}
+			if (firstName.trim() === '' || !/^[a-zA-Z]+$/.test(firstName)) {
+				$('#firstNameError').text('Valid first name required: no spaces, numbers, or special characters.');
+				return;
+			}
+			if (lastName.trim() === '' || !/^[a-zA-Z]+$/.test(lastName)) {
+				$('#lastNameError').text('Valid last name required: no spaces, numbers, or special characters.');
+				return;
+			}
+			if (email.trim() === '') {
+				$('#emailError').text('Please enter an email address.');
+				return;
+			} else if (!/^[^\s]+[^\s]+\.[^\s]+$/.test(email)) {
+				$('#emailError').text('Please enter a valid email address.');
+				return;
+			}
+			if (password.trim() === '') {
+				$('#passwordError').text('Please enter a password.');
+				return;
+			} else if (password.length < 8) {
+				$('#passwordError').text('Password should be at least 8 characters long.');
+				return;
+			} else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[^a-zA-Z0-9]/.test(password)) {
+				$('#passwordError').text('Password must have lowercase, uppercase, digit, and special character.');
+				return;
+			}
+			if ($('#designation').val() == null || $('#designation').val() == '') {
+				$('#designationError').text('Please select a designation.');
+				return false;
+			}
+			if ($('#technology').val() == null || $('#technology').val() == '') {
+				$('#technologyError').text('Please select a technology.');
+				return false;
+			}
+			if (experience.trim() === '' || isNaN(parseFloat(experience)) || parseFloat(experience) < 0) {
+				$('#experienceError').text('Please enter a valid year of experience.');
+				return;
+			}
+			if (interviewsConducted.trim() === '' || isNaN(interviewsConducted) || interviewsConducted < 0) {
+				$('#InterviewsConductedError').text('Please enter a valid number of interviews conducted.');
+				return;
+			}
 
-				// Send AJAX request
-				$.ajax({
-					url: '/Interviewer/AddInterviewerlist',
-					method: 'POST',
-					data: {
-						FirstName: firstName,
-						LastName: lastName,
-						Email: email,
-						Password : password,
-						DesignationId: designation,
-						TechnologyId: technology,
-						YearOfExperience: experience,
-						TotalInterviewsConducted: interviewsConducted
-					},
+			// Send AJAX request
+			$.ajax({
+				url: '/Interviewer/AddInterviewerlist',
+				method: 'POST',
+				data: {
+					FirstName: firstName,
+					LastName: lastName,
+					Email: email,
+					Password : password,
+					DesignationId: designation,
+					TechnologyId: technology,
+					YearOfExperience: experience,
+					TotalInterviewsConducted: interviewsConducted
+				},
 
-					success: function (response) {
-						if (response.success) {
-							// Display a success message
-							alert(response.message);
-							location.reload(true);
-						} else {
-							// Display an error message
-							alert("Error: " + response.message);
-							location.reload(true);
-						}
-					},
-					error: function (xhr, status, error) {
-						// Handle any errors that occur during the request
-						alert("An error occurred while processing the request. Please try again later.");
+				success: function (response) {
+					if (response.success) {
+						// Display a success message
+						alert(response.message);
+						location.reload(true);
+					} else {
+						// Display an error message
+						alert("Error: " + response.message);
+						location.reload(true);
 					}
-				});
+				},
+				error: function (xhr, status, error) {
+					// Handle any errors that occur during the request
+					alert("An error occurred while processing the request. Please try again later.");
+				}
 			});
 		});
-
+		
 		function updatefunction(id) {
 			debugger
 			var InterviewerId = $('#updateinterviewerid_' + id).val();

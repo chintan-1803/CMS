@@ -29,7 +29,7 @@ namespace CMSWebApi.Services
 
         public AuthenticateResponse AuthenticateUser(WebApiUserLoginEntity model)
         {
-            string testPassword = _cipherService.Decrypt("Cdu8ugFusrwvh7Yli/ZlkQ==");
+            //string testPassword = _cipherService.Decrypt("Cdu8ugFusrwvh7Yli/ZlkQ==");
             var connectDbparams = new DynamicParameters();
             connectDbparams.Add("email", model.Email, DbType.String);
             connectDbparams.Add("password", _cipherService.Encrypt(model.Password), DbType.String);

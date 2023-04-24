@@ -1,5 +1,4 @@
 ﻿using CMSWebApi.Models;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Reflection.Emit;
 using System.Xml.Linq;
@@ -15,6 +14,7 @@ namespace CMS.Models
         public string Error { get; set; }
         public string UserFullName { get; set; }
         public string UserRoleName { get; set; }
+        public string ResultMessage { get; set; }
     }
     
 }

@@ -6,6 +6,7 @@ namespace CMS.Models
 {
     public class AuthenticateResponse
     {
+        public string ResultMessage { get; set; }
         public int Id { get; set; }
         public string EmailId { get; set; }
         public string Token { get; set; }
@@ -14,11 +15,9 @@ namespace CMS.Models
         public string UserFullName { get; set; }
         public string UserRoleName { get; set; }
 
-        /*public AuthenticateResponse()
+        public AuthenticateResponse()
         {
-
-        }*/
-
+        }
         public AuthenticateResponse(LoginResponse user, string token) : base()
         {
             Id = user.Id;
@@ -28,8 +27,7 @@ namespace CMS.Models
             Error = user.Error;
             UserFullName = user.UserFullName;
             UserRoleName = user.UserRoleName;
+            ResultMessage = user.ResultMessage;
         }
     }
-
-    
 }

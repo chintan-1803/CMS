@@ -31,12 +31,14 @@ namespace CMSWebApi.Controllers
             {
                 var response = _userApiService.AuthenticateUser(model);
 
-                if (response == null)
+                if (response.ResultMessage == "Successful")
                 {
-                    return BadRequest(new { message = "Username or password is incorrect" });
+                    return Ok(response);
                 }
-
-                return Ok(response);
+                else
+                {
+                    return BadRequest(response);
+                }      
             }
             catch (Exception ex)
             {
