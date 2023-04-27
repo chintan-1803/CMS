@@ -7,8 +7,8 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    /*[Authorize]*/
-    public class RoleController : Controller
+	[Authorize(Roles = "Admin")]
+	public class RoleController : Controller
 	{
 		private readonly IRole _role_Interface;
 		public RoleController(IRole role_Interface)
@@ -18,8 +18,8 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Rolelist()
 		{
-			//pass the session
-			var jsonData = HttpContext.Session.GetString("RoleDataList");
+            //pass the session
+            var jsonData = HttpContext.Session.GetString("RoleDataList");
 			List<RoleModel> data;
 			if (jsonData == null)
 			{

@@ -9,8 +9,8 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    /*[Authorize]*/
-    public class DesignationController : Controller
+	[Authorize(Roles = "Admin")]
+	public class DesignationController : Controller
 	{
 		private readonly IDesignation _designation_Interface;
 		private readonly IMasterData _masterdata;
@@ -22,18 +22,13 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Designationlist()
 		{
-			// Get the list of designations from the API
-			var jsonData = HttpContext.Session.GetString("DesignationList");
+            // Get the list of designations from the API
+            var jsonData = HttpContext.Session.GetString("DesignationList");
 
 			if(jsonData == null) {
 				var response = _designation_Interface.Designationlist();
 				var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
 			}
-			//var masterDatalist = HttpContext.Session.GetString("masterDatalist");
-			//add designation list into session
-			//var data1 = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-			//var jsonData = JsonConvert.SerializeObject(data1);
-			//HttpContext.Session.SetString("designationList", jsonData);
 			if(jsonData == null){
 				var masterDataResponse = _masterdata.AllMasterDatalist();
 				var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
@@ -43,35 +38,10 @@ namespace CMS.Controllers
 				HttpContext.Session.SetString("DesignationList", DesignationData);
 
 			}
-
-			//var jsonData = JsonConvert.SerializeObject(jsonData1);
-			
 			var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
 
-			//var masterDataResponse = _masterdata.AllMasterDatalist();
-			//var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
-			//var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-			//var data = JsonConvert.DeserializeObject(DesignationData);
-			//if (masterDataList.DesignationData == null) {
-
-			//	HttpContext.Session.SetString("DesignationList", DesignationData);
-			//}
-
-
-
-
-			//if (data != null)
-			//{
-			//	var masterDataResponse = _masterdata.AllMasterDatalist();
-			//	var jsonData = JsonConvert.SerializeObject(masterDataResponse);
-			//	HttpContext.Session.SetString("masterDatalist", jsonData);
-			//	return View(data);
-			//}
 			if (designationList != null)
 			{
-				////var masterDataResponse = _masterdata.AllMasterDatalist();
-				//var jsonData = JsonConvert.SerializeObject(masterDataResponse);
-				//HttpContext.Session.SetString("masterDatalist", jsonData);
 				return View(designationList);
 			}
 			else

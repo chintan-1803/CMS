@@ -1,13 +1,16 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using CMS.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace CMS.Controllers
 {
@@ -36,41 +39,75 @@ namespace CMS.Controllers
             if (ModelState.IsValid)
             {
                 var response = _userService.AuthenticateLogin(objUserLogin);
-                
+
                 if (response.ResultMessage == "Successful")
                 {
-                    string Username = objUserLogin.Email;
-                    HttpContext.Session.SetString("Username", Username);
-                    var masterDataResponse = _masterdata.AllMasterDatalist();
+                    //authorization code
 
-                    //do for all the master table .
-                    var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
+                    ClaimsIdentity identity = null;
+                    bool isAuthenticate = false;
+                    if (response.UserRoleName == "Admin")
+                    {
+                        identity = new ClaimsIdentity(new[]
+                        {
+                            new Claim(ClaimTypes.Name,response.UserFullName),
+                              new Claim(ClaimTypes.Role, "Admin")
+                             }, CookieAuthenticationDefaults.AuthenticationScheme);
+                        isAuthenticate = true;
+                    }
+                    if ((response.UserRoleName == "Interviewer"))
+                    {
+                        identity = new ClaimsIdentity(new[]
+                        {
+                            new Claim(ClaimTypes.Name, response.UserFullName),
+                             new Claim(ClaimTypes.Role,"Interviewer")
+                             }, CookieAuthenticationDefaults.AuthenticationScheme);
+                        isAuthenticate = true;
+                    }
 
-                    var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-                    HttpContext.Session.SetString("DesignationList", DesignationData);
+                    if (isAuthenticate)
+                    {
+                        var principal = new ClaimsPrincipal(identity);
+                        var login = HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-                    var TechnologyData = JsonConvert.SerializeObject(masterDataList.TechnologyData);
-                    HttpContext.Session.SetString("TechnologyList", TechnologyData);
 
-                    var ReasonData = JsonConvert.SerializeObject(masterDataList.ReasonData);
-                    HttpContext.Session.SetString("ReasonDataList", ReasonData);
+                        string Username = objUserLogin.Email;
+                        HttpContext.Session.SetString("Username", Username);
+                        var masterDataResponse = _masterdata.AllMasterDatalist();
 
-                    var RoleData = JsonConvert.SerializeObject(masterDataList.RoleData);
-                    HttpContext.Session.SetString("RoleDataList", RoleData);
+                        //do for all the master table .
+                        var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
 
-                    var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
-                    HttpContext.Session.SetString("RoundList", RoundData);
+                        var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
+                        HttpContext.Session.SetString("DesignationList", DesignationData);
 
-                    var InterviewStatusData = JsonConvert.SerializeObject(masterDataList.InterviewStatusData);
-                    HttpContext.Session.SetString("InterviewStatusList", InterviewStatusData);
+                        var TechnologyData = JsonConvert.SerializeObject(masterDataList.TechnologyData);
+                        HttpContext.Session.SetString("TechnologyList", TechnologyData);
 
-                    var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
-                    HttpContext.Session.SetString("InterviewerList", InterviewerData);
+                        var ReasonData = JsonConvert.SerializeObject(masterDataList.ReasonData);
+                        HttpContext.Session.SetString("ReasonDataList", ReasonData);
 
-                    var CandidateMasterData = JsonConvert.SerializeObject(masterDataList.CandidateMasterData);
-                    HttpContext.Session.SetString("CandidateMasterList", CandidateMasterData);
+                        var RoleData = JsonConvert.SerializeObject(masterDataList.RoleData);
+                        HttpContext.Session.SetString("RoleDataList", RoleData);
 
-                    return RedirectToAction("HomePage", "Home");
+                        var RoundData = JsonConvert.SerializeObject(masterDataList.RoundData);
+                        HttpContext.Session.SetString("RoundList", RoundData);
+
+                        var InterviewStatusData = JsonConvert.SerializeObject(masterDataList.InterviewStatusData);
+                        HttpContext.Session.SetString("InterviewStatusList", InterviewStatusData);
+
+                        var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
+                        HttpContext.Session.SetString("InterviewerList", InterviewerData);
+
+                        var CandidateMasterData = JsonConvert.SerializeObject(masterDataList.CandidateMasterData);
+                        HttpContext.Session.SetString("CandidateMasterList", CandidateMasterData);
+
+                        return RedirectToAction("HomePage", "Home");
+                    }
+                    else
+                    {
+                        return View();
+                    }
                 }
                 else
                 {
@@ -83,6 +120,8 @@ namespace CMS.Controllers
                 return View();
             }
         }
+
+       
 
         [AllowAnonymous]
         public IActionResult Logout()

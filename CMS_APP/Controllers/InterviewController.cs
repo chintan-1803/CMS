@@ -11,8 +11,9 @@ using System.Linq;
 
 namespace CMS.Controllers
 {
-	/*[Authorize]*/
-	public class InterviewController : Controller
+    [Authorize(Roles = "Interviewer,Admin")]
+  
+    public class InterviewController : Controller
 	{
 		private readonly IInterview _interviewInterface;
 

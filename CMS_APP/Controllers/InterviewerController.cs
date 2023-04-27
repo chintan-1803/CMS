@@ -7,6 +7,7 @@ using System.Data;
 namespace CMS.Controllers
 {
     /*[Authorize]*/
+    [Authorize(Roles = "Interviewer,Admin")]
     public class InterviewerController : Controller
     {
         /*private readonly Interviewer _interviewerService;*/
@@ -21,7 +22,7 @@ namespace CMS.Controllers
         [HttpGet]
         public IActionResult Interviewerlist()
         {
-            var response = _interviewer_Interface.Interviewerlist();
+			var response = _interviewer_Interface.Interviewerlist();
             var data = JsonConvert.DeserializeObject<List<InterviewerModel>>(response.Content);
 
             // Get the list of designations from the session

@@ -40,39 +40,46 @@ builder.Services.AddScoped<IInterview, Interview>();
 builder.Services.AddScoped<IInterviewer, Interviewer>();
 builder.Services.AddScoped<ICandidate, Candidate>();
 
+
+//add Authentication
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+	app.UseExceptionHandler("/Error");
+	//app.UseExceptionHandler();
+	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+	app.UseHsts();
 }
+app.Use(async (context, next) =>
+{
+	await next();
+	if (context.Response.StatusCode == 404)
+	{
+		context.Request.Path = "/Error/Index";
+		await next();
+	}
+});
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();
 app.UseRouting();
+
+//add CookiePolicy and Authentication
+
+app.UseCookiePolicy();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Login}/{id?}");
-
-
-/*app.Use(async (context, next) =>
-{
-    if (context.User == null || !context.User.Identity.IsAuthenticated)
-    {
-        await context.ChallengeAsync();
-    }
-    else
-    {
-        await next();
-    }
-});*/
 
 app.Run();
 

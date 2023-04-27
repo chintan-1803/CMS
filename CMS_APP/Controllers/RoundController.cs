@@ -9,8 +9,8 @@ using RoundModel = CMS.Models.RoundModel;
 
 namespace CMS.Controllers
 {
-    /*[Authorize]*/
-    public class RoundController : Controller
+	[Authorize(Roles = "Admin")]
+	public class RoundController : Controller
 	{
 		private readonly IRound _round_Interface;
 		public RoundController(IRound round_Interface)
@@ -20,8 +20,8 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Roundlist()
 		{
-			//pass the session
-			var jsonData = HttpContext.Session.GetString("RoundList");
+            //pass the session
+            var jsonData = HttpContext.Session.GetString("RoundList");
 
 			List<RoundModel> data;
 			if (jsonData == null)

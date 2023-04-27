@@ -7,8 +7,8 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-  /*  [Authorize]*/
-    public class TechnologyController : Controller
+	[Authorize(Roles = "Admin")]
+	public class TechnologyController : Controller
 	{
 		private readonly ITechnology _technology_Interface;
 		public TechnologyController(ITechnology technology_Interface)
@@ -18,9 +18,8 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Technologylist()
 		{
-
-			//pass the session
-			var jsonData = HttpContext.Session.GetString("TechnologyList");
+            //pass the session
+            var jsonData = HttpContext.Session.GetString("TechnologyList");
 
 			List<TechnologyModel> data;
 			if (jsonData == null)

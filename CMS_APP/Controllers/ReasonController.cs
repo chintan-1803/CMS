@@ -1,14 +1,15 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using CMSWebApi.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Drawing.Drawing2D;
 
 namespace CMS.Controllers
 {
-    /*[Authorize]*/
-    public class ReasonController : Controller
+	[Authorize(Roles = "Admin")]
+	public class ReasonController : Controller
 	{
 		private readonly IReason _reason_Interface;
 		public ReasonController(IReason reason_Interface)
@@ -17,9 +18,8 @@ namespace CMS.Controllers
 		}
 		[HttpGet]
 		public IActionResult Reasonlist()
-
 		{
-			var jsonData = HttpContext.Session.GetString("ReasonDataList");
+            var jsonData = HttpContext.Session.GetString("ReasonDataList");
 			List<ReasonModel> data;
 			if (jsonData == null)
 			{

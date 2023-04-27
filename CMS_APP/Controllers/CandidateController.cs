@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace CMS.Controllers
 {
-    /*[Authorize]*/
+    
     public class CandidateController : Controller
     {
 		private readonly IMasterData _masterdata;
@@ -22,6 +22,7 @@ namespace CMS.Controllers
 		[HttpGet]
         public IActionResult CandidateRegistration()
         {
+
 			var masterDataResponse = _masterdata.AllMasterDatalist();
 			var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
 			ViewBag.TechnologyList = masterDataList.TechnologyData;
@@ -64,10 +65,11 @@ namespace CMS.Controllers
 		//Admin
 
 		[HttpGet]
+		[Authorize(Roles = "Interviewer,Admin")]
 		public IActionResult AllCandidatelist()
 		{
-			// Get the list of designations from the API
-			var response = _candidateDatamodal.GetCandidateList();
+            // Get the list of designations from the API
+            var response = _candidateDatamodal.GetCandidateList();
 			var data = JsonConvert.DeserializeObject<List<CandidateMasterEntity>>(response.Content);
 			//data.ForEach(data => { data.resume; }) ;
 			if (data != null)
