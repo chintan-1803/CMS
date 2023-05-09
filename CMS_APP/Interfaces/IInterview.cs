@@ -12,5 +12,9 @@ namespace CMS.Interfaces
         public RestResponse UpdateInterview(InterviewModel updateInterviewData);
 
         public RestResponse DeleteInterview(InterviewModel interviewId);
-    }
+
+		public RestResponse AddInterviewRound(InterviewRoundModel interviewRoundData);
+
+		public RestResponse ViewInterviewRound(int interviewId);
+	}
 }

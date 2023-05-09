@@ -38,7 +38,7 @@ namespace CMSWebApi.Controllers
 				//return Ok(json);
 
 
-				return Ok(new { DesignationData = response.Item1, ReasonData = response.Item2, RoleData = response.Item3, RoundData = response.Item4, TechnologyData = response.Item5, InterviewStatusData = response.Item6, InterviewerData = response.Item7, CandidateMasterData = response.Item8 });;
+				return Ok(new { DesignationData = response.Item1, ReasonData = response.Item2, RoleData = response.Item3, RoundData = response.Item4, TechnologyData = response.Item5, InterviewStatusData = response.Item6, InterviewerData = response.Item7, CandidateMasterData = response.Item8, RoundStatusData = response.Item9 });
 				//return Json(response);
 			}
 			catch (Exception ex)

@@ -224,7 +224,7 @@
 				$('#DesignationError').text('Designation is required.');
 				return;
 			}
-			if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(Designation.trim())) {
+			if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Designation.trim())) {
 				$('#DesignationError').text('Designation is incorrect.Please enter a valid designation.');
 				return;
 			}// Make the AJAX call
@@ -271,7 +271,7 @@
 				}, 3000);
 				return ;
 			}
-		    if (!/^[a-zA-Z0-9]+(\s[a-zA-Z0-9]+)?$/.test(designation.trim())) {
+		    if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(designation.trim())) {
 				// Show error message and return without making the AJAX call
 			    $('#DesignationError_' + id).text('Designation is incorrect.Please enter a valid designation.');
 				setTimeout(function () {

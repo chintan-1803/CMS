@@ -22,8 +22,12 @@
 
         public readonly static string InterviewStatusData = "GetAllInterviewStatusData";
 
-        //Designation
-        public readonly static string PageDesignationMasterData = "PageDesignationMaster";
+		public readonly static string InterviewRoundsData = "GetAllInterviewRoundsData";
+
+		public readonly static string RoundStatusData = "GetAllRoundStatusData";
+
+		//Designation
+		public readonly static string PageDesignationMasterData = "PageDesignationMaster";
 
         public readonly static string InsertDesignation = "sp_Insert_DesignationMaster";
 
@@ -85,6 +89,7 @@
 
         public readonly static string DeleteInterview = "sp_Delete_Interviews";
 
+
         // Interview Status
         public readonly static string InsertInterviewStatus = "sp_Insert_InterviewStatus";
 
@@ -96,6 +101,23 @@
 
 		public readonly static string CandidateData = "GetAllCandidatesData";
 
+        //AllDashboarddata
+        public readonly static string GetAllDashboardData = "GetAllDashboardData";
+
+
+		//Interview Rounds
+		public readonly static string InsertInterviewRound = "sp_Insert_interviewRounds";
+
+		public readonly static string UpdateInterviewRound = "sp_Update_InterviewRound";
+
+		public readonly static string DeleteInterviewRound = "sp_Delete_InterviewRound";
+
+		//Round Status
+		public readonly static string InsertRoundStatus = "sp_Insert_RoundStatus";
+
+		public readonly static string UpdateRoundStatus = "sp_Update_RoundStatus";
+
+		public readonly static string DeleteRoundStatus = "sp_Delete_RoundStatus";
 
 	}
 }

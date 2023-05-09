@@ -460,11 +460,11 @@
 													<label for="location">Agree for change location?</label>
 													<div class="radio-buttons">
 														<div class="radio-button">
-															<input type="radio" id="location" name="location" value="yes" onchange="locationrbtn(location)" required>
+															<input type="radio" id="locationyes" name="location" value="yes" @*onchange="locationrbtn(location)"*@ required>
 															<label for="yes">Yes</label>
 														</div>
 														<div class="radio-button">
-															<input type="radio" id="location" name="location" value="no" onchange="locationrbtn(location)">
+															<input type="radio" id="locationno" name="location" value="no" @*onchange="locationrbtn(location)"*@>
 															<label for="no">No</label>
 														</div>
 													</div>
@@ -652,15 +652,15 @@
 		}
 	}
 
-	function locationrbtn(e) {
-
-		if (e.value == "yes") {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
+	//function locationrbtn(e) {
+	//	debugger
+	//	if (e.value == "yes") {
+	//		return "yes";
+	//	}
+	//	else {
+	//		return "no";
+	//	}
+	//}
 
 	$('#resumeup').change(function () {
 		//here we take the file extension and set an array of valid extensions
@@ -739,7 +739,7 @@
 			Email: $('#email').val(),
 			ContactNo: $('#phone_number').val(),
 			Skills: $('#skills').val(),
-			AgreeForChangeLocation: $('#location').val(),
+			AgreeForChangeLocation: $("input[name=location]:checked").val() == "true",
 			City: $('#city').val(),
 			State: $('#State').val(),
 			Address: $('#Address').val(),
@@ -757,6 +757,9 @@
 			Reference: $('#Reference').val(),
 			resume: pdfString
 		}
+		//if (firstName== null){
+		//	return false;
+		//}
 		//var base64String = "";
 		//// Get the values of the input fields
 		//var FirstName = $('#first_name').val();

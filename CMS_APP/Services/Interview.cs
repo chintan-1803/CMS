@@ -51,5 +51,24 @@ namespace CMS.Services
             var response = client.Execute<InterviewModel>(request);
             return response;
         }
-    }
+
+		public RestResponse AddInterviewRound(InterviewRoundModel interviewRoundData)
+		{
+			var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.AddInterviewRound);
+			RestRequest request = new RestRequest() { Method = Method.Post };
+			request.AddHeader("Content-Type", "application/json");
+			request.AddParameter("application/json", JsonConvert.SerializeObject(interviewRoundData), ParameterType.RequestBody);
+			var response = client.Execute<InterviewRoundModel>(request);
+			return response;
+		}
+
+		public RestResponse ViewInterviewRound(int interviewId)
+		{
+			var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.InterviewRoundPath + "/" + interviewId);
+			RestRequest request = new RestRequest() { Method = Method.Get };
+			request.AddHeader("Content-Type", "application/json");
+			var response = client.Execute(request);
+			return response;
+		}
+	}
 }

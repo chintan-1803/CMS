@@ -2,6 +2,7 @@
 using CMS.Interfaces;
 using CMS.Models;
 using CMS.Services;
+using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -22,32 +23,46 @@ namespace CMS.Controllers
 		[HttpGet]
 		public IActionResult Designationlist()
 		{
-            // Get the list of designations from the API
-            var jsonData = HttpContext.Session.GetString("DesignationList");
-
-			if(jsonData == null) {
-				var response = _designation_Interface.Designationlist();
-				var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-			}
-			if(jsonData == null){
-				var masterDataResponse = _masterdata.AllMasterDatalist();
-				var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
-				//var designation = masterDataList.DesignationData;
-				//var designation 
-				var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-				HttpContext.Session.SetString("DesignationList", DesignationData);
-
-			}
-			var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
-
-			if (designationList != null)
+			var jsonData = HttpContext.Session.GetString("DesignationList");
+			List<DesignationModel> data;
+			if (jsonData == null)
 			{
-				return View(designationList);
+				var response = _designation_Interface.Designationlist();
+				data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
+				var DesignationData = JsonConvert.SerializeObject(data);
+				HttpContext.Session.SetString("DesignationList",DesignationData);
 			}
 			else
 			{
-				return View();
+				data = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
 			}
+			return View(data);
+			// Get the list of designations from the API
+			//var jsonData = HttpContext.Session.GetString("DesignationList");
+
+			//if(jsonData == null) {
+			//	var response = _designation_Interface.Designationlist();
+			//	var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
+			//}
+			//if(jsonData == null){
+			//	var masterDataResponse = _masterdata.AllMasterDatalist();
+			//	var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
+			//	//var designation = masterDataList.DesignationData;
+			//	//var designation 
+			//	var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
+			//	HttpContext.Session.SetString("DesignationList", DesignationData);
+
+			//}
+			//var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
+
+			//if (designationList != null)
+			//{
+			//	return View(designationList);
+			//}
+			//else
+			//{
+			//	return View();
+			//}
 		}
 
 
@@ -87,7 +102,7 @@ namespace CMS.Controllers
 				return BadRequest(response);
 			}
 			if(response.Content == "\"SUCCESS\""){
-				HttpContext.Session.Remove("masterDatalist");
+				HttpContext.Session.Remove("DesignationList");
 				return Json(new { success = true, message = "Designation updated successfully." });
 			}
 			if (response != null)
@@ -106,7 +121,7 @@ namespace CMS.Controllers
 			var response = _designation_Interface.DeleteDesignationitem(Designation_ID);
 			if (response != null)
 			{
-				HttpContext.Session.Remove("masterDatalist");
+				HttpContext.Session.Remove("DesignationList");
 				return Json(new { success = true, message = "Designation deleted successfully." });
 			}
 			else

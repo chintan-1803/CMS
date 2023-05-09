@@ -25,4 +25,10 @@
         public DateTime? change_date { get; set; }
         public bool? IsDeleted { get; set; } = false;
     }
+
+	public class InterviewViewModel
+	{
+		public List<InterviewModel>? Interview { get; set; }
+		public List<InterviewRoundModel>? InterviewRounds { get; set; }
+	}
 }

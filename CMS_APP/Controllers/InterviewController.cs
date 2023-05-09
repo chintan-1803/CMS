@@ -12,11 +12,9 @@ using System.Linq;
 namespace CMS.Controllers
 {
     [Authorize(Roles = "Interviewer,Admin")]
-  
-    public class InterviewController : Controller
+	public class InterviewController : Controller
 	{
 		private readonly IInterview _interviewInterface;
-
 		public InterviewController(IInterview interviewInterface)
 		{
 			_interviewInterface = interviewInterface;
@@ -28,6 +26,21 @@ namespace CMS.Controllers
 			var response = _interviewInterface.GetInterviewList();
 			var data = JsonConvert.DeserializeObject<List<InterviewModel>>(response.Content);
 
+			var interviewRoundList = new List<InterviewRoundModel>();
+			foreach (var interview in data)
+			{
+				var interviewId = interview.InterviewId;
+				var interviewRoundResponse = _interviewInterface.ViewInterviewRound(interviewId);
+				var interviewRound = JsonConvert.DeserializeObject<List<InterviewRoundModel>>(interviewRoundResponse.Content);
+
+				interviewRoundList.AddRange(interviewRound);
+			}
+
+			var viewModel = new InterviewViewModel
+			{
+				Interview = data,
+				InterviewRounds = interviewRoundList
+			};
 			var jsonData = HttpContext.Session.GetString("ReasonDataList");
 			var reasonList = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
 
@@ -43,20 +56,24 @@ namespace CMS.Controllers
 			var jsonData4 = HttpContext.Session.GetString("CandidateMasterList");
 			var candidateMasterList = JsonConvert.DeserializeObject<List<CandidateMasterEntity>>(jsonData4);
 
-			if (data != null)
-			{
-				ViewBag.ReasonList = reasonList;
-				ViewBag.TechnologyList = technologyList;
-				ViewBag.InterviewStatusList = interviewStatusList;
-				ViewBag.InterviewerList = interviewerList;
-				ViewBag.CandidateMasterList = candidateMasterList;
-				return View(data);
-			}
-			else
-			{
-				return View();
-			}
+			var jsonData5 = HttpContext.Session.GetString("RoundList");
+			var roundList = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData5);
+
+			var jsonData6 = HttpContext.Session.GetString("RoundStatusList");
+			var roundStatusList = JsonConvert.DeserializeObject<List<RoundStatusModel>>(jsonData6);
+
+			ViewBag.ReasonList = reasonList;
+			ViewBag.TechnologyList = technologyList;
+			ViewBag.InterviewStatusList = interviewStatusList;
+			ViewBag.InterviewerList = interviewerList;
+			ViewBag.CandidateMasterList = candidateMasterList;
+			ViewBag.RoundList = roundList;
+			ViewBag.RoundStatusList = roundStatusList;
+
+			// Pass the view model to the view
+			return View(viewModel);
 		}
+
 
 		[HttpPost]
 		public IActionResult AddInterview(InterviewModel interviewData)
@@ -87,34 +104,6 @@ namespace CMS.Controllers
 			}
 		}
 
-		//[HttpPost]
-		//public IActionResult AddInterview(InterviewModel interviewData)
-		//{
-		//	var response = _interviewInterface.AddInterview(interviewData);
-		//	// Deserialize the response content to a list of InterviewModel objects
-		//	var data = JsonConvert.DeserializeObject<List<InterviewModel>>(response.Content);
-
-		//	if (response.Content == "\"SUCCESS\"")
-		//	{
-		//		return Json(new { success = true, message = "Interview added successfully." });
-		//	}
-		//	else
-		//	{
-		//		var errorMessage = "An error occurred while saving the interview.";
-		//		// Use the Where method on the deserialized collection
-		//		var conflictingInterviews = data.Where(interview =>interview.CandidateId == interviewData.CandidateId && interview.ScheduledTime == interviewData.ScheduledTime);
-
-		//		if (conflictingInterviews.Any())
-		//		{
-		//			return Json(new { success = false, message = "There is a conflict with the interview schedule. Please choose a different time or candidate." });
-		//		}
-		//		else
-		//		{
-		//			return Json(new { success = false, message = errorMessage });
-		//		}
-		//	}
-		//}
-
 		[HttpPut]
 		public IActionResult UpdateInterview(InterviewModel updateInterviewData)
 		{
@@ -122,13 +111,13 @@ namespace CMS.Controllers
 
 			if (!response.IsSuccessful)
 			{
-                var errorMessage = "An error occurred while saving the interview.";
-                if (response.Content == "\"Interviewer is occupied\"")
+				var errorMessage = "An error occurred while saving the interview.";
+				if (response.Content == "\"Interviewer is occupied\"")
 				{
-                    errorMessage = "Interviewer is occupied.";
-                }
-                return Json(new { success = false, message = errorMessage });
-            }
+					errorMessage = "Interviewer is occupied.";
+				}
+				return Json(new { success = false, message = errorMessage });
+			}
 			if (response.Content == "\"SUCCESS\"")
 			{
 				return Json(new { success = true, message = "Interview updated successfully." });
@@ -155,6 +144,43 @@ namespace CMS.Controllers
 			else
 			{
 				return Json(new { success = false });
+			}
+		}
+
+		[HttpPost]
+		public IActionResult AddInterviewRound(InterviewRoundModel interviewRoundData)
+		{
+			var response = _interviewInterface.AddInterviewRound(interviewRoundData);
+
+			if (!response.IsSuccessful)
+			{
+				return BadRequest(response);
+			}
+			if (response.Content == "\"SUCCESS\"")
+			{
+				return Json(new { success = true, message = "Interview Round added successfully." });
+			}
+			else
+			{
+				return BadRequest(response);
+			}
+		}
+
+		[HttpGet]
+		/*[Produces("application/json")]*/
+		public IActionResult ViewInterviewRoundById(int interviewId)
+		{
+			var response = _interviewInterface.ViewInterviewRound(interviewId);
+
+			var interviewRoundList = JsonConvert.DeserializeObject<List<InterviewRoundModel>>(response.Content);
+
+			if (interviewRoundList != null)
+			{
+				return Json(interviewRoundList);
+			}
+			else
+			{
+				return NotFound();
 			}
 		}
 	}

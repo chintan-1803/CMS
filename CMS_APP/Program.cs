@@ -39,6 +39,7 @@ builder.Services.AddScoped<IMasterData, MasterData>();
 builder.Services.AddScoped<IInterview, Interview>();
 builder.Services.AddScoped<IInterviewer, Interviewer>();
 builder.Services.AddScoped<ICandidate, Candidate>();
+builder.Services.AddScoped<IDashboardDatalist, DashboardDatalist>();
 
 
 //add Authentication

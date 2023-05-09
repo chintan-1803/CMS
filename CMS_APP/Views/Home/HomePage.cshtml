@@ -1,99 +1,91 @@
-﻿@{
+﻿@model CMS.Models.DashboardData
+@{
     //ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row">
-    <!-- task, page, download counter  start -->
-    <div class="col-xl-3 col-md-6">
-        <div class="card">
-            <div class="card-block">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <h4 class="text-c-purple">46</h4>
-                        <h6 class="text-muted m-b-0">Interviews</h6>
-                    </div>
-                    <div class="col-4 text-right">
-                        <i class="fa fa-bar-chart f-28"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer bg-c-purple">
-                <div class="row align-items-center">
-                    <div class="col-9">
-                        <p class="text-white m-b-0">% change</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <i class="fa fa-line-chart text-white f-16"></i>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
+<div class="row text-center justify-content-center">
+    <!-- the four cards -->
+    <div class="col-xl-3 col-md-3">
         <div class="card">
             <div class="card-block">
                 <div class="row align-items-center">
                     <div class="col-8">
-                        <h4 class="text-c-green">13</h4>
-                        <h6 class="text-muted m-b-0">Selected Candidate</h6>
-                    </div>
-                    <div class="col-4 text-right">
-                        <i class="fa fa-users f-28"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer bg-c-green">
-                <div class="row align-items-center">
-                    <div class="col-9">
-                        <p class="text-white m-b-0">% change</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <i class="fa fa-line-chart text-white f-16"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card">
-            <div class="card-block">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <h4 class="text-c-red">8</h4>
-                        <h6 class="text-muted m-b-0">Offer Provided</h6>
-                    </div>
-                    <div class="col-4 text-right">
-                        <i class="ti-layout-cta-btn-left f-32"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer bg-c-red">
-                <div class="row align-items-center">
-                    <div class="col-9">
-                        <p class="text-white m-b-0">% change</p>
-                    </div>
-                    <div class="col-3 text-right">
-                        <i class="fa fa-line-chart text-white f-16"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-        <div class="card">
-            <div class="card-block">
-                <div class="row align-items-center">
-                    <div class="col-8">
-                        <h4 class="text-c-blue">6</h4>
-                        <h6 class="text-muted m-b-0">Offer Accepted</h6>
+                        <h4 class="text-c-purple">@Model.totalInterview</h4>
+                        <h6 class="text-muted m-b-0">Total Interviews</h6>
                     </div>
                     <div class="col-4 text-right">
                         <i class="fa fa-calendar-check-o f-28"></i>
                     </div>
                 </div>
             </div>
-            <div class="card-footer bg-c-blue">
+        </div>
+    </div>
+    <div class="col-xl-3">
+        <div class="card">
+            <div class="card-block">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h4 class="text-c-green">@Model.completeInterview</h4>
+                        <h6 class="text-muted m-b-0">Completed Interviews</h6>
+                    </div>
+                    <div class="col-4 text-right">
+                        <i class="fa fa-calendar-check-o f-28"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3">
+        <div class="card">
+            <div class="card-block">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h4 class="text-c-red">@Model.scheduledInterview</h4>
+                        <h6 class="text-muted m-b-0">Scheduled Interviews</h6>
+                    </div>
+                    <div class="col-4 text-right">
+                        <i class="fa fa-calendar-check-o f-28"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 ">
+        <div class="card">
+            <div class="card-block">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h4 class="text-c-blue">@Model.pendingInterview</h4>
+                        <h6 class="text-muted m-b-0">Pending Interviews</h6>
+                    </div>
+                    <div class="col-4 text-right">
+                        <i class="fa fa-calendar-check-o f-28"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <!-- task, page, download counter  start -->
+    
+    <div class="col-xl-3">
+        <div class="card">
+            <div class="card-block">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h4 class="text-c-green">@Model.totalCandidates</h4>
+                        <h6 class="text-muted m-b-0">Total Candidates</h6>
+                    </div>
+                    <div class="col-4 text-right">
+                        <i class="fa fa-users f-28"></i>
+                    </div>
+                </div>
+            </div>
+            @*<div class="card-footer bg-c-green">
                 <div class="row align-items-center">
                     <div class="col-9">
                         <p class="text-white m-b-0">% change</p>
@@ -102,9 +94,11 @@
                         <i class="fa fa-line-chart text-white f-16"></i>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </div>
+   
+   
 
     <!--  sale analytics end -->
     <!--  project and team member start -->

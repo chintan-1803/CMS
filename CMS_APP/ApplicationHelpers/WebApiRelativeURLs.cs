@@ -90,5 +90,29 @@ namespace CMS.ApplicationHelpers
 
 		public const string DeleteInterview = "/Interview/DeleteInterviewData";
 
+        //Dashboard
+
+        public const string Dashboarddata = "/Dashboard";
+
+		//Interview Round
+
+		public const string InterviewRoundPath = "/InterviewRound/InterviewRound";
+
+		public const string AddInterviewRound = "/InterviewRound/AddInterviewRound";
+
+		public const string UpdateInterviewRound = "/InterviewRound/UpdateInterviewRound";
+
+		public const string DeleteInterviewRound = "/InterviewRound/DeleteInterviewRound";
+
+		//Round Status
+
+		public const string RoundStatusPath = "/RoundStatus/RoundStatus";
+
+		public const string AddRoundStatus = "/RoundStatus/AddRoundStatus";
+
+		public const string UpdateRoundStatus = "/RoundStatus/UpdateRoundStatus";
+
+		public const string DeleteRoundStatus = "/RoundStatus/DeleteRoundStatus";
+
 	}
 }

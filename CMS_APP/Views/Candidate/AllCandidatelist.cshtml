@@ -66,12 +66,7 @@
 	<div class="card table-card">
 		<div class="card-header">
 			<h5>Candidate List</h5>
-			<div class="card-header-right">
-				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
-					Create New
-				</button>
-				@*Add Reason--pop box*@
-			</div>
+			
 		</div>
 		<div class="card-block">
 			<div class="table-responsive">
@@ -114,26 +109,6 @@
 									</div>
 								</td>
 								<td class="text-center">@(data.IsExperience ? "Yes" : "No") </td>
-								<td class="text-right">
-									<div class="dropdown">
-										<button width="10px" height="10px" type="button" class="btn btn-primary light sharp" data-toggle="dropdown">
-											<svg width="20px" height="20px" viewBox="0 0 24 24" version="1.1">
-												<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-													<rect x="0" y="0" width="24" height="24"></rect>
-													<circle fill="#000000" cx="5" cy="12" r="2"></circle>
-													<circle fill="#000000" cx="12" cy="12" r="2"></circle>
-													<circle fill="#000000" cx="19" cy="12" r="2"></circle>
-												</g>
-											</svg>
-										</button>
-										<div class="dropdown-menu">
-
-											<button type="button" class="dropdown-item" data-toggle="modal" @*data-target="#UpdateModalCenter_@data.InterviewerId"*@>Edit</button>
-											<button type="button" class="dropdown-item" data-toggle="modal" @* data-target="#myModal_@data.InterviewerId"*@>Delete</button>
-										</div>
-									</div>
-									
-								</td>
 							</tr>
 						}
 					</tbody>

@@ -12,5 +12,6 @@ namespace CMS.Models
         public List<InterviewStatusModel> InterviewStatusData { get; set; }
         public List<InterviewerModel> InterviewerData { get; set; }
         public List<CandidateMasterEntity> CandidateMasterData { get; set; }
-    }
+		public List<RoundStatusModel> RoundStatusData { get; set; }
+	}
 }

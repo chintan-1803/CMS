@@ -102,7 +102,10 @@ namespace CMS.Controllers
                         var CandidateMasterData = JsonConvert.SerializeObject(masterDataList.CandidateMasterData);
                         HttpContext.Session.SetString("CandidateMasterList", CandidateMasterData);
 
-                        return RedirectToAction("HomePage", "Home");
+						var RoundStatusData = JsonConvert.SerializeObject(masterDataList.RoundStatusData);
+						HttpContext.Session.SetString("RoundStatusList", RoundStatusData);
+
+						return RedirectToAction("HomePage", "Home");
                     }
                     else
                     {

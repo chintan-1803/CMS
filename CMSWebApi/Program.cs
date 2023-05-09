@@ -43,6 +43,9 @@ builder.Services.AddScoped<IInterviewer_Interface, Interviewer_Service>();
 builder.Services.AddScoped<IInterviewStatus_Interface, InterviewStatus_Service>();
 builder.Services.AddScoped<IInterviews_Interface, Interviews_Service>();
 builder.Services.AddScoped<ICandidate_Interface,Candidate_Service>();
+builder.Services.AddScoped<IGetAllDashboardData_Interface,GetAllDashboardData_Service>();
+builder.Services.AddScoped<IInterviewRound_Interface, InterviewRound_Service>();
+builder.Services.AddScoped<IRoundStatus_Interface, RoundStatus_Service>();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddSwaggerGen(c =>

@@ -3,14 +3,14 @@
 *@
 @using CMS.Constants;
 @using CMS.ApplicationHelpers;
-@model InterviewViewModel
+@model List<CMS.Models.InterviewModel>
 @inject IHttpContextAccessor HttpContextAccessor
 @using CMS.Models;
 @using Microsoft.AspNetCore.Http
 @using Newtonsoft.Json
 @{
     ViewBag.Title = "Interview List";
-
+    
 
     //string create_User = HttpContextAccessor.HttpContext.Session.GetString("create_User");
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -54,7 +54,6 @@
     .modal-header .close {
         font-size: 20px;
     }
-    
 
     .modal-body {
         text-align: left;
@@ -93,7 +92,7 @@
                                         <option value="" disabled selected>Select Candidate</option>
                                         @foreach (var candidate in ViewBag.CandidateMasterList)
                                         {
-                                            <option value="@candidate.CandidateId">@candidate.firstName @candidate.lastName @candidate.ContactNo</option>
+                                            <option value="@candidate.CandidateId">@candidate.firstName @candidate.lastName</option>
                                         }
                                     </select>
                                     <span asp-validation-for="CandidateId" class="text-danger" id="candidateIdError"></span>
@@ -107,7 +106,7 @@
                                         <option value="" disabled selected>Select Interviewer</option>
                                         @foreach (var interviewer in ViewBag.InterviewerList)
                                         {
-                                            <option value="@interviewer.InterviewerId">@interviewer.FirstName @interviewer.LastName </option>
+                                            <option value="@interviewer.InterviewerId">@interviewer.FirstName @interviewer.LastName</option>
                                         }
                                     </select>
                                     <span asp-validation-for="InterviewerId" class="text-danger" id="interviewerIdError"></span>
@@ -175,7 +174,7 @@
                                 </div>
 
                                 <div class="modal-footer d-flex justify-content-center">
-                                    <button class="btn btn-deep-blue" id="save-btn"> Save</button>
+                                    <button class="btn btn-deep-blue" id="save-btn" > Save</button>
 
                                 </div>
                             </div>
@@ -202,7 +201,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var data in Model.Interview)
+                        @foreach (var data in Model)
                         {
                             <tr>
                                 <td class="text-center">@data.CandidateFName @data.CandidateLName</td>
@@ -226,124 +225,12 @@
                                                 </g>
                                             </svg>
                                         </button>
-
                                         <div class="dropdown-menu">
+
                                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewId">Edit</button>
                                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.InterviewId">Delete</button>
                                         </div>
-                                        <button type="button" class="btn btn-primary light sharp" style="font-size: 14px; width: 80px; height: 30px;" data-toggle="modal" data-target="#AddRoundModalCenter_@data.InterviewId" onclick="clearModal()">Add Round</button>
-                                        <button type="button" class="btn btn-primary light sharp" style="font-size: 12px; width: 80px; height: 30px;" data-toggle="modal" data-target="#ViewRoundModalCenter_@data.InterviewId" onclick="viewRound(@data.InterviewId)">View Rounds</button>
                                     </div>
-
-                                    <!-- Add Interview Round Popup-->
-
-                                    <div class="modal fade" id="AddRoundModalCenter_@data.InterviewId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header text-center">
-                                                        <h4 class="modal-title w-100 font-weight-bold">Add Interview Round</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <input type="hidden" id="InterviewId_@data.InterviewId" value="@data.InterviewId" class="form-control validate">
-
-                                                    <div class="modal-body mx-3">
-                                                        <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Name</span>
-                                                        </label>
-                                                        <select class="form-control validate round-dropdown" required id="roundName_@data.InterviewId">
-                                                            <option value="" disabled selected>Select Round</option>
-                                                            @foreach (var round in ViewBag.RoundList)
-                                                            {
-                                                                <option value="@round.RoundID">@round.Round_Name</option>
-                                                            }
-                                                        </select>
-                                                        <span asp-validation-for="roundName" class="text-danger" id="roundNameError_@data.InterviewId"></span>
-                                                    </div>
-
-                                                    <div class="modal-body mx-3">
-                                                        <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Status</span>
-                                                        </label>
-                                                        <select class="form-control validate roundStatus-dropdown" required id="roundStatus_@data.InterviewId">
-                                                            <option value="" disabled selected>Select Round Status</option>
-                                                            @foreach (var roundStatus in ViewBag.RoundStatusList)
-                                                            {
-                                                                <option value="@roundStatus.roundStatusId">@roundStatus.StatusName</option>
-                                                            }
-                                                        </select>
-                                                        <span asp-validation-for="roundStatus" class="text-danger" id="roundStatusError_@data.InterviewId"></span>
-                                                    </div>
-
-                                                    <div class="modal-body mx-3">
-                                                        <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled At</span>
-                                                        </label>
-                                                        <input asp-for="scheduledAt" type="datetime-local" id="scheduledAt_@data.InterviewId" class="form-control validate" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")">
-                                                        <span asp-validation-for="scheduledAt" class="text-danger" id="scheduledAtError_@data.InterviewId"></span>
-                                                    </div>
-
-                                                    <div class="modal-body mx-3">
-                                                        <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Feedback</span>
-                                                        </label>
-                                                        <textarea asp-for="roundFeedback" id="roundFeedback_@data.InterviewId" class="form-control validate"></textarea>
-                                                        <span asp-validation-for="roundFeedback" class="text-danger" id="roundFeedbackError_@data.InterviewId"></span>
-                                                    </div>
-
-                                                    <div class="modal-footer d-flex justify-content-center">
-                                                        <button class="btn btn-deep-blue" id="save-button" onclick="addRoundfunction(@data.InterviewId)"> Save</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- View Round Popup-->
-                                    <div class="modal fade" id="ViewRoundModalCenter_@data.InterviewId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 800px;">
-                                            <div class="modal-dialog" role="document" style="max-width: 800px;">
-                                                <div class="modal-content">
-                                                    <div class="modal-header text-center">
-                                                        <h4 class="modal-title w-100 font-weight-bold">View Interview Round</h4>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <input type="hidden" id="InterviewId_@data.InterviewId" value="@data.InterviewId" class="form-control validate">
-                                                    <table class="table table-hover">
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="text-center">Round name</th>
-                                                                <th class="text-center">Round Status</th>
-                                                                <th class="text-center">Round Schedule Time</th>
-                                                                <th class="text-center">Round Feedback</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach (var interviewRound in Model.InterviewRounds)
-                                                            {
-                                                                if(interviewRound.interviewId == @data.InterviewId){
-                                                                    <tr>
-                                                                        <td class="text-center">@interviewRound.Round_Name</td>
-                                                                        <td class="text-center">@interviewRound.StatusName</td>
-                                                                        <td class="text-center">@interviewRound.scheduledAt</td>
-                                                                        <td class="text-center">@interviewRound.roundFeedback</td>
-                                                                    </tr>
-                                                                }
-                                                            }
-                                                                
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Delete Popup-->
 
                                     <div class="text-center">
                                         <div id="myModal_@data.InterviewId" class="modal fade">
@@ -520,7 +407,6 @@
 
     <script>
 
-        // This below function can clear the values from Add interview and Add interview round
         function clearModal() {
             // Clear the input field values
             $("#candidateId").val('');
@@ -530,13 +416,8 @@
             $("#interviewURL").val('');
             $("#scheduledTime").val('');
             $("#description").val('');
-            $("#roundName").val('');
-            $("#roundStatus").val('');
-            $("#scheduledAt").val('');
-            $("#roundFeedback").val('');
         }
 
-        // This below function can show and hide interview URL field from the add interview form
         function showInterviewURLField() {
             document.getElementById("interviewURLField").style.display = "block";
         }
@@ -544,7 +425,6 @@
             document.getElementById("interviewURLField").style.display = "none";
         }
 
-        // This below function is to check the is online field is clicked or not in add interview
         function validateForm() {
             var isOnline = document.getElementsByName("isOnline");
             var checkedOption = false;
@@ -567,133 +447,134 @@
             return true;
         }
 
-        // This below function is to save data of add interview
-        $("#save-btn").click(function () {
+        
+        $(function () {
+            $("#save-btn").click(function () {
+               
+                // Get the values from the form fields
+                var candidateId = $("#candidateId").val();
+                var interviewerId = $("#interviewerId").val();
+                var technology = $("#technology").val();
+                var isOnline = $("input[name=isOnline]:checked").val() == "true";
+                var interviewURL = $("#interviewURL").val();
+                var scheduledTime = $("#scheduledTime").val();
+                var statusId = $("#statusID").val();
+                var description = $("#description").val();
+                var selectedTime = new Date(scheduledTime);
+                var urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+               
+                $('#candidateId').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#candidateIdError').text('');
+                    }
+                });
+                $('#interviewerId').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#interviewerIdError').text('');
+                    }
+                });
+                $('#technology').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#technologyError').text('');
+                    }
+                });
+                $('input[name=isOnline]:checked').on('change', function () {
+                    // Clear the error message when a value is selected
+                    $('#isOnlineError').text('');
+                });
 
-            // Get the values from the form fields
-            var candidateId = $("#candidateId").val();
-            var interviewerId = $("#interviewerId").val();
-            var technology = $("#technology").val();
-            var isOnline = $("input[name=isOnline]:checked").val() == "true";
-            var interviewURL = $("#interviewURL").val();
-            var scheduledTime = $("#scheduledTime").val();
-            var statusId = $("#statusID").val();
-            var description = $("#description").val();
-            var selectedTime = new Date(scheduledTime);
-            var urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+                $('#interviewURL').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#interviewURLError').text('');
+                    }
+                });
+                $('#scheduledTime').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#scheduledTimeError').text('');
+                    }
+                });
+                $('#statusID').on('input', function () {
+                    // Clear the error message when the field is not empty
+                    if ($(this).val() !== '') {
+                        $('#statusIDError').text('');
+                    }
+                });
+                if ($("#candidateId").val() == null || $("#candidateId").val() == '') {
+                    $('#candidateIdError').text('Please select a Candidate.');
+                    return false;
+                }
+                if ($("#interviewerId").val() == null || $("#interviewerId").val() == '') {
+                    $('#interviewerIdError').text('Please select a Interviewer.');
+                    return false;
+                }
+                if ($("#technology").val() == null || $("#technology").val() == '') {
+                    $('#technologyError').text('Please select a Technology.');
+                    return false;
+                }
+                if (!validateForm()) {
+                    return;
+                }
+                if (isOnline && interviewURL.trim() === "") {
+                    $("#interviewURLError").text("Please enter the interview URL.");
+                    return;
+                }
+                if (isOnline && (!interviewURL || !urlRegex.test(interviewURL))) {
+                    $("#interviewURLError").text("Please enter a valid URL.");
+                    return false;
+                }
+                if ($("#scheduledTime").val() == null || $("#scheduledTime").val() == '') {
+                    $('#scheduledTimeError').text('Please select Date and Time.');
+                    return false;
+                }
+                if (selectedTime < new Date()) {
+                    $('#scheduledTimeError').text("Please select a future date and time for the interview.");
+                    return;
+                }
+                if ($("#statusID").val() == null || $("#statusID").val() == '') {
+                    $('#statusIDError').text('Please select a Status.');
+                    return false;
+                }
 
-            $('#candidateId').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#candidateIdError').text('');
-                }
-            });
-            $('#interviewerId').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#interviewerIdError').text('');
-                }
-            });
-            $('#technology').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#technologyError').text('');
-                }
-            });
-            $('input[name=isOnline]:checked').on('change', function () {
-                // Clear the error message when a value is selected
-                $('#isOnlineError').text('');
-            });
-
-            $('#interviewURL').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#interviewURLError').text('');
-                }
-            });
-            $('#scheduledTime').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#scheduledTimeError').text('');
-                }
-            });
-            $('#statusID').on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#statusIDError').text('');
-                }
-            });
-            if ($("#candidateId").val() == null || $("#candidateId").val() == '') {
-                $('#candidateIdError').text('Please select a Candidate.');
-                return false;
-            }
-            if ($("#interviewerId").val() == null || $("#interviewerId").val() == '') {
-                $('#interviewerIdError').text('Please select a Interviewer.');
-                return false;
-            }
-            if ($("#technology").val() == null || $("#technology").val() == '') {
-                $('#technologyError').text('Please select a Technology.');
-                return false;
-            }
-            if (!validateForm()) {
-                return;
-            }
-            if (isOnline && interviewURL.trim() === "") {
-                $("#interviewURLError").text("Please enter the interview URL.");
-                return;
-            }
-            if (isOnline && (!interviewURL || !urlRegex.test(interviewURL))) {
-                $("#interviewURLError").text("Please enter a valid URL.");
-                return false;
-            }
-            if ($("#scheduledTime").val() == null || $("#scheduledTime").val() == '') {
-                $('#scheduledTimeError').text('Please select Date and Time.');
-                return false;
-            }
-            if (selectedTime < new Date()) {
-                $('#scheduledTimeError').text("Please select a future date and time for the interview.");
-                return;
-            }
-            if ($("#statusID").val() == null || $("#statusID").val() == '') {
-                $('#statusIDError').text('Please select a Status.');
-                return false;
-            }
-
-            // Make an AJAX call to the server to save the data
-            $.ajax({
-                url: '/Interview/AddInterview',
-                method: 'POST',
-                data: {
-                    CandidateId: candidateId,
-                    InterviewerId: interviewerId,
-                    TechnologyId: technology,
-                    IsOnline: isOnline,
-                    InterviewURL: interviewURL,
-                    ScheduledTime: scheduledTime,
-                    StatusID: statusId,
-                    Description: description
-                },
-                success: function (response) {
-                    if (response.success) {
-                        // Display a success message
-                        alert(response.message);
-                        location.reload(true);
-                    } else {
-                        // Display an error message
-                        alert("Error: " + response.message);
+                // Make an AJAX call to the server to save the data
+                $.ajax({
+                    url: '/Interview/AddInterview',
+                    method: 'POST',
+                    data: {
+                        CandidateId: candidateId,
+                        InterviewerId: interviewerId,
+                        TechnologyId: technology,
+                        IsOnline: isOnline,
+                        InterviewURL: interviewURL,
+                        ScheduledTime: scheduledTime,
+                        StatusID: statusId,
+                        Description: description
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            // Display a success message
+                            alert(response.message);
+                            location.reload(true);
+                        } else {
+                            // Display an error message
+                            alert("Error: " + response.message);
+                            location.reload(true);
+                        }
+                    },
+                    error: function (response) {
+                        // Handle errors here
+                        console.error(response);
+                        alert('Error occurred while saving data');
                         location.reload(true);
                     }
-                },
-                error: function (response) {
-                    // Handle errors here
-                    console.error(response);
-                    alert('Error occurred while saving data');
-                    location.reload(true);
-                }
+                });
             });
         });
 
-        // This below function is to update data of interview
         function updatefunction(id) {
             var interviewId = $("#updateinterviewid_" + id).val();
             var candidateId = $("#candidateId_" + id).val();
@@ -820,14 +701,13 @@
                 error: function (response) {
                     // Handle errors here
                     console.error(response);
-                    alert(response.message);
+                     alert(response.message);
                     //alert('Error occurred while saving data');
                     location.reload(true);
                 }
             });
         }
 
-        // This below function is to delete data of any interview
         function deletefunction(id) {
             var interviewId = $('#deleteInterviewId_' + id).val();
 
@@ -848,135 +728,4 @@
                 }
             });
         }
-
-        // This below function is to save data of add interview round
-        function addRoundfunction(id) {
-            // Get the values from the form fields
-            var interviewId = $("#InterviewId_" + id).val();
-            var roundName = $("#roundName_" + id).val();
-            var roundStatus = $("#roundStatus_" + id).val();
-            var scheduledAt = $("#scheduledAt_" + id).val();
-            var roundFeedback = $("#roundFeedback_" + id).val();
-            var selectedTime = new Date(scheduledAt);
-
-            $('#roundName_'+id).on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#roundNameError_'+id).text('');
-                }
-            });
-            $('#roundStatus_'+id).on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#roundStatusError_'+id).text('');
-                }
-            });
-            $('#scheduledAt_'+id).on('input', function () {
-                // Clear the error message when the field is not empty
-                if ($(this).val() !== '') {
-                    $('#scheduledAtError_'+id).text('');
-                }
-            });
-
-            if ($('#roundName_'+id).val() == null || $('#roundName_'+id).val() == '') {
-                $('#roundNameError_'+id).text('Please select a Round Name.');
-                return false;
-            }
-            if ($('#roundStatus_'+id).val() == null || $('#roundStatus_'+id).val() == '') {
-                $('#roundStatusError_'+id).text('Please select a Round Status.');
-                return false;
-            }
-            if ($('#scheduledAt_'+id).val() == null || $('#scheduledAt_'+id).val() == '') {
-                $('#scheduledAtError_'+id).text('Please select a Schedule Time.');
-                return false;
-            }
-            if (selectedTime < new Date()) {
-            $('#scheduledAtError_' + id).text("Please select a future date and time for the interview.");
-                return;
-            }
-
-            // Make an AJAX call to the server to save the data
-            $.ajax({
-                url: '/Interview/AddInterviewRound',
-                method: 'POST',
-                data: {
-                    interviewId: interviewId,
-                    roundNumberId: roundName,
-                    roundStatusId: roundStatus,
-                    scheduledAt: scheduledAt,
-                    roundFeedback: roundFeedback
-                },
-                success: function (response) {
-                    debugger
-                    // Display a success message
-                    alert(response.message);
-                    location.reload(true);
-                },
-                error: function (response) {
-                    debugger
-                    // Handle errors here
-                    console.error(response);
-                    alert(response.message);
-                    //alert('Error occurred while saving data');
-                    location.reload(true);
-                }
-            });
-        }
-
-        function viewRound(id) {
-            debugger
-          var interviewId = $("#InterviewId_" + id).val();
-
-              $.ajax({
-            url: '/Interview/ViewInterviewRoundById',
-                method: 'GET',
-                data: {
-                  interviewId: interviewId,
-                },
-                success: function (response) {
-                    debugger
-                    // Display a success message
-                    console.log(response);
-                    //location.reload(true);
-                    
-                },
-                error: function (response) {
-                    debugger
-                    // Handle errors here
-                    console.error(response);
-                    alert('Error occurred while saving data');
-                    //location.reload(true);
-                }
-              });
-        }
-
-        //function viewRound(id) {
-        //    var interviewId = $("#InterviewId_" + id).val();
-        //    @*var roundName = $("#roundName").val();
-        //    var roundStatus = $("#roundStatus").val();
-        //    var scheduledAt = $("#scheduledAt").val();
-        //    var roundFeedback = $("#roundFeedback").val();*@
-
-        //    $.ajax({
-        //            url: '/Interview/ViewInterviewRound',
-        //        method: 'PUT',
-        //        data: {
-        //            interviewId: interviewId
-        //            @*roundNumberId: roundName,
-        //            roundStatusId: roundStatus,
-        //            scheduledAt: scheduledAt,
-        //            roundFeedback: roundFeedback*@
-        //        },
-        //        success: function (response) {
-        //            console.log(response);
-        //            //$('#myModal_' + id).modal('hide');
-        //            alert(response.message);
-        //            location.reload();
-        //        },
-        //        error: function (response) {
-        //            console.error(errorthrown);
-        //        }
-        //    });
-        //}
-
     </script>
