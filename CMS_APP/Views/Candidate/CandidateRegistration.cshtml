@@ -288,6 +288,10 @@
 	#pdfnamefile {
 		color: black;
 	}
+
+	/*.header-text p {
+					text-align: justify;
+				}*/
 </style>
 
 <div class="modal fade" id="messageModal">
@@ -315,7 +319,7 @@
 								<div class="line-icon">
 									<hr>
 								</div>
-								<form>
+								<form onsubmit="SaveRecord()">
 									<ul class="form-section page-section">
 										<li class="form-line">
 											<div class="form-header-group  header-small">
@@ -329,7 +333,7 @@
 											@*<label class="form-label form-label-top form-label-auto" id="label_1" for="first_1"> Full Name<span class="form-required">*</span> </label>*@
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="first_name">First Name</label>
+													<label for="first_name">First Name <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="first_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="First Name" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
 													<small id="firstname" class="form-text text-muted">Enter alphabets only</small>
 													<span asp-validation-for="firstname" class="text-danger" id="firstnameError"></span>
@@ -337,43 +341,44 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="last_name">Last Name</label>
+													<label for="last_name">Last Name <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="last_name" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="emailHelp" placeholder="Last Name" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
 													<small id="lastname" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<label for="exampleInputEmail1">Address</label>
+													<label for="exampleInputEmail1">Address <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="Address" aria-describedby="AddresslHelp" placeholder="Address" required="">
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="city">City</label>
+													<label for="city">City <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="city" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="cityHelp" placeholder="City" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
 													<small id="city_" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="last_name">State</label>
+													<label for="last_name">State <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="State" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="stateHelp" placeholder="State" required="" oninput="this.value = this.value.replace(/[^A-za-z]/g, '');">
 													<small id="State_" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="phone_number">Phone Number</label>
+													<label for="phone_number">Phone Number <span style="color:red">*</span>  </label>
 													<input type="tel" class="form-control" id="phone_number" data-component="phone" aria-describedby="cityHelp" data-type="mask-number" data-masked="true" placeholder="" required="" maxlength="10" pattern="[0-9]{10}" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
 													<small id="phonenumber" class="form-text text-muted">Please enter your 10-digit phone number.</small>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="email">E-Mail</label>
-													<input type="email" class="form-control" id="email" @*pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/."*@ data-type="input-textbox" aria-describedby="emailHelp" placeholder="ex: Myname@example.com" required="">
+													<label for="email">E-Mail<span style="color:red">*</span> </label>
+													<input type="email" class="form-control" name="email" id="email" pattern="[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,4}$" data-type="input-textbox" aria-describedby="emailHelp" placeholder="ex: myname@example.com" required>
 													<span asp-validation-for="Designation" class="text-danger" id="EmailError"></span>
+													<small id="emailid" class="form-text text-muted">ex: myname@example.com</small>
 												</div>
 											</div>
 											<br>
@@ -389,7 +394,7 @@
 										<li class="form-line row">
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="10th_pr">10th Grade Percentage</label>
+													<label for="10th_pr">10th Grade Percentage <span style="color:red">*</span> </label>
 													<input type="number" class="form-control" id="10th_pr" aria-describedby="10prHelp" placeholder="" min="1" max="100" step="0.01" required="">
 												</div>
 											</div>
@@ -401,26 +406,26 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="degreeinfo">Area of Study/Degree</label>
-													<input type="text" class="form-control" id="degreeinfo" aria-describedby="degreeinfo" placeholder="">
+													<label for="degreeinfo">Area of Study/Degree <span style="color:red">*</span> </label>
+													<input type="text" class="form-control" id="degreeinfo" aria-describedby="degreeinfo" placeholder="" oninput="this.value = this.value.replace(/[0-9/s]/g, '');" required>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="12th_pr">Percentage Obtained in the Course</label>
-													<input type="number" class="form-control" id="degreepr" data-component="phone" aria-describedby="degreeprHelp" min="1" max="10" step="0.01" placeholder="">
+													<label for="12th_pr">Percentage Obtained in the Course <span style="color:red">*</span> </label>
+													<input type="number" class="form-control" id="degreepr" data-component="phone" aria-describedby="degreeprHelp" min="1" max="100" step="0.01" placeholder="" required>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="12th_pr">Do you have any academic backlog?</label>
+													<label for="12th_pr">Do you have any academic backlog? <span style="color:red">*</span> </label>
 													<div class="radio-buttons">
 														<div class="radio-button">
-															<input type="radio" id="backlog" name="backlog" value="yes" required>
+															<input type="radio" id="backlog" name="backlog" value=true onchange="backlogrbtn(backlog)" required>
 															<label for="yes">Yes</label>
 														</div>
 														<div class="radio-button">
-															<input type="radio" id="backlog" name="backlog" value="no">
+															<input type="radio" id="backlog" name="backlog" value=false onchange="backlogrbtn(backlog)">
 															<label for="no">No</label>
 														</div>
 													</div>
@@ -457,14 +462,14 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="location">Agree for change location?</label>
+													<label for="location">Agree for change location? <span style="color:red">*</span> </label>
 													<div class="radio-buttons">
 														<div class="radio-button">
-															<input type="radio" id="locationyes" name="location" value="yes" @*onchange="locationrbtn(location)"*@ required>
+															<input type="radio" id="location" name="location" value=true onchange="locationrbtn(location)" required>
 															<label for="yes">Yes</label>
 														</div>
 														<div class="radio-button">
-															<input type="radio" id="locationno" name="location" value="no" @*onchange="locationrbtn(location)"*@>
+															<input type="radio" id="location" name="location" value=false onchange="locationrbtn(location)">
 															<label for="no">No</label>
 														</div>
 													</div>
@@ -483,46 +488,49 @@
 											@*<label class="form-label form-label-top form-label-auto" id="label_1" for="first_1"> Full Name<span class="form-required">*</span> </label>*@
 											<div class="col-md-6">
 												<div class="form-group">
-													<label for="12th_pr">Do you have any work experience?</label>
+													<label for="12th_pr">Do you have any work experience? <span style="color:red">*</span> </label>
 													<div class="radio-buttons">
 														<div class="radio-button">
-															<input type="radio" id="experience" name="experience" value="no" onchange="experiencerbtn(experience)">
-															<label for="no">No</label>
+															<input type="radio" id="experience" name="experience" value=true onchange="experiencerbtn(experience)">
+															<label for="yes">Yes</label>
 														</div>
 														<div class="radio-button">
-															<input type="radio" id="experience" name="experience" value="yes" onchange="experiencerbtn(experience)" required>
-															<label for="yes">Yes</label>
+															<input type="radio" id="experience" name="experience" value=false onchange="experiencerbtn(experience)" required>
+															<label for="no">No</label>
 														</div>
 
 													</div>
 												</div>
 											</div>
-											<div class="col-md-6">
+											
+											<div class="col-md-6" id="showExperiencefield" style="display: none;">
 												<div class="form-group">
-													<label for="experience">Number of Years in Relevant Work Experience</label>
-													<input type="number" class="form-control" id="experience_number" aria-describedby="experienceHelp" placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+													<label for="experience">Number of Years in Relevant Work Experience <span style="color:red">*</span> </label>
+													<input type="number" class="form-control" id="experience_number" aria-describedby="experienceHelp" placeholder="" min="0" max="50" step="0.01">
 
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-6" id="showCurrentsalaryfield" style="display: none;">
 												<div class="form-group">
-													<label for="currentsalary">Current Salary </label>
-													<input type="number" class="form-control" id="currentsalary" aria-describedby="currentsalaryHelp" placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+													<label for="currentsalary">Current Salary <span style="color:red">*</span> </label>
+													<input type="number" class="form-control" id="currentsalary" aria-describedby="currentsalaryHelp" placeholder="" min="0" >
 												</div>
 											</div>
-											<div class="col-md-6">
+											<div class="col-md-6" id="showExpectedsalaryfield" style="display: none;">
 												<div class="form-group">
-													<label for="expectedsalary">Expected Salary</label>
-													<input type="number" class="form-control" id="expectedsalary" data-type="input-textbox" aria-describedby="expectedsalaryHelp" placeholder="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+													<label for="expectedsalary">Expected Salary <span style="color:red">*</span> </label>
+													<input type="number" class="form-control" id="expectedsalary" data-type="input-textbox" aria-describedby="expectedsalaryHelp" placeholder="" min="0">
 												</div>
 											</div>
-											<div class="col-md-12">
+											<div class="col-md-12" id="showReasonfield" style="display: none;">
 												<div class="form-group">
-													<label for="Reason">Reason for Leaving?</label>
+													<label for="Reason">Reason for Leaving? <span style="color:red">*</span> </label>
 													<input type="text" class="form-control" id="Reason" aria-describedby="ReasonHelp" placeholder="">
 												</div>
 											</div>
+											
 										</li>
+
 										<li class="form-line">
 											<div class="form-header-group  header-small">
 												<div class="header-text httal htvam">
@@ -536,7 +544,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<label for="Reference">Reference </label>
-													<input type="text" class="form-control" id="Reference" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="Name of Refrence">
+													<input type="text" class="form-control" id="Reference" data-type="input-textbox" pattern="[A-Za-z]+" aria-describedby="first_nameHelp" placeholder="Name of Reference" oninput="this.value = this.value.replace(/[0-9]/g, '');">
 													<small id="Reference1" class="form-text text-muted">Enter alphabets only</small>
 												</div>
 											</div>
@@ -544,7 +552,7 @@
 										<li class="form-line">
 											<div class="form-header-group  header-small">
 												<div class="header-text httal htvam">
-													<h3 id="header_28" class="form-header-content" data-component="header">	Resume</h3>
+													<h3 id="header_28" class="form-header-content" data-component="header">	Resume <span style="color:red">*</span> </h3>
 													<hr />
 												</div>
 											</div>
@@ -570,22 +578,22 @@
 										</li>*@
 										<li>
 											<div class="container1 center">
-											<div class="row">
-											<div class="col-md-12">
-											<h2 class="white">Resume Upload</h2>
-											<p class="white"></p>
-											</div>
-											</div>
-											<div class="row">
-											<div class="col-md-12 col-md-offset-3 center">
-											<div class="btn-container">
-											<p id="pdfnamefile">Only pdf allowed!</p>
-											<button type="button" id="pdfbtnup" class="btn btn-primary btn-lg">Browse for your resume!</button>
-											<input type="file" value="" name="resumeup" id="resumeup" accept="application/pdf" required="">
-											<p id="file-result"></p>
-											</div>
-											</div>
-											</div>
+												<div class="row">
+													<div class="col-md-12">
+														<h2 class="white">Resume Upload</h2>
+														<p class="white"></p>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 col-md-offset-3 center">
+														<div class="btn-container">
+															<p id="pdfnamefile" style="text-align:center;">Only pdf allowed!</p>
+															<button type="button" id="pdfbtnup" class="btn btn-primary btn-lg">Browse for your resume!</button>
+															<input type="file" value="" name="resumeup" id="resumeup" accept="application/pdf" required="">
+															<p id="file-result"></p>
+														</div>
+													</div>
+												</div>
 											</div>
 										</li>
 										<li class="form-line">
@@ -599,9 +607,9 @@
 										<li class="form-line">
 											<div class="form-header-group  header-small">
 												<div class="header-text httal htvam">
-													<p>
-														By clicking the submit button below, I cerity that all of the information provided by me on this application is true and complete,
-														and I understand that if any false information, ommissions, or misrepresentations are discovered, my application may be rejected.
+													<p style="text-align:justify;">
+														By clicking the submit button below, I certify that all of the information provided by me on this application is true and complete, and I understand that if any false information,
+														omissions, or misrepresentations are discovered, my application may be rejected.
 													</p>
 												</div>
 											</div>
@@ -616,8 +624,8 @@
 									</ul>
 									<div id="cid_2" class="form-input-wide" data-layout="full">
 										<div data-align="center">
-											<input id="submit" type="submit" value="Submit" onclick="SaveRecord()" class="button">
-										
+											<input id="submit" type="submit" value="Submit" class="button">
+
 										</div>
 									</div>
 								</form>
@@ -630,13 +638,19 @@
 	</div>
 </section>
 
+<script src="~/js/jquery/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script type="text/javascript" language="javascript">
 	var pdfString;
+	var exprience;
 
 	function experiencerbtn(e) {
-		if (e.value == "yes") {
+		if (e.value == "true") {
+			document.getElementById("showExperiencefield").style.display = "block";
+			document.getElementById("showCurrentsalaryfield").style.display = "block";
+			document.getElementById("showExpectedsalaryfield").style.display = "block";
+			document.getElementById("showReasonfield").style.display = "block";
 			$('#experience_number').prop('required', true);
 			$('#currentsalary').prop('required', true);
 			$('#expectedsalary').prop('required', true);
@@ -644,6 +658,10 @@
 			return;
 		}
 		else {
+			document.getElementById("showExperiencefield").style.display = "none";
+			document.getElementById("showCurrentsalaryfield").style.display = "none";
+			document.getElementById("showExpectedsalaryfield").style.display = "none";
+			document.getElementById("showReasonfield").style.display = "none";
 			$('#experience_number').prop('required', false);
 			$('#currentsalary').prop('required', false);
 			$('#expectedsalary').prop('required', false);
@@ -651,16 +669,6 @@
 			return null;
 		}
 	}
-
-	//function locationrbtn(e) {
-	//	debugger
-	//	if (e.value == "yes") {
-	//		return "yes";
-	//	}
-	//	else {
-	//		return "no";
-	//	}
-	//}
 
 	$('#resumeup').change(function () {
 		//here we take the file extension and set an array of valid extensions
@@ -691,7 +699,7 @@
 
 		//Check File is not Empty
 		if (selectedFile.length > 0) {
-			
+
 			const fileSize = selectedFile[0].size;
 			const fileMb = fileSize / 1024 ** 2;
 			if (fileMb >= 2) {
@@ -717,7 +725,7 @@
 				console.log(base64);
 				base64String = base64
 				pdfString = base64.split(',')[1];
-				
+
 
 			};
 			// Convert data to base64
@@ -725,21 +733,18 @@
 		}
 	});
 
-</script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-	
 	function SaveRecord() {
-		
-
+		var backlogValue = $("input[name='backlog']:checked").val();
+		var locationValue = $("input[name='location']:checked").val();
+		var isExperienceValue=$("input[name='experience']:checked").val()
 		var querystring = {
 			firstName: $('#first_name').val(),
 			lastName: $('#last_name').val(),
 			Email: $('#email').val(),
 			ContactNo: $('#phone_number').val(),
 			Skills: $('#skills').val(),
-			AgreeForChangeLocation: $("input[name=location]:checked").val() == "true",
+			AgreeForChangeLocation: locationValue,
 			City: $('#city').val(),
 			State: $('#State').val(),
 			Address: $('#Address').val(),
@@ -747,9 +752,9 @@
 			PR_12: $('#12th_pr').val(),
 			areaofstudy: $('#degreeinfo').val(),
 			College_CGPA: $('#degreepr').val(),
-			backlog: $('#backlog').val(),
+			backlog: backlogValue,
 			TechnologyId: $('#technology').val(),
-			IsExperience: $('#experience').val(),
+			IsExperience: isExperienceValue,
 			TotalExperience: $('#experience_number').val(),
 			CurrentCTC: $('#currentsalary').val(),
 			ExpectedCTC: $('#expectedsalary').val(),
@@ -757,67 +762,31 @@
 			Reference: $('#Reference').val(),
 			resume: pdfString
 		}
-		//if (firstName== null){
-		//	return false;
-		//}
-		//var base64String = "";
-		//// Get the values of the input fields
-		//var FirstName = $('#first_name').val();
-		//var LastName = $('#last_name').val();
-		//var Email = $('#email').val();
-		//var ContactNo = $('#phone_number').val();
-		//var Skills = $('#skills').val();
-		//var AgreeForChangeLocation = $('#location').val();
-		//var City = $('#city').val();
-		//var State = $('#State').val();
-		//var Address = $('#Address').val();
-		//var PR_10 = $('#10th_pr').val();
-		//var PR_12 = $('#12th_pr').val();
-		//var areaofstudy = $('#degreeinfo').val();
-		//var College_CGPA = $('#degreepr').val();
-		//var backlog = $('#backlog').val();
-		//var TechnologyId = $('#technology').val();
-		//var IsExperience = $('#experience').val();
-		//var TotalExperience = $('#experience_number').val();
-		//var CurrentCTC = $('#currentsalary').val();
-		//var ExpectedCTC = $('#expectedsalary').val();
-		//var ReasoneForChange = $('#Reason').val();
-		//var Reference = $('#Reference').val();
-		//var resume = $('#resumeup').val();
+		
 		// Make the AJAX call
 		$.ajax({
 			url: '/Candidate/CandidateRegistration',
 			method: 'POST',
 			data: querystring,
 			success: function (response) {
-				// Handle the response data here
-				//console.log(response);
-				//$('#exampleModalCenter').modal('hide');
-				//alert(response.message);
-				//return true;
-				//location.reload(true);
-				window.location.reload();
+				alert(response.message);
+				location.reload();
 
 			},
 			error: function (response) {
-				
-				// Handle errors here
-				//console.error(errorThrown);
-				alert("error");
-				
-				return;
+				alert(response.responseJSON.message);
+				location.reload();
 
 			}
 		});
 	}
 
+</script>
 
-	$('#Designation').on('input', function () {
-		// Clear the error message when the field is not empty
-		if ($(this).val() !== '') {
-			$('#DesignationError').text('');
-		}
-	});
+<script src="~/js/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
 </script>
 @*@section Scripts {
 		@{

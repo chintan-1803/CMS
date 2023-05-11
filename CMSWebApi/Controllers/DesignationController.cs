@@ -116,38 +116,7 @@ namespace CMSWebApi.Controllers
 
 		#endregion
 
-		//#region  UpdateDesignation
-		//[HttpPut("UpdateDesignation")]
-		//public IActionResult UpdateDesignation(DesignationModel designationmodel)
-		//{
-		//	try
-		//	{
-		//		var response = _designationService.UpdateDesignation(designationmodel);
-
-		//		if (response == 0 )
-		//		{
-		//			return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-		//		}
-		//		else if(response < 0)
-		//		{
-		//                  return Ok("Data already exists");
-		//              }
-		//		else if (response > 0)
-		//		{
-		//			return Ok("SUCCESS");
-		//		}
-		//		else
-		//		{
-		//			return Ok("Something went wrong");
-		//		}
-
-		//	}
-		//	catch (Exception ex)
-		//	{
-		//		return BadRequest(new { message = ex.Message });
-		//	}
-		//}
-		//#endregion
+		
 
 		#region  DeleteDesignation
 		[HttpPut("DeleteDesignation")]

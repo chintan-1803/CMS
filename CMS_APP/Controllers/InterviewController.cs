@@ -150,19 +150,35 @@ namespace CMS.Controllers
 		[HttpPost]
 		public IActionResult AddInterviewRound(InterviewRoundModel interviewRoundData)
 		{
-			var response = _interviewInterface.AddInterviewRound(interviewRoundData);
+			// Check if the round number already exists for this interview
+			var response = _interviewInterface.ViewInterviewRound(interviewRoundData.interviewId);
+			if (!response.IsSuccessful)
+			{
+				return BadRequest(new { message = response.ErrorMessage });
+			}
+
+
+
+			var rounds = JsonConvert.DeserializeObject<List<InterviewRoundModel>>(response.Content);
+			if (rounds.Any(r => r.roundNumberId == interviewRoundData.roundNumberId))
+			{
+				return BadRequest(new { message = "Round name already exists for this interview." });
+			}
+
+			// If the round number doesn't already exist, proceed with saving the data
+			response = _interviewInterface.AddInterviewRound(interviewRoundData);
 
 			if (!response.IsSuccessful)
 			{
-				return BadRequest(response);
+				return BadRequest(new { message = response.ErrorMessage });
 			}
-			if (response.Content == "\"SUCCESS\"")
+			else if (response.Content == "\"SUCCESS\"")
 			{
 				return Json(new { success = true, message = "Interview Round added successfully." });
 			}
 			else
 			{
-				return BadRequest(response);
+				return BadRequest(new { message = response.Content });
 			}
 		}
 

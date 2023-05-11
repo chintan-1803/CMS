@@ -15,7 +15,7 @@ namespace CMS.Models
         [Display(Name = "Password")]
         [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
-        [RegularExpression("([a-z]|[A-Z]|[0-9]|[\\W]){4}[a-zA-Z0-9\\W]{3,11}", ErrorMessage = "Please enter valid password format")]        
+        [RegularExpression("([a-z]|[A-Z]|[0-9]|[\\W]){4}[a-zA-Z0-9\\W]{3,11}", ErrorMessage = "Please enter valid password format.")]        
         public string Password { set; get; }
     }
 }

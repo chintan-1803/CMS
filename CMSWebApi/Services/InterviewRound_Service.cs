@@ -55,8 +55,11 @@ namespace CMSWebApi.Services
                 parameters.Add("@create_user", interviewRoundModel.create_user, DbType.String);
 
                 var result = _dapper.Insert<string>(StoreProcedureName.InsertInterviewRound, parameters, CommandType.StoredProcedure);
-
-                return result;
+				if (result == "Provided roundNumberId already exists for the given interviewId")
+				{
+					return "Provided round name already exists for this interview";
+				}
+				return result;
             }
             catch (ArgumentNullException ex)
             {

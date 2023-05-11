@@ -52,7 +52,11 @@ namespace CMSWebApi.Controllers
             {
                 return BadRequest(new { message = "FAILED TO ADD INTERVIEW ROUND" });
             }
-            else if (response == "Unsuccessful")
+			else if (response == "Provided round name already exists for this interview")
+			{
+				return BadRequest(response);
+			}
+			else if (response == "Unsuccessful")
             {
                 return BadRequest(response);
             }

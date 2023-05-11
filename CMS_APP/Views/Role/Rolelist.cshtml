@@ -85,7 +85,7 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">RoleName</span>
 									</label>
-									<input asp-for="RoleName" type="text" id="RoleName" class="form-control validate">
+									<input asp-for="RoleName" type="text" id="RoleName" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 									<span asp-validation-for="RoleName" class="text-danger" id="RoleError"></span>
 								</div>
 
@@ -153,7 +153,7 @@
 										<div class="dropdown-menu">
 											@*<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.DesignationID">Edit</button>
 										*@
-											<button type="button" id="EDIT_@data.RoleId" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.RoleId">Edit</button>
+											<button type="button" id="EDIT_@data.RoleId" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.RoleId" onclick="updateClearModal(@data.RoleId)">Edit</button>
 											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.RoleId">Delete</button>
 										</div>
 									</div>
@@ -194,24 +194,19 @@
 														</button>
 													</div>
 
-													<div class="modal-body mx-3">
-							
-															<input type="hidden" id="updateRoleId_@data.RoleId" value="@data.RoleId" class="form-control validate" readonly>
-														
-														
+													<div class="modal-body ">
+														<input type="hidden" id="previousRole_@data.RoleId" value="@data.RoleName" />
+														<input type="hidden" id="updateRoleId_@data.RoleId" value="@data.RoleId" class="form-control validate" readonly>
+														<div class="modal-body">
 															<label class="text-right" data-error="wrong" data-success="right" for="orangeForm-name">
-
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Role</span>
 															</label>
-														<input asp-for="RoleName" type="text" id="updaterole_@data.RoleId" value="@data.RoleName" class="form-control validate">
-														<span asp-validation-for="RoleName" class="text-danger" id="RoleError_@data.RoleId"></span>
-
-
-														@*<input type="hidden" id="update_change_user_@data.RoleId" value="@create_User" class="form-control validate">*@
-												
+															<input asp-for="RoleName" type="text" id="updaterole_@data.RoleId" value="@data.RoleName" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
+															<span asp-validation-for="RoleName" class="text-danger" id="RoleError_@data.RoleId"></span>
+														</div>
 														<input type="hidden" id="update_change_Date_@data.RoleId" value="@data.change_Date" class="form-control validate">
-
 													</div>
+													
 													<div class="modal-footer d-flex justify-content-center">
 														<button class="btn btn-deep-blue" id="edit-btn" onclick="updatefunction(@data.RoleId)"> Edit </button>
 													</div>
@@ -255,6 +250,14 @@
 
 	}
 
+	function updateClearModal(id) {
+		//For update to get the previous values
+		$("#updaterole_" + id).val($("#previousRole_" + id).val());
+
+		// Clear the error messages
+		$('#RoleError_' + id).text('');
+
+	}
 
 	$(function () {
 		// Add click event handler to the Save button

@@ -3,7 +3,7 @@
     public class InterviewRoundModel
     {
         public int interviewRoundId { get; set; }
-        public int? interviewId { get; set; }
+        public int interviewId { get; set; }
         public int? roundNumberId { get; set; }
         public string? Round_Name { get; set; }
         public int? roundStatusId { get; set; }

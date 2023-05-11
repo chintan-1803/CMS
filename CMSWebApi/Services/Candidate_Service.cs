@@ -25,7 +25,7 @@ namespace CMSWebApi.Services
 				parameters.Add("@firstName", candidatedata.firstName, DbType.String);
 				parameters.Add("@lastName", candidatedata.lastName, DbType.String);
 				parameters.Add("@Email", candidatedata.Email, DbType.String);
-				parameters.Add("@ContactNo", candidatedata.ContactNo, DbType.Decimal);
+				parameters.Add("@ContactNo", candidatedata.ContactNo, DbType.String);
 				parameters.Add("@Skills", candidatedata.Skills, DbType.String);
 				parameters.Add("@AgreeForChangeLocation", candidatedata.AgreeForChangeLocation, DbType.Boolean);
 				parameters.Add("@City", candidatedata.City, DbType.String);

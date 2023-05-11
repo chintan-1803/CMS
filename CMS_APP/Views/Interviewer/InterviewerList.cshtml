@@ -9,7 +9,6 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 <link rel="stylesheet" href="~/lib/font-awesome/css/fontawesome.css" />
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/regular.min.css">
 <link rel="stylesheet" href="~/lib/Font-Awesome/css/solid.min.css">
@@ -62,7 +61,7 @@
 			<h5> Interviewer List </h5>
 			<div class="card-header-right">
 
-				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
+				<button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModalForCreate()">
 					Create New
 				</button>
 
@@ -83,7 +82,7 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">First Name</span>
 									</label>
-									<input asp-for="firstName" type="text" id="firstName" class="form-control validate">
+									<input asp-for="firstName" type="text" id="firstName" class="form-control validate" placeholder="Enter your first name">
 
 									<span asp-validation-for="firstName" class="text-danger" id="firstNameError"></span>
 
@@ -94,7 +93,7 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Last Name</span>
 									</label>
-									<input asp-for="lastName" type="text" id="lastName" class="form-control validate">
+									<input asp-for="lastName" type="text" id="lastName" class="form-control validate" placeholder="Enter your last name">
 
 									<span asp-validation-for="lastName" class="text-danger" id="lastNameError"></span>
 
@@ -105,7 +104,7 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Email</span>
 									</label>
-									<input asp-for="email" type="text" id="email" class="form-control validate">
+									<input asp-for="email" type="text" id="email" class="form-control validate" placeholder="Enter your email address">
 
 									<span asp-validation-for="email" class="text-danger" id="emailError"></span>
 
@@ -113,15 +112,15 @@
 
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-password">
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Password</span>
+									<span class="modal-text w-100  font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Password</span>
 									</label>
 									<div class="input-group">
-										<input asp-for="password" type="text" id="password" class="form-control validate">
-										<div class="input-group-append">
-											<button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
-													<i class="fa fa-eye-slash"></i>
-											</button>
-										</div>
+									<input asp-for="password" type="password" id="password" class="form-control validate" placeholder="Enter your password">
+									<div class="input-group-append">
+										<button class="btn btn-outline-secondary" type="button" onclick="togglePassword()">
+										<i id="passwordToggleIcon" class="fa fa-eye-slash"></i>
+										</button>
+									</div>
 									</div>
 									<span asp-validation-for="password" class="text-danger" id="passwordError"></span>
 								</div>
@@ -142,7 +141,6 @@
 
 								</div>
 
-
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
 										<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology</span>
@@ -162,7 +160,7 @@
 
 										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Year of Experience</span>
 									</label>
-									<input asp-for="experience" type="text" id="experience" class="form-control validate">
+									<input asp-for="experience" type="text" id="experience" class="form-control validate" placeholder="Enter years of experience">
 
 									<span asp-validation-for="experience" class="text-danger" id="experienceError"></span>
 
@@ -170,16 +168,12 @@
 
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Total Interviews Conducted</span>
+										<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Total Interviews Conducted</span>
 									</label>
-									<input asp-for="InterviewsConducted" type="text" id="InterviewsConducted" class="form-control validate">
+									<input asp-for="InterviewsConducted" type="number" id="InterviewsConducted" class="form-control validate" placeholder="Enter total interviews conducted">
 
 									<span asp-validation-for="InterviewsConducted" class="text-danger" id="InterviewsConductedError"></span>
-
 								</div>
-
-								@*<input type="hidden" id="create_User" value="@create_User" class="form-control validate">*@
 
 								<div class="modal-footer d-flex justify-content-center">
 									<button class="btn btn-deep-blue" id="save-btn"> Save</button>
@@ -210,14 +204,6 @@
 						@foreach (var data in Model)
 						{
 							<tr>
-								@*<td class="text-center">
-							<div class="d-inline-block align-middle">
-							<div class="d-inline-block">
-							<h6>@data.FirstName</h6>
-							</div>
-							</div>
-							</td>*@
-
 								<td class="text-center">@data.FirstName</td>
 								<td class="text-center">@data.LastName</td>
 								<td class="text-center">@data.Email</td>
@@ -239,11 +225,13 @@
 										</button>
 										<div class="dropdown-menu">
 
-											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewerId">Edit</button>
+											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewerId" onclick="clearModal(@data.InterviewerId)">Edit</button>
 											<button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.InterviewerId">Delete</button>
 										</div>
 									</div>
 
+									<!-- Delete Popup-->
+									
 									<div class="text-center">
 										<div id="myModal_@data.InterviewerId" class="modal fade">
 											<div class="modal-dialog modal-confirm">
@@ -265,6 +253,7 @@
 											</div>
 										</div>
 									</div>
+
 									<!-- Update Popup-->
 
 									<div class="modal fade" id="UpdateModalCenter_@data.InterviewerId" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -280,13 +269,21 @@
 
 													<div class="modal-body">
 														<input type="hidden" id="updateinterviewerid_@data.InterviewerId" value="@data.InterviewerId" class="form-control validate" readonly>
-
+														<input type="hidden" id="previousfirstName_@data.InterviewerId" value="@data.FirstName" />
+														<input type="hidden" id="previouslastName_@data.InterviewerId" value="@data.LastName" />
+														<input type="hidden" id="previousemail_@data.InterviewerId" value="@data.Email" />
+														<input type="hidden" id="previouspassword_@data.InterviewerId" value="@data.Password" />
+														<input type="hidden" id="previousdesignation_@data.InterviewerId" value="@data.DesignationId" />
+														<input type="hidden" id="previoustechnology_@data.InterviewerId" value="@data.TechnologyId" />
+														<input type="hidden" id="previousexperience_@data.InterviewerId" value="@data.YearOfExperience" />
+														<input type="hidden" id="previousInterviewsConducted_@data.InterviewerId" value="@data.TotalInterviewsConducted" />
+														
 														<div class="modal-body">
 															<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">First Name</span>
 															</label>
-															<input asp-for="firstName" type="text" id="firstName_@data.InterviewerId" value="@data.FirstName" class="form-control validate">
+															<input asp-for="firstName" type="text" id="firstName_@data.InterviewerId" value="@data.FirstName" class="form-control validate" placeholder="Enter your first name">
 
 															<span asp-validation-for="firstName" class="text-danger" id="firstNameError_@data.InterviewerId"></span>
 
@@ -297,7 +294,7 @@
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Last Name</span>
 															</label>
-															<input asp-for="lastName" type="text" id="lastName_@data.InterviewerId" value="@data.LastName" class="form-control validate">
+															<input asp-for="lastName" type="text" id="lastName_@data.InterviewerId" value="@data.LastName" class="form-control validate" placeholder="Enter your last name">
 
 															<span asp-validation-for="lastName" class="text-danger" id="lastNameError_@data.InterviewerId"></span>
 
@@ -308,7 +305,7 @@
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Email</span>
 															</label>
-															<input asp-for="email" type="text" id="email_@data.InterviewerId" value="@data.Email" class="form-control validate">
+															<input asp-for="email" type="text" id="email_@data.InterviewerId" value="@data.Email" class="form-control validate" placeholder="Enter your email address">
 
 															<span asp-validation-for="email" class="text-danger" id="emailError_@data.InterviewerId"></span>
 
@@ -319,7 +316,7 @@
 																<span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Password</span>
 															</label>
 															<div class="input-group">
-																<input asp-for="password" type="password" id="password_@data.InterviewerId" value="@data.Password" class="form-control validate">
+																<input asp-for="password" type="password" id="password_@data.InterviewerId" value="@data.Password" class="form-control validate" placeholder="Enter your password">
 																<div class="input-group-append">
 																	<button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility(this.parentNode.parentNode.querySelector('input'), this.querySelector('.fa'))">
 																		<i class="fa fa-eye-slash"></i>
@@ -337,7 +334,7 @@
 																<option value="" disabled>Select designation</option>
 																@foreach (var designation in ViewBag.DesignationList)
 																{
-																	<option value="@designation.DesignationID" @(designation.DesignationID == data.DesignationId ? "selected" : "")>@designation.Designation</option>
+																	<option value="@designation.DesignationID" @(designation.DesignationID == data.DesignationId ? "selected='selected'" : "")>@designation.Designation</option>
 																}
 															</select>
 															<span asp-validation-for="designation" class="text-danger" id="designationError_@data.InterviewerId"></span>
@@ -351,7 +348,7 @@
 																<option value="" disabled selected>Select technology</option>
 																@foreach (var technology in ViewBag.TechnologyList)
 																{
-																	<option value="@technology.TechnologyId" @(technology.TechnologyId == data.TechnologyId ? "selected" : "")>@technology.TechnologyName</option>
+																	<option value="@technology.TechnologyId" @(technology.TechnologyId == data.TechnologyId ? "selected='selected'" : "")>@technology.TechnologyName</option>
 																}
 															</select>
 															<span asp-validation-for="technology" class="text-danger" id="technologyError_@data.InterviewerId"></span>
@@ -362,7 +359,7 @@
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Year of Experience</span>
 															</label>
-															<input asp-for="experience" type="text" id="experience_@data.InterviewerId" value="@data.YearOfExperience" class="form-control validate">
+															<input asp-for="experience" type="number" id="experience_@data.InterviewerId" value="@data.YearOfExperience" class="form-control validate" placeholder="Enter years of experience">
 
 															<span asp-validation-for="experience" class="text-danger" id="experienceError_@data.InterviewerId"></span>
 
@@ -373,7 +370,7 @@
 
 																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Total Interviews Conducted</span>
 															</label>
-															<input asp-for="InterviewsConducted" type="text" id="InterviewsConducted_@data.InterviewerId" value="@data.TotalInterviewsConducted" class="form-control validate">
+															<input asp-for="InterviewsConducted" type="number" id="InterviewsConducted_@data.InterviewerId" value="@data.TotalInterviewsConducted" class="form-control validate" placeholder="Enter total interviews conducted">
 
 															<span asp-validation-for="InterviewsConducted" class="text-danger" id="InterviewsConductedError_@data.InterviewerId"></span>
 
@@ -412,9 +409,9 @@
 
 	<script>
 
-		function clearModal() {
+		function clearModalForCreate() {
 			// Clear the input field values
-			$('#firstName').val('');
+			$("#firstName").val('');
 			$("#lastName").val('');
 			$("#email").val('');
 			$("#password").val('');
@@ -422,22 +419,56 @@
 			$("#technology").val('');
 			$("#experience").val('');
 			$("#InterviewsConducted").val('');
+
+			// Clear the error messages
+			$('#firstNameError').text('');
+			$('#lastNameError').text('');
+			$('#emailError').text('');
+			$('#passwordError').text('');
+			$('#designationError').text('');
+			$('#technologyError').text('');
+			$('#experienceError').text('');
+			$('#InterviewsConductedError').text('');
 		}
+
+		function clearModal(id) {
+
+            //For update to get the previous values
+			$("#firstName_" + id).val($("#previousfirstName_" + id).val());
+            $("#lastName_" + id).val($("#previouslastName_" + id).val());
+			$("#email_" + id).val($("#previousemail_" + id).val());
+			$("#password_" + id).val($("#previouspassword_" + id).val());
+			$("#designation_" + id).val($("#previousdesignation_" + id).val());
+			$("#technology_" + id).val($("#previoustechnology_" + id).val());
+            $("#experience_" + id).val($("#previousexperience_" + id).val());
+			$("#InterviewsConducted_" + id).val($("#previousInterviewsConducted_" + id).val());
+
+            // Clear the error messages
+			$('#firstNameError_' + id).text('');
+			$('#lastNameError_' + id).text('');
+			$('#emailError_' + id).text('');
+			$('#passwordError_' + id).text('');
+			$('#designationError_' + id).text('');
+			$('#technologyError_' + id).text('');
+			$('#experienceError_' + id).text('');
+			$('#InterviewsConductedError_' + id).text('');
+        }
 
 		function togglePassword() {
-			const passwordInput = document.getElementById("password");
-			const icon = document.querySelector(".fa-eye-slash");
-			if (passwordInput.type === "password") {
-				passwordInput.type = "text";
-				icon.classList.remove("fa-eye-slash");
-				icon.classList.add("fa-eye");
-			} else {
-				passwordInput.type = "password";
-				icon.classList.remove("fa-eye");
-				icon.classList.add("fa-eye-slash");
-			}
-		}
+		  const passwordInput = document.getElementById("password");
+		  const icon = document.querySelector("#passwordToggleIcon");
 
+		  if (passwordInput.type === "password") {
+			passwordInput.type = "text";
+			icon.classList.remove("fa-eye-slash");
+			icon.classList.add("fa-eye");
+		  } else {
+			passwordInput.type = "password";
+			icon.classList.remove("fa-eye");
+			icon.classList.add("fa-eye-slash");
+		  }
+		}
+	
 		function togglePasswordVisibility(inputElement, iconElement) {
 			if (inputElement.type === "password") {
 				inputElement.type = "text";
@@ -512,19 +543,19 @@
 			});
 
 			// Validate the input fields
-
-			if (firstName.trim() === '' || !/^[a-zA-Z]+$/.test(firstName)) {
-				$('#firstNameError').text('Valid first name required: no spaces, numbers, or special characters.');
+		
+			if (firstName.trim() === '' || !/^[a-zA-Z]{2,}$/.test(firstName)) {
+			$('#firstNameError').text('Valid first name (Min 2 characters, no spaces, or special characters).');
 				return;
 			}
-			if (lastName.trim() === '' || !/^[a-zA-Z]+$/.test(lastName)) {
-				$('#lastNameError').text('Valid last name required: no spaces, numbers, or special characters.');
+			if (lastName.trim() === '' || !/^[a-zA-Z]{2,}$/.test(lastName)) {
+				$('#lastNameError').text('Valid last name (Min 2 characters, no spaces, or special characters).');
 				return;
 			}
 			if (email.trim() === '') {
 				$('#emailError').text('Please enter an email address.');
 				return;
-			} else if (!/^[^\s]+[^\s]+\.[^\s]+$/.test(email)) {
+			} else if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
 				$('#emailError').text('Please enter a valid email address.');
 				return;
 			}
@@ -546,12 +577,12 @@
 				$('#technologyError').text('Please select a technology.');
 				return false;
 			}
-			if (experience.trim() === '' || isNaN(parseFloat(experience)) || parseFloat(experience) < 0) {
-				$('#experienceError').text('Please enter a valid year of experience.');
+			if (experience.trim() === '' || isNaN(parseFloat(experience)) || parseFloat(experience) < 0 || parseFloat(experience) > 50 || !(/^\d+(.\d)?$/.test(experience) || /^\d+$/.test(experience))) {
+				$('#experienceError').text('Please enter a valid year of experience (0-50) (e.g., 1 or 1.8).');
 				return;
 			}
-			if (interviewsConducted.trim() === '' || isNaN(interviewsConducted) || interviewsConducted < 0) {
-				$('#InterviewsConductedError').text('Please enter a valid number of interviews conducted.');
+			if (interviewsConducted.trim() === '' || isNaN(interviewsConducted) || interviewsConducted < 0 || interviewsConducted > 10 || interviewsConducted % 1 !== 0) {
+				$('#InterviewsConductedError').text('Please enter a valid number of interviews conducted (0-10).');
 				return;
 			}
 
@@ -589,7 +620,7 @@
 		});
 		
 		function updatefunction(id) {
-			debugger
+
 			var InterviewerId = $('#updateinterviewerid_' + id).val();
 			var FirstName = $('#firstName_' + id).val();
 			var LastName = $('#lastName_' + id).val();
@@ -634,31 +665,29 @@
 				$('#InterviewsConductedError_' + id).text('');
 			});
 
-
-			if (FirstName.trim() === '' || !/^[a-zA-Z]+$/.test(FirstName)) {
-				$('#firstNameError_' + id).text('Valid first name required: no spaces, numbers, or special characters.');
+			if (FirstName.trim() === '' || !/^[a-zA-Z]{2,}$/.test(FirstName)) {
+				$('#firstNameError_' + id).text('Valid first name (Min 2 characters, no spaces, or special characters).');
 				return;
 			}
-			if (LastName.trim() === '' || !/^[a-zA-Z]+$/.test(LastName)) {
-				$('#lastNameError_' + id).text('Valid last name required: no spaces, numbers, or special characters.');
+			if (LastName.trim() === '' || !/^[a-zA-Z]{2,}$/.test(LastName)) {
+				$('#lastNameError_' + id).text('Valid last name (Min 2 characters, no spaces, or special characters).');
 				return;
 			}
 			if (Email.trim() === '') {
 				$('#emailError_' + id).text('Please enter an email address.');
 				return;
-			} else if (!/^\S+\S+\.\S+$/.test(Email)) {
+			} else if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(Email)) {
 				$('#emailError_' + id).text('Please enter a valid email address.');
 				return;
 			}
-			if (Password.trim() === '') {
-				$('#passwordError_' + id).text('Please enter a password.');
-				return;
-			} else if (Password.length < 8) {
-				$('#passwordError_' + id).text('Password should be at least 8 characters long.');
-				return;
-			} else if (!/[a-z]/.test(Password) || !/[A-Z]/.test(Password) || !/[0-9]/.test(Password) || !/[^a-zA-Z0-9]/.test(Password)) {
-				$('#passwordError_' + id).text('Password must have lowercase, uppercase, digit, and special character.');
-				return;
+			if (Password.trim() !== '') {
+				if (Password.length < 8) {
+					$('#passwordError_' + id).text('Password should be at least 8 characters long.');
+					return;
+				} else if (!/[a-z]/.test(Password) || !/[A-Z]/.test(Password) || !/[0-9]/.test(Password) || !/[^a-zA-Z0-9]/.test(Password)) {
+					$('#passwordError_' + id).text('Password must have lowercase, uppercase, digit, and special character.');
+					return;
+				}
 			}
 			if ($('#designation_' + id).val() == null || $('#designation_' + id).val() == '') {
 				$('#designationError_' + id).text('Please select a designation.');
@@ -668,12 +697,12 @@
 				$('#technologyError_' + id).text('Please select a technology.');
 				return false;
 			}
-			if (YearOfExperience.trim() === '' || isNaN(parseFloat(YearOfExperience)) || parseFloat(YearOfExperience) < 0) {
-				$('#experienceError_' + id).text('Please enter a valid year of experience.');
+			if (YearOfExperience.trim() === '' || isNaN(parseFloat(YearOfExperience)) || parseFloat(YearOfExperience) < 0 || parseFloat(YearOfExperience) > 50 || !(/^\d+(.\d)?$/.test(YearOfExperience) || /^\d+$/.test(YearOfExperience))) {
+				$('#experienceError_' + id).text('Please enter a valid year of experience (0-50) (e.g., 1 or 1.8).');
 				return;
 			}
-			if (InterviewsConducted.trim() === '' || isNaN(InterviewsConducted) || InterviewsConducted < 0) {
-				$('#InterviewsConductedError_' + id).text('Please enter a valid number of interviews conducted.');
+			if (InterviewsConducted.trim() === '' || isNaN(InterviewsConducted) || InterviewsConducted < 0 || InterviewsConducted > 10 || InterviewsConducted % 1 !== 0) {
+				$('#InterviewsConductedError_' + id).text('Please enter a valid number of interviews conducted (0-10).');
 				return;
 			}
 
@@ -695,11 +724,11 @@
 					// Handle the response data here
 					console.log(response);
 					if (response.success) {
-						alert('Data updated successfully');
+						alert('Interviewer updated successfully');
 						//$('#exampleModalCenter').modal('hide');
 						location.reload(true);
 					} else {
-						alert('Data already exists');
+					alert('Interviewer already exists');
 						location.reload(true);
 					}
 				},
@@ -711,8 +740,8 @@
 			});
 		}
 
-
 		function deletefunction(id) {
+
 			var InterviewerId = $('#deleteInterviewerId_' + id).val();
 
 			$.ajax({
@@ -723,12 +752,14 @@
 				},
 				success: function (response) {
 					console.log(response);
+					$('#myModal_' + id).modal('hide'); // Hide the modal
+					alert(response.message); // Display the success message
 					//$('#myModal_' + id).modal('hide');
-					alert(response.message);
+					//alert(response.message);
 					location.reload();
 				},
 				error: function (response) {
-					console.error(errorthrown);
+					console.error(response);
 				}
 			});
 		}

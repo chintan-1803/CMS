@@ -58,8 +58,9 @@ namespace CMS.Services
 			RestRequest request = new RestRequest() { Method = Method.Post };
 			request.AddHeader("Content-Type", "application/json");
 			request.AddParameter("application/json", JsonConvert.SerializeObject(interviewRoundData), ParameterType.RequestBody);
-			var response = client.Execute<InterviewRoundModel>(request);
-			return response;
+			var response = client.Execute(request);
+
+			return response.IsSuccessful ? response : new RestResponse { IsSuccessful = false, ErrorMessage = response.ErrorMessage };
 		}
 
 		public RestResponse ViewInterviewRound(int interviewId)

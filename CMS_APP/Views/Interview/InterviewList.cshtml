@@ -70,7 +70,7 @@
         <div class="card-header">
             <h5>Interview List</h5>
             <div class="card-header-right">
-                <button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModal()">
+                <button type="button" class="btn1 btn-primary" width="10px" height="10px" data-toggle="modal" data-target="#exampleModalCenter" onclick="clearModalForCreate()">
                     Create New
                 </button>
                 @*Add Interview--pop box*@
@@ -146,7 +146,7 @@
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                         <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL</span>
                                     </label>
-                                    <input asp-for="InterviewURL" type="url" id="interviewURL" class="form-control validate">
+                                    <input asp-for="InterviewURL" type="url" id="interviewURL" class="form-control validate" placeholder="Enter interview URL">
                                     <span asp-validation-for="InterviewURL" class="text-danger" id="interviewURLError"></span>
                                 </div>
 
@@ -170,7 +170,7 @@
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                         <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Description</span>
                                     </label>
-                                    <textarea asp-for="Description" id="description" class="form-control validate"></textarea>
+                                    <textarea asp-for="Description" id="description" class="form-control validate" placeholder="Enter description"></textarea>
                                     <span asp-validation-for="Description" class="text-danger" id="DescriptionError"></span>
                                 </div>
 
@@ -228,10 +228,10 @@
                                         </button>
 
                                         <div class="dropdown-menu">
-                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewId">Edit</button>
+                                            <button type="button" class="dropdown-item" data-toggle="modal" data-target="#UpdateModalCenter_@data.InterviewId" onclick="clearModal(@data.InterviewId)">Edit</button>
                                             <button type="button" class="dropdown-item" data-toggle="modal" data-target="#myModal_@data.InterviewId">Delete</button>
                                         </div>
-                                        <button type="button" class="btn btn-primary light sharp" style="font-size: 14px; width: 80px; height: 30px;" data-toggle="modal" data-target="#AddRoundModalCenter_@data.InterviewId" onclick="clearModal()">Add Round</button>
+                                        <button type="button" class="btn btn-primary light sharp" style="font-size: 14px; width: 80px; height: 30px;" data-toggle="modal" data-target="#AddRoundModalCenter_@data.InterviewId" onclick="clearModal(@data.InterviewId)">Add Round</button>
                                         <button type="button" class="btn btn-primary light sharp" style="font-size: 12px; width: 80px; height: 30px;" data-toggle="modal" data-target="#ViewRoundModalCenter_@data.InterviewId" onclick="viewRound(@data.InterviewId)">View Rounds</button>
                                     </div>
 
@@ -253,7 +253,7 @@
                                                         <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                                             <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Name</span>
                                                         </label>
-                                                        <select class="form-control validate round-dropdown" required id="roundName_@data.InterviewId">
+                                                        <select class="form-control validate round-dropdown" required id="roundName_@data.InterviewId" asp-for="roundName">
                                                             <option value="" disabled selected>Select Round</option>
                                                             @foreach (var round in ViewBag.RoundList)
                                                             {
@@ -289,7 +289,7 @@
                                                         <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                                             <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Feedback</span>
                                                         </label>
-                                                        <textarea asp-for="roundFeedback" id="roundFeedback_@data.InterviewId" class="form-control validate"></textarea>
+                                                        <textarea asp-for="roundFeedback" id="roundFeedback_@data.InterviewId" class="form-control validate" placeholder="Enter round feedback"></textarea>
                                                         <span asp-validation-for="roundFeedback" class="text-danger" id="roundFeedbackError_@data.InterviewId"></span>
                                                     </div>
 
@@ -382,6 +382,15 @@
 
                                                     <div class="modal-body">
                                                         <input type="hidden" id="updateinterviewid_@data.InterviewId" value="@data.InterviewId" class="form-control validate" readonly>
+                                                        <input type="hidden" id="previousCandidateId_@data.InterviewId" value="@data.CandidateId" />
+                                                        <input type="hidden" id="previousInterviewerId_@data.InterviewId" value="@data.InterviewerId" />
+                                                        <input type="hidden" id="previousTechnologyId_@data.InterviewId" value="@data.TechnologyId" />
+                                                        <input type="hidden" id="previousIsOnline_@data.InterviewId" value="@data.IsOnline.ToString().ToLower()" />
+                                                        <input type="hidden" id="previousInterviewURL_@data.InterviewId" value="@data.InterviewURL" />
+                                                        <input type="hidden" id="previousScheduledTime_@data.InterviewId" value="@data.ScheduledTime.ToString("yyyy-MM-ddTHH:mm:ss")" />
+                                                        <input type="hidden" id="previousStatusID_@data.InterviewId" value="@data.StatusID" />
+                                                        <input type="hidden" id="previousDescription_@data.InterviewId" value="@data.Description" />
+                                                        <input type="hidden" id="previousReasonID_@data.InterviewId" value="@data.ReasonID" />
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
@@ -392,7 +401,7 @@
                                                                 <option value="" disabled selected>Select Candidate</option>
                                                                 @foreach (var candidate in ViewBag.CandidateMasterList)
                                                                 {
-                                                                    <option value="@candidate.CandidateId" @(candidate.CandidateId == data.CandidateId ? "selected" : "")>@candidate.firstName @candidate.lastName</option>
+                                                                    <option value="@candidate.CandidateId" @(candidate.CandidateId == data.CandidateId ? "selected='selected'" : "")>@candidate.firstName @candidate.lastName</option>
                                                                 }
                                                             </select>
                                                             <span asp-validation-for="CandidateId" class="text-danger" id="candidateIdError_@data.InterviewId"></span>
@@ -407,7 +416,7 @@
                                                                 @foreach (var interviewer in ViewBag.InterviewerList)
                                                                 {
 
-                                                                    <option value="@interviewer.InterviewerId" @(interviewer.InterviewerId == data.InterviewerId ? "selected" : "")>@interviewer.FirstName @interviewer.LastName</option>
+                                                                    <option value="@interviewer.InterviewerId" @(interviewer.InterviewerId == data.InterviewerId ? "selected='selected'" : "")>@interviewer.FirstName @interviewer.LastName</option>
                                                                 }
                                                             </select>
                                                             <span asp-validation-for="InterviewerId" class="text-danger" id="interviewerIdError_@data.InterviewId"></span>
@@ -421,7 +430,7 @@
                                                                 <option value="" disabled selected>Select technology</option>
                                                                 @foreach (var technology in ViewBag.TechnologyList)
                                                                 {
-                                                                    <option value="@technology.TechnologyId" @(technology.TechnologyId == data.TechnologyId ? "selected" : "")>@technology.TechnologyName</option>
+                                                                    <option value="@technology.TechnologyId" @(technology.TechnologyId == data.TechnologyId ? "selected='selected'" : "")>@technology.TechnologyName</option>
                                                                 }
                                                             </select>
                                                             <span asp-validation-for="technology" class="text-danger" id="technologyError_@data.InterviewId"></span>
@@ -446,7 +455,7 @@
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                                                 <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL</span>
                                                             </label>
-                                                            <input asp-for="InterviewURL" type="url" id="interviewURL_@data.InterviewId" value="@data.InterviewURL" class="form-control validate">
+                                                            <input asp-for="InterviewURL" type="url" id="interviewURL_@data.InterviewId" value="@data.InterviewURL" class="form-control validate" placeholder="Enter interview URL">
                                                             <span asp-validation-for="InterviewURL" class="text-danger" id="interviewURLError_@data.InterviewId"></span>
                                                         </div>
 
@@ -466,7 +475,7 @@
                                                                 <option value="" disabled selected>Select status</option>
                                                                 @foreach (var statusID in ViewBag.InterviewStatusList)
                                                                 {
-                                                                    <option value="@statusID.StatusID" @(statusID.StatusID == data.StatusID ? "selected" : "")>@statusID.Name</option>
+                                                                    <option value="@statusID.StatusID" @(statusID.StatusID == data.StatusID ? "selected='selected'" : "")>@statusID.Name</option>
                                                                 }
                                                             </select>
                                                             <span asp-validation-for="StatusID" class="text-danger" id="statusIDError_@data.InterviewId"></span>
@@ -476,7 +485,7 @@
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
                                                                 <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Description</span>
                                                             </label>
-                                                            <textarea asp-for="Description" id="description_@data.InterviewId" class="form-control validate">@data.Description</textarea>
+                                                            <textarea asp-for="Description" id="description_@data.InterviewId" class="form-control validate" placeholder="Enter description">@data.Description</textarea>
                                                             <span asp-validation-for="Description" class="text-danger" id="descriptionError_@data.InterviewId"></span>
                                                         </div>
 
@@ -488,7 +497,7 @@
                                                                 <option value="" disabled selected>Select Reason</option>
                                                                 @foreach (var reason in ViewBag.ReasonList)
                                                                 {
-                                                                    <option value="@reason.ReasonID" @(reason.ReasonID == data.ReasonID ? "selected" : "")>@reason.Reason</option>
+                                                                    <option value="@reason.ReasonID" @(reason.ReasonID == data.ReasonID ? "selected='selected'" : "")>@reason.Reason</option>
                                                                 }
                                                             </select>
                                                             <span asp-validation-for="reason" class="text-danger" id="reasonError_@data.InterviewId"></span>
@@ -521,7 +530,7 @@
     <script>
 
         // This below function can clear the values from Add interview and Add interview round
-        function clearModal() {
+        function clearModalForCreate() {
             // Clear the input field values
             $("#candidateId").val('');
             $("#interviewerId").val('');
@@ -530,10 +539,69 @@
             $("#interviewURL").val('');
             $("#scheduledTime").val('');
             $("#description").val('');
+
             $("#roundName").val('');
             $("#roundStatus").val('');
             $("#scheduledAt").val('');
             $("#roundFeedback").val('');
+
+            // Clear the error messages
+            $('#candidateIdError').text('');
+            $('#interviewerIdError').text('');
+            $('#technologyError').text('');
+            $('#isOnlineError').text('');
+            $('#interviewURLError').text('');
+            $('#scheduledTimeError').text('');
+            $('#statusIDError').text('');
+            $('#descriptionError').text('');
+        }
+
+        function clearModal(id) {
+
+            $("#roundName_" + id).val('');
+            $("#roundStatus_" + id).val('');
+            $("#scheduledAt_" + id).val('');
+            $("#roundFeedback_" + id).val('');
+
+            //For update to get the previous values 
+            $("#candidateId_" + id).val($("#previousCandidateId_" + id).val());
+            $("#interviewerId_" + id).val($("#previousInterviewerId_" + id).val());
+            $("#technology_" + id).val($("#previousTechnologyId_" + id).val());
+            var isOnline = $("#previousIsOnline_" + id).val() === "true";
+            if (isOnline) {
+                $("#isOnlineYes_" + id).prop("checked", true);
+                $("#interviewURLField_" + id).show();
+            } else {
+                $("#isOnlineNo_" + id).prop("checked", true);
+                $("#interviewURLField_" + id).hide();
+            }
+            $("#isOnlineYes_" + id).click(function() {
+                $("#interviewURLField_" + id).show();
+            });
+            $("#isOnlineNo_" + id).click(function() {
+                $("#interviewURLField_" + id).hide();
+            });
+            $("#interviewURL_" + id).val($("#previousInterviewURL_" + id).val());
+            $("#scheduledTime_" + id).val($("#previousScheduledTime_" + id).val());
+            $("#statusID_" + id).val($("#previousStatusID_" + id).val());
+            $("#description_" + id).val($("#previousDescription_" + id).val());
+            $("#reason_" + id).val($("#previousReasonID_" + id).val());
+
+            // Clear the error messages
+            $('#roundNameError_' + id).text('');
+            $('#roundStatusError_' + id).text('');
+            $('#scheduledAtError_' + id).text('');
+            $('#roundFeedbackError_' + id).text('');
+
+            $("#candidateIdError_" + id).text("");
+            $("#interviewerIdError_" + id).text("");
+            $("#technologyError_" + id).text("");
+            $("#isOnlineError_" + id).text("");
+            $("#interviewURLError_" + id).text("");
+            $("#scheduledTimeError_" + id).text("");
+            $("#statusIDError_" + id).text("");
+            $("#descriptionError_" + id).text("");
+            $("#reasonError_" + id).text("");
         }
 
         // This below function can show and hide interview URL field from the add interview form
@@ -623,6 +691,12 @@
                     $('#statusIDError').text('');
                 }
             });
+            $('#description').on('input', function () {
+                // Clear the error message when the field is not empty
+                if ($(this).val() !== '') {
+                    $('#descriptionError').text('');
+                }
+            });
             if ($("#candidateId").val() == null || $("#candidateId").val() == '') {
                 $('#candidateIdError').text('Please select a Candidate.');
                 return false;
@@ -658,7 +732,10 @@
                 $('#statusIDError').text('Please select a Status.');
                 return false;
             }
-
+            if (description.trim().length > 0 && description.trim().length < 2) {
+                $('#descriptionError').text('Description should be at least two characters long.');
+                return;
+            }
             // Make an AJAX call to the server to save the data
             $.ajax({
                 url: '/Interview/AddInterview',
@@ -789,6 +866,10 @@
                 $("#reasonError_" + id).text("Please select a reason.");
                 return;
             }
+            if (description.trim().length > 0 && description.trim().length < 2) {
+                $('#descriptionError_'+id).text('Description should be at least two characters long.');
+                return;
+            }
 
             // Make an AJAX call to the server to update the interview details
             $.ajax({
@@ -877,6 +958,12 @@
                     $('#scheduledAtError_'+id).text('');
                 }
             });
+            $('#roundFeedback_'+id).on('input', function () {
+                // Clear the error message when the field is not empty
+                if ($(this).val() !== '') {
+                $('#roundFeedbackError_' + id).text('');
+                }
+            });
 
             if ($('#roundName_'+id).val() == null || $('#roundName_'+id).val() == '') {
                 $('#roundNameError_'+id).text('Please select a Round Name.');
@@ -891,7 +978,11 @@
                 return false;
             }
             if (selectedTime < new Date()) {
-            $('#scheduledAtError_' + id).text("Please select a future date and time for the interview.");
+                $('#scheduledAtError_' + id).text("Please select a future date and time for the interview.");
+                return;
+            }
+            if (roundFeedback.trim().length > 0 && roundFeedback.trim().length < 2) {
+                $('#roundFeedbackError_' + id).text('Round feedback should be at least two characters long.');
                 return;
             }
 
@@ -907,76 +998,44 @@
                     roundFeedback: roundFeedback
                 },
                 success: function (response) {
-                    debugger
                     // Display a success message
                     alert(response.message);
                     location.reload(true);
                 },
                 error: function (response) {
-                    debugger
                     // Handle errors here
-                    console.error(response);
-                    alert(response.message);
-                    //alert('Error occurred while saving data');
-                    location.reload(true);
+                    //console.error(response);
+                    if (response.responseJSON && response.responseJSON.message) {
+                        var errorMessage = response.responseJSON.message;
+                        $('#roundNameError_'+id).text(errorMessage);
+                    } else {
+                        alert('Error occurred while saving data');
+                    }
                 }
             });
         }
 
         function viewRound(id) {
-            debugger
-          var interviewId = $("#InterviewId_" + id).val();
+              var interviewId = $("#InterviewId_" + id).val();
 
               $.ajax({
-            url: '/Interview/ViewInterviewRoundById',
-                method: 'GET',
-                data: {
-                  interviewId: interviewId,
-                },
-                success: function (response) {
-                    debugger
-                    // Display a success message
-                    console.log(response);
-                    //location.reload(true);
-                    
-                },
-                error: function (response) {
-                    debugger
-                    // Handle errors here
-                    console.error(response);
-                    alert('Error occurred while saving data');
-                    //location.reload(true);
-                }
+                    url: '/Interview/ViewInterviewRoundById',
+                    method: 'GET',
+                    data: {
+                      interviewId: interviewId,
+                    },
+                    success: function (response) {
+                      // Display a success message
+                      console.log(response);
+                      //location.reload(true);
+                    },
+                    error: function (response) {
+                      // Handle errors here
+                      console.error(response);
+                      alert('Error occurred while saving data');
+                      //location.reload(true);
+                    }
               });
         }
-
-        //function viewRound(id) {
-        //    var interviewId = $("#InterviewId_" + id).val();
-        //    @*var roundName = $("#roundName").val();
-        //    var roundStatus = $("#roundStatus").val();
-        //    var scheduledAt = $("#scheduledAt").val();
-        //    var roundFeedback = $("#roundFeedback").val();*@
-
-        //    $.ajax({
-        //            url: '/Interview/ViewInterviewRound',
-        //        method: 'PUT',
-        //        data: {
-        //            interviewId: interviewId
-        //            @*roundNumberId: roundName,
-        //            roundStatusId: roundStatus,
-        //            scheduledAt: scheduledAt,
-        //            roundFeedback: roundFeedback*@
-        //        },
-        //        success: function (response) {
-        //            console.log(response);
-        //            //$('#myModal_' + id).modal('hide');
-        //            alert(response.message);
-        //            location.reload();
-        //        },
-        //        error: function (response) {
-        //            console.error(errorthrown);
-        //        }
-        //    });
-        //}
-
+        
     </script>

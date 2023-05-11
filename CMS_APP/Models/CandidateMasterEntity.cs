@@ -8,7 +8,7 @@ namespace CMS.Models
 		public string ?firstName { set; get; }
 		public string? lastName { set; get; }
 		public string? Email { set; get; }
-		public int ?ContactNo { set; get; }
+		public string ?ContactNo { set; get; }
 		public int ?TechnologyId { set; get; }
 		public string ?TechnologyName { set; get; }//Select multiple dropdown of all technology.
 		public string ?Skills { set; get; }  //Select multiple dropdown of all skills based on technology.
