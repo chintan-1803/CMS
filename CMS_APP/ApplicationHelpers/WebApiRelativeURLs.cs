@@ -11,6 +11,10 @@ namespace CMS.ApplicationHelpers
 
         public const string LoginPath = "/LoginApi/authenticate";
 
+        public const string ForgotPasswordPath = "/LoginApi/SendResetPasswordLinkToUser?email=";
+
+		public const string ResetPasswordPath = "/LoginApi/ResetPassword";
+
         public const string DesignationPath = "/Designation/Designation";
 
         public const string AddDesignation = "/Designation/AddDesignation";

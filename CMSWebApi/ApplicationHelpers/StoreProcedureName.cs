@@ -4,6 +4,10 @@
     {
         public readonly static string AuthenticateUserExistsORNot = "sp_AuthenticateUserLogin";
 
+        public readonly static string GetUserByEmail = "sp_GetUserByEmail";
+        public readonly static string ResetPassword = "sp_ResetPassword";
+
+
         //add stored procedure name
 
         public readonly static string DesignationMasterData = "GetAllDesignationMasterData";

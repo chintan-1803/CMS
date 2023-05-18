@@ -6,6 +6,7 @@ using CMSWebApi.DataHelper;
 using CMS.Models;
 using CMSWebApi.Dapper;
 using Microsoft.OpenApi.Models;
+using CMSWebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,13 @@ Log.Logger = new LoggerConfiguration().CreateBootstrapLogger();
 builder.Host.UseSerilog(((ctx, lc) => lc
 .ReadFrom.Configuration(ctx.Configuration)));
 
+//emailConfiguration
+var emailConfig = builder.Configuration
+		.GetSection("EmailConfiguration")
+		.Get<EmailConfiguration>();
+builder.Services.AddSingleton(emailConfig);
+
+builder.Services.AddControllers();
 
 builder.Services.AddCors();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -29,7 +37,7 @@ builder.Services.AddControllers()
     .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
 
 // configure DI for application services
-builder.Services.AddSingleton<HttpContextAccessor>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IUserApiService,UserApiService>();
 builder.Services.AddScoped<IDesignation_Interface,Designation_Service>();
 builder.Services.AddScoped<IReason_Interface,Reason_Service>();
@@ -61,6 +69,8 @@ app.UseSwagger(c =>
     c.RouteTemplate = "WebApi/swagger/{documentname}/swagger.json";
 });
 
+
+app.UseHttpContext();
 
 app.UseSwaggerUI(c =>
 {

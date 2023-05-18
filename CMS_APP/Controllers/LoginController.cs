@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Channels;
 
 
 namespace CMS.Controllers
@@ -124,7 +125,92 @@ namespace CMS.Controllers
             }
         }
 
-       
+		[AllowAnonymous]
+		[HttpGet]
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+	
+		[HttpPost]
+        public IActionResult ForgotPassword(string email)
+        {
+            if (!string.IsNullOrEmpty(email))
+            {
+                var response = _userService.UserEmail(email);
+
+                if (!response.IsSuccessful)
+                {
+                    TempData["error-message"] = "User is not authenticated. Please provide a valid email address.";
+					return View();
+				}
+
+            }
+
+            return RedirectToAction(nameof(ResetPasswordConfirmation));
+        }
+		[HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
+
+		//  reset  Password
+
+		[AllowAnonymous]
+		[HttpGet]
+        public IActionResult ResetPassword(string i)
+		{
+			try
+			{
+                var userId = (Encryption.DecryptString(i));
+                
+                var forgotPassword = new ForgotPassword
+                {
+                    EmailId = userId
+                };
+                return View(forgotPassword);
+
+            }
+			catch (Exception ex)
+			{
+				
+				return BadRequest(new { message = ex.Message });
+			}
+			
+
+		}
+
+		[HttpPost]
+        public IActionResult ResetPassword(ForgotPassword resetPassword)
+        {
+            try
+            {
+               
+                var response = _userService.ResetPassword(resetPassword);
+                if (response.Content == "\" Password has been changed successfully.\"")
+                {
+                    TempData["Success-Message"] = "Congratulations!Your password has been changed successfully.";
+                    return View(resetPassword);
+                    //return Json(new { success = true, message = "Password has been changed successfully." });
+                }
+
+                if (response != null)
+                {
+                    return Json(new { success = false});
+                }
+                
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new { message = ex.Message });
+            }
+            return BadRequest(new { isSuccess = false });
+
+        }
+
 
         [AllowAnonymous]
         public IActionResult Logout()

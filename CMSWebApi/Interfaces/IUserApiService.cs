@@ -1,4 +1,5 @@
 ﻿using CMS.Models;
+using CMSWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,13 @@ namespace CMSWebApi.Interfaces
     {
         AuthenticateResponse AuthenticateUser(WebApiUserLoginEntity loginRequest);
         LoginResponse GetById(int userId);
-    }
+
+        //public WebApiUserLoginEntity ResetPasswordData(ForgotPassword model);
+
+        public int ResetPasswordData(ForgotPassword model);
+
+        public AuthenticateResponse UserByEmail(string email);
+        Task<string> SendEmail(string toEmail, string subject, string body, EmailConfiguration emailConfiguration);
+
+	}
 }
