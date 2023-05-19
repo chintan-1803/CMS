@@ -123,10 +123,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CMSWebApi\CMSWebApi.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="CMSWebApi">
       <HintPath>..\CMSWebApi\bin\Debug\net6.0\CMSWebApi.dll</HintPath>
     </Reference>

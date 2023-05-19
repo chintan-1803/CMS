@@ -1,10 +1,4 @@
-﻿using CMSWebApi.Models;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Reflection.Emit;
-using System.Xml.Linq;
-
-namespace CMS.Models
+﻿namespace CMS.Models
 {
     public class LoginResponse
     {

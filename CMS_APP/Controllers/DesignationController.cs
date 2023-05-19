@@ -2,7 +2,6 @@
 using CMS.Interfaces;
 using CMS.Models;
 using CMS.Services;
-using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

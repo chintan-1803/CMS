@@ -1,18 +1,13 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
-using CMS.Services;
-using CMSWebApi.Dapper;
-using CMSWebApi.Interfaces;
-using CMSWebApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Net;
 
 namespace CMS.Controllers
 {
-    
+
     public class CandidateController : Controller
     {
 		private readonly IMasterData _masterdata;

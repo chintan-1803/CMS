@@ -1,6 +1,5 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
-using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,7 +7,7 @@ using System.Net;
 
 namespace CMS.Controllers
 {
-	[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 	public class RoundController : Controller
 	{
 		private readonly IRound _round_Interface;

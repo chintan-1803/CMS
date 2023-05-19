@@ -1,15 +1,13 @@
 ﻿using CMS.ApplicationHelpers;
 using CMS.Interfaces;
 using CMS.Models;
-using Dapper;
 using Newtonsoft.Json;
 using RestSharp;
-using System.Data;
 using System.Net;
 
 namespace CMS.Services
 {
-	public class Candidate : ICandidate
+    public class Candidate : ICandidate
 	{
 
 		public RestResponse AddCandidate(CandidateMasterEntity candidateModel)
