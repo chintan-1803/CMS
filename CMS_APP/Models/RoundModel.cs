@@ -10,4 +10,9 @@
         public DateTime ? change_Date { get; set; }
         public bool IsDelete { get; set; }
     }
+	public class RoundViewModel
+	{
+		public List<RoundModel>? Rounds { get; set; }
+		public AllPaginationModel? PaginationModel { get; set; }
+	}
 }

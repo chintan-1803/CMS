@@ -5,7 +5,7 @@ namespace CMS.Interfaces
 {
     public interface IRole
     {
-        public RestResponse Rolelist();
+        public RestResponse Rolelist(int pageNumber, int pageSize, out int totalItems);
 
         public RestResponse AddRolelist(RoleModel roleModel);
 

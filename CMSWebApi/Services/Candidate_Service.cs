@@ -61,11 +61,25 @@ namespace CMSWebApi.Services
 
 		}
 
-		//Admin--- 
-		public Task<List<CandidateMasterEntity>> GetAllCandidates()
-		{
-			var model = _dapper.GetAll<CandidateMasterEntity>(StoreProcedureName.CandidateData, null, System.Data.CommandType.StoredProcedure);
-			return Task.FromResult(model);
-		}
-	}
+        //Admin--- 
+        public Task<List<CandidateMasterEntity>> GetAllCandidates(int pageNumber, int pageSize, out int totalItems)
+        {
+            try
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@PageNumber", pageNumber);
+                parameters.Add("@PageSize", pageSize);
+                parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                var model = _dapper.GetAll<CandidateMasterEntity>(StoreProcedureName.CandidateData, parameters, CommandType.StoredProcedure);
+                totalItems = parameters.Get<int>("@TotalItems");
+
+                return Task.FromResult(model);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error occurred while retrieving all candidates.", ex);
+            }
+        }
+    }
 }

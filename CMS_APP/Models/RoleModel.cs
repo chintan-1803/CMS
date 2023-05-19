@@ -10,4 +10,9 @@
         public DateTime? change_Date { get; set; }
         public bool IsDelete { get; set; }
     }
+	public class RoleViewModel
+	{
+		public List<RoleModel>? Roles { get; set; }
+		public AllPaginationModel? PaginationModel { get; set; }
+	}
 }

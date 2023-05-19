@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -20,52 +21,49 @@ namespace CMS.Controllers
 			_designation_Interface = designation_Interface;
 			_masterdata = masterdata;
 		}
+
 		[HttpGet]
-		public IActionResult Designationlist()
+		public IActionResult DesignationList(int pageNumber = 1, int pageSize = 5)
 		{
 			var jsonData = HttpContext.Session.GetString("DesignationList");
-			List<DesignationModel> data;
+			AllPaginationModel data;
+			var response = _designation_Interface.Designationlist(pageNumber, pageSize, out int totalItems);
 			if (jsonData == null)
 			{
-				var response = _designation_Interface.Designationlist();
-				data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-				var DesignationData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("DesignationList",DesignationData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var designationData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("DesignationList", designationData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
-			return View(data);
-			// Get the list of designations from the API
-			//var jsonData = HttpContext.Session.GetString("DesignationList");
 
-			//if(jsonData == null) {
-			//	var response = _designation_Interface.Designationlist();
-			//	var data = JsonConvert.DeserializeObject<List<DesignationModel>>(response.Content);
-			//}
-			//if(jsonData == null){
-			//	var masterDataResponse = _masterdata.AllMasterDatalist();
-			//	var masterDataList = JsonConvert.DeserializeObject<AllMasterDataModel>(masterDataResponse.Content);
-			//	//var designation = masterDataList.DesignationData;
-			//	//var designation 
-			//	var DesignationData = JsonConvert.SerializeObject(masterDataList.DesignationData);
-			//	HttpContext.Session.SetString("DesignationList", DesignationData);
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
 
-			//}
-			//var designationList = JsonConvert.DeserializeObject<List<DesignationModel>>(jsonData);
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
 
-			//if (designationList != null)
-			//{
-			//	return View(designationList);
-			//}
-			//else
-			//{
-			//	return View();
-			//}
+			var designationList = data.designationModel;
+
+			var viewModel = new DesignationViewModel
+			{
+				Designations = designationList,
+				PaginationModel = data
+			};
+
+			return View(viewModel);
 		}
 
-
+		
 		[HttpPost]
 		public IActionResult AddDesignationlist(DesignationModel designationData)
 		{

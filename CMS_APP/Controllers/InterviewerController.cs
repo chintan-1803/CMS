@@ -1,11 +1,12 @@
-﻿using CMS.Models;
+﻿using CMS.ApplicationHelpers;
+using CMS.Models;
 using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using RestSharp;
 using System.Data;
-
-
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -21,74 +22,63 @@ namespace CMS.Controllers
 		public InterviewerController(IInterviewer interviewer_Interface)
 		{
 			_interviewer_Interface = interviewer_Interface;
-
-
-
 		}
 
-
-
 		[HttpGet]
-		public IActionResult Interviewerlist()
+		public IActionResult InterviewerList(int pageNumber = 1, int pageSize = 5)
 		{
-			//var InterviewerData = JsonConvert.SerializeObject(masterDataList.InterviewerData);
 			var jsonData = HttpContext.Session.GetString("InterviewerList");
+			AllPaginationModel data;
 
+			var response = _interviewer_Interface.Interviewerlist(pageNumber, pageSize, out int totalItems);
 
-
-			List<InterviewerModel> data;
 			if (jsonData == null)
 			{
-				var response = _interviewer_Interface.Interviewerlist();
-				data = JsonConvert.DeserializeObject<List<InterviewerModel>>(response.Content);
-				var InterviewerData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("InterviewerList", InterviewerData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var interviewerData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("InterviewerList", interviewerData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<InterviewerModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
+
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
+
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
+
+			var interviewerList = data.interviewerModel;
+
+			var viewModel = new InterviewerViewModel
+			{
+				Interviewers = interviewerList,
+				PaginationModel = data
+			};
+
 			var jsonData1 = HttpContext.Session.GetString("DesignationList");
 			var designationList = JsonConvert.DeserializeObject(jsonData1);
-
-
 
 			var jsonData2 = HttpContext.Session.GetString("TechnologyList");
 			var technologyList = JsonConvert.DeserializeObject(jsonData2);
 
-			if (data != null)
+			if (interviewerList != null)
 			{
 				ViewBag.DesignationList = designationList;
 				ViewBag.TechnologyList = technologyList;
-				return View(data);
-			}
-			else
-			{
-				return View();
+				return View(viewModel);
 			}
 
-
-
-
-			// Get the list of designations from the session
-
-
-
-
-			// Get the list of technologies from the session
-
-
-
-			//var jsonData1 = HttpContext.Session.GetString("technologyList");
-			//var technologyList = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData1);
-
-
-
-
+			return BadRequest(new { message = "Failed to retrieve interviewer list" });
 		}
-
-
-
 
 		[HttpPost]
 		public IActionResult AddInterviewerlist(InterviewerModel interviewerData)

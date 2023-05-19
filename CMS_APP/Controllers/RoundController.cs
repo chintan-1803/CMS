@@ -1,11 +1,10 @@
 ﻿using CMS.Interfaces;
 using CMS.Models;
 using CMSWebApi.Interfaces;
-using CMSWebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using RoundModel = CMS.Models.RoundModel;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -18,35 +17,47 @@ namespace CMS.Controllers
 			_round_Interface = round_Interface;
 		}
 		[HttpGet]
-		public IActionResult Roundlist()
+		public IActionResult RoundList(int pageNumber = 1, int pageSize = 5)
 		{
-            //pass the session
-            var jsonData = HttpContext.Session.GetString("RoundList");
+			var jsonData = HttpContext.Session.GetString("RoundList");
+			AllPaginationModel data;
+			var response = _round_Interface.Roundlist(pageNumber, pageSize, out int totalItems);
 
-			List<RoundModel> data;
 			if (jsonData == null)
 			{
-				var response = _round_Interface.Roundlist();
-				data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
-				var RoundData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("RoundList",RoundData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var roundData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("RoundList", roundData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
-			return View(data);
-			//var response = _round_Interface.Roundlist();
-			//var data = JsonConvert.DeserializeObject<List<RoundModel>>(response.Content);
-			//if (data != null)
-			//{
-			//	return View(data);
-			//}
-			//else
-			//{
-			//	return View();
-			//}
+
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
+
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
+
+			var roundList = data.roundModel;
+
+			var viewModel = new RoundViewModel
+			{
+				Rounds = roundList,
+				PaginationModel = data
+			};
+
+			return View(viewModel);
 		}
+
 		[HttpPost]
 		public IActionResult AddRoundlist(RoundModel roundData)
 		{

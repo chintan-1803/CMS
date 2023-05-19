@@ -3,9 +3,7 @@ using RestSharp;
 
 public interface IInterviewer
 {
-    /*IEnumerable<InterviewerModel> GetAllInterviewersData();*/
-
-    public RestResponse Interviewerlist();
+    public RestResponse Interviewerlist(int pageNumber, int pageSize, out int totalItems);
 
     public RestResponse AddInterviewerlist(InterviewerModel InterviewerData);
 

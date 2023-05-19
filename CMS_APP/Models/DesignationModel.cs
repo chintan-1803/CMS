@@ -15,4 +15,9 @@ namespace CMS.Models
         public DateTime? change_Date { get; set; }
         public bool IsDelete { get; set; } = false;
     }
+	public class DesignationViewModel
+	{
+		public List<DesignationModel>? Designations { get; set; }
+		public AllPaginationModel? PaginationModel { get; set; }
+	}
 }

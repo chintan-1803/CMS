@@ -23,18 +23,25 @@ namespace CMSWebApi.Services
             _cipherService = cipherService;
         }
 
-        #region GetTechnology 
-        public Task<List<TechnologyModel>> GetAllTechnology()
-        {
-            try
-            {
-                //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-                var model = _dapper.GetAll<TechnologyModel>(StoreProcedureName.TechnologyMasterData, null, System.Data.CommandType.StoredProcedure);
-                return Task.FromResult(model);
-            }
-            catch (ArgumentNullException ex)
-            {
-				throw new ArgumentNullException("NULL VALUE", ex);
+		#region GetTechnology 
+		
+		public Task<List<TechnologyModel>> GetAllTechnology(int pageNumber, int pageSize, out int totalItems)
+		{
+			try
+			{
+				var parameters = new DynamicParameters();
+				parameters.Add("@PageNumber", pageNumber);
+				parameters.Add("@PageSize", pageSize);
+				parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+				var model = _dapper.GetAll<TechnologyModel>(StoreProcedureName.TechnologyMasterData, parameters, CommandType.StoredProcedure);
+				totalItems = parameters.Get<int>("@TotalItems");
+
+				return Task.FromResult(model);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error occurred while retrieving all rounds.", ex);
 			}
         }
         #endregion
@@ -87,18 +94,6 @@ namespace CMSWebApi.Services
 
             var result = _dapper.Execute(StoreProcedureName.DeleteTechnology, parameters, CommandType.StoredProcedure);
 
-            return result;
-        }
-        #endregion
-
-        #region GetTechnologiesByPage
-        public async Task<List<TechnologyModel>> GetTechnologiesByPage(int pageNumber, int rowsOfPage)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-            var result = _dapper.GetAll<TechnologyModel>("PageTechnologyMaster", parameters, CommandType.StoredProcedure);
             return result;
         }
         #endregion

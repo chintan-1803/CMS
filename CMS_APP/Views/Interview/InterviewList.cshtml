@@ -3,9 +3,8 @@
 *@
 @using CMS.Constants;
 @using CMS.ApplicationHelpers;
-@model InterviewViewModel
+@model CMS.Models.InterviewViewModel
 @inject IHttpContextAccessor HttpContextAccessor
-@using CMS.Models;
 @using Microsoft.AspNetCore.Http
 @using Newtonsoft.Json
 @{
@@ -87,7 +86,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate Name</span>
+                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate Name <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <select class="form-control validate candidate-dropdown" required id="candidateId">
                                         <option value="" disabled selected>Select Candidate</option>
@@ -101,7 +100,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interviewer Name</span>
+                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interviewer Name <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <select class="form-control validate interviewer-dropdown" required id="interviewerId">
                                         <option value="" disabled selected>Select Interviewer</option>
@@ -115,7 +114,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology</span>
+                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <select class="form-control validate technology-dropdown" required id="technology">
                                         <option value="" disabled selected>Select technology</option>
@@ -129,7 +128,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Is interview Online?</span>
+                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Is interview Online? <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="isOnline" id="isOnlineYes" value="true" onclick="showInterviewURLField()" required>
@@ -144,7 +143,7 @@
 
                                 <div class="modal-body mx-3" id="interviewURLField" style="display: none;">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL</span>
+                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <input asp-for="InterviewURL" type="url" id="interviewURL" class="form-control validate" placeholder="Enter interview URL">
                                     <span asp-validation-for="InterviewURL" class="text-danger" id="interviewURLError"></span>
@@ -152,7 +151,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled time</span>
+                                        <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled time <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <input asp-for="ScheduledTime" type="datetime-local" id="scheduledTime" class="form-control validate" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")">
                                     <span asp-validation-for="ScheduledTime" class="text-danger" id="scheduledTimeError"></span>
@@ -160,7 +159,7 @@
 
                                 <div class="modal-body mx-3">
                                     <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Status</span>
+                                        <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Status <span style="color: red; display: inline;">*</span></span>
                                     </label>
                                     <input asp-for="StatusID" type="text" id="statusID" value="Scheduled" class="form-control validate" readonly>
                                     <span asp-validation-for="StatusID" class="text-danger" id="StatusIDError"></span>
@@ -251,7 +250,7 @@
 
                                                     <div class="modal-body mx-3">
                                                         <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Name</span>
+                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Name <span style="color: red; display: inline;">*</span></span>
                                                         </label>
                                                         <select class="form-control validate round-dropdown" required id="roundName_@data.InterviewId" asp-for="roundName">
                                                             <option value="" disabled selected>Select Round</option>
@@ -265,7 +264,7 @@
 
                                                     <div class="modal-body mx-3">
                                                         <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Status</span>
+                                                            <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Status <span style="color: red; display: inline;">*</span></span>
                                                         </label>
                                                         <select class="form-control validate roundStatus-dropdown" required id="roundStatus_@data.InterviewId">
                                                             <option value="" disabled selected>Select Round Status</option>
@@ -279,7 +278,7 @@
 
                                                     <div class="modal-body mx-3">
                                                         <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                            <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled At</span>
+                                                            <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled At <span style="color: red; display: inline;">*</span></span>
                                                         </label>
                                                         <input asp-for="scheduledAt" type="datetime-local" id="scheduledAt_@data.InterviewId" class="form-control validate" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")">
                                                         <span asp-validation-for="scheduledAt" class="text-danger" id="scheduledAtError_@data.InterviewId"></span>
@@ -394,7 +393,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate Name</span>
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Candidate Name <span style="color: red; display: inline;">*</span></span>
                                                             </label>
 
                                                             <select class="form-control validate candidate-dropdown" required selected="@data.CandidateId" id="candidateId_@data.InterviewId" disabled>
@@ -409,7 +408,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interviewer Name</span>
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interviewer Name <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <select class="form-control validate interviewer-dropdown" required selected="@data.InterviewerId" id="interviewerId_@data.InterviewId">
                                                                 <option value="" disabled selected>Select Interviewer</option>
@@ -424,7 +423,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology</span>
+                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <select class="form-control validate technology-dropdown" required selected="@data.TechnologyId" id="technology_@data.InterviewId">
                                                                 <option value="" disabled selected>Select technology</option>
@@ -438,7 +437,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Is interview Online?</span>
+                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Is interview Online? <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <div class="form-check">
                                                                 <input class="form-check-input" type="radio" name="isOnline_@data.InterviewId" id="isOnlineYes_@data.InterviewId" value="true" checked="@data.IsOnline" onclick="showInterviewURLField(@data.InterviewId)" />
@@ -453,7 +452,7 @@
 
                                                         <div class="modal-body" id="interviewURLField_@data.InterviewId">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL</span>
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Interview URL <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <input asp-for="InterviewURL" type="url" id="interviewURL_@data.InterviewId" value="@data.InterviewURL" class="form-control validate" placeholder="Enter interview URL">
                                                             <span asp-validation-for="InterviewURL" class="text-danger" id="interviewURLError_@data.InterviewId"></span>
@@ -461,7 +460,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled time</span>
+                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Scheduled time <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <input asp-for="ScheduledTime" type="datetime-local" id="scheduledTime_@data.InterviewId" value="@data.ScheduledTime.ToString("yyyy-MM-ddTHH:mm:ss")" class="form-control validate" min="@DateTime.Now.ToString("yyyy-MM-ddTHH:mm")">
                                                             <span asp-validation-for="ScheduledTime" class="text-danger" id="scheduledTimeError_@data.InterviewId"></span>
@@ -469,7 +468,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Status</span>
+                                                                <span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Status <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <select class="form-control validate technology-dropdown" required selected="@data.StatusID" id="statusID_@data.InterviewId">
                                                                 <option value="" disabled selected>Select status</option>
@@ -491,7 +490,7 @@
 
                                                         <div class="modal-body">
                                                             <label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason</span>
+                                                                <span class="modal-text w-100 font-weight-bold" style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason <span style="color: red; display: inline;">*</span></span>
                                                             </label>
                                                             <select class="form-control validate reason-dropdown" required selected="@data.ReasonID" id="reason_@data.InterviewId">
                                                                 <option value="" disabled selected>Select Reason</option>
@@ -517,9 +516,43 @@
                         }
                     </tbody>
                 </table>
-                <div class="text-right m-r-20">
+                @*<div class="text-right m-r-20">
                     <a href="#!" class=" b-b-primary text-primary">View all Task</a>
-                </div>
+                </div>*@
+            </div>
+            <!-- Pagination controls -->
+            <div class="pagination-container">
+                @if (Model != null && Model.PaginationModel.TotalPages >= 1)
+                {
+                    <nav aria-label="Page navigation" class="text-right">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == 1 ? "disabled" : "")">
+                                <a class="page-link" href="/Interview/InterviewList?pageNumber=@(Model.PaginationModel.CurrentPage - 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Previous">
+                                    Previous
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="/Interview/InterviewList?pageNumber=1&pageSize=@Model.PaginationModel.PageSize">First</a>
+                            </li>
+                            @for (int i = 1; i <= Model.PaginationModel.TotalPages; i++)
+                            {
+                                <li class="page-item @(i == Model.PaginationModel.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="/Interview/InterviewList?pageNumber=@i&pageSize=@Model.PaginationModel.PageSize">@i</a>
+                                </li>
+                            }
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+                                <a class="page-link" href="/Interview/InterviewList?pageNumber=@Model.PaginationModel.TotalPages&pageSize=@Model.PaginationModel.PageSize" aria-label="Last">
+                                    Last
+                                </a>
+                            </li>
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+                                <a class="page-link" href="/Interview/InterviewList?pageNumber=@(Model.PaginationModel.CurrentPage + 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Next">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                }
             </div>
         </div>
     </div>
@@ -920,7 +953,7 @@
                 },
                 success: function (response) {
                     console.log(response);
-                    //$('#myModal_' + id).modal('hide');
+                    $('#myModal_' + id).modal('hide'); // Hide the delete popup modal
                     alert(response.message);
                     location.reload();
                 },

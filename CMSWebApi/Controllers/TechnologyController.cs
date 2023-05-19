@@ -22,26 +22,44 @@ namespace CMSWebApi.Controllers
 
         }
 
-        #region Get Technology Without Async
-        [HttpGet("Technology")]
-        public IActionResult Technology()
-        {
-            var responseTask = _TechnologyService.GetAllTechnology();
-            //responseTask.Wait();
-            var response = responseTask.Result;
+		#region Get Technology Without Async
+		
+		[HttpGet("Technology")]
+		public IActionResult Technology(int pageNumber = 1, int pageSize = 5)
+		{
+			try
+			{
+				var responseTask = _TechnologyService.GetAllTechnology(pageNumber, pageSize, out int totalItems);
+				var response = responseTask.Result;
 
-            //if (response == null)
-            //{
-            //    return BadRequest(new { message = "NULL VALUE" });
-            //}
+				if (response == null)
+				{
+					return BadRequest(new { message = "NULL VALUE" });
+				}
 
-            return Ok(response);
-        }
+				var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-        #endregion
+				var model = new AllPaginationModel
+				{
+					technologyModel = response,
+					TotalItems = totalItems,
+					PageSize = pageSize,
+					CurrentPage = pageNumber,
+					TotalPages = totalPages
+				};
 
-        #region  AddTechnology
-        [HttpPost("AddTechnology")]
+				return Ok(model);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
+		}
+
+		#endregion
+
+		#region  AddTechnology
+		[HttpPost("AddTechnology")]
         public IActionResult AddTechnology(TechnologyModel technologyModel)
         {
             var result = _TechnologyService.AddTechnology(technologyModel);
@@ -102,15 +120,6 @@ namespace CMSWebApi.Controllers
                     return Ok("Something went wrong");
                 }
             }
-        #endregion
-
-        #region GetTechnologiesByPage
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetTechnologiesByPage(int pageNumber = 1, int rowsOfPage = 5)
-        {
-            var technologies = await _TechnologyService.GetTechnologiesByPage(pageNumber, rowsOfPage);
-            return Ok(technologies);
-        }
         #endregion
     }
 }

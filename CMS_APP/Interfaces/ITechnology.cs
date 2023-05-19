@@ -5,7 +5,7 @@ namespace CMS.Interfaces
 {
     public interface ITechnology
     {
-        public RestResponse Technologylist();
+        public RestResponse Technologylist(int pageNumber, int pageSize, out int totalItems);
 
         public RestResponse AddTechnology(TechnologyModel technologyModel);
 

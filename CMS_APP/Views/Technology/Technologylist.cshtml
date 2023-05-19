@@ -1,7 +1,7 @@
 ﻿@using CMS.Constants;
 @using CMS.ApplicationHelpers;
-
-@model List<CMS.Models.TechnologyModel>
+@model CMS.Models.TechnologyViewModel
+@*@model List<CMS.Models.TechnologyModel>*@
 @inject IHttpContextAccessor HttpContextAccessor
 @using Microsoft.AspNetCore.Http
 @{
@@ -135,7 +135,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach (var data in Model)
+						@foreach (var data in Model.Technologies)
 						{
 							<tr>
 								<td class="text-center">
@@ -245,9 +245,43 @@
 						}
 					</tbody>
 				</table>
-				<div class="text-right m-r-20">
+				@*<div class="text-right m-r-20">
 					<a href="#!" class=" b-b-primary text-primary">View all Task</a>
-				</div>
+				</div>*@
+			</div>
+			<!-- Pagination controls -->
+			<div class="pagination-container">
+				@if (Model != null && Model.PaginationModel.TotalPages >= 1)
+				{
+					<nav aria-label="Page navigation" class="text-right">
+						<ul class="pagination justify-content-end">
+							<li class="page-item @(Model.PaginationModel.CurrentPage == 1 ? "disabled" : "")">
+								<a class="page-link" href="/Technology/Technologylist?pageNumber=@(Model.PaginationModel.CurrentPage - 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Previous">
+									Previous
+								</a>
+							</li>
+							<li class="page-item">
+								<a class="page-link" href="/Technology/Technologylist?pageNumber=1&pageSize=@Model.PaginationModel.PageSize">First</a>
+							</li>
+							@for (int i = 1; i <= Model.PaginationModel.TotalPages; i++)
+							{
+								<li class="page-item @(i == Model.PaginationModel.CurrentPage ? "active" : "")">
+									<a class="page-link" href="/Technology/Technologylist?pageNumber=@i&pageSize=@Model.PaginationModel.PageSize">@i</a>
+								</li>
+							}
+							<li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+								<a class="page-link" href="/Technology/Technologylist?pageNumber=@Model.PaginationModel.TotalPages&pageSize=@Model.PaginationModel.PageSize" aria-label="Last">
+									Last
+								</a>
+							</li>
+							<li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+								<a class="page-link" href="/Technology/Technologylist?pageNumber=@(Model.PaginationModel.CurrentPage + 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Next">
+									Next
+								</a>
+							</li>
+						</ul>
+					</nav>
+				}
 			</div>
 		</div>
 	</div>

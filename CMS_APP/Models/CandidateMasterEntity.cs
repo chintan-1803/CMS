@@ -40,4 +40,10 @@ namespace CMS.Models
 		public DateTime? change_Date { get; set; }
 		public bool IsDeleted { get; set; } = false;
 	}
+
+    public class CandidateListViewModel
+    {
+        public AllPaginationModel? PaginationModel { get; set; }
+        public List<CandidateMasterEntity>? Candidates { get; set; }
+    }
 }

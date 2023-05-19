@@ -5,7 +5,7 @@ namespace CMSWebApi.Interfaces
 {
     public interface IInterviewer_Interface
     {
-        Task<List<InterviewerModel>> GetAllInterviewerDetails();
+        public Task<List<InterviewerModel>> GetAllInterviewerDetails(int pageNumber, int pageSize, out int totalItems);
         public string AddInterviewer([FromBody] InterviewerModel interviewerModel);
 
 		public int UpdateInterviewer(InterviewerModel interviewerModel);

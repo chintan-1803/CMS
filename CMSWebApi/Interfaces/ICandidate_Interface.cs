@@ -7,7 +7,8 @@ namespace CMSWebApi.Interfaces
 	{
 		public string addCandidate(CandidateMasterEntity candidatedata);
 
-		//Admin--
-		public Task<List<CandidateMasterEntity>> GetAllCandidates();
-	}
+        //Admin--
+        public Task<List<CandidateMasterEntity>> GetAllCandidates(int pageNumber, int pageSize, out int totalItems);
+
+    }
 }

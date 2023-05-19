@@ -4,6 +4,7 @@ using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -16,38 +17,47 @@ namespace CMS.Controllers
 			_technology_Interface = technology_Interface;
 		}
 		[HttpGet]
-		public IActionResult Technologylist()
+		public IActionResult TechnologyList(int pageNumber = 1, int pageSize = 5)
 		{
-            //pass the session
-            var jsonData = HttpContext.Session.GetString("TechnologyList");
+			var jsonData = HttpContext.Session.GetString("TechnologyList");
+			AllPaginationModel data;
+			var response = _technology_Interface.Technologylist(pageNumber, pageSize, out int totalItems);
 
-			List<TechnologyModel> data;
 			if (jsonData == null)
 			{
-				var response = _technology_Interface.Technologylist();
-				data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
-				var TechnologyData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("TechnologyList", TechnologyData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var technologyData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("TechnologyList", technologyData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
-			return View(data);
 
-			//var response = _technology_Interface.Technologylist();
-			//var data = JsonConvert.DeserializeObject<List<TechnologyModel>>(response.Content);
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
 
-			//if (data != null)
-			//{
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
 
-			//	return View(data);
-			//}
-			//else
-			//{
-			//	return View();
-			//}
+			var technologyList = data.technologyModel;
+
+			var viewModel = new TechnologyViewModel
+			{
+				Technologies = technologyList,
+				PaginationModel = data
+			};
+
+			return View(viewModel);
 		}
+
 		[HttpPost]
 		public IActionResult AddTechnologylist(TechnologyModel technologyData)
 		{

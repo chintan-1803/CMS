@@ -12,4 +12,9 @@
         public DateTime? change_Date { get; set; }
         public bool ?IsDelete { get; set; } = false;
     }
+	public class TechnologyViewModel
+	{
+		public List<TechnologyModel>? Technologies { get; set; }
+		public AllPaginationModel? PaginationModel { get; set; }
+	}
 }

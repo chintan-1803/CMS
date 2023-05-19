@@ -5,11 +5,10 @@ namespace CMSWebApi.Interfaces
 {
     public interface IRound_Interface
     {
-        Task<List<RoundModel>> GetAllRound();
+        public Task<List<RoundModel>> GetAllRound(int pageNumber, int pageSize, out int totalItems);
 		string AddRound([FromBody] RoundModel roundModel);
         public int UpdateRound(RoundModel roundModel);
         public int DeleteRoundByid(RoundModel Round_ID);
-        Task<List<RoundModel>> GetRoundsByPage(int pageNumber, int rowsOfPage);
 
     }
 }

@@ -22,18 +22,35 @@ namespace CMSWebApi.Controllers
 
 		#region Get Round Without ASYNC
 		[HttpGet("Round")]
-		public IActionResult Round()
+		public IActionResult Round(int pageNumber = 1, int pageSize = 5)
 		{
-			var responseTask = _roundService.GetAllRound();
-			responseTask.Wait();
-			var response = responseTask.Result;
+			try
+			{
+				var responseTask = _roundService.GetAllRound(pageNumber, pageSize, out int totalItems);
+				var response = responseTask.Result;
 
-			//if (response == null)
-			//{
-			//    return BadRequest(new { message = "NULL VALUE" });
-			//}
-			return Ok(response);
+				if (response == null)
+				{
+					return BadRequest(new { message = "NULL VALUE" });
+				}
 
+				var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+				var model = new AllPaginationModel
+				{
+					roundModel = response,
+					TotalItems = totalItems,
+					PageSize = pageSize,
+					CurrentPage = pageNumber,
+					TotalPages = totalPages
+				};
+
+				return Ok(model);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
 		}
 		#endregion
 
@@ -107,15 +124,6 @@ namespace CMSWebApi.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
-        }
-        #endregion
-
-        #region GetRoundsByPage
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetRoundsByPage(int pageNumber = 1, int rowsOfPage = 5)
-        {
-            var rounds = await _roundService.GetRoundsByPage(pageNumber, rowsOfPage);
-            return Ok(rounds);
         }
         #endregion
     }

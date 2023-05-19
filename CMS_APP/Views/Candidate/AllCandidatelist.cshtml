@@ -1,12 +1,13 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
 @using Newtonsoft.Json;
 @using Microsoft.AspNetCore.Http
 @using CMS.Models
-@model List<CMS.Models.CandidateMasterEntity>
+@using Microsoft.AspNetCore.Mvc.Routing
+@model CMS.Models.CandidateListViewModel
+@*@model List<CMS.Models.CandidateMasterEntity>*@
+@*@model CMS.Models.AllPaginationModel *@ 
 @inject IHttpContextAccessor HttpContextAccessor
 @{
 	ViewBag.Title = "Interviewer List";
@@ -83,7 +84,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						@foreach (var data in Model)
+						@foreach (var data in Model.Candidates)
 						{
 							<tr>
 								<td class="text-center">@data.firstName</td>
@@ -113,53 +114,41 @@
 						}
 					</tbody>
 				</table>
-				@*<div class="text-right m-r-20">
-					<a href="#!" class=" b-b-primary text-primary">View all Task</a>
-				</div>*@
 			</div>
+            <!-- Pagination controls -->
+            <div class="pagination-container">
+                @if (Model != null && Model.PaginationModel.TotalPages >= 1)
+                {
+                    <nav aria-label="Page navigation" class="text-right">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == 1 ? "disabled" : "")">
+                                <a class="page-link" href="/Candidate/AllCandidatelist?pageNumber=@(Model.PaginationModel.CurrentPage - 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Previous">
+                                    Previous
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="/Candidate/AllCandidatelist?pageNumber=1&pageSize=@Model.PaginationModel.PageSize">First</a>
+                            </li>
+                            @for (int i = 1; i <= Model.PaginationModel.TotalPages; i++)
+                            {
+                                <li class="page-item @(i == Model.PaginationModel.CurrentPage ? "active" : "")">
+                                    <a class="page-link" href="/Candidate/AllCandidatelist?pageNumber=@i&pageSize=@Model.PaginationModel.PageSize">@i</a>
+                                </li>
+                            }
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+                                <a class="page-link" href="/Candidate/AllCandidatelist?pageNumber=@Model.PaginationModel.TotalPages&pageSize=@Model.PaginationModel.PageSize" aria-label="Last">
+                                    Last
+                                </a>
+                            </li>
+                            <li class="page-item @(Model.PaginationModel.CurrentPage == Model.PaginationModel.TotalPages ? "disabled" : "")">
+                                <a class="page-link" href="/Candidate/AllCandidatelist?pageNumber=@(Model.PaginationModel.CurrentPage + 1)&pageSize=@Model.PaginationModel.PageSize" aria-label="Next">
+                                    Next
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                }
+            </div>
 		</div>
 	</div>
 </div>
-@*<script>
-	var div = document.getElementById("target");
-	div.onload = function () {
-		div.style.height =
-			div.contentWindow.document.body.scrollHeight + 'px';
-	}
-</script>*@
-@*<script>
-
-	
-	// Loop through each row in the table and convert the Base64 string to a PDF view
-	$('resume').each(function () {
-		const base64String = $(this).find('td:nth-child(5)').text(); // Replace 5 with the index of the resume column
-		const canvas = document.createElement('canvas');
-		const pdf = new jsPDF();
-
-		// Convert the Base64 string to an ArrayBuffer
-		const byteCharacters = atob(base64String);
-		const byteNumbers = new Array(byteCharacters.length);
-		for (let i = 0; i < byteCharacters.length; i++) {
-			byteNumbers[i] = byteCharacters.charCodeAt(i);
-		}
-		const byteArray = new Uint8Array(byteNumbers);
-
-		// Load the PDF from the ArrayBuffer and render it on the canvas
-		pdf.load(byteArray);
-		pdf.getPage(1).then(function (page) {
-			const viewport = page.getViewport(1.0);
-			canvas.width = viewport.width;
-			canvas.height = viewport.height;
-			const ctx = canvas.getContext('2d');
-			const renderContext = {
-				canvasContext: ctx,
-				viewport: viewport
-			};
-			page.render(renderContext);
-
-			// Replace the Base64 string with the rendered PDF view
-			$(this).find('td:nth-child(5)').html(canvas);
-		});
-	});
-
-</script>*@

@@ -7,7 +7,8 @@ namespace CMS.Interfaces
 	{
 		public RestResponse AddCandidate(CandidateMasterEntity candidateModel);
 
-		//Admin---
-		public RestResponse GetCandidateList();
-	}
+        //Admin---
+        public RestResponse GetCandidateList(int pageNumber, int pageSize, out int totalItems);
+
+    }
 }

@@ -22,25 +22,29 @@ namespace CMSWebApi.Controllers
 
         #region Interview
         [HttpGet("Interview")]
-        public IActionResult GetInterviewStatus()
+        public IActionResult GetInterview(int pageNumber = 1, int pageSize = 5)
         {
-            try
-            {
-                var responseTask = _interviewsService.GetAllInterviewsData();
-                responseTask.Wait();
-                var response = responseTask.Result;
+            var responseTask = _interviewsService.GetAllInterviewsData(pageNumber, pageSize, out int totalItems);
+            var response = responseTask.Result;
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
-
-                return Ok(response);
-            }
-            catch (Exception ex)
+            if (response == null)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "NULL VALUE" });
             }
+
+            var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            var model = new AllPaginationModel
+            {
+                interviewModel = response,
+                TotalItems = totalItems,
+                PageSize = pageSize,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
+            };
+
+            return Ok(model);
+            
         }
         #endregion
 

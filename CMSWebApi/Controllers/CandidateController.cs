@@ -36,28 +36,37 @@ namespace CMSWebApi.Controllers
 			return Ok("SUCCESS");
 		}
 
+        [HttpGet("Candidatelist")]
+        public IActionResult Candidatelist(int pageNumber = 1, int pageSize = 5)
+        {
+            try
+            {
+                var responseTask = _candidateService.GetAllCandidates(pageNumber, pageSize, out int totalItems);
+                var response = responseTask.Result;
 
-		[HttpGet("Candidatelist")]
-		public IActionResult Candidatelist()
-		{
-			try
-			{
-				var responseTask = _candidateService.GetAllCandidates();
-				//responseTask.Wait();
-				var response = responseTask.Result;
+                if (response == null)
+                {
+                    return BadRequest(new { message = "NULL VALUE" });
+                }
 
-				if (response == null)
-				{
-					return BadRequest(new { message = "NULL VALUE" });
-				}
+                var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-				return Ok(response);
-			}
-			catch (Exception ex)
-			{
-				return BadRequest(new { message = ex.Message });
-			}
-		}
+                var model = new AllPaginationModel
+                {
+                    candidateMasterEntities = response,
+                    TotalItems = totalItems,
+                    PageSize = pageSize,
+                    CurrentPage = pageNumber,
+                    TotalPages = totalPages
+                };
+
+                return Ok(model);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
 
 
 		//public IActionResult Index()

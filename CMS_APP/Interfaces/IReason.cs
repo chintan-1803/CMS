@@ -5,9 +5,9 @@ namespace CMS.Interfaces
 {
     public interface IReason
     {
-        public RestResponse Reasonlist();
+        public RestResponse Reasonlist(int pageNumber, int pageSize, out int totalItems);
 
-        public RestResponse AddDesignationlist(ReasonModel reasonModel);
+        public RestResponse AddReasonlist(ReasonModel reasonModel);
 
 		public RestResponse UpdateReasonlist(ReasonModel reasonModel);
 

@@ -5,7 +5,7 @@ namespace CMS.Interfaces
 {
     public interface IRound
     {
-        public RestResponse Roundlist();
+        public RestResponse Roundlist(int pageNumber, int pageSize, out int totalItems);
 
         public RestResponse AddRound(RoundModel roundModel);
 

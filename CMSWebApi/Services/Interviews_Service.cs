@@ -21,16 +21,23 @@ namespace CMSWebApi.Services
             _dapper = dapper;
         }
 
-        public Task<List<InterviewsModel>> GetAllInterviewsData()
+        public Task<List<InterviewsModel>> GetAllInterviewsData(int pageNumber, int pageSize, out int totalItems)
         {
             try
             {
-                var model = _dapper.GetAll<InterviewsModel>(StoreProcedureName.InterviewsData, null, CommandType.StoredProcedure);
+                var parameters = new DynamicParameters();
+                parameters.Add("@PageNumber", pageNumber);
+                parameters.Add("@PageSize", pageSize);
+                parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                var model = _dapper.GetAll<InterviewsModel>(StoreProcedureName.InterviewsData, parameters, CommandType.StoredProcedure);
+                totalItems = parameters.Get<int>("@TotalItems");
+
                 return Task.FromResult(model);
             }
-            catch (ArgumentNullException ex)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException("NULL VALUE", ex);
+                throw new Exception("Error occurred while retrieving all interviews data.", ex);
             }
         }
 

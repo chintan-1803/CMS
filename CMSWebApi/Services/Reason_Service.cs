@@ -24,20 +24,24 @@ namespace CMSWebApi.Services
         }
 
         #region GetReasons 
-        public Task<List<ReasonModel>> GetAllReason()
-        {
-            try
-            {
-                //var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
+       
+		public Task<List<ReasonModel>> GetAllReason(int pageNumber, int pageSize, out int totalItems)
+		{
+			try
+			{
+				var parameters = new DynamicParameters();
+				parameters.Add("@PageNumber", pageNumber);
+				parameters.Add("@PageSize", pageSize);
+				parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                //change this
-				var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, null, System.Data.CommandType.StoredProcedure);
+				var model = _dapper.GetAll<ReasonModel>(StoreProcedureName.ReasonMasterData, parameters, CommandType.StoredProcedure);
+				totalItems = parameters.Get<int>("@TotalItems");
+
 				return Task.FromResult(model);
-            }
-            catch (ArgumentNullException ex)
-            {
-
-				throw new ArgumentNullException("NULL VALUE", ex);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error occurred while retrieving all reasons.", ex);
 			}
         }
         #endregion
@@ -99,18 +103,6 @@ namespace CMSWebApi.Services
             catch (ArgumentNullException ex) { 
                 throw new ArgumentNullException("FAILED TO DELETE REASON.", ex); 
             }
-		}
-		#endregion
-
-		#region GetReasonsByPage
-		public async Task<List<ReasonModel>> GetReasonsByPage(int pageNumber, int rowsOfPage)
-		{
-			var parameters = new DynamicParameters();
-			parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-			parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-			var result = _dapper.GetAll<ReasonModel>("PageReasonMaster", parameters, CommandType.StoredProcedure);
-			return result;
 		}
 		#endregion
 	}

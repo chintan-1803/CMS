@@ -21,21 +21,33 @@ namespace CMSWebApi.Controllers
 
         }
 
-        #region Get Role Without Async
-        [HttpGet("Role")]
-        public IActionResult Role()
-        {
-            try
-            {
-                var responseTask = _roleService.GetAllRole();
-                var response = responseTask.Result;
+		#region Get Role Without Async
+		
+		[HttpGet("Role")]
+		public IActionResult Role(int pageNumber = 1, int pageSize = 5)
+		{
+			try
+			{
+				var responseTask = _roleService.GetAllRole(pageNumber, pageSize, out int totalItems);
+				var response = responseTask.Result;
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
+				if (response == null)
+				{
+					return BadRequest(new { message = "NULL VALUE" });
+				}
 
-                return Ok(response);
+				var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+				var model = new AllPaginationModel
+				{
+					roleModel = response,
+					TotalItems = totalItems,
+					PageSize = pageSize,
+					CurrentPage = pageNumber,
+					TotalPages = totalPages
+				};
+
+				return Ok(model);
 
             }
             catch (Exception ex)
@@ -112,15 +124,6 @@ namespace CMSWebApi.Controllers
                     return Ok("Something went wrong");
                 }
             
-        }
-        #endregion
-
-        #region GetRolesByPage
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetRolesByPage(int pageNumber = 1, int rowsOfPage = 5)
-        {
-            var roles = await _roleService.GetRolesByPage(pageNumber, rowsOfPage);
-            return Ok(roles);
         }
         #endregion
     }

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Drawing.Drawing2D;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -16,43 +17,56 @@ namespace CMS.Controllers
 		{
 			_reason_Interface = reason_Interface;
 		}
+
 		[HttpGet]
-		public IActionResult Reasonlist()
+		public IActionResult Reasonlist(int pageNumber = 1, int pageSize = 5)
 		{
-            var jsonData = HttpContext.Session.GetString("ReasonDataList");
-			List<ReasonModel> data;
+			var jsonData = HttpContext.Session.GetString("ReasonDataList");
+			AllPaginationModel data;
+
+			var response = _reason_Interface.Reasonlist(pageNumber, pageSize, out int totalItems);
+
 			if (jsonData == null)
 			{
-				var response = _reason_Interface.Reasonlist();
-				data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
-				var ReasonData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("ReasonDataList",ReasonData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var reasonData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("ReasonDataList", reasonData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
-			return View(data);
-			////var response = _reason_Interface.Reasonlist();
-			////var data = JsonConvert.DeserializeObject<List<ReasonModel>>(response.Content);
 
-			////var jsonData = HttpContext.Session.GetString("designationList");
-			////var designationList = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
-			//if (data != null)
-			//{
-			//	return View(data);
-			//}
-			//else
-			//{
-			//	return View();
-			//}
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
+
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
+
+			var reasonList = data.reasonModel;
+
+			var viewModel = new ReasonViewModel
+			{
+				Reasons = reasonList,
+				PaginationModel = data
+			};
+
+			return View(viewModel);
 		}
+
 		[HttpPost]
 		public IActionResult AddReasonlist(ReasonModel reasonData)
 		{
 			//var errors = ModelState.Values.SelectMany(v => v.Errors);
 			reasonData.create_User = HttpContext.Session.GetString("Username");
-			var response = _reason_Interface.AddDesignationlist(reasonData);
+			var response = _reason_Interface.AddReasonlist(reasonData);
 			if (!response.IsSuccessful)
 			{
 				return BadRequest(response);

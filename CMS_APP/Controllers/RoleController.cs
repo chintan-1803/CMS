@@ -4,6 +4,7 @@ using CMSWebApi.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -16,36 +17,47 @@ namespace CMS.Controllers
 			_role_Interface = role_Interface;
 		}
 		[HttpGet]
-		public IActionResult Rolelist()
+		public IActionResult RoleList(int pageNumber = 1, int pageSize = 5)
 		{
-            //pass the session
-            var jsonData = HttpContext.Session.GetString("RoleDataList");
-			List<RoleModel> data;
+			var jsonData = HttpContext.Session.GetString("RoleDataList");
+			AllPaginationModel data;
+			var response = _role_Interface.Rolelist(pageNumber, pageSize, out int totalItems);
+
 			if (jsonData == null)
 			{
-				var response = _role_Interface.Rolelist();
-				data = JsonConvert.DeserializeObject<List<RoleModel>>(response.Content);
-				var RoleData = JsonConvert.SerializeObject(data);
-				HttpContext.Session.SetString("RoleDataList", RoleData);
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
+					var roleData = JsonConvert.SerializeObject(data);
+					HttpContext.Session.SetString("RoleDataList", roleData);
+				}
+				else
+				{
+					return View("Error"); // Return an error view or handle the error appropriately
+				}
 			}
 			else
 			{
-				data = JsonConvert.DeserializeObject<List<RoleModel>>(jsonData);
+				data = JsonConvert.DeserializeObject<AllPaginationModel>(response.Content);
 			}
-			return View(data);
-			//var response = _role_Interface.Rolelist();
-			//var data = JsonConvert.DeserializeObject<List<RoleModel>>(response.Content);
 
-			//if (data != null)
-			//{
-			//	//return RedirectToAction("DesignationPage", "Designation",new { data });
-			//	return View(data);
-			//}
-			//else
-			//{
-			//	return View();
-			//}
+			var totalPages = (int)Math.Ceiling((double)data.TotalItems / pageSize);
+
+			data.PageSize = pageSize;
+			data.CurrentPage = pageNumber;
+			data.TotalPages = totalPages;
+
+			var roleList = data.roleModel;
+
+			var viewModel = new RoleViewModel
+			{
+				Roles = roleList,
+				PaginationModel = data
+			};
+
+			return View(viewModel);
 		}
+
 		[HttpPost]
 		public IActionResult AddRolelist(RoleModel roleModel)
 		{
@@ -71,8 +83,8 @@ namespace CMS.Controllers
 		[HttpPut]
 		public IActionResult UpdateRolelist(RoleModel rolemodel)
 		{
-            rolemodel.Change_user = HttpContext.Session.GetString("Username");
-            var response = _role_Interface.UpdateRolelist(rolemodel);
+			rolemodel.Change_user = HttpContext.Session.GetString("Username");
+			var response = _role_Interface.UpdateRolelist(rolemodel);
 			if (!response.IsSuccessful)
 			{
 				return BadRequest(response);

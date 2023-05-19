@@ -30,5 +30,6 @@
 	{
 		public List<InterviewModel>? Interview { get; set; }
 		public List<InterviewRoundModel>? InterviewRounds { get; set; }
-	}
+        public AllPaginationModel? PaginationModel { get; set; }
+    }
 }

@@ -5,11 +5,10 @@ namespace CMSWebApi.Interfaces
 {
     public interface IReason_Interface
     {
-        Task<List<ReasonModel>> GetAllReason();
+        Task<List<ReasonModel>> GetAllReason(int pageNumber, int pageSize, out int totalItems);
         public string AddReason(ReasonModel reasonModel);
 		public int UpdateReason(ReasonModel reasonModel);
         public int DeleteReasonByid(ReasonModel Reason_ID);
-        Task<List<ReasonModel>> GetReasonsByPage(int pageNumber, int rowsOfPage);
 
     }
 }

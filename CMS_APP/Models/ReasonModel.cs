@@ -10,4 +10,9 @@
         public DateTime? change_Date { get; set; }
         public bool IsDelete { get; set; }
     }
+	public class ReasonViewModel
+	{
+		public List<ReasonModel>? Reasons { get; set; }
+		public AllPaginationModel? PaginationModel { get; set; }
+	}
 }

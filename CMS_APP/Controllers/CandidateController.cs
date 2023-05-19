@@ -3,9 +3,12 @@ using CMS.Models;
 using CMS.Services;
 using CMSWebApi.Dapper;
 using CMSWebApi.Interfaces;
+using CMSWebApi.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -51,33 +54,47 @@ namespace CMS.Controllers
 			}
 		}
 
-		//Admin
+        //Admin
+        [HttpGet]
+        [Authorize(Roles = "Interviewer,Admin")]
+        public IActionResult AllCandidateList(int pageNumber = 1, int pageSize = 5)
+        {
+            try
+            {
+                int totalItems;
+                var response = _candidateDatamodal.GetCandidateList(pageNumber, pageSize, out totalItems);
 
-		[HttpGet]
-		[Authorize(Roles = "Interviewer,Admin")]
-		public IActionResult AllCandidatelist()
-		{
-            // Get the list of designations from the API
-            var response = _candidateDatamodal.GetCandidateList();
-			var data = JsonConvert.DeserializeObject<List<CandidateMasterEntity>>(response.Content);
-			if (data != null)
-			{
-				return View(data);
-			}
-			else
-			{
-				return View();
-			}
-		}
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var responseBody = response.Content;
+                    var model = JsonConvert.DeserializeObject<AllPaginationModel>(responseBody);
 
-		//public FileResult GetResume(string base64String)
-		//{
-		//	// Convert the Base64 string to a byte array
-		//	var bytes = Convert.FromBase64String(base64String);
+                    var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-		//	// Return the byte array as a PDF file
-		//	return File(bytes, "application/pdf");
-		//}
+                    model.TotalItems = totalItems;
+                    model.PageSize = pageSize;
+                    model.CurrentPage = pageNumber;
+                    model.TotalPages = totalPages;
 
-	}
+                    var candidateMasterEntities = model.candidateMasterEntities;
+
+                    var viewModel = new CandidateListViewModel
+                    {
+                        PaginationModel = model,
+                        Candidates = candidateMasterEntities
+                    };
+
+                    return View(viewModel);
+                }
+                else
+                {
+                    return BadRequest(new { message = "Failed to retrieve candidate list" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+    }
 }

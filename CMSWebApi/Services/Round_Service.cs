@@ -23,23 +23,31 @@ namespace CMSWebApi.Services
             _cipherService = cipherService;
         }
 
-        #region GetRound
-        public Task<List<RoundModel>> GetAllRound()
-        {
-            try
-            {
-                var model = _dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, null, System.Data.CommandType.StoredProcedure);
-                return Task.FromResult(model);
-            }
-            catch (ArgumentNullException ex)
-            {
-				throw new ArgumentNullException("NULL VALUE", ex);
-			}
-        }
-        #endregion
+		#region GetRound
+		public Task<List<RoundModel>> GetAllRound(int pageNumber, int pageSize, out int totalItems)
+		{
+			try
+			{
+				var parameters = new DynamicParameters();
+				parameters.Add("@PageNumber", pageNumber);
+				parameters.Add("@PageSize", pageSize);
+				parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-        #region AddRound
-        public string AddRound([FromBody] RoundModel roundModel)
+				var model = _dapper.GetAll<RoundModel>(StoreProcedureName.RoundMasterData, parameters, CommandType.StoredProcedure);
+				totalItems = parameters.Get<int>("@TotalItems");
+
+				return Task.FromResult(model);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error occurred while retrieving all rounds.", ex);
+			}
+		}
+
+		#endregion
+
+		#region AddRound
+		public string AddRound([FromBody] RoundModel roundModel)
         {
             try
             {
@@ -96,18 +104,6 @@ namespace CMSWebApi.Services
             catch (ArgumentNullException ex) { 
                 throw new ArgumentNullException("FAILED TO DELETE ROUND.", ex); 
             }
-		}
-		#endregion
-
-		#region GetRoundsByPage
-		public async Task<List<RoundModel>> GetRoundsByPage(int pageNumber, int rowsOfPage)
-		{
-			var parameters = new DynamicParameters();
-			parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-			parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-			var result = _dapper.GetAll<RoundModel>("PageRoundMaster", parameters, CommandType.StoredProcedure);
-			return result;
 		}
 		#endregion
 	}

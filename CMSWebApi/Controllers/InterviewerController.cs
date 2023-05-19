@@ -23,26 +23,29 @@ namespace CMSWebApi.Controllers
 
         #region Get Designation WithOut Async
         [HttpGet("Interviewer")]
-        public IActionResult Interviewer()
+        public IActionResult GetInterviewer(int pageNumber = 1, int pageSize = 5)
         {
-            try
-            {
-                var responseTask = _InterviewerService.GetAllInterviewerDetails();
-                responseTask.Wait();
-                var response = responseTask.Result;
+            var responseTask = _InterviewerService.GetAllInterviewerDetails(pageNumber, pageSize, out int totalItems);
+            var response = responseTask.Result;
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
-
-                return Ok(response);
-            }
-            catch (Exception ex)
+            if (response == null)
             {
-                //_logger.Error(ex, "Post UsersController Authenticate");
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "NULL VALUE" });
             }
+
+            var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+            var model = new AllPaginationModel
+            {
+                interviewerModel = response,
+                TotalItems = totalItems,
+                PageSize = pageSize,
+                CurrentPage = pageNumber,
+                TotalPages = totalPages
+            };
+
+            return Ok(model);
+           
         }
         #endregion
 
@@ -50,9 +53,7 @@ namespace CMSWebApi.Controllers
         [HttpPost("AddInterviewer")]
         public IActionResult AddInterviewer(InterviewerModel interviewermodel)
         {
-            try
-            {
-                var response = _InterviewerService.AddInterviewer(interviewermodel);
+            var response = _InterviewerService.AddInterviewer(interviewermodel);
 
                 if (response == null)
                 {
@@ -63,12 +64,7 @@ namespace CMSWebApi.Controllers
                     return BadRequest(response);
                 }
 
-                return Ok("SUCCESS");
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
+            return Ok("SUCCESS");
         }
         #endregion
 
@@ -76,27 +72,19 @@ namespace CMSWebApi.Controllers
         [HttpPut("UpdateInterviewer")]
         public IActionResult UpdateInterviewer(InterviewerModel interviewermodel)
         {
-            try
+            var response = _InterviewerService.UpdateInterviewer(interviewermodel);
+
+            if (response == 0)
             {
-                var response = _InterviewerService.UpdateInterviewer(interviewermodel);
-
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-
+                return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
             }
-            catch (Exception ex)
+            else if (response > 0)
             {
-                return BadRequest(new { message = ex.Message });
+                return Ok("SUCCESS");
+            }
+            else
+            {
+                return Ok("Something went wrong");
             }
         }
         #endregion
@@ -105,27 +93,21 @@ namespace CMSWebApi.Controllers
         [HttpPut("DeleteInterviewer")]
         public IActionResult DeleteInterviewer(InterviewerModel Interviewer_Id)
         {
-            try
-            {
-                var response = _InterviewerService.DeleteInterviewerByid(Interviewer_Id);
+            var response = _InterviewerService.DeleteInterviewerByid(Interviewer_Id);
 
-                if (response == 0)
-                {
-                    return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-                }
-                else if (response > 0)
-                {
-                    return Ok("SUCCESS");
-                }
-                else
-                {
-                    return Ok("Something went wrong");
-                }
-            }
-            catch (Exception ex)
+            if (response == 0)
             {
-                return BadRequest(new { message = ex.Message });
+                return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
             }
+            else if (response > 0)
+            {
+                return Ok("SUCCESS");
+            }
+            else
+            {
+                return Ok("Something went wrong");
+            }
+          
         }
         #endregion
 

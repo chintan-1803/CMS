@@ -5,22 +5,43 @@ using Newtonsoft.Json;
 using RestSharp;
 using System.Data;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace CMS.Services
 {
     public class Designation : IDesignation
     {
-        public RestResponse Designationlist()
-        {
-            
-                var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.DesignationPath);
-                RestRequest request = new RestRequest() { Method = Method.Get };
-                request.AddHeader("Content-Type", "application/json");
-                // Add any query string parameters to the URL, e.g. client.AddQueryParameter("paramName", "paramValue")
-                RestResponse response = client.Execute(request);
-                return response;
-       
-        }
+		public RestResponse Designationlist(int pageNumber, int pageSize, out int totalItems)
+		{
+			try
+			{
+				var client = new RestClient(WebApiRelativeURLs.BaseURL + WebApiRelativeURLs.DesignationPath);
+				RestRequest request = new RestRequest() { Method = Method.Get };
+				request.AddHeader("Content-Type", "application/json");
+				request.AddParameter("pageNumber", pageNumber);
+				request.AddParameter("pageSize", pageSize);
+				var response = client.Execute(request);
+
+				if (response.StatusCode == HttpStatusCode.OK)
+				{
+					var responseBody = response.Content;
+					var data = JsonConvert.DeserializeObject<AllPaginationModel>(responseBody);
+
+					totalItems = data.TotalItems;
+
+					return response;
+				}
+				else
+				{
+					throw new Exception("Failed to retrieve the designation list from the Web API.");
+				}
+			}
+			catch (Exception ex)
+			{
+				throw new ArgumentNullException("FAILED TO VIEW DESIGNATION", ex);
+			}
+		}
+
 
         public RestResponse AddDesignationlist(DesignationModel designationData)
         {

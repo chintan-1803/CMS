@@ -23,19 +23,25 @@ namespace CMSWebApi.Services
             _cipherService = cipherService;
         }
 
-        #region GetRole
-        public Task<List<RoleModel>> GetAllRole()
-        {
-            try
-            {
-                //List<model> GetAll<model>(string sp, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
-                var model = _dapper.GetAll<RoleModel>(StoreProcedureName.RoleMasterData, null, System.Data.CommandType.StoredProcedure);
-                return Task.FromResult(model);
-            }
-            catch (ArgumentNullException ex)
-            {
+		#region GetRole
 
-				throw new ArgumentNullException("NULL VALUE", ex);
+		public Task<List<RoleModel>> GetAllRole(int pageNumber, int pageSize, out int totalItems)
+		{
+			try
+			{
+				var parameters = new DynamicParameters();
+				parameters.Add("@PageNumber", pageNumber);
+				parameters.Add("@PageSize", pageSize);
+				parameters.Add("@TotalItems", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+				var model = _dapper.GetAll<RoleModel>(StoreProcedureName.RoleMasterData, parameters, CommandType.StoredProcedure);
+				totalItems = parameters.Get<int>("@TotalItems");
+
+				return Task.FromResult(model);
+			}
+			catch (Exception ex)
+			{
+				throw new Exception("Error occurred while retrieving all roles.", ex);
 			}
         }
         #endregion
@@ -108,18 +114,6 @@ namespace CMSWebApi.Services
             {
 				throw new ArgumentNullException("FAILED TO DELETE REASON.", ex);
 			}
-        }
-        #endregion
-
-        #region GetRolesByPage
-        public async Task<List<RoleModel>> GetRolesByPage(int pageNumber, int rowsOfPage)
-        {
-            var parameters = new DynamicParameters();
-            parameters.Add("@PageNumber", pageNumber, DbType.Int32);
-            parameters.Add("@RowsOfPage", rowsOfPage, DbType.Int32);
-
-            var result = _dapper.GetAll<RoleModel>("PageRoleMaster", parameters, CommandType.StoredProcedure);
-            return result;
         }
         #endregion
     }

@@ -23,26 +23,30 @@ namespace CMSWebApi.Controllers
 
 		#region Get Designation WithOut Async
 		[HttpGet("Designation")]
-		public IActionResult Designation()
+		public IActionResult Designation(int pageNumber = 1, int pageSize = 5)
 		{
-			try
-			{
-				var responseTask = _designationService.GetAllDesignation();
-				//responseTask.Wait();
-				var response = responseTask.Result;
+			var responseTask = _designationService.GetAllDesignation(pageNumber, pageSize, out int totalItems);
+			var response = responseTask.Result;
 
-                if (response == null)
-                {
-                    return BadRequest(new { message = "NULL VALUE" });
-                }
-
-				return Ok(response);
-			}
-			catch (Exception ex)
+			if (response == null)
 			{
-				return BadRequest(new { message = ex.Message });
+				return BadRequest(new { message = "NULL VALUE" });
 			}
+
+			var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
+
+			var model = new AllPaginationModel
+			{
+				designationModel = response,
+				TotalItems = totalItems,
+				PageSize = pageSize,
+				CurrentPage = pageNumber,
+				TotalPages = totalPages
+			};
+
+			return Ok(model);
 		}
+
 		#endregion
 
 		#region  AddDesignation
@@ -65,30 +69,7 @@ namespace CMSWebApi.Controllers
 
 		}
 		#endregion
-		//public IActionResult AddDesigantion(DesignationModel designationmodel)
-		//{
-		//	var response = _designationService.AddDesignation(designationmodel);
-
-
-		//	//if (response == null)  //check this
-		//	//{
-		//	//	return BadRequest(new { message = "FAILED TO ADD DESIGNATION" });
-		//	//}
-		//	if (response == "Unsuccessful")
-		//	{
-		//		var error = new { errorcode = 1, errormessage = "DESIGNATION IS ALREADY EXISTS" };
-		//		return BadRequest(error);
-		//	}
-		//	else
-		//	{
-		//		var success = new { errorcode = 0, errormessage = "SUCCESS" };
-		//		return Ok(success);
-		//	}
-
-		//	//return Ok("SUCCESS");
-
-		//}
-          //#endregion
+		
 		#region  UpdateDesignation
 		[HttpPut("UpdateDesignation")]
 		public IActionResult UpdateDesignation(DesignationModel designationmodel)
@@ -138,15 +119,5 @@ namespace CMSWebApi.Controllers
 			}
 		}
         #endregion
-
-        #region GetDesignationsByPage
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetDesignationsByPage(int pageNumber = 1, int rowsOfPage = 5)
-        {
-            var designations = await _designationService.GetDesignationsByPage(pageNumber, rowsOfPage);
-            return Ok(designations);
-        }
-        #endregion
-
     }
 }

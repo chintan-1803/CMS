@@ -5,7 +5,7 @@ namespace CMS.Interfaces
 {
     public interface IInterview
     {
-        public RestResponse GetInterviewList();
+        public RestResponse GetInterviewList(int pageNumber, int pageSize, out int totalItems);
 
         public RestResponse AddInterview(InterviewModel interviewData);
 

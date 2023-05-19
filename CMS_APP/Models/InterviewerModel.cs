@@ -24,4 +24,10 @@ namespace CMS.Models
 		public DateTime? change_Date { get; set; }
 		public bool IsDeleted { get; set; } = false;
 	}
+
+    public class InterviewerViewModel
+    {
+        public List<InterviewerModel>? Interviewers { get; set; }
+        public AllPaginationModel? PaginationModel { get; set; }
+    }
 }

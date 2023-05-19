@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 
 namespace CMS.Controllers
 {
@@ -20,62 +21,81 @@ namespace CMS.Controllers
 			_interviewInterface = interviewInterface;
 		}
 
-		[HttpGet]
-		public IActionResult InterviewList()
-		{
-			var response = _interviewInterface.GetInterviewList();
-			var data = JsonConvert.DeserializeObject<List<InterviewModel>>(response.Content);
+        [HttpGet]
+        public IActionResult InterviewList(int pageNumber = 1, int pageSize = 5)
+        {
+			var response = _interviewInterface.GetInterviewList(pageNumber, pageSize, out int totalItems);
 
-			var interviewRoundList = new List<InterviewRoundModel>();
-			foreach (var interview in data)
-			{
-				var interviewId = interview.InterviewId;
-				var interviewRoundResponse = _interviewInterface.ViewInterviewRound(interviewId);
-				var interviewRound = JsonConvert.DeserializeObject<List<InterviewRoundModel>>(interviewRoundResponse.Content);
+			if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var responseBody = response.Content;
+                var data = JsonConvert.DeserializeObject<AllPaginationModel>(responseBody);
 
-				interviewRoundList.AddRange(interviewRound);
-			}
+                var totalPages = (int)Math.Ceiling((double)totalItems / pageSize);
 
-			var viewModel = new InterviewViewModel
-			{
-				Interview = data,
-				InterviewRounds = interviewRoundList
-			};
-			var jsonData = HttpContext.Session.GetString("ReasonDataList");
-			var reasonList = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
+                data.TotalItems = totalItems;
+                data.PageSize = pageSize;
+                data.CurrentPage = pageNumber;
+                data.TotalPages = totalPages;
 
-			var jsonData1 = HttpContext.Session.GetString("TechnologyList");
-			var technologyList = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData1);
+                var interviewList = data.interviewModel;
 
-			var jsonData2 = HttpContext.Session.GetString("InterviewStatusList");
-			var interviewStatusList = JsonConvert.DeserializeObject<List<InterviewStatusModel>>(jsonData2);
+                var interviewRoundList = new List<InterviewRoundModel>();
+                foreach (var interview in interviewList)
+                {
+                    var interviewId = interview.InterviewId;
+                    var interviewRoundResponse = _interviewInterface.ViewInterviewRound(interviewId);
+                    var interviewRound = JsonConvert.DeserializeObject<List<InterviewRoundModel>>(interviewRoundResponse.Content);
 
-			var jsonData3 = HttpContext.Session.GetString("InterviewerList");
-			var interviewerList = JsonConvert.DeserializeObject<List<InterviewerModel>>(jsonData3);
+                    interviewRoundList.AddRange(interviewRound);
+                }
 
-			var jsonData4 = HttpContext.Session.GetString("CandidateMasterList");
-			var candidateMasterList = JsonConvert.DeserializeObject<List<CandidateMasterEntity>>(jsonData4);
+                var viewModel = new InterviewViewModel
+                {
+                    Interview = interviewList,
+                    InterviewRounds = interviewRoundList,
+                    PaginationModel = data
+                };
 
-			var jsonData5 = HttpContext.Session.GetString("RoundList");
-			var roundList = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData5);
+                var jsonData = HttpContext.Session.GetString("ReasonDataList");
+                var reasonList = JsonConvert.DeserializeObject<List<ReasonModel>>(jsonData);
 
-			var jsonData6 = HttpContext.Session.GetString("RoundStatusList");
-			var roundStatusList = JsonConvert.DeserializeObject<List<RoundStatusModel>>(jsonData6);
+                var jsonData1 = HttpContext.Session.GetString("TechnologyList");
+                var technologyList = JsonConvert.DeserializeObject<List<TechnologyModel>>(jsonData1);
 
-			ViewBag.ReasonList = reasonList;
-			ViewBag.TechnologyList = technologyList;
-			ViewBag.InterviewStatusList = interviewStatusList;
-			ViewBag.InterviewerList = interviewerList;
-			ViewBag.CandidateMasterList = candidateMasterList;
-			ViewBag.RoundList = roundList;
-			ViewBag.RoundStatusList = roundStatusList;
+                var jsonData2 = HttpContext.Session.GetString("InterviewStatusList");
+                var interviewStatusList = JsonConvert.DeserializeObject<List<InterviewStatusModel>>(jsonData2);
 
-			// Pass the view model to the view
-			return View(viewModel);
-		}
+                var jsonData3 = HttpContext.Session.GetString("InterviewerList");
+                var interviewerList = JsonConvert.DeserializeObject<List<InterviewerModel>>(jsonData3);
 
+                var jsonData4 = HttpContext.Session.GetString("CandidateMasterList");
+                var candidateMasterList = JsonConvert.DeserializeObject<List<CandidateMasterEntity>>(jsonData4);
 
-		[HttpPost]
+                var jsonData5 = HttpContext.Session.GetString("RoundList");
+                var roundList = JsonConvert.DeserializeObject<List<RoundModel>>(jsonData5);
+
+                var jsonData6 = HttpContext.Session.GetString("RoundStatusList");
+                var roundStatusList = JsonConvert.DeserializeObject<List<RoundStatusModel>>(jsonData6);
+
+                ViewBag.ReasonList = reasonList;
+                ViewBag.TechnologyList = technologyList;
+                ViewBag.InterviewStatusList = interviewStatusList;
+                ViewBag.InterviewerList = interviewerList;
+                ViewBag.CandidateMasterList = candidateMasterList;
+                ViewBag.RoundList = roundList;
+                ViewBag.RoundStatusList = roundStatusList;
+
+                // Pass the view model to the view
+                return View(viewModel);
+            }
+            else
+            {
+                return BadRequest(new { message = "Failed to retrieve interview list" });
+            }
+        }
+
+        [HttpPost]
 		public IActionResult AddInterview(InterviewModel interviewData)
 		{
 			var response = _interviewInterface.AddInterview(interviewData);
