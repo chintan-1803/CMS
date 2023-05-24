@@ -142,6 +142,11 @@ namespace CMS.Controllers
 
                 if (!response.IsSuccessful)
                 {
+                    if(response.Content== "\"Invalid EmailId\"")
+                    {
+						TempData["error-message"] = "User is not authenticated. Please provide a valid email address.";
+						return View();
+					}
                     TempData["error-message"] = "User is not authenticated. Please provide a valid email address.";
 					return View();
 				}
