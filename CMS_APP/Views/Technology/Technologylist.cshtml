@@ -79,7 +79,7 @@
 								<div class="modal-body mx-3">
 									<label data-error="wrong" data-success="right" for="orangeForm-name">
 
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology <span style="color: red; display: inline;">*</span></span>
 									</label>
 									<input asp-for="TechnologyName" type="text" id="TechnologyName" class="form-control validate" placeholder="Ex:.Net,Python,Machine Learning"  oninput="this.value = this.value.replace(/[^a-zA-Z.-/\s]/g, '');">
 									<span asp-validation-for="TechnologyName" class="text-danger" id="TechnologyNameError"></span>
@@ -198,7 +198,7 @@
 											<div class="modal-dialog" role="document">
 												<div class="modal-content">
 													<div class="modal-header text-center">
-														<h4 class="modal-title w-100 font-weight-bold">Edit Role</h4>
+														<h4 class="modal-title w-100 font-weight-bold">Edit Technology</h4>
 														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 															<span aria-hidden="true">&times;</span>
 														</button>
@@ -211,7 +211,7 @@
 
 														<div class="md-form mb-5">
 															<label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
-																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology Name</span>
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Technology <span style="color: red; display: inline;">*</span></span>
 															</label>
 															<input type="text" id="updatetechnologyname_@data.TechnologyId" value="@data.TechnologyName" class="form-control validate" placeholder="Ex:.Net,Python,Machine Learning" oninput="this.value = this.value.replace(/[^a-zA-Z.-/\s]/g, '');">
 															<span class="text-danger" id="technologyError_@data.TechnologyId"></span>
@@ -320,34 +320,34 @@
 				var Description = $('#Description').val();
 				// var createdBy = $('#create_User').val();
 
-				if ((TechnologyName.trim() === '') && (Description.trim() === '')) {
-					$('#EmptyfieldError').text('Both fields are required.');
-					setTimeout(function () {
-						$('#EmptyfieldError').text('');
-					}, 3000);
-					return;
-				}
-				if ((TechnologyName.trim() === "") || (TechnologyName.trim() == null)) {
-					$('#TechnologyNameError').text('Technology is required.');
-					return;
-				}
-				if (Description.trim() === '') {
-					$('#DescriptionError').text('Description is required.');
-					setTimeout(function () {
-						$('#DescriptionError').text('');
-					}, 3000);
-					return;
-				}
+			if ((TechnologyName.trim() === '') && (Description.trim() === '')) {
+				$('#EmptyfieldError').text('Both fields are required.');
+				setTimeout(function () {
+					$('#EmptyfieldError').text('');
+				}, 3000);
+				return;
+			}
+			if ((TechnologyName.trim() === "") || (TechnologyName.trim() == null)) {
+				$('#TechnologyNameError').text('Technology is required.');
+				return;
+			}
+			if (Description.trim() === '') {
+				$('#DescriptionError').text('Description is required.');
+				setTimeout(function () {
+					$('#DescriptionError').text('');
+				}, 3000);
+				return;
+			}
 
-				if( (!/^(?!\d)([a-zA-Z]|[. -][a-zA-Z]|[a-zA-Z][. -]?[a-zA-Z]+)*$|^[a-zA-Z]+\s[a-zA-Z]+$/.test(TechnologyName.trim())) || (TechnologyName.length < 2)) {
-					$('#TechnologyNameError').text('Invalid technology name.minimum 2 characters required.');
-					return;
-				}
+			if (!/^([a-zA-Z]|[a-zA-Z][. -]?[a-zA-Z]+)*$/.test(TechnologyName.trim()) || (TechnologyName.length < 2)) {
+				$('#TechnologyNameError').text('Invalid technology name. Minimum 2 characters required.');
+				return;
+			}
 
-				if ((!/^[a-zA-Z]+([. -]?[a-zA-Z]+)*$/.test(Description.trim())) || (Description.length < 2)) {
-					$('#DescriptionError').text('Invalid description name.minimum 2 characters required.');
-					return;
-				}
+			if (!/^[a-zA-Z]+([. -][a-zA-Z]+)*$/.test(Description.trim()) || (Description.length < 2)) {
+				$('#DescriptionError').text('Invalid description. Minimum 2 characters required.');
+				return;
+			}
 
 				// Make the AJAX call
 				$.ajax({
@@ -388,22 +388,20 @@
 
 		function updatefunction(id) {
 
-
-
 			var TechnologyId = $('#updateTechnologyId_' + id).val();
 			var TechnologyName = $('#updatetechnologyname_' + id).val();
 			var Description = $('#updateDescription_' + id).val();
 			// var updatedby = $('#update_change_user_' + id).val();
 			var updatedtime = $('#update_change_Date_' + id).val();
 
-			if ((TechnologyName === '') && (Description === '')) {
+			if ((TechnologyName.trim() === '') && (Description.trim() === '')) {
 				$('#EmptyfieldError_' + id).text('Both fields are required.');
 				setTimeout(function () {
 					$('#EmptyfieldError_' + id).text('');
 				}, 3000);
 				return;
 			}
-			if (TechnologyName === '') {
+			if (TechnologyName.trim() === '') {
 				// Show error message and return without making the AJAX call
 				$('#technologyError_' + id).text('Technology is required.');
 				setTimeout(function () {
@@ -411,7 +409,7 @@
 				}, 3000);
 				return;
 			}
-			if (Description === '') {
+			if (Description.trim() === '') {
 				// Show error message and return without making the AJAX call
 				$('#DescriptionError_' + id).text('Description is required.');
 				setTimeout(function () {
@@ -419,23 +417,21 @@
 				}, 3000);
 				return;
 			}
-
-			if ((!/^(?!\d)([a-zA-Z]|[. -][a-zA-Z]|[a-zA-Z][. -]?[a-zA-Z]+)*$|^[a-zA-Z]+\s[a-zA-Z]+$/.test(TechnologyName.trim())) || (TechnologyName.length < 2)) {
+			if (!/^([a-zA-Z]|[a-zA-Z][. -]?[a-zA-Z]+)*$/.test(TechnologyName.trim()) || (TechnologyName.length < 2)) {
 				// Show error message and return without making the AJAX call
-				$('#technologyError_' + id).text('Invalid technology name.Minimum 2characters required.');
+				$('#technologyError_' + id).text('Invalid technology name. Minimum 2 characters required.');
 				setTimeout(function () {
 					$('#technologyError_' + id).text('');
 				}, 3000);
 				return;
 			}
-			if ((!/^[a-zA-Z]+([. -]?[a-zA-Z]+)*$/.test(Description.trim())) || (Description.length < 2)) {
-				$('#DescriptionError_' + id).text('Invalid description name.Minimum 2 characters required.');
+			if (!/^[a-zA-Z]+([. -][a-zA-Z]+)*$/.test(Description.trim()) || (Description.length < 2)) {
+				$('#DescriptionError_' + id).text('Invalid description. Minimum 2 characters required.');
 				setTimeout(function () {
 					$('#DescriptionError_' + id).text('');
 				}, 3000);
 				return;
 			}
-
 
 			$.ajax({
 				url: '/Technology/UpdateTechnologylist',

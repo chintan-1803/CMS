@@ -84,7 +84,7 @@
 								<div class="modal-body mx-3">
 									<label data-error="wrong" data-success="right" for="orangeForm-name">
 
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round Name</span>
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round <span style="color: red; display: inline;">*</span></span>
 									</label>
 									<input asp-for="Round_Name" type="text" id="Round_Name" class="form-control validate" placeholder="Ex:Round A,RoundA" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 									<span asp-validation-for="Round_Name" class="text-danger" id="RoundError"></span>
@@ -197,7 +197,7 @@
 														<input type="hidden" id="updateRoundID_@data.RoundID" value="@data.RoundID" class="form-control validate" readonly>
 														<div class="modal-body">
 															<label class="text-right" data-error="wrong" data-success="right" for="orangeForm-name">
-																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round</span>
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Round <span style="color: red; display: inline;">*</span></span>
 															</label>
 															<input type="text" id="updateround_@data.RoundID" value="@data.Round_Name" class="form-control validate" placeholder="Ex:Round A,RoundA"  oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 															<span asp-validation-for="Reason" class="text-danger" id="RoundError_@data.RoundID"></span>
@@ -303,13 +303,13 @@
 			//var createdBy = $('#create_User').val();
 
 			if (Round_Name.trim() === '') {
-				$('#RoundError').text('Round is required.');
-				return;
+			  $('#RoundError').text('Round is required.');
+			  return;
 			}
 
-			if ((!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Round_Name.trim()))  || (Round_Name.length < 2)) {
-				$('#RoundError').text('A valid round name requires a minimum of 2 characters.');
-				return;
+			if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Round_Name.trim()) || (Round_Name.length < 2)) {
+			  $('#RoundError').text('A valid round name requires a minimum of 2 characters.');
+			  return;
 			}
 
 			// Make the AJAX call
@@ -360,14 +360,15 @@
 			}, 3000);
 			return;
 		}
-		if ((!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Round_Name.trim()))  || (Round_Name.length < 2)) {
+
+		if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(Round_Name.trim()) || (Round_Name.trim().length < 2)) {
 			// Show error message and return without making the AJAX call
 			$('#RoundError_' + id).text('A valid round name requires a minimum of 2 characters.');
 			setTimeout(function () {
 				$('#RoundError_' + id).text('');
 			}, 3000);
 			return;
-		}
+		}	   
 
 		$.ajax({
 			url: '/Round/UpdateRoundlist',
