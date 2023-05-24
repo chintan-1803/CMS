@@ -84,7 +84,7 @@
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
 
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason</span>
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason <span style="color: red; display: inline;">*</span></span>
 									</label>
 									<input asp-for="Reason" type="text" id="Reason" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 
@@ -197,7 +197,7 @@
 														<input type="hidden" id="updatereasonid_@data.ReasonID" value="@data.ReasonID" class="form-control validate" readonly>
 														<div class="modal-body">
 															<label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
-																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">	Reason </span>
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Reason <span style="color: red; display: inline;">*</span></span>
 															</label>
 															<input asp-for="Reason" type="text" id="updatereason_@data.ReasonID" value="@data.Reason" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 															<span asp-validation-for="Reason" class="text-danger" id="ReasonError_@data.ReasonID"></span>

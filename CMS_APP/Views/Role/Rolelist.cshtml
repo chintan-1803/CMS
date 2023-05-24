@@ -83,7 +83,7 @@
 								<div class="modal-body mx-3">
 									<label data-error="wrong" data-success="right" for="orangeForm-name">
 
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">RoleName</span>
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Role <span style="color: red; display: inline;">*</span></span>
 									</label>
 									<input asp-for="RoleName" type="text" id="RoleName" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 									<span asp-validation-for="RoleName" class="text-danger" id="RoleError"></span>
@@ -199,7 +199,7 @@
 														<input type="hidden" id="updateRoleId_@data.RoleId" value="@data.RoleId" class="form-control validate" readonly>
 														<div class="modal-body">
 															<label class="text-right" data-error="wrong" data-success="right" for="orangeForm-name">
-																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Role</span>
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Role <span style="color: red; display: inline;">*</span></span>
 															</label>
 															<input asp-for="RoleName" type="text" id="updaterole_@data.RoleId" value="@data.RoleName" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 															<span asp-validation-for="RoleName" class="text-danger" id="RoleError_@data.RoleId"></span>
@@ -304,8 +304,8 @@
 				$('#RoleError').text('Role is required.');
 				return;
 			}
-
-			if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(RoleName.trim())) {
+			
+			if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(RoleName.trim())) {
 				$('#RoleError').text('Role is incorrect.Please enter a valid role.');
 				return;
 			}
@@ -361,7 +361,7 @@
 				}, 3000);
 			return;
 		}
-		if (!/^[a-zA-Z]+([ ][a-zA-Z]+)*$/.test(RoleName.trim())) {
+		if (!/^[a-zA-Z]+(\s[a-zA-Z]+)?$/.test(RoleName.trim())) {
 			// Show error message and return without making the AJAX call
 			$('#RoleError_' + id).text('Role is incorrect.Please enter a valid role.');
 				setTimeout(function () {
