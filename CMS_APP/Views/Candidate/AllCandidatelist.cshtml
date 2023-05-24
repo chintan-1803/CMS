@@ -1,6 +1,4 @@
-﻿
-
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @using Newtonsoft.Json;
@@ -111,7 +109,9 @@
 										</div>
 									</div>
 								</td>
-								<td class="text-center">@(data.IsExperience ? "Yes" : "No") </td>
+								<td class="text-center">
+									@(data.AgreeForChangeLocation ? "Yes" : "No")
+								</td>
 							</tr>
 						}
 					</tbody>
