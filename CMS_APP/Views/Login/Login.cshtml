@@ -72,18 +72,27 @@
 </html>
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/font-awesome/js/fontawesome.min.js"></script>
+@*<script src="~/lib/font-awesome/js/fontawesome.min.js"></script>*@
 
 
 <script>
 
     $('#btnToggle').click(function () {
-        if ('password' == $('#valPassword').attr('type')) {
-            $('#valPassword').prop('type', 'text');
-        }
-        else {
-            $('#valPassword').prop('type', 'password');
+        var passwordInput = $('#valPassword');
+        var currentType = passwordInput.attr('type');
+        var isPassword = currentType === 'password';
+
+        if (isPassword) {
+            passwordInput.attr('type', 'text');
+            $('#btnToggle').removeClass('fa-eye-slash').addClass('fa-eye');
+        } else {
+            passwordInput.attr('type', 'password');
+            $('#btnToggle').removeClass('fa-eye').addClass('fa-eye-slash');
         }
     });
 
+    // Set the initial state with the eye closed
+    $('#valPassword').attr('type', 'password');
+    $('#btnToggle').removeClass('fa-eye').addClass('fa-eye-slash');
+    
 </script>
