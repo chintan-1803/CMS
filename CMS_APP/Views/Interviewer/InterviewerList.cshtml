@@ -589,8 +589,8 @@
 			}
 			if (email.trim() === '') {
 				$('#emailError').text('Please enter an email address.');
-				return;
-			} else if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+				return;										 
+			} else if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
 				$('#emailError').text('Please enter a valid email address.');
 				return;
 			}

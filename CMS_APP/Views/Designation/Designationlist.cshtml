@@ -69,7 +69,7 @@
 								</div>
 								<div class="modal-body mx-3">
 									<label class="right-align" data-error="wrong" data-success="right" for="orangeForm-name">
-										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation</span>
+										<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation <span style="color: red; display: inline;">*</span></span>
 									</label>
 									<input asp-for="Designation" type="text" id="Designation" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 									<span asp-validation-for="Designation" class="text-danger" id="DesignationError"></span>
@@ -179,7 +179,7 @@
 														<input type="hidden" id="updatedesignationid_@data.DesignationID" value="@data.DesignationID" class="form-control validate">
 														<div class="modal-body">
 															<label class="text-right" data-error="wrong" data-success="left" for="orangeForm-name">
-																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation </span>
+																<span class="modal-text w-100  font-weight-bold " style="vertical-align: middle; font-size: 1.2em; color: grey;">Designation <span style="color: red; display: inline;">*</span></span>
 															</label>
 															<input type="text" id="updatedesignation_@data.DesignationID" value="@data.Designation" class="form-control validate" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '');">
 															<span asp-validation-for="Designation" class="text-danger" id="DesignationError_@data.DesignationID"></span>
